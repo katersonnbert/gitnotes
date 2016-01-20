@@ -1,0 +1,8 @@
+Java Hands on
+
+
+Which date and time library to use:
+http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html
+
+Use LocalDate / LocalTime /LocalDateTime from package java.time
+

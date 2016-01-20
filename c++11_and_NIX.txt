@@ -1,0 +1,16 @@
+
+NIX:
+
+add functions always add a link to an existing entity
+create functions always create a new entity
+remove functions always remove a link to an existing entity
+delete functions always delete an existing entity
+
+
+information snippets:
+
+size_t ... exactly the memory size of a pointer (?) but unfortunately the size differs between 32 and 64 bit systems ... can lead to information loss because of that.
+
+
+
+
