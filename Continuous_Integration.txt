@@ -5,7 +5,7 @@ Continuous integration
 Travis CI with Github
 ======================
 
-	http://docs.travis-ci.com/user/getting-started/
+(http://docs.travis-ci.com/user/getting-started/)
 
 - sign in to travis CI with the github account
 - add organization
@@ -26,14 +26,11 @@ Travis CI with Github
 
 Travis CI specifics:
 
-Validate a Travis .yaml:
-http://lint.travis-ci.org/
+[Validate a Travis .yaml](http://lint.travis-ci.org/)
 
-There are no 32 bit environments under Travis CI:
-https://github.com/travis-ci/travis-ci/issues/986
+There are no 32 bit environments under [Travis CI](https://github.com/travis-ci/travis-ci/issues/986)
 
-OSX does not support python builds at the moment (07.12.2015):
-https://docs.travis-ci.com/user/languages/python
+[OSX does not support python builds at the moment (07.12.2015)](https://docs.travis-ci.com/user/languages/python)
 
 
 
@@ -50,13 +47,13 @@ AppVeyor with GitHub
 - add appveyor.yml file
 
 more information about the appveyor yaml file:
-	http://www.appveyor.com/docs/appveyor-yml
-	http://www.yegor256.com/2015/01/10/windows-appveyor-maven.html
+[Appveyor](http://www.appveyor.com/docs/appveyor-yml)
+[Appveyor Maven](http://www.yegor256.com/2015/01/10/windows-appveyor-maven.html)
 
 - change email notifications via UI
 
 - to show the current status of an appveyor branch e.g. in the github readme go to the settings page of the respective project e.g.:
-	https://ci.appveyor.com/project/mpsonntag/crawler-to-rdf/settings/badges
+	(https://ci.appveyor.com/project/mpsonntag/crawler-to-rdf/settings/badges)
   copy markdown code
 
 
@@ -137,7 +134,7 @@ Coveralls with Travis CI & GitHub
 Findbugs, Checkstyle, PMD:
 ==========================
 
-http://www.petrikainulainen.net/programming/maven/findbugs-maven-plugin-tutorial/
+[Findbugs](http://www.petrikainulainen.net/programming/maven/findbugs-maven-plugin-tutorial/)
 
 	mvn -Dpmd.printFailingErrors=true pmd:check checkstyle:check findbugs:check
 
@@ -147,7 +144,7 @@ http://www.petrikainulainen.net/programming/maven/findbugs-maven-plugin-tutorial
 Create Javadoc:
 ===============
 
-https://newcircle.com/bookshelf/java_fundamentals_tutorial/javadoc
+[Javadoc](https://newcircle.com/bookshelf/java_fundamentals_tutorial/javadoc)
 
 This is how it works:
 	javadoc -private -d [path] [sourcepath] -subpackages [list of packages]
