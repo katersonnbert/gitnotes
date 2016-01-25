@@ -257,3 +257,39 @@ Symlinks for the operating system:
 /usr/local/lib
 
 
+# Root access by using `sudo`
+[Introduction to sudo](https://www.linux.com/learn/tutorials/306766:linux-101-introduction-to-sudo)
+
+In a nutshell sudo is the commandline way to grant a user root access for the following command e.g. when installing a software package. It will require a password that is associated with a user that has root access.
+
+	sudo [command]
+	[sudo] password for [username]:
+
+
+# Installing packages by using apt (Advanced Packaging Tool)
+[Quick apt-get overview](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool)
+
+When working on Debian based Linux systems, apt-get is a convenient way to download and install software packages.
+For most of the packages root access is required which means using `sudo apt-get [command]`.
+
+- Update the index to be up to date with all the packages that can be installed via apt-get
+	sudo apt-get update
+
+- Install a package e.g. the terminator linux terminal, which is an awesome linux terminal
+	sudo apt-get install terminator
+
+- Install a package that is not handled via the normal apt-get package list e.g. the java8 distribution: This requires to manually add a repository to the apt-get list of installable packages, update the repository and the install the package.
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	sudo apt-get install oracle-java8-installer
+
+
+# Using SFTP with the file browser
+- ctrl + l
+- enter user@url e.g. nix@projects.g-node.org
+- enter pass phrase
+- 
+
+
+
+
