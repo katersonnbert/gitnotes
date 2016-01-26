@@ -309,7 +309,13 @@ Install Gedit latex plugins
 
 
 Install IRC Chat with empathy (but probably skip this, empathy sucks)
-	sudo apt-get account-plugin-irc
+	sudo apt-get install account-plugin-irc
+
+Install XChat
+	sudo apt-get install xchat
+
+#gnode@freenode
+#ccc@blafasel
 
 
 Install VLC
