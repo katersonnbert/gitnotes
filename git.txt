@@ -328,6 +328,10 @@ You can display which repositories will be removed by using first:
 	git remote prune --dry-run [origin/upstream]
 
 
+# Unstage file for commit
+	git reset <file>
+
+
 
 
 
