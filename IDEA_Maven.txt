@@ -255,12 +255,12 @@ files (from all subfolders):
 
 # Create new IDEA Maven project with an existing github repository.
 
-- Create new IDEA Project with groupID and artifactID
+- Create new IDEA Project with groupID and artifactID - e.g. "org.g_node" and "tag-notes"; avoid "-" in groupID
 - Close IDEA
 - Create github repository with the same name as the artifactID
 - rename artifactID folder to tmp
 - git clone repository to local work directory with the artifactID as folder name
-- copy all files and folders from the tmp directory to the new git folder.
+- copy all files and folders from the tmp directory to the new git folder. NOTE! also copy all HIDDEN files at this step!
 - open IDEA again.
 - File -> Project Structure -> Project: set Project language level to 8 - Lambdas
 - add all required files from another java maven project, update pom file.
