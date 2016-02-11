@@ -266,7 +266,10 @@ files (from all subfolders):
 - add all required files from another java maven project, update pom file.
 - get IDEA and git to play nice:
 	File -> Settings -> Version Control -> add project root path, apply. 
-- add repository to travis, appveyor and coveralls
+- add repository to
+--- travis
+--- appveyor
+--- coveralls
 - add badges to readme.md
 
 
