@@ -1,0 +1,85 @@
+GCA Setup
+
+Ahoi!
+
+
+ich habe versuchsweise GCA-Web frisch geklont und nochmal von Grund auf
+so eingerichtet, dass man die Tests und die Web-App von IDEA und der
+Konsole aus starten kann. So geht's:
+
+
+Konsole:
+Damit man GCA-Web von der Konsole aus starten kann, braucht man das
+(aktuelle) Activator-Dingens[1]. Das muss man dann nur noch entpacken
+(das darin enthaltene 'activator' binary in $PATH eintragen) und dann
+'activator' im Projektverzeichnis ausführen:
+
+    $ activator test
+    oder
+    $ activator run
+
+Im Prinzip alles genau so wie in der .travis.yml. Damit das klappt muss
+lediglich das JDK (7 oder 8) installiert sein. Der Scala-Compiler oder
+SBT muss nicht auf dem System installiert sein (wie sich auf Travis
+herausgestellt hat, ist das ggf. sogar eher hinderlich).
+
+
+IDEA (15):
+Zunächst muss man das Project importieren, und zwar als SBT Projekt.
+Wichtig ist dabei, dass GCA-Web aus zwei Modulen besteht: 'GCA-Web' und
+'GCA-Web-build' beide muss man im entsprechenden Dialog für den Import
+auswählen.
+
+Um GCA-Web von der IDE aus zu starten, muss man sich manuell eine "Play
+2 run configuration" anlegen.
+
+    Run -> Edit Configurations -> + -> Play 2 App -> Namen Eingeben
+    -> OK
+
+Um die Tests in IDEA zu starten, einfach mit rechts auf das Verzeichnis
+'test' klicken und dann:
+
+    Run -> ScalaTests in 'test'
+
+
+Grüße,
+Adrian
+
+
+[1] https://downloads.typesafe.com/typesafe-activator/1.3.7/typesafe-activator-1.3.7-minimal.zip
+
+
+
+
+Allgemein:
+
+Bestimmte play frameworks brauchen bestimmte sbt versionen, damit die beiden die richtigen sachen bekommen benötigt man activator, das die korrekten sbt's bzw compiler für die sbt's lädt, installiert und aufsetzt, damit das framework überhaupt arbeiten kann.
+
+
+
+How to set up GCA-Web:
+
+- Get latest activator
+- Extract to software/activator_[current_version]
+- Update ~/bin/activator Symlink
+- Clone GCA-Web to directory of choice
+- Open IDEA -> New -> Project from existing source -> Select clone -> create project from existing sources -> Keep name the same -> Overwrite .idea -> Do not select any pre-compiled source files -> finish
+- Open Project Structure -> Project -> Select Java version -> Select Project language level 8 -> Apply
+- Follow all sbt import Dialogs
+- Should have imported 2 modules by the end of the process.
+
+- At the shell to start the project use:
+	activator run
+- Move to browser
+	http://localhost:9000
+- Use firefox to debug javascript: activate debugger by ctrl-shift-k
+
+- Use chromium to debug javaScript - activate debugger by ctrl-shift-j
+- More info on the debugger:
+	http://stackoverflow.com/questions/66420/how-do-you-launch-the-javascript-debugger-in-google-chrome
+
+User:
+
+
+
+
