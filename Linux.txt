@@ -248,14 +248,6 @@ awk     ... An entire programming language designed for constructing filters. Ex
                 http://www.vectorsite.net/tsawk.html
 
 
-# Important system folders in Linux:
-
-Symlinks for the operating system:
-	/etc/alternatives
-
-/usr/local/include
-/usr/local/lib
-
 
 # Root access by using `sudo`
 [Introduction to sudo](https://www.linux.com/learn/tutorials/306766:linux-101-introduction-to-sudo)
@@ -290,6 +282,68 @@ For most of the packages root access is required which means using `sudo apt-get
 - enter pass phrase
 - 
 
+# Finding where a program is installed
+which [program name]
 
 
 
+# Changing permissions:
+chmod options permissions filename
+
+# Change permissions to read, write and delete for everyone:
+chmod 777 filename
+
+
+detailled description and examples:
+http://www.computerhope.com/unix/uchmod.htm
+
+
+
+
+# Create file
+touch fileName
+
+
+
+# Write to file
+
+# Overwrite file
+echo "text" > fileName
+
+# Add to file at the bottom
+echo "text" >> fileName
+
+
+# Create Symlink
+http://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/
+
+ln -s [target-filename] [symbolic-filename]
+
+# this creates a symbolic link named [symbolic-filename] that points to [target-filename]
+# NOTE: ALWAYS use the whole path as [target-filename], do not use relative terms.
+
+e.g. ln -s /home/currentUser/tmp/testLinks/hurra.txt ../hurraLink
+
+
+# Delete Symlink
+Symlinks can simply be deleted by rm. This will not touch the file the link points to.
+
+e.g. rm hurraLink
+
+
+# Important system folders in Linux:
+
+Symlinks for the operating system:
+	/etc/alternatives
+
+/usr/local/include
+/usr/local/lib
+
+
+/usr/share
+
+custom:
+/opt/
+
+
+/home/[user]/bin
