@@ -134,6 +134,11 @@ Install python library installation tool
 Install python packages (futures for python 2to3, alabaster for documentation)
 	sudo pip install future alabaster
 
+
+# REPLACE the following with sole installation of jupyter - check if its best to install solely via pip and NOT via apt-get
+# To see which kernels and where they are installed, check `jupyter kernelspec list`
+# Problem was: 
+
 Install ipython and ipython notebook
 	sudo apt-get install ipython ipython-notebook
 
