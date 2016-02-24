@@ -1,0 +1,93 @@
+SCALA
+=====
+
+# How to use shell under Ubuntu:
+- DL latest version from http://www.scala-lang.org/download
+- Extract to directory of choice, then run 
+	bash [dir]/scala/bin/scala
+
+
+# Good to knows
+- imperative programming style   e.g. java, c++ ... often mutate a state shared between different functions
+- functional programming style   Haskell ... does not change a mutual state. every function just returns a value
+- statically typed
+- has type inferrence
+
+
+# Scala interpreter commands
+
+:help			print help
+:quit			end interpreter
+:save <path>	save shell history to <path>
+:history		show history
+
+
+# Defining functions:
+
+def functionName(parameter: Type, parameter: Type, ...): Return Type = { function body }
+
+e.g.
+
+def getmax(x: Int, y: Int): Int = {
+  if (x > y)
+    x
+  else
+    y
+}
+
+
+# Using loops
+var i = 0
+while (i < args.length) {
+    println(args(i))
+    i += 1
+}
+
+
+# Iterate with foreach and for
+	args.foreach(arg => println(arg))
+		or
+	args.foreach((arg: String) => println(arg))
+
+... foreach is called on args and pass in a function literal
+
+
+# Functional literal
+
+(Parameter list) => function body
+	e.g.
+(x: Int, y: Int) => x + y
+
+
+# Methods in Scala
+
+- Methods are class member functions
+- they can be called on instances of the corresponding class
+- as a rule methods with only one parameter can be called without dot or parenthesis
+	e.g.
+	for (i <- 0 to 2)
+		[body]
+
+	In this example the class Int has a method "to" with one parameter of type Int.
+	One could also use this syntax:
+	
+	for (i <- (0).to(2))
+
+	another example:
+	1 + 2					is actually		(1).+(2)
+	someArray(i)			is actually		someArray.apply(i)
+	someArray(i, "text")	is actually		someArray.update(i, "text")
+
+Scala basically treats everything as objects with methods.
+
+
+# Using lists in Scala
+
+buch p41
+
+
+
+
+Mostly from
+Programming in Scala; Odersky, Spoon, Venners; artima; 2010
+
