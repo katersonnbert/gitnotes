@@ -78,7 +78,31 @@ How to set up GCA-Web:
 - More info on the debugger:
 	http://stackoverflow.com/questions/66420/how-do-you-launch-the-javascript-debugger-in-google-chrome
 
-User:
+Test User:
+check "Tests:Assets" for users .. should be there once all tests have run successfully at least once.
+
+
+
+- Set up DB ... Run all tests to populate the Database
+- Intellij supports database ... add db from file, install drivers
+- If the tests fail:
+-- check, if the correct test unit is selected (requires scala tests instead of e.g. junit)
+-- delete all db files and run the tests again - if the jpa.default in conf.application.conf is defaultpersistenceunit, when the tests are run, the or mapper should create every table which it does not encounter.
+
+- Intellij Enterprise is required for support of the play framework, database interaction support and convenience functions.
+
+
+
+Set up infos:
+
+the main setup infos are defined in:
+- conf.application.conf (requires conf.META-INF.orm.xml & conf.META-INF.persitence.xml for the setup of the OR Mapper)
+- conf.play.plugins (additional plugins - also states the order in which the plugins are started. play starts plugins of its own, so the defined order for additional should not be too low)
+- conf.routes
+- project.build.properties
+- project.plugin.sbt
+- build.sbt
+
 
 
 
