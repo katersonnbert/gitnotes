@@ -91,6 +91,8 @@ check "Tests:Assets" for users .. should be there once all tests have run succes
 
 - Intellij Enterprise is required for support of the play framework, database interaction support and convenience functions.
 
+NOTE: if we cannot connect to an H2 DB with some obscure primary key violation error, IDEA probably uses the wrong drivers for the database. Search the path of the SBT H2 jar from the external libraries. Use these drivers in the DB settings as H2 DB drivers.
+
 
 
 Set up infos:
@@ -103,6 +105,62 @@ the main setup infos are defined in:
 - project.plugin.sbt
 - build.sbt
 
+
+
+Front end:
+
+Logic is always in public/javascripts
+HTML is always in app/views/dashboard/
+
+
+Back end:
+
+Mapping model-DB:
+The models for the individual tables of the database are found in app/models/
+
+Abstract States:
+Defined in app/models/AbstractState.scala
+
+
+
+DataBase:
+- H2 local
+- Postgress Production
+
+
+
+
+
+
+Other issues:
+- On conferences I can save empty topics
+- On conferences there is an error when I try to add groups
+
+
+
+
+
+data flow:
+
+e.g. conference field iOSApp
+
+field in app/views/dashboard/admin/conference.scala.html -> data-bind:"value: iOSApp" ... mapped to JSON object.
+via utils/serializer ... class ConferenceFormat ... read and write ... maps JSON Object field "iOSApp" to Backend class field member "iOSApp"
+Scala class app/models/conference.scala ... here is the field member "iOSApp" that by some magic is converted to the actual database field.
+
+
+
+*.scala.html ... these are the html templates, can be accessed via included .js files and JQuery $
+
+
+
+JavaScript: works with JQuery 
+
+$ ... returns JQuery object
+
+e.g.
+
+$(document.getElementById('someId'))
 
 
 
