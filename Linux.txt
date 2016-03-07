@@ -347,3 +347,12 @@ custom:
 
 
 /home/[user]/bin
+
+
+
+# Find text in files using grep
+
+- Find text "NoResultsException" in all files of all subfolders (-R) of the current folder (.) and print the line number where the match has been found (-n).
+	grep -Rn "NoResultsException" .
+
+
