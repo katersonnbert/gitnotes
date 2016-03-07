@@ -332,6 +332,47 @@ You can display which repositories will be removed by using first:
 	git reset <file>
 
 
+# Commit messages
+Adhere to these 5 rules:
+    Separate subject from body with a blank line
+    Limit the subject line to 50 characters
+    Capitalize the subject line
+    Do not end the subject line with a period
+    Use the imperative mood in the subject line
+    Wrap the body at 72 characters
+    Use the body to explain what and why vs. how
+http://chris.beams.io/posts/git-commit/
 
+
+Add a commit message from the command line:
+	git commit -m "Message"
+
+Write multi line commit messages from the command line - ' or " can be used to write multi line commit messages:
+
+	git commit -m "Message head
+	BodyText
+	More Body Text
+	
+	Final line"
+
+This might be tricky on windows. For such issues read:
+http://stackoverflow.com/questions/5064563/add-line-break-to-git-commit-m-from-command-line
+
+
+# Automatically close issues using commit messages:
+Issues can be automatically closed by using keywords in the text body of COMMIT MESSAGES (NOT pull requests!)
+
+These keywords are:
+    close #[issueNr]
+    closes #[issueNr]
+    closed #[issueNr]
+    fix #[issueNr]
+    fixes #[issueNr]
+    fixed #[issueNr]
+    resolve #[issueNr]
+    resolves #[issueNr]
+    resolved #[issueNr]
+
+https://help.github.com/articles/closing-issues-via-commit-messages/
 
 
