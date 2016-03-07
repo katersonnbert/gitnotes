@@ -53,11 +53,14 @@ Adrian
 
 Allgemein:
 
+JavaScript: read the JavaScript pitfalls presentation. (redmine)
+
+
 Bestimmte play frameworks brauchen bestimmte sbt versionen, damit die beiden die richtigen sachen bekommen benötigt man activator, das die korrekten sbt's bzw compiler für die sbt's lädt, installiert und aufsetzt, damit das framework überhaupt arbeiten kann.
 
 
 
-How to set up GCA-Web:
+# How to set up GCA-Web:
 
 - Get latest activator
 - Extract to software/activator_[current_version]
@@ -107,40 +110,29 @@ the main setup infos are defined in:
 
 
 
-Front end:
-
-Logic is always in public/javascripts
-HTML is always in app/views/dashboard/
 
 
-Back end:
+# DataBase:
+The project uses hibernate to map classes to the used database.
+- H2 ... development
+- Postgress ... production
 
-Mapping model-DB:
-The models for the individual tables of the database are found in app/models/
+Mapping Models to DB:
+The models for the individual tables of the database are found in app/models/ - the main class here is app/models/AbstractState.scala
 
-Abstract States:
-Defined in app/models/AbstractState.scala
-
-
-
-DataBase:
-- H2 local
-- Postgress Production
+Queries:
+All queries to the database can be found in app/service/
 
 
+# HTML templates:
+- All HTML templates can be found at app/views
+	*.scala.html ... these are the html templates, can be accessed via included .js files and JQuery $
+
+- All javascripts used in these templates can be found in app/assets/javascript
+- All additional stylesheets for these templates can be found in app/assets/stylesheets
 
 
-
-
-Other issues:
-- On conferences I can save empty topics
-- On conferences there is an error when I try to add groups
-
-
-
-
-
-data flow:
+# Data flow:
 
 e.g. conference field iOSApp
 
@@ -150,11 +142,7 @@ Scala class app/models/conference.scala ... here is the field member "iOSApp" th
 
 
 
-*.scala.html ... these are the html templates, can be accessed via included .js files and JQuery $
-
-
-
-JavaScript: works with JQuery 
+# JavaScript: works with JQuery 
 
 $ ... returns JQuery object
 
