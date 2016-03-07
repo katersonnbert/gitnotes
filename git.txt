@@ -249,7 +249,7 @@ https://help.github.com/articles/adding-an-existing-project-to-github-using-the-
 - have a cup of tea
 
 
-# undo last commit:
+# undo / remove last commit:
 http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit
 
 
@@ -374,5 +374,19 @@ These keywords are:
     resolved #[issueNr]
 
 https://help.github.com/articles/closing-issues-via-commit-messages/
+
+
+# Move commits from master branch to new branch.
+
+- checkout new branch
+	git checkout -b "newBranch"
+- new branch and master branch are now identical
+- checkout master
+- remove the last commits that should only be in the new branch.
+-- if it is only one commit:
+	git reset --hard HEAD~1
+-- if it is n commits:
+	git reset --hard HEAD~n
+
 
 
