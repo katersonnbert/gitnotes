@@ -96,6 +96,8 @@ check "Tests:Assets" for users .. should be there once all tests have run succes
 
 NOTE: if we cannot connect to an H2 DB with some obscure primary key violation error, IDEA probably uses the wrong drivers for the database. Search the path of the SBT H2 jar from the external libraries. Use these drivers in the DB settings as H2 DB drivers.
 
+In my case e.g. /home/msonntag/.ivy2/cache/com.h2database/h2/jars
+
 
 
 Set up infos:
@@ -116,6 +118,8 @@ the main setup infos are defined in:
 The project uses hibernate to map classes to the used database.
 - H2 ... development
 - Postgress ... production
+
+- to switch the Database, add a file "application.dev.conf" or "application.prod.conf" to the "conf" folder which contain the proper access settings for a different database.
 
 Mapping Models to DB:
 The models for the individual tables of the database are found in app/models/ - the main class here is app/models/AbstractState.scala
@@ -149,6 +153,36 @@ $ ... returns JQuery object
 e.g.
 
 $(document.getElementById('someId'))
+
+
+
+# Play framework templates
+
+To create html pages, play uses a templating framework that is similar to scala.
+
+In a *.scala.html template page, html can be written plainly. When the page is compiled, these parts will be converted to print(plainHTML)
+
+If the compiler encounters an "@", it treats everything after this as scala code and creates functions out of them.
+
+e.g.
+	@if(some.text != null) {
+		<p>@some.text</p>
+	}
+creates a function: func (s: String) = {
+	print("<p>")
+	print(s)
+	print("</p>")
+}
+
+
+#JSON
+
+The play framework mainly uses JSON for transmitting information from server to client and vice versa.
+
+The two main converters are:
+	json.parse(stuff)	... parse text to JSON
+	Json.stringify(stuff) ... convert JSON to text
+These two do the exact (?) opposite of each other.
 
 
 
