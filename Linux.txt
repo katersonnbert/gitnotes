@@ -356,3 +356,14 @@ custom:
 	grep -Rn "NoResultsException" .
 
 
+# netstat: check connections and available sockets
+
+	`netstat`
+	
+- Check connections:
+	`netstat -l`
+- Check connections showing their local address
+	`netstat -lt`
+
+
+
