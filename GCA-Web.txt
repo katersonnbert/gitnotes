@@ -121,6 +121,13 @@ The project uses hibernate to map classes to the used database.
 
 - to switch the Database, add a file "application.dev.conf" or "application.prod.conf" to the "conf" folder which contain the proper access settings for a different database.
 
+- An example additional setup file to use postgres is "application.prod.example.conf"
+- If we want to use postgres, create an empty postgres database with an owner
+	- change db.default.url to new database
+	- change db.default.user and password to new database owner
+	- IMPORTANT! if the database already contains data that should not be overwritten, change jpa.default to "prodPersistenceUnit"
+	- If no mailserver is available, set smtp.mock to "true"
+
 Mapping Models to DB:
 The models for the individual tables of the database are found in app/models/ - the main class here is app/models/AbstractState.scala
 
@@ -134,6 +141,7 @@ All queries to the database can be found in app/service/
 
 - All javascripts used in these templates can be found in app/assets/javascript
 - All additional stylesheets for these templates can be found in app/assets/stylesheets
+
 
 
 # Data flow:
@@ -185,5 +193,12 @@ The two main converters are:
 These two do the exact (?) opposite of each other.
 
 
+# Good to knows:
+ctime, mtime, atime:
 
+ctime: changes when file attributes are changed e.g. file owner, file permissions, file modification.
+mtime: changes when the contents of a file are changed.
+atime: changes whenever a file is accessed.
+
+http://www.linux-faqs.info/general/difference-between-mtime-ctime-and-atime
 
