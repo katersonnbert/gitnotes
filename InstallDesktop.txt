@@ -323,6 +323,10 @@ Install XChat
 #ccc@blafasel
 
 
+Install Postgres
+	sudo apt-get install postgresql
+
+
 Install VLC
 	sudo apt-get install vlc
 
