@@ -202,3 +202,71 @@ atime: changes whenever a file is accessed.
 
 http://www.linux-faqs.info/general/difference-between-mtime-ctime-and-atime
 
+
+# Installation at the production server:
+
+Hallo Tiziano,
+
+    wir können es Dienstag oder Mittwoch zusammen du und ich am Telefon
+    machen. 
+
+Dienstag würde bei mir gut passen. Wäre 10:00 Uhr OK?
+
+    Würde es als Backup reichen, wenn ich ein Datenbank dump und
+    eine Kopie des Verzeichnis, wo GCA installiert ist, mache?
+
+Ja das reicht aus.
+
+    Für die DB-Schema Änderungen hätte ich gerne sie als SQL-Skript im
+    Voraus, so dass wir keine Zeit mit Dateienaustausch verschwenden.
+
+Die Migration des Schemas besteht aus zwei Schritten. Im ersten Schritt
+wird das Schema von GCA-Web selbst geändert (wenn die neue Version von
+GCA mit der richtigen Konfiguration gestartet wird).
+Der 2. Schritt besteht aus einem kurzen SQL-Script welches z.B. neue
+Felder in der DB mit sinnvollen Werten füllt. Dieses Script werde ich
+dir heute im Laufe des Tages zuschicken.
+
+    Ich nehme an, ihr habt alles schon bei euch in pre-production getestet,
+    oder? Also die ganze Gelegenheit sollte ein 10-minutigen Sache sein,
+    oder?
+
+
+Eigentlich sollten 10 Minuten ausreichen, aber bring lieber etwas mehr
+Zeit mit - nur für den Fall dass doch was schief läuft.
+
+
+Viele Grüße,
+Adrian
+
+
+Hallo Adrian,
+
+wir können es Dienstag oder Mittwoch zusammen du und ich am Telefon machen. Würde es als Backup reichen, wenn ich ein Datenbank dump und eine Kopie des Verzeichnis, wo GCA installiert ist, mache?
+
+Für die DB-Schema Änderungen hätte ich gerne sie als SQL-Skript im Voraus, so dass wir keine Zeit mit Dateienaustausch verschwenden.
+
+Ich nehme an, ihr habt alles schon bei euch in pre-production getestet, oder? Also die ganze Gelegenheit sollte ein 10-minutigen Sache sein, oder?
+
+Ciao,
+Tiziano
+
+On Fri 11 Mar, 16:35, Adrian Stoewer <adrian.stoewer@rz.ifi.lmu.de> wrote:
+
+    Hallo Admins,
+
+    in den letzten Wochen haben wir an GCA-Web gearbeitet: ein paar Fehler
+    beseitigt und einige neue Features hinzugefügt. Damit sind wir jetzt
+    soweit fertig, sodass ein neues Release von GCA-Web Anfang nächster
+    Woche deployed werden kann. Im Großen und Ganzen wird es wieder das
+    selbe Prozedere sein wie im letzten Jahr. Aber es gibt auch wieder auch
+    ein paar kleine Änderungen am DB-Schema, die berücksichtigt werden
+    müssen.
+
+    Wie sieht es bei euch aus? Habt ihr nächste Woche Zeit die Installation
+    der neuen Version vorzunehmen? Und wie würdet ihr dabei gerne vorgehen:
+    soll ich euch eine Schritt-für-Schritt-Anleitung zukommen lassen, oder
+    sollen wir die Installation lieber gemeinsam per Hangout/Telefon machen?
+
+    Ein schönes Wochenende und viele Grüße,
+    Adrian
