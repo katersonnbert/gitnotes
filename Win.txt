@@ -25,3 +25,11 @@ Windows good to knows
 - Clone github repository locally
 - Open IDEA, open project as maven -> tick import maven projects automatically -> finish
 
+
+# Windows guest virtual box
+
+Windows guest in Linux host uses right-ctrl as host key
+Change view if the view seems screwed up - use combination until the view fits again.
+	[host key] + F
+
+
