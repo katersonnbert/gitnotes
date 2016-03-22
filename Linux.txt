@@ -333,6 +333,16 @@ e.g. rm hurraLink
 
 # Important system folders in Linux:
 
+Global searchpath variable $PATH:
+- display all directories currently included in the searchpath:
+	echo $PATH
+
+- permanently add directories to $PATH by editing /etc/profile or $HOME/.profile by adding
+	export PATH=$PATH:/[directory of choice]
+
+
+
+
 Symlinks for the operating system:
 	/etc/alternatives
 
@@ -364,6 +374,21 @@ custom:
 	`netstat -l`
 - Check connections showing their local address
 	`netstat -lt`
+
+
+# Lunux server crashcourse:
+
+http://www.linuxhowtos.org/C_C++/socket.htm
+
+- client and server are both processes, that communicate with each other via SOCKETS.
+- processes can only communicate, if they are in the same ADRESS DOMAIN and have the same SOCKET TYPE.
+- the two main different address domains are the UNIX DOMAIN (processes live in a common file system) and the INTERNET DOMAIN (processes live on two hosts anywhere in the internet)
+- the address of a socket in the unix domain is a CHARACTER STRING entry in the file system
+- the address of a socket in the internet domain is the internet adress of the host machine which is the IP ADDRESS (unique 32bit address).
+- Each internet socket address needs a port number on its host (16bit unsigned integer).
+- There are port numbers reserved for Unix standard services, port numbers above 2000 are available.
+- The mainly used socket type is the STREAM SOCKET. Stream sockets TCP (transmission control protocol).
+
 
 
 
