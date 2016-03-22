@@ -46,11 +46,14 @@ Adding an application to the quick launcher bar:
 	Exec=[path to shell script]
 	Terminal=false
 	Categories=[Linux application categories e.g. Development;IDE;Java;]
-- copy the created .desktop file to hidden folder ~/.local/share/applications
+- DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
+- DO NOT USE QUOTES WHEN SETTING THE ICON PATH
+- move the created .desktop file to hidden folder ~/.local/share/applications
 - manually edit the properties (properties -> permissions -> execute) to make it executable
 - draw it onto the quick launcher bar.
 
 Edit an existing quick launcher link: right click, properties, change whatever you like.
+Remove an existing quick launcher link: alt + right-click
 
 
 
@@ -341,15 +344,54 @@ Install Go
 	tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
 - in case of /usr/local installation add to /etc/profile
 	export PATH=$PATH:/usr/local/go/bin
-- in case of custom path installation add to $HOME/.profile
+- in case of custom path installation add to $HOME/.profile ... GOPATH is an additional directory, where go looks for installed packages
+	export GOPATH=$HOME/work/software/go-packages
 	export GOROOT=$HOME/work/software/go
 	export PATH=$PATH:$GOROOT/bin
 - re-load $PATH
 	source $HOME/.profile
 
+
+DL and install Visual Studio Code
+- Download latest visual studio code
+- Unpack it to directory of choice e.g. $HOME/work/software
+- Add Launcher:
+- create .desktop file in hidden ~/.local/share/applications folder
+	gedit $HOME/VSCode.desktop &
+- add following statements to file, change where required:
+	[Desktop Entry]
+	Version=1.6
+	Type=Application
+	Name=Visual Studio Code
+	Icon=/home/msonntag/work/software/VSCode-linux-x64/resources/app/resources/linux/code.png
+	Exec="/home/msonntag/work/software/VSCode-linux-x64/code"
+	Categories=Development;IDE;
+	Terminal=false
+
+- move file to hidden folder
+	sudo mv $HOME/VSCode.desktop $HOME/.local/share/applications/VSCode.desktop
+
+- start, install add ons by F1 ... ext inst ... select add on
+-- install go, PowerShell, markdown linter
+
+- on the commandline install all recommended go-tools according to https://marketplace.visualstudio.com/items?itemName=lukehoban.Go
+	go get -u -v github.com/nsf/gocode
+	go get -u -v github.com/rogpeppe/godef
+	go get -u -v github.com/golang/lint/golint
+	go get -u -v github.com/lukehoban/go-find-references
+	go get -u -v github.com/lukehoban/go-outline
+	go get -u -v sourcegraph.com/sqs/goreturns
+	go get -u -v golang.org/x/tools/cmd/gorename
+	go get -u -v github.com/tpng/gopkgs
+	go get -u -v github.com/newhook/go-symbols
+	go get github.com/derekparker/delve/cmd/dlv
+	echo $GOPATH
+
+
+
 DL and install Protege
 add Launcher:
-- create .desktop file in hidden ~/.local/applications folder
+- create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
 		[Desktop Entry]
 		Version=5.0
