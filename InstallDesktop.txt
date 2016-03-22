@@ -334,6 +334,18 @@ Install VLC
 Install Chromium
 	sudo apt-get install chromium-browser
 
+Install Go
+- download latest zip from golang.org
+- install according to golang.org/doc/install
+- unpack to directory of choice e.g. /usr/local or in our case $HOME/work/software
+	tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
+- in case of /usr/local installation add to /etc/profile
+	export PATH=$PATH:/usr/local/go/bin
+- in case of custom path installation add to $HOME/.profile
+	export GOROOT=$HOME/work/software/go
+	export PATH=$PATH:$GOROOT/bin
+- re-load $PATH
+	source $HOME/.profile
 
 DL and install Protege
 add Launcher:
