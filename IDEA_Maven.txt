@@ -14,6 +14,10 @@ add the following line to the idea.sh startup shell script right after the sheba
 	File > Settings > Editor > Code Style > Java > Imports > Class count to use import with '*'
 
 
+# Set tab size:
+	File > Settings > Editor > Code Style > [Language] > Tabs and Indents
+
+
 
 # ShortCuts:
 	alt + enter ... additional options, complementation, etc
@@ -271,11 +275,5 @@ files (from all subfolders):
 --- appveyor
 --- coveralls
 - add badges to readme.md
-
-
-
-
-
-
 
 
