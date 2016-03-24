@@ -1,8 +1,6 @@
-Go
-==
+# Go
 
 # Packages:
-
 - Go programs are made of packages.
 - Programs start running in package main.
 - further packages can be used by `import`
@@ -35,7 +33,7 @@ Go
 	func swap(fst string, snd string) (string, string) {
 		return snd, fst
 	}
-
+    //
 	func main() {
 		a, b := swap("I am", "First")
 		fmt.Println(a, b, "says Mr Yoda")
@@ -70,13 +68,14 @@ Go
     fmt.Println(epicPants)
     const epicShirt = "As is her epic shirt, which interestingly is also made of inferred"
     fmt.Println(epicShirt, reflect.TypeOf(epicShirt))
-
+    //
 	const intern = 10
 	const lowFloat = 1.2
     fmt.Println("Meanwhile the", reflect.TypeOf(intern), "does not even know its inferred", reflect.TypeOf(lowFloat), "value")
 	```
 
 # Basic types
+
 - The available basic types are
 	```
 	bool
@@ -126,7 +125,7 @@ Go
 
 ### If
 - The plain `if` looks like this:
-	```
+    ```
 	evenMoreSitups := 10
 	if evenMoreSitups > 9 {
 		fmt.Println("No, thank you!")
@@ -141,7 +140,7 @@ Go
 		}
 		return lim
 	}
-
+    //
 	func main() {
 		fmt.Println(
 			pow(3, 2, 10),
@@ -225,25 +224,25 @@ Go
 	```
 
 - The following example shows basic pointer usage and unusage:
-	```
+    ```
 	func testPointer() {
 		var i int = 21
 		var x *int
-
+		//
 		//fmt.Println("*x has value:\t", *x) // Since the pointer points nowhere at the moment, this leads to panic.
 		//x = 12 // Since this is a pointer, it can only hold addresses, no actual value and this leads to panic.
-
+		//
 		fmt.Println("x has value:\t", x)		// <nil>
-
+		//
 		x = &i
 		fmt.Println("x has value:\t", x)		// [some address]
 		fmt.Println("*x points to:\t", *x)		// 21
 		fmt.Println("i before:\t", i)			// 21
-
+		//
 		*x = 22
 		fmt.Println("i after:\t", i)			// 22
 		fmt.Println("x has value:\t", x)		// [same address]
-
+		//
 		*x = *x/2
 		fmt.Println("i has been divided:\t", i)	// 11
 	}
@@ -258,13 +257,13 @@ Go
 		X int
 		Y int
 	}
-
+    //
 	func useVertex() {
 		var va Vertex = Vertex{1, 2}
 		vb := Vertex{}
 		fmt.Println("Struct access: va:", va, "vb:", vb)
 		fmt.Println("Struct field access: va.X:", va.X, "vb.X:", vb.X)
-
+        //
 		var pa *Vertex = &va
 		pb := &vb
 		pb.X = 120
@@ -300,14 +299,14 @@ Go
 	```
 	import "fmt"
 	import "strings"
-
+    //
 	func printBoard {
 		board := [][]string{
 			[]string{"_", "_", "_"},
 			[]string{"_", "_", "_"},
 			[]string{"_", "_", "_"},
 		}
-
+        //
 		for i := 0; i < len(board); i++ {
 			fmt.Printf("%s\n", strings.Join(board[i], " "))
 		}
@@ -333,5 +332,6 @@ Go
 
 
 
-Distilled from [the Go homepage](https://golang.org/doc/)
-
+Distilled from resources:
+[Go homepage](https://golang.org/doc/)
+[Go by example](https://gobyexample.com/)
