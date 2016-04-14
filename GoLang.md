@@ -647,6 +647,7 @@ where go looks for installed packages
 	export GOPATH=$HOME/work/software/go-packages
 	export GOROOT=$HOME/work/software/go
 	export PATH=$PATH:$GOROOT/bin
+	export PATH=$PATH:$GOPATH/bin
 	```
 - re-load `$PATH`
     ```
