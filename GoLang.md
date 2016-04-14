@@ -627,6 +627,40 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
 
 
 
+# Go Hands On
+
+## Install Go
+- check [Go Getting started](https://golang.org/doc/install) and install side by side with the following steps
+
+- download latest zip from golang.org
+- unpack to directory of choice e.g. `/usr/local` or in our case `$HOME/work/software`
+    ```
+	tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
+	```
+- in case of `/usr/local` installation add to `/etc/profile`
+    ```
+	export PATH=$PATH:/usr/local/go/bin
+	```
+- in case of custom path installation add to `$HOME/.profile` ... GOPATH is an additional directory, 
+where go looks for installed packages
+	```
+	export GOPATH=$HOME/work/software/go-packages
+	export GOROOT=$HOME/work/software/go
+	export PATH=$PATH:$GOROOT/bin
+	```
+- re-load `$PATH`
+    ```
+	source $HOME/.profile
+    ```
+
+## Install additional packages
+- Move to the `$GOPATH` directory, in our case `$HOME/work/software/go-packages`
+- There, run `go get [desired package]` e.g.
+    ```
+    go get github.com/golang/lint/golint
+    ```
+
+
 Distilled from resources:
 [Go homepage](https://golang.org/doc/)
 [Go by example](https://gobyexample.com/)
