@@ -1,7 +1,7 @@
 # Go
 
 # Packages:
-- Go programs are made of packages.
+- Go programs are organized in packages.
 - Programs start running in package main.
 - further packages can be used by `import`
 - imports can be written as:
@@ -28,7 +28,7 @@
 	}
 	```
 
-- Functions can return multiple values
+- Functions can return multiple values. Return values of functions can be ignored using `_`.
 	```
 	func swap(fst string, snd string) (string, string) {
 		return snd, fst
@@ -37,8 +37,50 @@
 	func main() {
 		a, b := swap("I am", "First")
 		fmt.Println(a, b, "says Mr Yoda")
+		//
+		c, _ := swap("Ignored", "I shall be")
+		fmt.Println(c, "a king")
 	}
 	```
+- Functions can be passed to other functions as arguments and values.
+    ```
+    func compute(fn func(float64, float64) float64) float64 {
+        return fn(3, 4)
+    }
+    //
+    func main() {
+        hypot := func(x, y float64) float64 {
+            return math.Sqrt(x*x + y*y)
+        }
+        fmt.Println("hypot", hypot(5, 12))
+        //
+        fmt.Println("compute(hypot)", compute(hypot))   // passes hypot without arguments to compute. Compute uses hypot with its own values 3, 4 and returns the return value of hypot.
+        fmt.Println("compute(math.Pow)", compute(math.Pow))
+    }
+    ```
+    
+### Closures
+- Closures are anonymous functions, that are returned by a function. These anonymous functions have access to the variables that have been defined by the surrounding function, 
+keep track of the state of these variables and will work with them each time the variable that the anonymous function has been assigned to is accessed.
+    ```
+    func intSeq() func() int {
+        i := 0
+        return func() int {
+            i += 1
+            return i
+        }
+    }
+    //
+    func main() {
+        nextInt := intSeq()
+        fmt.Println(nextInt())
+        fmt.Println(nextInt())
+        newInts := intSeq()
+        fmt.Println(newInts())
+        fmt.Println(nextInt())
+    }
+    ```
+
 
 # Variables
 - Variables are declared via the keyword `var` and required a type after the variable name.
@@ -51,7 +93,7 @@
 		fmt.Println("I spy with my little i", i, "which is", a, "ok and also very ", d, "dent")
 	}
 	```
-- NOTE: Depending on the type the variables are initialized with different values (e.g. bool - false, int - 0, string - "") - and not with null.
+- NOTE: Depending on the type the variables are initialized with initial values matching the type (e.g. bool - false, byte, int, float, etc - 0, string - "") - and not with null.
 - Inside a function the variable declaration can be shortened by using the short assignment `:=` with implicit type.
 	```
 	fancyPants := "The fairy queen short assignes fancy pants which are made of"
@@ -75,16 +117,15 @@
 	```
 
 # Basic types
-
 - The available basic types are
+
 	```
 	bool
 	string
 	int  int8  int16  int32  int64
 	uint uint8 uint16 uint32 uint64 uintptr
 	byte // alias for uint8
-	rune // alias for int32
-		 // represents a Unicode code point
+	rune // alias for int32; represents a Unicode code point
 	float32 float64
 	complex64 complex128
 	```
@@ -93,7 +134,7 @@
 
 
 # Type conversion
-- The expression `T(v)` converts value `v` into type `T`.
+- The expression `T(v)` converts value `v` to type `T`.
 - NOTE: Go requires explicit conversion between different types.
 	```
     hui := 49
@@ -105,7 +146,8 @@
 # Control structures
 
 ### For
-- Go has only one loop structure, the `for` loop; the syntax is `for [init statement]; [ending condition]; [post iteration statement] {}`
+- Go has only one loop structure, the `for` loop; the syntax is `for [init statement]; [terminator condition]; [post current iteration statement] {}`
+
 	```
 	for i := 0; i < 4; i++ {
 		fmt.Println("The fairy queen does situp number", i)
@@ -114,6 +156,7 @@
 	```
 
 - The first and the last statement of a for loop is optional:
+
 	```
 	moreSitups := 4
 	for moreSitups < 10 {
@@ -125,6 +168,7 @@
 
 ### If
 - The plain `if` looks like this:
+
     ```
 	evenMoreSitups := 10
 	if evenMoreSitups > 9 {
@@ -149,17 +193,18 @@
 	}
 	```
 
-- `if - else` is nothing fancy and looks like this:
+- `if - else if - else` is nothing fancy and looks like this:
 	```
 	if [condition] {
+	} else if [condition] {
 	} else {
 	}
 	```
-- NOTE `elseif` functionality is handled by `switch`.
 
 
 ### Switch
 - `switch` has `case`, `default` as fallthrough and can have an initial statement:
+
 	```
 	switch os := runtime.GOOS; os {
 	case "darwin":
@@ -205,8 +250,7 @@
 
 - Go has no pointer arithmetic.
 - A pointer holds the memory address of a variable.
-- `*T` is of type pointer to a value of type `T` 
-	```var p *int```
+- `*T` is of type pointer to a value of type `T`, e.g. `var p *int`
 - The `&` operator generates a pointer to its corresponding variable:
 	```
 	var p *int
@@ -288,7 +332,8 @@
 	```
 
 ### Slices of an array
-- Slices point to arrays.
+- Slices point to arrays. Slicing a slice will only change the pointer, but never the underlying array, even if the slice only points to a portion of the array. 
+Until a slice points to a completely different array, the underlying array will always be kept in memory.
 - `[]T` is a slice with elements of type `T`.
 	```
 	primes := []int{2, 3, 5, 7, 11, 13}
@@ -315,7 +360,7 @@
 
 - Slices can be re-sliced using the syntax `s[lo:hi]` where `lo` and `hi` are integers corresponding to the slice index.
 - `lo` is always included, `hi` is always excluded. `s[lo:lo]` is empty, `s[lo:lo+1]` contains exactly one element.
-- A missing `lo` index implies and index of 0
+- A missing `lo` index implies an index of 0
 	```
 	s := []int{1, 2, 3, 4, 5, 6}
 	fmt.Println(s[:3])
@@ -325,9 +370,259 @@
 	s := []int{1, 2, 3, 4, 5, 6}
 	fmt.Println(s[3:])
 	```
+- New slices are created using the `make` function. The two additional parameters are `length` and `capacity`. A slice cannot grow longer than its capacity. 
+If this happens, a new underlying array is created, doubling the capacity, copying the contents of the original array into the new one, replacing the pointer of the slice with a pointer to the new array and updating the capacity of the slice. 
+    ```
+    s := make([]int, 2, 5) // creates an empty slice with an underlying array of length 2 and capacity 5. it will initialize only the first two entries of the underlying array with 0.
+    ```
+- Go provides a built in append function for slices. Since slices are wrappers for arrays, that only contain the pointer to an array, the len and the capacity of the array the slice actually points to, 
+an append will under the hood create a new array and reassign the pointer of the slice to the new array.
+    ```
+    s := make([]int, 1, 2)
+    s = append(s, 1, 2) // results in [0 1 2], len=3, cap=4
+                        // In this example the underlying array had been initilized with one default value = 0. Two values were appended leading to [0 1 2]. 
+                        // Since the original capacity was 2, append created a new array with doubled capacity, copied the contents of the original array (0) 
+                        // to the new one, appended the two new values and returned a pointer to the new array.
+    ```
 
+- NOTE: The zero value of a slice is `nil`
+    ```
+    var s []int
+    fmt.Println(s, len(s), cap(s))
+    if s == nil {
+        fmt.Println("nil!")
+    }
+    ```
 
+- Slices can be used with range. When looping over a slice, `range` returns the current index and the value of the slice at that index for each iteration.
+    ```
+    var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+    //
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+    ```
 
+# Maps
+- A map maps keys to values. Syntax is `map[type of key]type of value`. New maps are created with `make`.
+    ```
+	m := make(map[string]int)
+	m["one"] = 1
+	m["two"] = 2
+	m["three"] = 3
+	//
+	fmt.Println(m, m["one"])
+    ```
+- Elements of a map can be entered, updated, deleted and checked for existence via the key.
+    ```
+    m := make(map[string]int)
+    m["iDoNotExist"] // returns 0
+    m["iExist"] = 1 // create
+    m["iExist"] = 2 // update
+    delete(m["iExist"]) // delete; 
+    v, ok := m["iExist"] // check for existence, v contains the return value, ok true if the key exists, false otherwise
+    ```
+
+# Methods
+- Go does not provide classes, but `methods` can be defined for `types`.
+- Within a package, functions can be defined for "receivers" using syntax `func (valName receiverType) FuncName() returnType`
+    In the following example, a method "FullName" is defined for a struct "Person". Methods can be called on an instance of their receiver.
+    ```
+    type Person struct {
+        fname, lname string
+    }
+    //
+    func (p Person) FullName() string {
+        return p.fname +" "+ p.lname
+    }
+    //
+    func main() {
+        p := Person{"Blub", "Blubberich"}
+        fmt.Println(p.FullName())
+    }
+    ```
+- The correct wording is "A method is a function with a receiver argument"
+- NOTE: Methods work on copies of values. If the receiver value is manipulated within a method, this will NOT change the original value. If methods should manipulate the actual value, the receiver of a method has to be a pointer!
+    ```
+    type Person struct {
+        fname, lname string
+    }
+    //
+    func (p Person) PrintFullName() string {
+        p.fname = "Mr "+ p.fname
+        return p.fname +" "+ p.lname
+    }
+    //
+    func (p *Person) UpdateFname() string {
+        p.fname = "new"
+        return p.fname +" "+ p.lname
+    }
+    //
+    func main() {
+        p := Person{"Blub", "Blubberich"}
+        fmt.Println(p.PrintFullName(), p.fname) // p.fname has not changed
+        fmt.Println(p.UpdateFname(), p.fname) // p.fname has been updated
+    }
+    ```
+- NOTE: methods take both values ("p" in our example) as well as pointers ("&p") as receivers. 
+Go conveniently interprets "p" as "&p" in our example since the UpdateFname method has a pointer receiver.
+
+# Interfaces
+- An interface is a specific `type`, that is defined by a set of method signatures.
+- Go interfaces are implemented implicitly. There is no statement, that a type is implementing an interface using e.g. an "implements" keyword. Only if a type actually fulfills all interface methods, it implements the interface. 
+- Example of an interface: Stringers; One of the most ubiquitous interfaces is Stringer defined by the fmt package. Before printing a value, fmt will look, if the value has implemented the `Stringer` interface and use its return value to print.
+    ```
+    type Stringer interface {
+        String() string
+    }
+    ```
+- A Stringer is a type that can describe itself as a string. The fmt package (and many others) look for this interface to print values. An implementation of this interface would be: 
+    ```
+    type Person struct {
+        Name string
+        Age  int
+    }
+    //
+    func (p Person) String() string {
+        return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+    }
+    //
+    func main() {
+        a := Person{"Arthur Dent", 42}
+        z := Person{"Zaphod Beeblebrox", 9001}
+        fmt.Println(a)          // prints "Arthur Dent (42 years)"
+        fmt.Println(z)          // prints "Zaphod Beeblebrox (9001 years)"
+    }
+    ```
+- TO CHECK: Not sure how interfaces work over different packages, and when which code is executed.
+
+# Errors
+- The `error` type is a built-in interface; when printing values, the fmt package will look for an implementation of `error` before printing a value.
+    ```
+    type error interface {
+        Error() string
+    }
+    ```
+- An example of an error implementation:
+    ```
+    type MyError struct {
+        When time.Time
+        What string
+    }
+    //
+    func (e *MyError) Error() string {
+        return fmt.Sprintf("at %v, %s",
+            e.When, e.What)
+    }
+    //
+    func run() error {
+        return &MyError{
+            time.Now(),
+            "it didn't work",
+        }
+    }
+    //
+    func main() {
+        if err := run(); err != nil {
+            fmt.Println(err)
+        }
+    }
+    ```
+
+# Goroutines and Channels
+
+## Goroutine
+- A goroutine is a thread managed by the Go runtime.
+- The execution of code within a goroutine happens parallel to any subsequent code after the routine has been started.
+- NOTE: Access to memory must be synchronized, if goroutines are used, since they run in the same adress space.
+- Example:
+    ```
+    func say(s string) {
+        for i := 0; i < 10; i++ {
+            time.Sleep(100 * time.Millisecond)
+            fmt.Println(s)
+        }
+    }
+    //
+    func main() {
+        go say("world")
+        say("hello")
+    }
+    ```
+
+## Channel
+- A channel is a typed sender and receiver of data. Channels can be used to communicate between `goroutines`.
+- Values can be sent via a channel using the `<-` operator, information flows in the direction of the arrow.
+- Channels have to be created using `make` before they can be used, e.g: `ch := make(chan int)`
+- Sends and receives block until the other side is ready.
+    ```
+    ch <- v     // send v to channel ch
+    v := <-ch   // receive data from channel ch and assign value to v
+    ```
+- One channel can be used for multiple goroutines. But I have no idea in which order the channel returns the values from the individual goroutines...
+    ```
+    func sum(s []int, c chan int) {
+        sum := 0
+        for _, v := range s {
+            sum += v
+        }
+        c <- sum // send sum to c
+    }
+    //
+    func main() {
+        s := []int{7, 2, 8, -9, 4, 0}
+        //
+        c := make(chan int)
+        go sum(s[:len(s)/2], c)     // calculates 17
+        go sum(s[len(s)/2:], c)     // calculates -5
+        go sum(s, c)                // calculates 12
+        x, y, z := <-c, <-c, <-c    // receive from c
+        //
+        fmt.Println(x, y, z)   // returns 12 17 -5; if go sum(s, c) would be moved to the top of the routine list, it would return -5 12 17
+    }
+    ```
+- NOTE: You must only consume as much channel output as have been opened, otherwise a deadlock fatal error will occur!
+
+### Buffered channel
+- Channels can be created with a buffer to ensure, that not too many channels will be opened.
+    ```
+	ch := make(chan int, 2)
+	ch <- 1
+	ch <- 2				// adding ch <-3 here would lead to an error
+	fmt.Println(<-ch)	// prints 1
+	ch <- 3				// since one channel slot has been consumed, its ok to use it again
+	fmt.Println(<-ch)	// prints 2
+	fmt.Println(<-ch)	// prints 3
+    ```
+    
+## Channel close and range
+- A sender can close a channel. A receiver can test on his end, if a channel is still open.
+    ```
+    // sender:
+    close(ch)
+    // receiver
+    v, ok := <-ch   // if the channel has been closed on the sender side, ok will be false.
+    ```
+- `range` in a loop will stop, if a channel has been closed.
+    ```
+    func fibonacci(n int, c chan int) {
+        x, y := 0, 1
+        for i := 0; i < n; i++ {
+            c <- x
+            x, y = y, x+y
+        }
+        close(c)
+    }
+    //
+    func main() {
+        c := make(chan int, 10)
+        fmt.Println(cap(c), "\n")
+        go fibonacci(cap(c), c)
+        for i := range c {          // range stops iterating, once c has been closed in the go routine
+            fmt.Println(i)
+        }
+    }
+    ```
 
 
 
@@ -335,3 +630,9 @@
 Distilled from resources:
 [Go homepage](https://golang.org/doc/)
 [Go by example](https://gobyexample.com/)
+[Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
+
+
+
+Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
+
