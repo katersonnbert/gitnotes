@@ -20,7 +20,7 @@ In folder ~ (absolute /home/msonntag in our example)
 Check if path has been automatically added by linux:
 	~$ cat $PATH
 
-If not, then execute the following:
+If not, then execute the following to recompile the .profile file:
 	~$ source .profile
 
 Check path again
@@ -169,6 +169,10 @@ create new general key
 create new github key
 	ssh-keygen
 call key "id_rsa_github"
+
+
+Install curl
+    sudo apt-get install curl
 
 
 Install Maven
