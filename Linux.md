@@ -386,10 +386,10 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
 - Custom packages and libraries can usually be found in one of the following folders:
 
         /opt/
-        /usr/local/include
-        /usr/local/lib
-        /usr/share
-        /home/[user]/bin
+        /usr/local/include/
+        /usr/local/lib/ & /usr/local/lib/pkgconfig/
+        /usr/share/
+        /home/[user]/bin/
 
 
 # Find text in files using grep
