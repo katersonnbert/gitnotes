@@ -263,30 +263,27 @@ gzip    ... compress/uncompress files
 tar     ... compress/uncompress files
 
 
-# Commandline programs for textfile handling:
+# Commandline programs for text file handling:
 Use the --help option for in depth information, links provided or the interweb.
 
-sort    ... Sorts standard input then outputs the sorted result on standard output.
-uniq    ... Given a sorted stream of data from standard input, it removes duplicate lines of data (i.e., it makes sure that every line is unique).
-fmt     ...Reads text from standard input, then outputs formatted text on standard output.
-pr      ...Takes text input from standard input and splits the data into pages with page breaks, headers and footers in preparation for printing.
-head    ... Outputs the first few lines of its input. Useful for getting the header of a file.
-tail    ... Outputs the last few lines of its input. Useful for things like getting the most recent entries from a log file.
-tr      ... Translates characters. Can be used to perform tasks such as upper/lowercase conversions or changing line termination characters from one type to another (for example, converting DOS text files into Unix style text files).
-grep    ... Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.
-                http://www.panix.com/~elflord/unix/grep.html
-
-sed     ... Stream editor. Can perform more sophisticated text translations than tr.
-                http://www.ceri.memphis.edu/computer/docs/unix/sed.htm
-awk     ... An entire programming language designed for constructing filters. Extremely powerful.
-                http://www.vectorsite.net/tsawk.html
-
+---|---
+`sort` |Sorts standard input then outputs the sorted result on standard output.
+`uniq` |Given a sorted stream of data from standard input, it removes duplicate lines of data (i.e., it makes sure that every line is unique).
+`fmt`  |Reads text from standard input, then outputs formatted text on standard output.
+`pr`   |Takes text input from standard input and splits the data into pages with page breaks, headers and footers in preparation for printing.
+`head` |Outputs the first few lines of its input. Useful for getting the header of a file.
+`tail` |Outputs the last few lines of its input. Useful for things like getting the most recent entries from a log file.
+`tr`   |Translates characters. Can be used to perform tasks such as upper/lowercase conversions or changing line termination characters from one type to another (for example, converting DOS text files into Unix style text files).
+`grep` |Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.<br/>http://www.panix.com/~elflord/unix/grep.html
+`sed`  |Stream editor. Can perform more sophisticated text translations than tr. <br/> http://www.ceri.memphis.edu/computer/docs/unix/sed.htm |
+`awk`  |An entire programming language designed for constructing filters. Extremely powerful. <br/> http://www.vectorsite.net/tsawk.html
 
 
 # Root access by using `sudo`
 [Introduction to sudo](https://www.linux.com/learn/tutorials/306766:linux-101-introduction-to-sudo)
 
-In a nutshell sudo is the commandline way to grant a user root access for the following command e.g. when installing a software package. It will require a password that is associated with a user that has root access.
+In a nutshell sudo is the commandline way to grant a user root access for the following command e.g. when installing a software package. 
+It will require a password that is associated with a user that has root access.
 
 	sudo [command]
 	[sudo] password for [username]:
@@ -299,15 +296,19 @@ When working on Debian based Linux systems, apt-get is a convenient way to downl
 For most of the packages root access is required which means using `sudo apt-get [command]`.
 
 - Update the index to be up to date with all the packages that can be installed via apt-get
-	sudo apt-get update
+
+	    sudo apt-get update
 
 - Install a package e.g. the terminator linux terminal, which is an awesome linux terminal
-	sudo apt-get install terminator
 
-- Install a package that is not handled via the normal apt-get package list e.g. the java8 distribution: This requires to manually add a repository to the apt-get list of installable packages, update the repository and the install the package.
-	sudo add-apt-repository ppa:webupd8team/java
-	sudo apt-get update
-	sudo apt-get install oracle-java8-installer
+	    sudo apt-get install terminator
+
+- Install a package that is not handled via the normal apt-get package list e.g. the java8 distribution: 
+This requires to manually add a repository to the apt-get list of installable packages, update the repository and the install the package.
+
+        sudo add-apt-repository ppa:webupd8team/java
+        sudo apt-get update
+        sudo apt-get install oracle-java8-installer
 
 
 # Using SFTP with the file browser
@@ -370,7 +371,12 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
 
 
 
-# Important system folders in Linux:
+# Linux System variables
+`$HOME` ... contains absolute path to the home folder
+`$PATH` ... contains all directories which are included when looking for an executable
+
+
+# Important system folders under Linux:
 
 ###  Global searchpath variable $PATH:
 
@@ -390,6 +396,43 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
         /usr/local/lib/ & /usr/local/lib/pkgconfig/
         /usr/share/
         /home/[user]/bin/
+
+
+## Adding custom executable paths under Linux:
+
+Set up a bin folder that is included in the Linux $PATH which contains all the links to starting programs. check out this link for 
+further information:
+http://www.troubleshooters.com/linux/prepostpath.htm
+Folders can easily be added to the beginning and the the end of the variable - depending on where the application is first found, 
+this will be executed.
+
+Example:
+In folder ~ (absolute /home/msonntag in our example)
+
+	~$ mkdir bin
+
+Check if path has been automatically added by linux:
+
+	~$ cat $PATH
+
+If not, then execute the following to recompile the .profile file:
+
+	~$ source .profile
+
+Check path again
+
+	~$ cat $PATH
+
+If its still not in there, then add it manually to the beginning of the `$PATH`:
+
+	~$ export PATH=/home/msonntag/bin:$PATH
+
+Create symbolic links to executables in custom bin folder. As example add startup shell script of application activator
+can be used to easily switch between different distributions of the same application
+
+	~$ cd bin
+	~/bin$ ln -s /home/msonntag/work/software/activator-1.2.12/activator activator
+
 
 
 # Find text in files using grep
