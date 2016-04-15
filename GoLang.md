@@ -130,7 +130,13 @@ keep track of the state of these variables and will work with them each time the
 	complex64 complex128
 	```
 
-- NOTE! `int, uint, uintptr` types are 32bit/64bit on 32/64bit systems respectively
+- NOTE! `int, uint, uintptr` types are 32bit/64bit on 32/64bit systems respectively.
+- More information about strings, bytes and runes can be found (in this blog entry)[https://blog.golang.org/strings].
+
+### String
+- In Go a string is a read-only slice of bytes (of any format e.g. Unicode, UTF-8, etc).
+- Since a string is a slice of bytes, the individual bytes of a string can be accessed by index.
+        `sampleString[0]` yields the byte of string sampleString at index 0.
 
 
 # Type conversion
@@ -625,6 +631,25 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
     ```
 
 
+
+# Tests
+- Test files have to reside in the same package as the go files that are to be tested.
+- Test files should have the same name as the go files, with an additional "_test.go" ending.
+
+        file.go
+        file_test.go
+
+- Run tests for all packages from the commandline using
+ 
+        go test ./...
+        
+- Run tests with more detailed information
+
+        go test -v ./...
+        
+- Run only tests where the name of the function matches regular expression
+
+        go test -run="SomeFunctionNamePart" ./...
 
 
 # Go Hands On
