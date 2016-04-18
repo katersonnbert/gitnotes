@@ -54,14 +54,16 @@
         }
         fmt.Println("hypot", hypot(5, 12))
         //
-        fmt.Println("compute(hypot)", compute(hypot))   // passes hypot without arguments to compute. Compute uses hypot with its own values 3, 4 and returns the return value of hypot.
+        fmt.Println("compute(hypot)", compute(hypot))   // passes hypot without arguments to compute. 
+                                                        // Compute uses hypot with its own values 3, 4 and returns the return value of hypot.
         fmt.Println("compute(math.Pow)", compute(math.Pow))
     }
     ```
     
 ### Closures
-- Closures are anonymous functions, that are returned by a function. These anonymous functions have access to the variables that have been defined by the surrounding function, 
-keep track of the state of these variables and will work with them each time the variable that the anonymous function has been assigned to is accessed.
+- Closures are anonymous functions, that are returned by a function. These anonymous functions have access to the variables 
+that have been defined by the surrounding function, keep track of the state of these variables and will work with them 
+each time the variable that the anonymous function has been assigned to is accessed.
     ```
     func intSeq() func() int {
         i := 0
@@ -93,7 +95,8 @@ keep track of the state of these variables and will work with them each time the
 		fmt.Println("I spy with my little i", i, "which is", a, "ok and also very ", d, "dent")
 	}
 	```
-- NOTE: Depending on the type the variables are initialized with initial values matching the type (e.g. bool - false, byte, int, float, etc - 0, string - "") - and not with null.
+- NOTE: Depending on the type the variables are initialized with initial values matching the type 
+(e.g. bool - false, byte, int, float, etc - 0, string - "") - and not with null.
 - Inside a function the variable declaration can be shortened by using the short assignment `:=` with implicit type.
 	```
 	fancyPants := "The fairy queen short assignes fancy pants which are made of"
@@ -131,12 +134,14 @@ keep track of the state of these variables and will work with them each time the
 	```
 
 - NOTE! `int, uint, uintptr` types are 32bit/64bit on 32/64bit systems respectively.
-- More information about strings, bytes and runes can be found (in this blog entry)[https://blog.golang.org/strings].
+- More information about strings, bytes and runes can be found [in this blog entry](https://blog.golang.org/strings).
 
-### String
+### String (and runes)
 - In Go a string is a read-only slice of bytes (of any format e.g. Unicode, UTF-8, etc).
 - Since a string is a slice of bytes, the individual bytes of a string can be accessed by index.
         `sampleString[0]` yields the byte of string sampleString at index 0.
+- Every string literal always holds valid UTF-8 sequences.
+- These sequences are called runes (not characters, since they hold bytes).
 
 
 # Type conversion
@@ -240,7 +245,8 @@ keep track of the state of these variables and will work with them each time the
 ### Defer
 
 - The `defer` statement defers the execution of a function until the surrounding function ends.
-- The defer's arguments are evaluated immediately, but the function call is not executed until the end of the surrounding function.
+- The defer's arguments are evaluated immediately, but the function call is not executed until 
+the end of the surrounding function.
 	```
 	xx := "a Yoda"
 	yy := "the fairy queen is not"
@@ -301,7 +307,8 @@ keep track of the state of these variables and will work with them each time the
 # Structs
 - A `struct` is a collection of fields.
 - The fields of a struct can be accessed using a dot. Struct fields can also be accessed via a struct pointer.
-- The fields of a struct will be initialized with default values according to the field type, if they are not set at struct initialization.
+- The fields of a struct will be initialized with default values according to the field type, 
+if they are not set at struct initialization.
 	```
 	type Vertex struct {
 		X int
@@ -338,7 +345,8 @@ keep track of the state of these variables and will work with them each time the
 	```
 
 ### Slices of an array
-- Slices point to arrays. Slicing a slice will only change the pointer, but never the underlying array, even if the slice only points to a portion of the array. 
+- Slices point to arrays. Slicing a slice will only change the pointer, but never the underlying array, even if 
+the slice only points to a portion of the array. 
 Until a slice points to a completely different array, the underlying array will always be kept in memory.
 - `[]T` is a slice with elements of type `T`.
 	```
@@ -376,19 +384,25 @@ Until a slice points to a completely different array, the underlying array will 
 	s := []int{1, 2, 3, 4, 5, 6}
 	fmt.Println(s[3:])
 	```
-- New slices are created using the `make` function. The two additional parameters are `length` and `capacity`. A slice cannot grow longer than its capacity. 
-If this happens, a new underlying array is created, doubling the capacity, copying the contents of the original array into the new one, replacing the pointer of the slice with a pointer to the new array and updating the capacity of the slice. 
+- New slices are created using the `make` function. The two additional parameters are `length` and `capacity`. 
+A slice cannot grow longer than its capacity. If this happens, a new underlying array is created, doubling the capacity, 
+copying the contents of the original array into the new one, replacing the pointer of the slice with a pointer to the 
+new array and updating the capacity of the slice. 
     ```
-    s := make([]int, 2, 5) // creates an empty slice with an underlying array of length 2 and capacity 5. it will initialize only the first two entries of the underlying array with 0.
+    s := make([]int, 2, 5)  // creates an empty slice with an underlying array of length 2 and capacity 5. 
+                            //it will initialize only the first two entries of the underlying array with 0.
     ```
-- Go provides a built in append function for slices. Since slices are wrappers for arrays, that only contain the pointer to an array, the len and the capacity of the array the slice actually points to, 
-an append will under the hood create a new array and reassign the pointer of the slice to the new array.
+- Go provides a built in append function for slices. Since slices are wrappers for arrays, that only contain 
+the pointer to an array, the len and the capacity of the array the slice actually points to, an append will 
+under the hood create a new array and reassign the pointer of the slice to the new array.
     ```
     s := make([]int, 1, 2)
     s = append(s, 1, 2) // results in [0 1 2], len=3, cap=4
-                        // In this example the underlying array had been initilized with one default value = 0. Two values were appended leading to [0 1 2]. 
-                        // Since the original capacity was 2, append created a new array with doubled capacity, copied the contents of the original array (0) 
-                        // to the new one, appended the two new values and returned a pointer to the new array.
+                        // In this example the underlying array had been initilized with one default value = 0. 
+                        // Two values were appended leading to [0 1 2]. 
+                        // Since the original capacity was 2, append created a new array with doubled capacity, 
+                        // copied the contents of the original array (0) to the new one, appended the two new values 
+                        // and returned a pointer to the new array.
     ```
 
 - NOTE: The zero value of a slice is `nil`
@@ -432,7 +446,8 @@ an append will under the hood create a new array and reassign the pointer of the
 # Methods
 - Go does not provide classes, but `methods` can be defined for `types`.
 - Within a package, functions can be defined for "receivers" using syntax `func (valName receiverType) FuncName() returnType`
-    In the following example, a method "FullName" is defined for a struct "Person". Methods can be called on an instance of their receiver.
+    In the following example, a method "FullName" is defined for a struct "Person". 
+    Methods can be called on an instance of their receiver.
     ```
     type Person struct {
         fname, lname string
@@ -448,7 +463,9 @@ an append will under the hood create a new array and reassign the pointer of the
     }
     ```
 - The correct wording is "A method is a function with a receiver argument"
-- NOTE: Methods work on copies of values. If the receiver value is manipulated within a method, this will NOT change the original value. If methods should manipulate the actual value, the receiver of a method has to be a pointer!
+- NOTE: Methods work on copies of values. If the receiver value is manipulated within a method, 
+this will NOT change the original value. If methods should manipulate the actual value, the receiver of a method 
+has to be a pointer!
     ```
     type Person struct {
         fname, lname string
@@ -474,15 +491,18 @@ an append will under the hood create a new array and reassign the pointer of the
 Go conveniently interprets "p" as "&p" in our example since the UpdateFname method has a pointer receiver.
 
 # Interfaces
-- An interface is a specific `type`, that is defined by a set of method signatures.
-- Go interfaces are implemented implicitly. There is no statement, that a type is implementing an interface using e.g. an "implements" keyword. Only if a type actually fulfills all interface methods, it implements the interface. 
-- Example of an interface: Stringers; One of the most ubiquitous interfaces is Stringer defined by the fmt package. Before printing a value, fmt will look, if the value has implemented the `Stringer` interface and use its return value to print.
+- An interface is a specific `type`, that is defined by / represents a set of method signatures.
+- Go interfaces are implemented implicitly. There is no statement, that a type is implementing an interface using 
+e.g. an "implements" keyword. Only if a type actually fulfills all interface methods, it implements the interface. 
+- Example of an interface: Stringers; One of the most ubiquitous interfaces is Stringer defined by the fmt package. 
+Before printing a value, fmt will look, if the value has implemented the `Stringer` interface and use its return value to print.
     ```
     type Stringer interface {
         String() string
     }
     ```
-- A Stringer is a type that can describe itself as a string. The fmt package (and many others) look for this interface to print values. An implementation of this interface would be: 
+- A Stringer is a type that can describe itself as a string. The fmt package (and many others) 
+look for this interface to print values. An implementation of this interface would be: 
     ```
     type Person struct {
         Name string
@@ -500,10 +520,43 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
         fmt.Println(z)          // prints "Zaphod Beeblebrox (9001 years)"
     }
     ```
+
+- A variable of interface type stores a pair: the actual value and the type of that value
+
+## The empty interface
+- `interface{}` can hold any value; the empty interface can hold zero or more methods.
+- This can be used in reflection, when we want to assign something "dynamic" at a certain point in our code.
+ 
+        var r io.Reader
+        tty, err := os.OpenFile("/dev/tty", os.O_RDWR, 0)
+        if err != nil {
+            return nil, err
+        }
+        r = tty                 // contains (tty, *os.File) ... value und type of value
+ 
+        var w io.Writer
+        w = r.(io.Writer)       // type assertion ... its asserted, that the type of r actually 
+                                // implements the io.Writer interface. This might fail, if r does not implement
+                                // all the io.Writer methods
+        
+        var empty interface{}
+        empty = w               // Since an empty interface can hold ANY value this works nicely and accepts any methods.
+                                // The value pair contained in this interface will always be (value, concrete type)
+
+
+Find more detailed information about interfaces in [this blog post by Russ Cox](http://research.swtch.com/interfaces).
+
 - TO CHECK: Not sure how interfaces work over different packages, and when which code is executed.
 
+# Reflection
+Now that we know how interfaces work, we can have a look at reflections in Go!
+Check [this blog post about reflections](http://blog.golang.org/laws-of-reflection) for more details.
+[TODO] - read above.
+
+
 # Errors
-- The `error` type is a built-in interface; when printing values, the fmt package will look for an implementation of `error` before printing a value.
+- The `error` type is a built-in interface; when printing values, the fmt package will 
+look for an implementation of `error` before printing a value.
     ```
     type error interface {
         Error() string
@@ -535,7 +588,7 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
     }
     ```
 
-# Goroutines and Channels
+# Goroutines, Channels and Mutex
 
 ## Goroutine
 - A goroutine is a thread managed by the Go runtime.
@@ -565,7 +618,8 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
     ch <- v     // send v to channel ch
     v := <-ch   // receive data from channel ch and assign value to v
     ```
-- One channel can be used for multiple goroutines. But I have no idea in which order the channel returns the values from the individual goroutines...
+- One channel can be used for multiple goroutines. But I have no idea in which order 
+the channel returns the values from the individual goroutines...
     ```
     func sum(s []int, c chan int) {
         sum := 0
@@ -584,7 +638,8 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
         go sum(s, c)                // calculates 12
         x, y, z := <-c, <-c, <-c    // receive from c
         //
-        fmt.Println(x, y, z)   // returns 12 17 -5; if go sum(s, c) would be moved to the top of the routine list, it would return -5 12 17
+        fmt.Println(x, y, z)    // returns 12 17 -5; if go sum(s, c) would be moved to the top of the routine list, 
+                                // it would return -5 12 17
     }
     ```
 - NOTE: You must only consume as much channel output as have been opened, otherwise a deadlock fatal error will occur!
@@ -630,11 +685,18 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
     }
     ```
 
+## Mutex
+If goroutines are used but channels are not, Go provides a mutual exclusion mechanism to ensure, 
+that variable access conflicts can be avoided.
+- `sync.Mutex Lock` locks the access to a variable for everything outside the current goroutine
+- `sync.Mutex Unlock` releases access to a locked variable 
+
+
 
 
 # Tests
 - Test files have to reside in the same package as the go files that are to be tested.
-- Test files should have the same name as the go files, with an additional "_test.go" ending.
+- Test files have the same name as the go files, with an additional "_test.go" ending.
 
         file.go
         file_test.go
@@ -695,4 +757,3 @@ Distilled from resources:
 
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
-
