@@ -98,7 +98,7 @@ To use the hdf5 debug dlls, nix and nix-mx have to be built in DEBUG mode! For t
 
 
 
-How to build nix-mx under linux:
+How to build nix-mx under Linux:
 ================================
 
 - fetch and build nix:
