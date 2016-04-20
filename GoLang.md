@@ -18,6 +18,16 @@
 	)
 	```
 
+- Unused imports are not allowed.
+- NOTE: Jumping ahead: Every package can contain an init() function, that is executed once upon import. If only
+code within the init() function of a package is required, but nothing of the package itself, it would be an
+unused import. To still allow this import, the following code can be used.
+    
+    ```
+    _ import "fmt"
+    ```
+
+
 # Functions:
 - Go is a statically typed language.
 - Functions take zero or more arguments, arguments and return types have to be typed.
