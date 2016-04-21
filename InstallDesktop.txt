@@ -143,8 +143,8 @@ Upgrade pip in case it was already installed
     sudo pip install --upgrade pip
 
 Install additional pyhton packages
-    sudo pip install quantities coveralls cpp-coveralls
-    sudo pip3 install quantities coveralls cpp-coveralls
+    sudo pip install quantities coveralls cpp-coveralls mock==1.0.1
+    sudo pip3 install quantities coveralls cpp-coveralls mock
 
 Install python packages (futures for python 2to3, alabaster for documentation)
 	sudo pip install future alabaster
