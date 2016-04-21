@@ -150,6 +150,12 @@ Install python packages (futures for python 2to3, alabaster for documentation)
 	sudo pip install future alabaster
 
 
+Install neo dependencies
+    sudo apt-get install python-numexpr python3-numexpr
+    sudo pip install tables
+    sudo pip3 install tables
+
+
 # REPLACE the following with sole installation of jupyter - check if its best to install solely via pip and NOT via apt-get
 # To see which kernels and where they are installed, check `jupyter kernelspec list`
 # Problem was: 
