@@ -466,3 +466,32 @@ https://help.github.com/articles/closing-issues-via-commit-messages/
 
 	    git reset --hard HEAD~n
 
+
+# Bisect - fast find breaking commit in history
+
+The actual commands you need to run to execute the full git bisect flow are:
+
+- Let git know to start bisecting.
+
+        git bisect start
+- Let git know about a known good commit (i.e. last commit that you made before the vacation).
+
+        git bisect good {{some-commit-hash}}
+- Let git know about a known bad commit (i.e. the HEAD of the master branch). git bisect bad HEAD (HEAD just means the last commit).
+
+        git bisect bad {{some-commit-hash}}
+
+- At this point git would check out a middle commit, and let you know to run your tests.
+- Let git know that the feature does not work in currently checked out commit.
+
+        git bisect bad
+- Let git know that the feature does work in currently checked out commit.
+
+        git bisect good
+- When the first bad commit is found, git would let you know. At this point git bisect is done.
+- Returns you to the initial starting point of git bisect process, (i.e. the HEAD of the master branch).
+
+        git bisect reset
+- Log the last git bisect that completed successfully.
+
+        git bisect log
