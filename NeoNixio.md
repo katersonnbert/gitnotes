@@ -18,3 +18,6 @@ Install:
 - clone and build python-neo-nixio
 
 
+Comments:
+
+Tests are really slow with both python and python3
