@@ -40,6 +40,7 @@ Check git settings in main git folder:
 git status					| shows project status
 git add []                  | add files to git repository
 git add .                   | adds all files recursively to repository which are not managed by git yet
+git add -p                  | steps through all changes and asks if they should be staged for commit
 git commit                  | commits all added or removed files to/from local git repository
 git remote                  | show all remote repositories
 git pull origin master      | pull from master branch
@@ -52,6 +53,8 @@ git checkout [branchName]   | switch from current project branch to [branchName]
 git merge [branchName]      | merge locally current project branch with [branchName]
 git branch -D [branchName]  | delete branch [branchName]
 git remote -v               | shows, which repositories are added
+git log                     | displays commit history
+git log --oneline --graph   | displays shortened commit history
 
 
 
