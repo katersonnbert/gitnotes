@@ -5,6 +5,10 @@ OAuth 2
 
 ## Primary concepts
 
+- TOFU ... trust on first use ... user has to make the decision once to allow a client to act on his behalf for a certain action. after this first grant, the client can act w/o asking the client again. 
+
+## Primary actors
+
 - Resource owner (RO)
 - Client (C)
 - OAuth server (AS)
@@ -20,6 +24,19 @@ OAuth 2
 - C sends access token to RS
 - RS sends resource to C
 
+## Detailed workflow
+
+- C redirects RO to authorization endpoint (AS)
+- RO authenticates to AS (TOFU)
+- RO grants authorization to C
+- AS redirects RO to C with authorization code
+- C sends authorization code to AS token endpoint
+- AS sends token to C
+- C sends token to RS
+- RS sends resource to C
 
 
+# Auth server
+
+## Primaray
 
