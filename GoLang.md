@@ -543,6 +543,24 @@ look for this interface to print values. An implementation of this interface wou
 
 - Find more detailed information about interfaces in [this blog post by Russ Cox](http://research.swtch.com/interfaces).
 - TO CHECK: Not sure how interfaces work over different packages, and when which code is executed.
+- Using reflection, it can be tested, if sthg passed in via an empty interface actually provides the required method:
+
+        type Stringer interface {
+            String() string
+        }
+        
+        func ToString(any interface{}) string {
+            if v, ok := any.(Stringer); ok {
+                return v.String()
+            }
+            switch v := any.(type) {
+            case int:
+                return strconv.Itoa(v)
+            case float:
+                return strconv.Ftoa(v, 'g', -1)
+            }
+            return "???"
+        }
 
 
 # Reflection
