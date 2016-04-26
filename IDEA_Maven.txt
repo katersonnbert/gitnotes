@@ -95,8 +95,6 @@ use maven projects
 - create git ssh keys
 https://help.github.com/articles/generating-ssh-keys/
 
-1muaccess235
-
 
 
 
@@ -275,5 +273,3 @@ files (from all subfolders):
 --- appveyor
 --- coveralls
 - add badges to readme.md
-
-
