@@ -2,11 +2,9 @@ GCA Setup
 
 Ahoi!
 
-
 ich habe versuchsweise GCA-Web frisch geklont und nochmal von Grund auf
 so eingerichtet, dass man die Tests und die Web-App von IDEA und der
 Konsole aus starten kann. So geht's:
-
 
 Konsole:
 Damit man GCA-Web von der Konsole aus starten kann, braucht man das
@@ -22,7 +20,6 @@ Im Prinzip alles genau so wie in der .travis.yml. Damit das klappt muss
 lediglich das JDK (7 oder 8) installiert sein. Der Scala-Compiler oder
 SBT muss nicht auf dem System installiert sein (wie sich auf Travis
 herausgestellt hat, ist das ggf. sogar eher hinderlich).
-
 
 IDEA (15):
 Zunächst muss man das Project importieren, und zwar als SBT Projekt.
@@ -41,10 +38,7 @@ Um die Tests in IDEA zu starten, einfach mit rechts auf das Verzeichnis
 
     Run -> ScalaTests in 'test'
 
-
 Grüße,
-Adrian
-
 
 [1] https://downloads.typesafe.com/typesafe-activator/1.3.7/typesafe-activator-1.3.7-minimal.zip
 
@@ -56,7 +50,8 @@ Allgemein:
 JavaScript: read the JavaScript pitfalls presentation. (redmine)
 
 
-Bestimmte play frameworks brauchen bestimmte sbt versionen, damit die beiden die richtigen sachen bekommen benötigt man activator, das die korrekten sbt's bzw compiler für die sbt's lädt, installiert und aufsetzt, damit das framework überhaupt arbeiten kann.
+Bestimmte play frameworks brauchen bestimmte sbt versionen, damit die beiden die richtigen sachen bekommen benötigt man activator, das die korrekten sbt's bzw compiler für die sbt's lädt, installiert und aufsetzt,
+damit das framework überhaupt arbeiten kann.
 
 
 
@@ -94,9 +89,10 @@ check "Tests:Assets" for users .. should be there once all tests have run succes
 
 - Intellij Enterprise is required for support of the play framework, database interaction support and convenience functions.
 
-NOTE: if we cannot connect to an H2 DB with some obscure primary key violation error, IDEA probably uses the wrong drivers for the database. Search the path of the SBT H2 jar from the external libraries. Use these drivers in the DB settings as H2 DB drivers.
+NOTE: if we cannot connect to an H2 DB with some obscure primary key violation error, IDEA probably uses the wrong drivers for the database. Search the path of the SBT H2 jar from the external libraries.
+Use these drivers in the DB settings as H2 DB drivers.
 
-In my case e.g. /home/msonntag/.ivy2/cache/com.h2database/h2/jars
+In my case e.g. /home/[username]/.ivy2/cache/com.h2database/h2/jars
 
 
 
@@ -117,7 +113,7 @@ the main setup infos are defined in:
 # DataBase:
 The project uses hibernate to map classes to the used database.
 - H2 ... development
-- Postgress ... production
+- Postgres ... production
 
 - to switch the Database, add a file "application.dev.conf" or "application.prod.conf" to the "conf" folder which contain the proper access settings for a different database.
 
@@ -205,7 +201,7 @@ http://www.linux-faqs.info/general/difference-between-mtime-ctime-and-atime
 
 # Installation at the production server:
 
-Hallo Tiziano,
+Hallo,
 
     wir können es Dienstag oder Mittwoch zusammen du und ich am Telefon
     machen. 
@@ -235,12 +231,10 @@ dir heute im Laufe des Tages zuschicken.
 Eigentlich sollten 10 Minuten ausreichen, aber bring lieber etwas mehr
 Zeit mit - nur für den Fall dass doch was schief läuft.
 
-
 Viele Grüße,
-Adrian
 
 
-Hallo Adrian,
+
 
 wir können es Dienstag oder Mittwoch zusammen du und ich am Telefon machen. Würde es als Backup reichen, wenn ich ein Datenbank dump und eine Kopie des Verzeichnis, wo GCA installiert ist, mache?
 
@@ -249,12 +243,9 @@ Für die DB-Schema Änderungen hätte ich gerne sie als SQL-Skript im Voraus, so
 Ich nehme an, ihr habt alles schon bei euch in pre-production getestet, oder? Also die ganze Gelegenheit sollte ein 10-minutigen Sache sein, oder?
 
 Ciao,
-Tiziano
 
-On Fri 11 Mar, 16:35, Adrian Stoewer <adrian.stoewer@rz.ifi.lmu.de> wrote:
 
     Hallo Admins,
-
     in den letzten Wochen haben wir an GCA-Web gearbeitet: ein paar Fehler
     beseitigt und einige neue Features hinzugefügt. Damit sind wir jetzt
     soweit fertig, sodass ein neues Release von GCA-Web Anfang nächster
@@ -269,4 +260,3 @@ On Fri 11 Mar, 16:35, Adrian Stoewer <adrian.stoewer@rz.ifi.lmu.de> wrote:
     sollen wir die Installation lieber gemeinsam per Hangout/Telefon machen?
 
     Ein schönes Wochenende und viele Grüße,
-    Adrian
