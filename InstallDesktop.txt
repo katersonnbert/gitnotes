@@ -14,7 +14,7 @@ http://www.troubleshooters.com/linux/prepostpath.htm
 Folders can be easily added to the beginning and the the end of the variable - depending on where the application is first found, this will be executed.
 
 Example:
-In folder ~ (absolute /home/msonntag in our example)
+In folder ~ (absolute /home/[username] in our example)
 	~$ mkdir bin
 
 Check if path has been automatically added by linux:
@@ -27,13 +27,13 @@ Check path again
 	~$ cat $PATH
 
 If its still not in there, then add it manually to the beginning of the PATH:
-	~$ export PATH=/home/msonntag/bin:$PATH
+	~$ export PATH=/home/[user]/bin:$PATH
 
 
-Create symbolic links to executeables in custom bin folder. As example add startup shell script of application activator
+Create symbolic links to executables in custom bin folder. As example add startup shell script of application activator
 can be used to easily switch between different distributions of the same application
 	~$ cd bin
-	~/bin$ ln -s /home/msonntag/work/software/activator-1.2.12/activator activator
+	~/bin$ ln -s /home/[user]/work/software/activator-1.2.12/activator activator
 
 
 Adding an application to the quick launcher bar:
@@ -465,19 +465,19 @@ Resources:
 
 
 
-LMU specific
+Uni specific
 ============
 
 printer setup (hp p2015):
 - add
 - network printer
-- HP LaserJet P2015 Series (10.153.169.246) - should be the first entry
+- HP LaserJet P2015 Series - should be the first entry
 - use AppSocket/HP Direct ... should be done
 
 - add
 - network printer
 - cp3525
-- socket://hpljcp3525.cns.bzm:9100
+- socket://hpljcp3525.snc.bmz:9100
 
 
 
@@ -487,7 +487,6 @@ clone all forks from github
 clone and build nix
 - move to folder which will contain the nix files
 - clone files from github to local repository
-	git clone git@github.com:mpsonntag/nix.git nix
 - set up required folders for build
 	cd nix
 	mkdir build
@@ -514,7 +513,6 @@ clone and build nix
 clone and build nixpy
 - move to folder where nixpy should be imported
 - clone files from github to local repository
-	git clone git@github.com:mpsonntag/nixpy.git nixpy
 - set up local repositories (if required)
 - check recognised remotes first:
 	git remote -v
@@ -532,10 +530,6 @@ clone and build nixpy
 	python setup.py build_sphinx
 
 
-clone and build gndata planning
-	git clone git@github.com:G-Node/planning.git GNE_planning
-	git remote -v
-
 
 empathy: rooms, join, gnode
 
@@ -543,7 +537,7 @@ empathy: rooms, join, gnode
 
 
 
-Windows:
+Win:
 	notepad++
 	chocolatey
 	putty
@@ -555,9 +549,6 @@ Windows:
 	idea community
 	idea pycharm
 
-
-
-
 Add python to path variable
 (ctrl+x -> Systemsteuerung -> System -> erweiterte einstellungen -> umgebungsvariablen -> add to path variable)
 install numpy (python -m pip install numpy)
@@ -567,7 +558,3 @@ install github for windows
 
 dl protege
 dl hdfview -> extract -> change paths in bin/hdfview.bat
-
-
-
-
