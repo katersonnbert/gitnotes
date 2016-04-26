@@ -96,14 +96,17 @@ If we fork a project in github from a folder to our own user, we create a copy o
 If everyone is working on their own forks, then a pull request lets other people know, that there are major changes in your fork and they should sync their forks with the contents of your fork.
 
 #### Creating a pull request
-In github under your user and your fork, look on the left hand side above the file list. there is a green button and a branch button. select the branch you want to compare and then use the green button, to see, if there are any changes between the spoon and the fork repositories of the selected branch. Through the following menu you can create a pull request for all other users.
+In github under your user and your fork, look on the left hand side above the file list. there is a green button and a branch button. 
+select the branch you want to compare and then use the green button, to see, if there are any changes between the spoon and the fork repositories of the selected branch. 
+Through the following menu you can create a pull request for all other users.
 
 #### Handling a pull requires
 If there is an open pull request, it can be seen on the right hand side
 
 
 # Branches
-Branches are useful for working on stuff, while always keeping a master branch that contains the last working version. once the branch version is functional, the changes can be merged with the last functional version of the master branch.
+Branches are useful for working on stuff, while always keeping a master branch that contains the last working version. once the branch version is functional, 
+the changes can be merged with the last functional version of the master branch.
 
 - first create a new branch and immediately switch to this branch
 
@@ -142,7 +145,7 @@ Branches are useful for working on stuff, while always keeping a master branch t
 
 
 # Creating a github from local repository
-- create a github repository thats named exactly as the folder you want to add on github
+- create a github repository that's named exactly as the folder you want to add on github
 - move to folder containing files
 - initialize git
 
@@ -294,7 +297,7 @@ https://help.github.com/articles/adding-an-existing-project-to-github-using-the-
         git commit -m "first commit"
 	
 - create new repository in github using the same name as the folder the project resides in; do not initialize the github repo
-- copy the quick setup ssh adresse of the github repository e.g. git@github.com:mpsonntag/G-Node-Bootstrap.git
+- copy the quick setup ssh address of the github repository e.g. git@github.com:mpsonntag/G-Node-Bootstrap.git
 - add the github repository as the remote repository for the local git, e.g.:
 
         git remote add origin git@github.com:mpsonntag/G-Node-Bootstrap.git
