@@ -16,11 +16,6 @@ Follow these steps to set up the development environment for the NIX Matlab bind
 **Build process for RELEASE build**
 - start virtual box
 - MatLab 32/64bit, extract/install to `[directory of choice]`
-	/* G-Node SPECIFIC!
-		use WinSCP, get MATLAB_R2011a_Win32.zip (~676mb) for 32bit Matlab
-					get MATLAB_R2011a_Win62.zip (~745mb) for 64bit Matlab
-		from gate.g-node.org, `/groups/g-node-code/share/MATLAB/`
-	*/
 - check MatLab registry keys, if they are not there set up:
 	add keys to `HKEY_LOCAL_MACHINE/Software` to create the following structure:
 		`HKEY_LOCAL_MACHINE/Software/Mathworks/MATLAB/7.12`
