@@ -35,8 +35,3 @@ OAuth 2
 - C sends token to RS
 - RS sends resource to C
 
-
-# Auth server
-
-## Primaray
-
