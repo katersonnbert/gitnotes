@@ -5,7 +5,8 @@ http://en.wikipedia.org/wiki/Windows_PowerShell
 
 
 #Background:
-The main application for the Windows PowerShell is automating tasks and providing a configuration management framework for administrators. It consists of a command-line shell and an associated scripting language. Administrators can write scripts that access both local and remote Windows systems and perform administrative tasks there.
+The main application for the Windows PowerShell is automating tasks and providing a configuration management framework for administrators. It consists of a command-line shell and an associated scripting language.
+Administrators can write scripts that access both local and remote Windows systems and perform administrative tasks there.
 
 Windows PowerShell is object oriented and is based on objects of the .NET framework. DOS commands have been replaced by cmdlets ("Commandlets") which can be used in a pipe, connecting them with the "|" operator.
 
@@ -18,7 +19,8 @@ PowerShell provides a command-line based help, similar to Unix man pages via the
 
 
 #PowerShell Scripts
-Scripts executable by the PowerShell have to use the file ending ".ps1". Functions, methods and definitions that should be loaded when the PowerShell start have to be written to a file "profile.ps1" which has to be placed in a specific folder, which location in turn depends on the operating system. [xxx]
+Scripts executable by the PowerShell have to use the file ending ".ps1". Functions, methods and definitions that should be loaded when the PowerShell start have to be written to a file "profile.ps1"
+which has to be placed in a specific folder, which location in turn depends on the operating system. [xxx]
 
 
 #Cmdlets
