@@ -1,4 +1,4 @@
-Linux bash (bourne again shell)
+Linux and using the Bash (bourne again shell)
 ===============================
 
 #  Using the shell
@@ -8,6 +8,9 @@ Baby steps:
 2) get to know the file system and how to navigate through it (see explanatory tutorial above)
 3) get to know the basic shell commands described below
 4) script away
+
+## Opening a shell
+Under Ubuntu Linux a terminal can be opened by using Ctrl + Alt + T
 
 
 ##  More resources:
@@ -451,7 +454,15 @@ can be used to easily switch between different distributions of the same applica
 	`netstat -lt`
 
 
-# Linux server crashcourse:
+# Bashrc
+- The hidden `.bashrc` file is a script, that is executed, whenever a new terminal session is started.
+- The file contains configurations for the terminal session. An example would be the shorthand `ll` instead of `ls -l`
+- There are two main bashrc files.
+- The first is found in /etc/bash.bashrc, this one applies to all shell sessions
+- The second one is found in /home/[user]/.bashrc. This one applies only to non-login shell sessions.
+
+
+# Linux server crash course:
 
 http://www.linuxhowtos.org/C_C++/socket.htm
 
