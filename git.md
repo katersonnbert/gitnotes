@@ -21,10 +21,40 @@ NOTE: never use the [https://github.com/...] address for forks
 	    git remote add upstream [git ssh spoon-knife clone url]
 
 # Managing git
-Check git settings in main git folder:
+- There are two main config files for git: .gitconfig for global settings in the /home/[user]/ directory 
+and .git/config in each of the repositories for local repository specific settings.
 
-	cat .git/config
+- Check global git settings:
 
+        less /home/[user]/.gitconfig
+
+- Check git settings in main git folder:
+
+	    less .git/config
+
+- Check a global setting entry e.g. user email
+
+        git config --global user.email
+
+- Set a global setting entry
+
+        git config --global user.email "noone@nowhere.org"
+
+- Check a local setting entry (from somewhere within a local repository)
+ 
+        git config --get user.email
+
+- Set a local setting entry (from somewhere within a local repository)
+
+        git config user.email "noone@nowhere.org"
+
+- To push to two different github accounts and commit users
+
+    1) clone the repository that should use a different account using the https clone url
+    2) update the email address in the local .git/config with the secondary account email address
+ 
+For more information about this topic check [here](https://help.github.com/articles/setting-your-email-in-git/)
+ 
 
 # Regarding commits
 - always pull before a commit!
@@ -131,7 +161,7 @@ the changes can be merged with the last functional version of the master branch.
 	    
 - then merge
 
-	    git merge [branch2]	// ... e.g.: git merge workinprogress
+	    git merge [branch2]	// ... e.g.: git merge workInProgress
 
 
 # Push
@@ -175,7 +205,7 @@ the changes can be merged with the last functional version of the master branch.
 
 
 # git rebase
-http://git-scm.com/book/de/v1/Git-Branching-Rebasing
+A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Branching-Rebasing)
 
 
 # G-Node git pipeline
@@ -260,7 +290,7 @@ http://git-scm.com/book/de/v1/Git-Branching-Rebasing
 
 
 # Submodules (git within git)
-http://git-scm.com/book/en/v2/Git-Tools-Submodules
+[http://git-scm.com/book/en/v2/Git-Tools-Submodules]
 
 Move to folder where the submodule is supposed to be installed
 
@@ -268,7 +298,7 @@ Move to folder where the submodule is supposed to be installed
 
 
 # Create github repository from local
-https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux
+[https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux]
 
 - initialize local git repository
 
@@ -310,12 +340,12 @@ https://help.github.com/articles/adding-an-existing-project-to-github-using-the-
 
 
 # Undo / remove last commit:
-http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit
+[http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit]
 
 
 # Find difference between commits:
 
-http://jk.gs/git-diff.html
+(Source)[http://jk.gs/git-diff.html]
 
 - show the difference between the last two commits:
 
@@ -347,7 +377,7 @@ http://jk.gs/git-diff.html
 
 # Transfer ownership from user to organization:
 
-https://help.github.com/articles/transferring-a-repository/
+[https://help.github.com/articles/transferring-a-repository/]
 
 - update github repository
 - close IDE
@@ -369,11 +399,11 @@ e.g. to create a save branch when an specific release has been done.
 
 	git branch branchname <sha1-commit-hash>
 
-from: http://stackoverflow.com/questions/2816715/branch-from-a-previous-commit-using-git
+(from here)[http://stackoverflow.com/questions/2816715/branch-from-a-previous-commit-using-git]
 
 
 # Manage branches
-(http://gitready.com/intermediate/2009/02/13/list-remote-branches.html)
+[http://gitready.com/intermediate/2009/02/13/list-remote-branches.html]
 
 
 - Show all local branches
@@ -407,7 +437,7 @@ You can display which repositories will be removed by using first:
 
 
 # Commit messages
-Adhere to [these rules](http://chris.beams.io/posts/git-commit/):
+Adhere to [these rules](http://chris.beams.io/posts/git-commit/)
 
 - Separate subject from body with a blank line
 - Limit the subject line to 50 characters
@@ -431,7 +461,7 @@ Write multi line commit messages from the command line - ' or " can be used to w
 	Final line"
 
 This might be tricky on windows. For such issues read:
-http://stackoverflow.com/questions/5064563/add-line-break-to-git-commit-m-from-command-line
+[http://stackoverflow.com/questions/5064563/add-line-break-to-git-commit-m-from-command-line]
 
 
 # Automatically close issues using commit messages:
