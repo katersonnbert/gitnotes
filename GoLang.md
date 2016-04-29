@@ -602,6 +602,22 @@ look for an implementation of `error` before printing a value.
             }
         }
 
+# Visibility
+- Constants, variables, structs and functions that have an identifier starting with an upper case letter 
+can be accessed from outside of the package.
+- The same with an identifier starting with a lower case letter can only be accessed within the same package.
+ 
+         type notExported struct {}     //this struct is visible only in this package as it starts with small letter
+         
+         type Exported struct {         //variable starts with capital letter, so visible outside this package
+             notExportedVariable int    //variable starts with small letter, so NOT visible outside package
+             ExportedVariable int       //variable starts with capital letter, so visible outside package
+             s string                   //not exported
+             S string                   //exported
+         }
+
+Definition can be found [here](https://golang.org/ref/spec#Exported_identifiers), examples from [here]
+(http://golangtutorials.blogspot.de/2011/06/structs-in-go-instead-of-classes-in.html)
 
 # Goroutines, Channels and Mutex
 
