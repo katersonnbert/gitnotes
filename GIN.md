@@ -20,3 +20,9 @@ e.g. `go test -v ./data`, `go test -v ./util`, etc.
 - Travis CI is used, it uses golint and go vet to check for bugs and goveralls for coverage.
 - The go packages e.g. `data` and `util` need to be tested individually, goverall requires that the resulting 
 profiles are assembled manually for a full coverage report.
+
+
+# Test REST:
+
+- install rested plugin for firefox
+- install rest client for idea ultimate
