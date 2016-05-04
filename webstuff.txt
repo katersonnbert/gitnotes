@@ -1,5 +1,31 @@
-CSS
-===
+HTTP Methods
+============
+
+To interact with a REST API, HTTP methods are used. The mainly used methods are:
+- GET
+- POST
+
+## GET
+- Requests data from a specific resource.
+- Information required to get to the requested data can be sent via a query string in the URL of a GET request.
+- Can also be sent as a conditional GET, when the request message header includes an If-Modified-Since, If-Unmodified-Since, If-Match, If-None-Match or If-Range.
+
+NOTE: See HTML query for more information regarding request message query.
+
+## POST
+- Submits data to a specific resource.
+- Any necessary query string is sent in the HTTP message body of the POST request.
+- In detail, POST requires the server to accept an enclosed entity and process it at the provided Request-URI in the request line.
+
+## Further HTTP methods:
+- PUT       ... Submits data and requests, that it should be stored at an also provided Request-URI.
+- HEAD      ... like GET, but returns only the HTTP headers without a document body
+- DELETE    ... Sends a Request-URI and requests, that the resource found at this URI should be deleted.
+- OPTIONS   ... Returns which HTTP methods are supported by the server.
+- CONNECT   ... Converts the connection to a TCP/IP tunnel
+
+Find more basics (here)[http://www.w3schools.com/tags/ref_httpmethods.asp]
+and more details (here)[https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html].
 
 
 LESS
@@ -8,10 +34,6 @@ LESS
 less files require the metadata tags:
 	fileExtension='.less'
 	mimeType='text/css'
-
-
-HTML5
-=====
 
 
 JSON (Java Script Object Notation)
