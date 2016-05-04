@@ -27,6 +27,26 @@ NOTE: See HTML query for more information regarding request message query.
 Find more basics (here)[http://www.w3schools.com/tags/ref_httpmethods.asp]
 and more details (here)[https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html].
 
+HTML query
+==========
+
+- A query string is a part of the URL and can be used to submit data to a server.
+- A query string is composed of key-value pairs, each pair is separated by "&"
+- Key-value of each pair is separated by "=" e.g. field1=value1
+- The query added to the main URL and is separated from it by "?".
+
+    http://example.org/nowhere?field1=value1&field2=value2
+
+NOTE: HTML URLs have to solely consist of characters from the ASCII character-set, other characters need to be encoded.
+Find a description how to properly encode a URL (here)[http://www.w3schools.com/tags/ref_urlencode.asp].
+
+
+REST API status codes
+=====================
+
+A list of REST API status codes can be found (here)[http://www.restapitutorial.com/httpstatuscodes.html]
+or (here)[http://www.w3schools.com/tags/ref_httpmessages.asp].
+
 
 LESS
 ====
