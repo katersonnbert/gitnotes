@@ -778,6 +778,15 @@ where go looks for installed packages
         go get github.com/golang/lint/golint
 
 
+## Lint, vet and format your go code
+
+To increase readability and enforce standard code layout go offers linting and autoformat.
+So before checking in a file use the following lines of go code:
+
+    fgt golint -min_confidence 0.9 ./...
+    go vet ./...
+    gofmt -w [yourfile].go
+
 
 Distilled from resources:
 [Go homepage](https://golang.org/doc/)
