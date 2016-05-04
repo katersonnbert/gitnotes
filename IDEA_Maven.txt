@@ -29,7 +29,7 @@ add the following line to the idea.sh startup shell script right after the sheba
 	shift + esc ... hide active window
 
 
-#Shortcuts in IDEA 15:
+# Shortcuts in IDEA 15:
 	https://dzone.com/refcardz/intellij-idea-update
 
 Back to editor          Esc
@@ -96,7 +96,33 @@ use maven projects
 https://help.github.com/articles/generating-ssh-keys/
 
 
+# Update IDEA
 
+- make sure that a launcher for idea is available, if not create one using the following template.
+- create file [name of application].desktop somewhere, open it with an editor, add at least the following:
+	[Desktop Entry]
+	Type=Application
+	Name=[Name of application]
+	Comment=[Comment]
+	Icon=[path to icon]
+	Exec=[path to shell script]
+	Terminal=false
+	Categories=[Linux application categories e.g. Development;IDE;Java;]
+- DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
+- DO NOT USE QUOTES WHEN SETTING THE ICON PATH
+- move the created .desktop file to hidden folder ~/.local/share/applications
+- manually edit the properties (properties -> permissions -> execute) to make it executable
+- draw it onto the quick launcher bar.
+
+
+## Community edition
+- DL newest version from Intellij
+- unzip to folder of joice
+- change properties of quick launcher to .../[new idea directory]/bin/idea.sh
+
+## Ultimate edition
+- same as community edition
+- at first open, activate by providing intellij account data
 
 
 # Building a java project:
@@ -273,3 +299,4 @@ files (from all subfolders):
 --- appveyor
 --- coveralls
 - add badges to readme.md
+
