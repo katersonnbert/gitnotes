@@ -1,9 +1,9 @@
 HTTP Methods
 ============
-
 To interact with a REST API, HTTP methods are used. The mainly used methods are:
+
 - GET
-- POST
+- POST 
 
 ## GET
 - Requests data from a specific resource.
@@ -24,8 +24,8 @@ NOTE: See HTML query for more information regarding request message query.
 - OPTIONS   ... Returns which HTTP methods are supported by the server.
 - CONNECT   ... Converts the connection to a TCP/IP tunnel
 
-Find more basics (here)[http://www.w3schools.com/tags/ref_httpmethods.asp]
-and more details (here)[https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html].
+Find more basics [here](http://www.w3schools.com/tags/ref_httpmethods.asp)
+and more details [here](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 
 HTML query
 ==========
@@ -38,14 +38,14 @@ HTML query
     http://example.org/nowhere?field1=value1&field2=value2
 
 NOTE: HTML URLs have to solely consist of characters from the ASCII character-set, other characters need to be encoded.
-Find a description how to properly encode a URL (here)[http://www.w3schools.com/tags/ref_urlencode.asp].
+Find a description how to properly encode a URL [here](http://www.w3schools.com/tags/ref_urlencode.asp).
 
 
 REST API status codes
 =====================
 
-A list of REST API status codes can be found (here)[http://www.restapitutorial.com/httpstatuscodes.html]
-or (here)[http://www.w3schools.com/tags/ref_httpmessages.asp].
+A list of REST API status codes can be found [here](http://www.restapitutorial.com/httpstatuscodes.html)
+or [here](http://www.w3schools.com/tags/ref_httpmessages.asp).
 
 
 LESS
