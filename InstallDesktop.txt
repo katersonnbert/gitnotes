@@ -425,7 +425,7 @@ Install the following Go packages at the $GOPATH folder:
     go get gopkg.in/yaml.v2
     go get github.com/pborman/uuid
     go get golang.org/x/crypto/bcrypt
-
+    go get github.com/docopt/docopt-go
 
 DL and install Protege
 add Launcher:
