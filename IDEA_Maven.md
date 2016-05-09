@@ -19,18 +19,24 @@ IDEA window next to the line:column display.
 
 ## Display whitespace:
 
-        View > Active Editor > Show Whitespaces
+For one file only:
+
+    View > Active Editor > Show Whitespaces
+
+Globally:
+
+    Settings > Editor > General > Appearance > Show whitespaces
 
 
 ## Disable IntelliJ Starred (Package) Imports?
 
-        File > Settings > Editor > Code Style > Java > Imports > Class count to use import with '*'
+    File > Settings > Editor > Code Style > Java > Imports > Class count to use import with '*'
 
 Find details [here](http://stackoverflow.com/questions/3587071/disable-intellij-starred-package-imports).
 
 
 ## Set tab size:
-        File > Settings > Editor > Code Style > [Language] > Tabs and Indents
+    File > Settings > Editor > Code Style > [Language] > Tabs and Indents
 
 
 # Update IDEA
@@ -64,53 +70,53 @@ Find details [here](http://stackoverflow.com/questions/3587071/disable-intellij-
 
 
 # IDEA ShortCuts:
-        alt + enter ... additional options, complementation, etc
-        alt + insert ... adding constructors, etc
-        ctrl + q ... documentation for selected item
-        shift + F6 ... rename stuff
-        ctrl + alt + o ... autorefine import statements
-        ctrl + alt + B ... go to implementation
-        shift + esc ... hide active window
+    alt + enter ... additional options, complementation, etc
+    alt + insert ... adding constructors, etc
+    ctrl + q ... documentation for selected item
+    shift + F6 ... rename stuff
+    ctrl + alt + o ... autorefine import statements
+    ctrl + alt + B ... go to implementation
+    shift + esc ... hide active window
 
 
 # Shortcuts in IDEA 15:
 Find details [here](https://dzone.com/refcardz/intellij-idea-update)
 
-        Back to editor          Esc
-        hide subwin             shift + esc
-        Toggle projTree win     Alt + 1
-        Toggle run window       Alt + 4
-        Toggle console          Alt + F12
-        move to method          ctrl + F12 / alt + 7
-        run app                 ctrl + F10
-        Scratch file            ctrl + alt + shift + insert     (will affect file history! which sucks)
-        Search everywhere       ctrl + shift + a                (also works for reopening projects)
-        switch subwin/files     ctrl + tab
-        recent files            ctrl + e
-        zoom                    ctrl + mouse-wheel
-        jump to next method     alt + up/down
+    Back to editor          Esc
+    hide subwin             shift + esc
+    Toggle projTree win     Alt + 1
+    Toggle run window       Alt + 4
+    Toggle console          Alt + F12
+    move to method          ctrl + F12 / alt + 7
+    run app                 ctrl + F10
+    Scratch file            ctrl + alt + shift + insert     (will affect file history! which sucks)
+    Search everywhere       ctrl + shift + a                (also works for reopening projects)
+    switch subwin/files     ctrl + tab
+    recent files            ctrl + e
+    zoom                    ctrl + mouse-wheel
+    jump to next method     alt + up/down
 
-        copy line               ctrl + d
-        comment line            ctrl + numpad /
+    copy line               ctrl + d
+    comment line            ctrl + numpad /
 
-        move line/method        ctrl + shift + up/down
-        join line               ctrl + shift + j                (move last line to cursor position)
-        (smart) split line      alt + enter                     (intellij senses context - will present split
-                                                                    option if appropriate)
-        language injection      alt + enter                     (IDEA context sense - will present
-                                                                    language inj option if appropriate)
-        check RegExp            alt + enter                     (if language injection regular expression: alt
-                                                                    + enter shows testwindow)
-        create test class       alt + enter                     (if positioned over a class name, alt + enter
-                                                                    will add the option to create a testfile)
-        add test method         alt + insert
-        fold/expand code block  ctrl + .
-        refactor                ctrl + F6                       (refactors variables, methods and classes)
-        definition peak         ctrl + shift + i
+    move line/method        ctrl + shift + up/down
+    join line               ctrl + shift + j                (move last line to cursor position)
+    (smart) split line      alt + enter                     (intellij senses context - will present split
+                                                                option if appropriate)
+    language injection      alt + enter                     (IDEA context sense - will present
+                                                                language inj option if appropriate)
+    check RegExp            alt + enter                     (if language injection regular expression: alt
+                                                                + enter shows testwindow)
+    create test class       alt + enter                     (if positioned over a class name, alt + enter
+                                                                will add the option to create a testfile)
+    add test method         alt + insert
+    fold/expand code block  ctrl + .
+    refactor                ctrl + F6                       (refactors variables, methods and classes)
+    definition peak         ctrl + shift + i
 
-        close file              ctrl + w                        (custom key map)
-        select word             alt + a                         (custom key map)
-        show file history       alt + '                         (custom key map)
+    close file              ctrl + w                        (custom key map)
+    select word             alt + a                         (custom key map)
+    show file history       alt + '                         (custom key map)
 
 
 ## Postfix completion:
