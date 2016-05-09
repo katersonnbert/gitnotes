@@ -13,12 +13,12 @@ NOTE: never use the [https://github.com/...] address for forks
 - terminal: move to folder you want to create your repository
 - clone repository
 
-	    git clone [git ssh clone URL] [projectFolderName]
-	    e.g. ~/work$ git clone git@github.com:mpsonntag/gndata-editor.git GNdata-editor
+        git clone [git ssh clone URL] [projectFolderName]
+        e.g. ~/work$ git clone git@github.com:mpsonntag/gndata-editor.git GNdata-editor
 
 - set upstream repository!
 
-	    git remote add upstream [git ssh spoon-knife clone url]
+        git remote add upstream [git ssh spoon-knife clone url]
 
 # Managing git
 - There are two main config files for git: .gitconfig for global settings in the /home/[user]/ directory 
@@ -30,7 +30,7 @@ and .git/config in each of the repositories for local repository specific settin
 
 - Check git settings in main git folder:
 
-	    less .git/config
+        less .git/config
 
 - Check a global setting entry e.g. user email
 
@@ -67,7 +67,7 @@ For more information about this topic check [here](https://help.github.com/artic
 
 # git commands
 ---|---
-git status					| shows project status
+git status                  | shows project status
 git add []                  | add files to git repository
 git add .                   | adds all files recursively to repository which are not managed by git yet
 git add -p                  | steps through all changes and asks if they should be staged for commit
@@ -129,30 +129,30 @@ If we fork a project in github from a folder to our own user, we create a copy o
 - move to the local git repository dir
 - check which repositories are already used
 
-	    git remote -v
+        git remote -v
 
 - add upstream repository by using
 
-	    git remote add upstream [git ssh spoon-knife clone url]
+        git remote add upstream [git ssh spoon-knife clone url]
 
 - now we have specified the upstream repository for our fork repository
 
 #### How to sync fork repository with upstream repository
 - to get modifications done in the upstream repository
 
-	    git fetch upstream
-	    
+        git fetch upstream
+
 - this creates a local branch of the upstream repository
 
-	    git remote -v
-	    
+        git remote -v
+        
 - next make sure you are in the master fork repository
 
-	    git checkout master
-	    
+        git checkout master
+
 - then merge the upstream repository with the fork repository
 
-	    git merge upstream/master
+        git merge upstream/master
 
 
 # Pull request
@@ -173,38 +173,38 @@ the changes can be merged with the last functional version of the master branch.
 
 - first create a new branch and immediately switch to this branch
 
-	    git checkout -b [name of new branch]
-	
+        git checkout -b [name of new branch]
+
 - next we push this branch to github
 
-	    git push origin [name of new branch]
-	
+        git push origin [name of new branch]
+
 - we can check all existing branches
 
-	    git branch
-	    
+        git branch
+
 - show differences between branches
 
-	    git diff [branch1]..[branch2]
+        git diff [branch1]..[branch2]
 
 #### Merging branches
 - checkout branch you want to import changes into
 
-	    git checkout [branch1]	// ... e.g.:  git checkout master
-	    
+        git checkout [branch1]      // ... e.g.:  git checkout master
+
 - then merge
 
-	    git merge [branch2]	// ... e.g.: git merge workInProgress
+        git merge [branch2]         // ... e.g.: git merge workInProgress
 
 
 # Push
 - normal push moves always all associated branches to remote
 
-	    git push
-	
+        git push
+
 - to push only a specific branch to the remote repository
 
-	    git push origin [branch name]
+        git push origin [branch name]
 
 
 # Creating a github from local repository
@@ -212,8 +212,8 @@ the changes can be merged with the last functional version of the master branch.
 - move to folder containing files
 - initialize git
 
-	    git init
-	    
+        git init
+
 - create file .gitignore and modify
 
         *_exc_*
@@ -221,20 +221,20 @@ the changes can be merged with the last functional version of the master branch.
 
 - locally add all files to repository (will not add empty folders)
 
-	    git add .
-	     
+        git add .
+
 - commit
 
-	    git commit -m 'hurra'
-	     
+        git commit -m 'hurra'
+
 - add remote repository
 
         git remote add origin [repo ssh origin url]
         git remote -v
-        
+
 - push stuff to github
 
-    	git push origin master
+        git push origin master
 
 
 # git rebase
@@ -256,28 +256,28 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
 - enter host github.com
 
         repository G-Node / [repository name] e.g. gndata-editor
-        
+
 - either enter API token that already exists for a project or create new one
 - on right hand side upper corner select default task/add task ... issues from github should be imported.
 - if this is correct, IDEA creates a new branch for this issue
 - make changes in project, add changed files in "changes"
 - use "commit", write one line description, leave one empty line, write "Fixes #issuenumber" if this commit actually fixes the number
 
-        git log							// ... check last commits
-        git push origin [branchname]	// ... push issue branch to repository e.g.: git push origin gndata-editor-46
+        git log                         // ... check last commits
+        git push origin [branchname]    // ... push issue branch to repository e.g.: git push origin gndata-editor-46
 
 - someone has to check the changes on github and merge the branch with the master
 
-	    git status
+        git status
 
 - change to master
 
         git fetch --all
-        git rebase upstream/master			// ... to get the changes included into the own master repository
+        git rebase upstream/master          // ... to get the changes included into the own master repository
         git log
         git push origin master
-        git branch -D gndata-editor-46		// ... remove issue branch locally
-        git push origin :gndata-editor-46	// ... remove issue branch in repository
+        git branch -D gndata-editor-46      // ... remove issue branch locally
+        git push origin :gndata-editor-46   // ... remove issue branch in repository
 
 
 ## Creating pull request
@@ -289,28 +289,28 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
         git rebase upstream/master
         git checkout [problem branch]
         git rebase master
-        git status						// ... check where the conflicts are, resolve them in IDE, save
-        git add [modified files]		// ... will be added to last commit
+        git status                          // ... check where the conflicts are, resolve them in IDE, save
+        git add [modified files]            // ... will be added to last commit
         git status
         git rebase --continue
         git log
-        git push origin [problem branch]	// ... if this does not work, use force:
+        git push origin [problem branch]    // ... if this does not work, use force:
         git push origin [problem branch] -f
-    
-        git commit --amend				// add changes to last commit
+
+        git commit --amend                  // add changes to last commit
 
 
 ## Creating an intermediate branch and subsequent pull request with these changes only
 - start
 
-	    git checkout -b [newbranch]	// ... create new branch
-	
+        git checkout -b [newbranch]     // ... create new branch
+
 - do stuff
 
-        git add .					// ... add changes
-        git commit					// ... commit changes
-        git push origin [newbranch]	// ... push changes to github
-	
+        git add .                       // ... add changes
+        git commit                      // ... commit changes
+        git push origin [newbranch]     // ... push changes to github
+
 - create pull request in github 
 - pull request
 - edit
@@ -318,34 +318,36 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
 - add description
 - create pull request
 
-        git checkout [workBranch]	// get back to actual workBranch
-        git rebase [newBranch]		// get changes from [newBranch] to [workBranch]
+        git checkout [workBranch]   // get back to actual workBranch
+        git rebase [newBranch]      // get changes from [newBranch] to [workBranch]
 
 
 # Submodules (git within git)
-[http://git-scm.com/book/en/v2/Git-Tools-Submodules]
 
 Move to folder where the submodule is supposed to be installed
 
-	git submodule add git@github.com:mpsonntag/testBoot.git stylesheets
+        git submodule add git@github.com:mpsonntag/testBoot.git stylesheets
+
+Detailed description [here](http://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 
 # Create github repository from local
-[https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux]
+
+From [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/#platform-linux).
 
 - initialize local git repository
 
-	    git init
-	
+        git init
+
 - create .gitignore file, open and add (or copy from another project):
 
         # IDEA
         .idea/
         *.iml
-    
+
         # log files
         *.log
-    
+
         # maven
         target/
         pom.xml.tag
@@ -358,59 +360,60 @@ Move to folder where the submodule is supposed to be installed
 
         git add .
         git commit -m "first commit"
-	
+
 - create new repository in github using the same name as the folder the project resides in; do not initialize the github repo
 - copy the quick setup ssh address of the github repository e.g. git@github.com:mpsonntag/G-Node-Bootstrap.git
 - add the github repository as the remote repository for the local git, e.g.:
 
         git remote add origin git@github.com:mpsonntag/G-Node-Bootstrap.git
-	
+
 - push changes from local to remote
 
         git push origin master
-	
+
 - have a cup of tea
 
 
 # Undo / remove last commit:
-[http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit]
+Read details [here](http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit)
 
 
 # Find difference between commits:
 
-(Source)[http://jk.gs/git-diff.html]
+Source can be found [here](http://jk.gs/git-diff.html)
 
 - show the difference between the last two commits:
 
-	    git diff HEAD^ HEAD
+        git diff HEAD^ HEAD
+
 
 # git delete
 - delete local branch
 
-	    git branch -d the_local_branch
-	
+        git branch -d the_local_branch
+
 - delete remote branch
 
-	    git push origin :the_remote_branch
+        git push origin :the_remote_branch
 
 
 # git amend commit (add stuff, change message)
 - add stuff to the last commit
 
-	    git commit --amend
-	
+        git commit --amend
+
 - add stuff to the last commit w/o changing the commit message
 
-	    git commit --amend --no-edit
-	
+        git commit --amend --no-edit
+
 - change commit message of last commit
 
-	    git commit --amend -m "New commit message"
+        git commit --amend -m "New commit message"
 
 
 # Transfer ownership from user to organization:
 
-[https://help.github.com/articles/transferring-a-repository/]
+Distilled from [here](https://help.github.com/articles/transferring-a-repository/)
 
 - update github repository
 - close IDE
@@ -430,26 +433,26 @@ Move to folder where the submodule is supposed to be installed
 
 e.g. to create a save branch when an specific release has been done.
 
-	git branch branchname <sha1-commit-hash>
+        git branch branchname <sha1-commit-hash>
 
-(from here)[http://stackoverflow.com/questions/2816715/branch-from-a-previous-commit-using-git]
+Paraphrase from [here](http://stackoverflow.com/questions/2816715/branch-from-a-previous-commit-using-git)
 
 
 # Manage branches
-[http://gitready.com/intermediate/2009/02/13/list-remote-branches.html]
-
 
 - Show all local branches
 
-	    git branch
-	    
+        git branch
+
 - Show all branches, local and remote
 
-	    git branch -a
-	    
+        git branch -a
+
 - Show all remote branches
 
-	    git branch -r
+        git branch -r
+
+Distilled from [here](http://gitready.com/intermediate/2009/02/13/list-remote-branches.html)
 
 
 # Remove stale upstream repositories
@@ -458,15 +461,16 @@ If working on with distributed repositories, it can happen, that stale remote re
 
 Remove stale remote repositories by:
 
-	    git remote prune [origin/upstream]
+        git remote prune [origin/upstream]
 
 You can display which repositories will be removed by using first:
 
-	    git remote prune --dry-run [origin/upstream]
+        git remote prune --dry-run [origin/upstream]
 
 
 # Unstage file for commit
-	git reset <file>
+
+        git reset <file>
 
 
 # Commit messages
@@ -483,18 +487,18 @@ Adhere to [these rules](http://chris.beams.io/posts/git-commit/)
 
 Add a commit message from the command line:
 
-	git commit -m "Message"
+        git commit -m "Message"
 
 Write multi line commit messages from the command line - ' or " can be used to write multi line commit messages:
 
-	git commit -m "Message head
-	BodyText
-	More Body Text
-	
-	Final line"
+        git commit -m "Message head
+        BodyText
+        More Body Text
 
-This might be tricky on windows. For such issues read:
-[http://stackoverflow.com/questions/5064563/add-line-break-to-git-commit-m-from-command-line]
+        Final line"
+
+This might be tricky on windows. For such issues [read this]
+(http://stackoverflow.com/questions/5064563/add-line-break-to-git-commit-m-from-command-line)
 
 
 # Automatically close issues using commit messages:
@@ -502,35 +506,35 @@ Issues can be automatically closed by using keywords in the text body of COMMIT 
 
 These keywords are:
 
-    close #[issueNr]
-    closes #[issueNr]
-    closed #[issueNr]
-    fix #[issueNr]
-    fixes #[issueNr]
-    fixed #[issueNr]
-    resolve #[issueNr]
-    resolves #[issueNr]
-    resolved #[issueNr]
+        close #[issueNr]
+        closes #[issueNr]
+        closed #[issueNr]
+        fix #[issueNr]
+        fixes #[issueNr]
+        fixed #[issueNr]
+        resolve #[issueNr]
+        resolves #[issueNr]
+        resolved #[issueNr]
 
-https://help.github.com/articles/closing-issues-via-commit-messages/
+Read more details [here](https://help.github.com/articles/closing-issues-via-commit-messages/)
 
 
 # Move commits from master branch to new branch.
 
 - checkout new branch
 
-	    git checkout -b "newBranch"
-	    
+        git checkout -b "newBranch"
+
 - new branch and master branch are now identical
 - checkout master
 - remove the last commits that should only be in the new branch.
 - if it is only one commit:
 
-	    git reset --hard HEAD~1
-	
+        git reset --hard HEAD~1
+
 - if it is n commits:
 
-	    git reset --hard HEAD~n
+        git reset --hard HEAD~n
 
 
 # Bisect - fast find breaking commit in history
@@ -546,7 +550,6 @@ The actual commands you need to run to execute the full git bisect flow are:
 - Let git know about a known bad commit (i.e. the HEAD of the master branch). git bisect bad HEAD (HEAD just means the last commit).
 
         git bisect bad {{some-commit-hash}}
-
 - At this point git would check out a middle commit, and let you know to run your tests.
 - Let git know that the feature does not work in currently checked out commit.
 
