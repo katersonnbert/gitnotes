@@ -2,35 +2,77 @@ IDEA:
 =====
 
 Under Linux, if you encounter the following error message upon startup:
-	IBus prior to 1.5.11 may cause input problems. See IDEA-78860 for details
+        IBus prior to 1.5.11 may cause input problems. See IDEA-78860 for details
 
 add the following line to the idea.sh startup shell script right after the shebang line:
-	export XMODIFIERS=""
+        export XMODIFIERS=""
+
+Finds details how to create git ssh keys [here](https://help.github.com/articles/generating-ssh-keys/).
 
 
-# Disable IntelliJ Starred (Package) Imports?
-	http://stackoverflow.com/questions/3587071/disable-intellij-starred-package-imports
+# Setting up IDEA
 
-	File > Settings > Editor > Code Style > Java > Imports > Class count to use import with '*'
+## Set line ending:
+
+Line endings for your current system (Mac: \r, Linux: \n, Win: \r\n) can be set at the (right) bottom of the
+IDEA window next to the line:column display.
+
+## Display whitespace:
+
+        View > Active Editor > Show Whitespaces
 
 
-# Set tab size:
-	File > Settings > Editor > Code Style > [Language] > Tabs and Indents
+## Disable IntelliJ Starred (Package) Imports?
+        http://stackoverflow.com/questions/3587071/disable-intellij-starred-package-imports
+
+        File > Settings > Editor > Code Style > Java > Imports > Class count to use import with '*'
 
 
+## Set tab size:
+        File > Settings > Editor > Code Style > [Language] > Tabs and Indents
 
-# ShortCuts:
-	alt + enter ... additional options, complementation, etc
-	alt + insert ... adding constructors, etc
-	ctrl + q ... documentation for selected item
-	shift + F6 ... rename stuff
-	ctrl + alt + o ... autorefine import statements
-	ctrl + alt + B ... go to implementation
-	shift + esc ... hide active window
+
+# Update IDEA
+
+- make sure that a launcher for idea is available, if not create one using the following template.
+- create file [name of application].desktop somewhere, open it with an editor, add at least the following:
+        [Desktop Entry]
+        Type=Application
+        Name=[Name of application]
+        Comment=[Comment]
+        Icon=[path to icon]
+        Exec=[path to shell script]
+        Terminal=false
+        Categories=[Linux application categories e.g. Development;IDE;Java;]
+- DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
+- DO NOT USE QUOTES WHEN SETTING THE ICON PATH
+- move the created .desktop file to hidden folder ~/.local/share/applications
+- manually edit the properties (properties -> permissions -> execute) to make it executable
+- draw it onto the quick launcher bar.
+
+
+## Community edition
+- DL newest version from Intellij
+- unzip to folder of joice
+- change properties of quick launcher to .../[new idea directory]/bin/idea.sh
+
+## Ultimate edition
+- same as community edition
+- at first open, activate by providing intellij account data
+
+
+# IDEA ShortCuts:
+        alt + enter ... additional options, complementation, etc
+        alt + insert ... adding constructors, etc
+        ctrl + q ... documentation for selected item
+        shift + F6 ... rename stuff
+        ctrl + alt + o ... autorefine import statements
+        ctrl + alt + B ... go to implementation
+        shift + esc ... hide active window
 
 
 # Shortcuts in IDEA 15:
-	https://dzone.com/refcardz/intellij-idea-update
+Find details [here](https://dzone.com/refcardz/intellij-idea-update)
 
 Back to editor          Esc
 hide subwin             shift + esc
@@ -41,7 +83,7 @@ move to method          ctrl + F12 / alt + 7
 run app                 ctrl + F10
 Scratch file            ctrl + alt + shift + insert     (will affect file history! which sucks)
 Search everywhere       ctrl + shift + a                (also works for reopening projects)
-switch subwin/files		ctrl + tab
+switch subwin/files     ctrl + tab
 recent files            ctrl + e
 zoom                    ctrl + mouse-wheel
 jump to next method     alt + up/down
@@ -81,83 +123,43 @@ var.sout        creates     System.out.println(var)
 var().try       creates     try {var();} catch (Exception e) {e.printStackTrace();}
 
 
+# Using IDEA
+
+## Using commandline inputs:
+- Run -> Edit configurations
 
 
-# Setting up IDEA
+# Specific problems with projects in IDEA
 
-After setting up a new project, set up the project structure
-
-use maven projects
-
-- set git as version control for project (settings - version control - add paths and stuff)
-- with each new class and other stuff add to git
-
-- create git ssh keys
-https://help.github.com/articles/generating-ssh-keys/
+## How to work with CSS resource files
+- all files that are not ".java" have to be in a folder that's marked as resource in IDEA.
+If an fxml file is supposed to be found, the folder it resides in has to be marked as resource explicitly.
+- CSS files always have to be in the resources folder!
+- the same applies to files that are referenced by the css file
 
 
-# Update IDEA
-
-- make sure that a launcher for idea is available, if not create one using the following template.
-- create file [name of application].desktop somewhere, open it with an editor, add at least the following:
-	[Desktop Entry]
-	Type=Application
-	Name=[Name of application]
-	Comment=[Comment]
-	Icon=[path to icon]
-	Exec=[path to shell script]
-	Terminal=false
-	Categories=[Linux application categories e.g. Development;IDE;Java;]
-- DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
-- DO NOT USE QUOTES WHEN SETTING THE ICON PATH
-- move the created .desktop file to hidden folder ~/.local/share/applications
-- manually edit the properties (properties -> permissions -> execute) to make it executable
-- draw it onto the quick launcher bar.
+## How to create / add a Scala+Play project
+Get plugins for play and scala:
+- Settings -> plugin -> Install JetBrains plugin
+- search for scala - install "scala" plugin
+- search for play - install "play x.x support" plugin
+- Close IDEA and open new scala/play2 project
+- In Settings/IDE Settings -> Scala: change JVM SDK to latest java version
 
 
-## Community edition
-- DL newest version from Intellij
-- unzip to folder of joice
-- change properties of quick launcher to .../[new idea directory]/bin/idea.sh
-
-## Ultimate edition
-- same as community edition
-- at first open, activate by providing intellij account data
+## Problems with building a project after IDEA update:
+- move to main old project folder, remove old dependencies:
+	$rm target project/target project/project/ .idea/ *.iml -rf
+- close project in IDEA and CREATE new scala + play 2 project, not import!
+- select project folder
 
 
 # Building a java project:
 
-(#)IntelliJ IDEA, css#)
-- all files that are not ".java" have to be in a folder thats marked as resource in idea. if i want an fxml file to be found, the folder it resides in has to be marked as resource explicitly.
-- CSS files always have to be in the resources folder!
-- the same applies to files that are referenced by the css file
-
-Add a scala / play project:
-Get plugins for play and scala:
-- Settings
--- plugin
--- Install JetBrains plugin
---- search for scala - install "scala" plugin
---- search for play - install "play x.x support" plugin
-
-Close and open scala/play2 project
-
-In Settings/IDE Settings:
-- Scala: change JVM SDK to latest java version
-
-
-
-Use idea 14 when we had an idea 13 project before:
-- move to main project 13 folder, remove old dependencies:
-	$rm target project/target project/project/ .idea/ *.iml -rf
-- close project in idea and CREATE new scala + play 2 proj, not import!
-- select project folder
-
-
-# Use commandline inputs:
-
-Run -> Edit configurations
-
+- After setting up a new project, set up the project structure
+- use maven projects
+- set git as version control for project (settings - version control - add paths and stuff)
+- with each new class and other stuff add to git
 
 
 
@@ -201,11 +203,10 @@ Start application
 Setup a Java MAVEN project with IDEA:
 =====================================
 
-requires: latest java JDK installation, maven installation
-check maven install for more details
+- requires: latest java JDK installation, maven installation
+- check maven install for more details
 
-
-Windows:
+## Windows:
 maven requires the global variable JAVA_HOME, the maven bin directory has to added to the windows path variable
 
 - create JAVA_HOME:
@@ -221,7 +222,7 @@ http://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-li
 https://confluence.atlassian.com/display/DOC/Setting+the+JAVA_HOME+Variable+in+Windows
 
 
-Create a new Maven project:
+## Create a new Maven project:
 
 google maven in 5 minutes
 https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
@@ -248,7 +249,7 @@ To use IDEA with a Maven Project go to the start screen:
 - follow wizard
 
 
-Once thats done check
+Once that's done check
 File -> Project Structure -> Project
 - set Project language level to 8 - Lambdas
 
@@ -293,10 +294,7 @@ files (from all subfolders):
 - File -> Project Structure -> Project: set Project language level to 8 - Lambdas
 - add all required files from another java maven project, update pom file.
 - get IDEA and git to play nice:
-	File -> Settings -> Version Control -> add project root path, apply. 
-- add repository to
---- travis
---- appveyor
---- coveralls
+	    File -> Settings -> Version Control -> add project root path, apply.
+- add repository to: travis; appveyor; coveralls
 - add badges to readme.md
 
