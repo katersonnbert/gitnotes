@@ -23,9 +23,10 @@ IDEA window next to the line:column display.
 
 
 ## Disable IntelliJ Starred (Package) Imports?
-        http://stackoverflow.com/questions/3587071/disable-intellij-starred-package-imports
 
         File > Settings > Editor > Code Style > Java > Imports > Class count to use import with '*'
+
+Find details [here](http://stackoverflow.com/questions/3587071/disable-intellij-starred-package-imports).
 
 
 ## Set tab size:
@@ -33,9 +34,9 @@ IDEA window next to the line:column display.
 
 
 # Update IDEA
-
 - make sure that a launcher for idea is available, if not create one using the following template.
-- create file [name of application].desktop somewhere, open it with an editor, add at least the following:
+- create file `[name of application].desktop` somewhere, open it with an editor, add at least the following:
+
         [Desktop Entry]
         Type=Application
         Name=[Name of application]
@@ -44,10 +45,11 @@ IDEA window next to the line:column display.
         Exec=[path to shell script]
         Terminal=false
         Categories=[Linux application categories e.g. Development;IDE;Java;]
+
 - DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
 - DO NOT USE QUOTES WHEN SETTING THE ICON PATH
 - move the created .desktop file to hidden folder ~/.local/share/applications
-- manually edit the properties (properties -> permissions -> execute) to make it executable
+- manually edit the properties (`properties > permissions > execute`) to make it executable
 - draw it onto the quick launcher bar.
 
 
@@ -126,7 +128,7 @@ Find details [here](https://dzone.com/refcardz/intellij-idea-update)
 # Using IDEA
 
 ## Using commandline inputs:
-- Run -> Edit configurations
+- Run > Edit configurations
 
 
 # Specific problems with projects in IDEA
@@ -172,9 +174,11 @@ MAVEN
 # How to build a java project with maven
 
 - check if java version is 1.8 or higher:
+
         ~$ java -version
 
 - check if maven version is 3 or higher:
+
         ~$ mvn -v
 
 - Move to a directory where the project can be built and installed:
@@ -296,7 +300,7 @@ files (from all subfolders):
 - git clone repository to local work directory with the artifactID as folder name
 - copy all files and folders from the tmp directory to the new git folder. NOTE! also copy all HIDDEN files at this step!
 - open IDEA again.
-- File -> Project Structure -> Project: set Project language level to 8 - Lambdas
+- `File > Project Structure > Project`: set Project language level to `8 - Lambdas`
 - add all required files from another java maven project, update pom file.
 - get IDEA and git to play nice:
 
