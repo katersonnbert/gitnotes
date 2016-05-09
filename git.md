@@ -86,6 +86,39 @@ git remote -v               | shows, which repositories are added
 git log                     | displays commit history
 git log --oneline --graph   | displays shortened commit history
 
+## git add
+
+You can do `git add -p yourFile` (or `--patch`), and git will begin breaking down your file in what it thinks are 
+sensible "hunks" (portions of the file). You will then be prompted with this question:
+
+Stage this hunk [y,n,q,a,d,/,j,J,g,s,e,?]?
+
+And here the meaning of each option:
+
+    y stage this hunk for the next commit
+    n do not stage this hunk for the next commit
+    q quit; do not stage this hunk or any of the remaining ones
+    a stage this hunk and all later hunks in the file
+    d do not stage this hunk or any of the later hunks in the file
+    g select a hunk to go to
+    / search for a hunk matching the given regex
+    j leave this hunk undecided, see next undecided hunk
+    J leave this hunk undecided, see next hunk
+    k leave this hunk undecided, see previous undecided hunk
+    K leave this hunk undecided, see previous hunk
+    s split the current hunk into smaller hunks
+    e manually edit the current hunk
+    ? print help
+
+If the file is not in the repository yet, do first `git add -N yourFile`. Afterwards you can go on with `git add -p yourFile`.
+
+You can then use:
+
+- `git diff --staged` afterwards to check that you staged the correct ones
+- `git reset -p to unstage` incorrect hunks
+- `git commit -v` to view your commit while you edit the commit message.
+
+Paraphrase from [here](http://stackoverflow.com/a/1085191)
 
 
 # Forking and cloning a project
@@ -247,7 +280,7 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
         git push origin :gndata-editor-46	// ... remove issue branch in repository
 
 
-## creating pull request
+## Creating pull request
 - github: create pullrequest (process self explanatory)
 - if pull request cannot be merged
 
@@ -267,7 +300,7 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
         git commit --amend				// add changes to last commit
 
 
-## creating an intermediate branch and subsequent pull request with these changes only
+## Creating an intermediate branch and subsequent pull request with these changes only
 - start
 
 	    git checkout -b [newbranch]	// ... create new branch
