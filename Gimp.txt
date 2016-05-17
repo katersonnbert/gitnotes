@@ -11,3 +11,8 @@ Gimp
 - ecken abrunden
 -- works only with jpg
 -- Filters - Decor - Round edges
+
+
+Crop images
+
+https://docs.gimp.org/en/gimp-tutorial-quickie-crop.html
