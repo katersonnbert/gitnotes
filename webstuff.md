@@ -52,8 +52,8 @@ LESS
 ====
 
 less files require the metadata tags:
-	fileExtension='.less'
-	mimeType='text/css'
+    fileExtension='.less'
+    mimeType='text/css'
 
 
 JSON (Java Script Object Notation)
@@ -85,48 +85,43 @@ In its syntax its similar to XML, but reduces some of the overhead.
 ###The JSON syntax defines the following main rules:
 - strings are always in double quotes
 - data is in name:value pairs, separated by a colon
-	"firstName":"Blaubaer"
+    "firstName":"Blaubaer"
 - data is separated by commas
 - curly braces hold objects
 -- objects can hold multiple name:value pairs
-	{"firstName":"Abdul", "lastName":"Nachtigaller"}
+    {"firstName":"Abdul", "lastName":"Nachtigaller"}
 - square brackets hold arrays, arrays can hold multiple objects
-	"litCharacters": [
-		{"firstName":"Abdul", "lastName":"Nachtigaller"},
-		{"firstName":"Randolp", "lastName":"Carter"},
-		{"firstName":"Arlen", "lastName":"Bales"}
-	]
+    "litCharacters": [
+        {"firstName":"Abdul", "lastName":"Nachtigaller"},
+        {"firstName":"Randolph", "lastName":"Carter"},
+        {"firstName":"Arlen", "lastName":"Bales"}
+    ]
 
 
 ###JSON uses JavaScript syntax
 JSON objects can be accessed using JavaScript
 
-	var litCharacters = [
-		{"firstName":"Abdul", "lastName":"Nachtigaller"},
-		{"firstName":"Randolp", "lastName":"Carter"},
-		{"firstName":"Arlen", "lastName":"Bales"}
-	];
+    var litCharacters = [
+        {"firstName":"Abdul", "lastName":"Nachtigaller"},
+        {"firstName":"Randolp", "lastName":"Carter"},
+        {"firstName":"Arlen", "lastName":"Bales"}
+    ];
 
-	litCharacters[0].firstName +" "+ litCharacters[0].lastName;
-	litCharacters[0].firstName = "Dr. Abdul";
+    litCharacters[0].firstName +" "+ litCharacters[0].lastName;
+    litCharacters[0].firstName = "Dr. Abdul";
 
 
 ###JSON object from string
 To convert a JSON string to a JSON object, the JavaScript function JSON.parse() is used, this object can in turn be used within the web page.
 
-	var text = '{ "litCharacters" : = [' +
-		'{"firstName":"Abdul", "lastName":"Nachtigaller"},' +
-		'{"firstName":"Randolp", "lastName":"Carter"},' +
-		'{"firstName":"Arlen", "lastName":"Bales"} ]}';
+    var text = '{ "litCharacters" : = [' +
+        '{"firstName":"Abdul", "lastName":"Nachtigaller"},' +
+        '{"firstName":"Randolp", "lastName":"Carter"},' +
+        '{"firstName":"Arlen", "lastName":"Bales"} ]}';
 
-	var obj = JSON.parse(text);
-	<p id="demo"></p>
-	<script>
-	document.getElementById("demo").innerHTML =
-	obj.litCharacters[1].firstName +" "+ obj.litCharacters[1].lastName;
-	</script>
-
-
-
-
-
+    var obj = JSON.parse(text);
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML =
+        obj.litCharacters[1].firstName +" "+ obj.litCharacters[1].lastName;
+    </script>
