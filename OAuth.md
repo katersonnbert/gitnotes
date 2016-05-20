@@ -5,7 +5,8 @@ OAuth 2
 
 ## Primary concepts
 
-- TOFU ... trust on first use ... user has to make the decision once to allow a client to act on his behalf for a certain action. after this first grant, the client can act w/o asking the client again. 
+- TOFU ... trust on first use ... user has to make the decision once to allow a client to act on his behalf 
+for a certain action. after this first grant, the client can act w/o asking the client again. 
 
 ## Primary actors
 
@@ -16,7 +17,7 @@ OAuth 2
 
 ## Primary workflow
 
-- C wants to gain access to a resource using a C
+- RO wants to gain access to a resource using a C
 - C requests authorization from RO
 - RO grants authorization to C
 - C sends authorization grant to AS
