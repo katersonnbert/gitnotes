@@ -30,12 +30,12 @@ unused import. To still allow this import, the following code can be used.
 - The types of function arguments are defined AFTER the name of the argument.
 
         func add(x int, y int) int {
-            return y + x	
+            return y + x
         }
 
 - Functions can return multiple values.
 - Return values of functions can be ignored using `_`.
-	
+
         func swap(fst string, snd string) (string, string) {
             return snd, fst
         }
@@ -47,7 +47,7 @@ unused import. To still allow this import, the following code can be used.
             c, _ := swap("Ignored", "I shall be")
             fmt.Println(c, "a king")
         }
-	
+
 - Functions can be passed to other functions as arguments and values.
 
         func compute(fn func(float64, float64) float64) float64 {
@@ -78,7 +78,7 @@ each time the variable that the anonymous function has been assigned to is acces
                 return i
             }
         }
-    
+
         func main() {
             nextInt := intSeq()
             fmt.Println(nextInt())
@@ -104,9 +104,9 @@ each time the variable that the anonymous function has been assigned to is acces
 (e.g. bool: false, byte, int, float, etc: 0, string: "") - and not with null/nil.
 - Inside a function the variable declaration can be shortened by using the short assignment `:=` with implicit type.
 
-        fancyPants := "The fairy queen short assignes fancy pants which are made of"
+        fancyPants := "The fairy queen short assigns fancy pants which are made of"
         fmt.Println(fancyPants, reflect.TypeOf(fancyPants))
-        fancyPants := "The fairy queen short assignes fancy pants which are made of reassigned"
+        fancyPants = "The fairy queen short assigns fancy pants which are made of reassigned"
         fmt.Println(fancyPants, reflect.TypeOf(fancyPants))
 
 
@@ -114,14 +114,15 @@ each time the variable that the anonymous function has been assigned to is acces
 - Constants are declared like variables using the keyword `const`.
 - Constants can only be initialized at the point of their declaration, but can take advantage of type inference.
 
-    	const epicPants string = "Her epic pants on the other hand are very constant"
+        const epicPants string = "Her epic pants on the other hand are very constant"
         fmt.Println(epicPants)
         const epicShirt = "As is her epic shirt, which interestingly is also made of inferred"
         fmt.Println(epicShirt, reflect.TypeOf(epicShirt))
     
         const intern = 10
         const lowFloat = 1.2
-        fmt.Println("Meanwhile the", reflect.TypeOf(intern), "does not even know its inferred", reflect.TypeOf(lowFloat), "value")
+        fmt.Println("Meanwhile the", reflect.TypeOf(intern), "does not even know its inferred", 
+                        reflect.TypeOf(lowFloat), "value")
 
 
 # Basic types
@@ -144,7 +145,7 @@ each time the variable that the anonymous function has been assigned to is acces
 - Since a string is a slice of bytes, the individual bytes of a string can be accessed by index.
         e.g. `sampleString[0]` yields the byte of string *sampleString* at index 0.
 - Every string literal always holds valid UTF-8 sequences.
-- These sequences are called runes (not characters, since they hold bytes).
+- These sequences are called runes (not chars, since they hold bytes).
 
 
 # Type conversion
