@@ -373,6 +373,11 @@ From [here](https://help.github.com/articles/adding-an-existing-project-to-githu
 
 - have a cup of tea
 
+# Discard changes from unstaged files
+
+        git checkout [file_name]
+
+Read details [here](http://stackoverflow.com/questions/22620393/various-ways-to-remove-local-git-changes)
 
 # Undo / remove last commit:
 Read details [here](http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit)
