@@ -306,16 +306,25 @@ Activator
 
 
 Install and setup everything required to build bootstrap
-- nodejs and npm (required for bootstrap and jekyll), run from ~$
-    sudo apt-get install nodejs nodejs-dev npm node-less
-//NOTE: NEVER USE THE FOLLOWING COMMAND IT WILL BREAK NPM! (if not run from ~$ if I read correctly but who knows)
-    sudo npm install npm -g
 - get ruby(required for jekyll), jekyll and rouge (both required for grunt)
     sudo apt-get install ruby ruby-dev make gcc
     sudo gem install jekyll
     sudo gem install rouge
+- get latest version of npm from [here](https://nodejs.org/)
+- Create version independent link; add version independent link to $HOME/.profile
+(don't forget to ```source``` afterwards), e.g.:
+
+        if [ -d "$HOME/work/software/nodejs" ] ; then
+            PATH="$PATH:$HOME/work/software/nodejs/bin"
+        fi
+- //NOTE: NEVER EVER USE THE FOLLOWING COMMAND IT WILL BREAK NPM! (if not run from ~$ if I read correctly but who knows)
+      sudo npm install npm -g
 - get grunt (required for bootstrap)
     sudo npm install -g grunt-cli
+
+- if required, install the following:
+    sudo apt-get install nodejs nodejs-dev node-less
+
 
 
 Install Virtual box
@@ -335,9 +344,6 @@ Install LaTex and additional fonts
 Install Gedit latex plugins
     sudo apt-get install gedit-latex-plugin
 
-
-Install IRC Chat with empathy (but probably skip this, empathy sucks)
-    sudo apt-get install account-plugin-irc
 
 Install XChat
     sudo apt-get install xchat
@@ -528,12 +534,6 @@ clone and build nixpy
 
 
 
-empathy: rooms, join, gnode
-
-
-
-
-
 Win:
     notepad++
     chocolatey
@@ -555,3 +555,11 @@ install github for windows
 
 dl protege
 dl hdfview -> extract -> change paths in bin/hdfview.bat
+
+
+old stuff:
+Install IRC Chat with empathy (but probably skip this, empathy sucks)
+    sudo apt-get install account-plugin-irc
+
+empathy: rooms, join, gnode
+
