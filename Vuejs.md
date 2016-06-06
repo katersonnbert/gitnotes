@@ -21,3 +21,27 @@ if there still is a result e.g. in /usr/local/lib or /usr/local/bin, unlink thes
 - Install npm dependencies in main folder ```npm install```. This will add all dependencies
 specified in "package.json" to the node_modules folder.
 - Start local application using ```npm run dev```
+
+## Structure of a vue file
+- \<style> block: additional styles specific for the current page.
+- \<template> block: contains the structure of a page using HTML elements; these can contain css attributes
+as well as vue specific attribute to dynamically include data. Elements can be bound to different views using v-bind.
+- \<script> block: contains imports of further views and bindings to data. only parts within ```export``` or
+```export default``` can be accessed outside of the file.
+
+
+- export blocks can contain functions like e.g. ```data()```, ```methods```, ```events```, ```props```, ```mixins```
+- ```props``` can be used to share bound data between various views (using ```twoway: true```)
+
+## Project structure
+
+#### main folder: package.json
+- Contains all required packages and dependencies
+
+#### main folder: webpack.config.js
+- defines which modules to load and with which settings and how and where the actually created javascript file
+will be put. can specify different settings when creating the output javascript files. e.g. settings for png limit
+can specify up to which file size images should be encoded with base64 rather than providing a link to an image.
+
+#### src.App.vue
+- Main entry point to the App.
