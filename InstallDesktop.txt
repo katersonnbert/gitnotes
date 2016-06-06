@@ -15,37 +15,37 @@ Folders can be easily added to the beginning and the the end of the variable - d
 
 Example:
 In folder ~ (absolute /home/[username] in our example)
-	~$ mkdir bin
+    ~$ mkdir bin
 
 Check if path has been automatically added by linux:
-	~$ cat $PATH
+    ~$ cat $PATH
 
 If not, then execute the following to recompile the .profile file:
-	~$ source .profile
+    ~$ source .profile
 
 Check path again
-	~$ cat $PATH
+    ~$ cat $PATH
 
 If its still not in there, then add it manually to the beginning of the PATH:
-	~$ export PATH=/home/[user]/bin:$PATH
+    ~$ export PATH=/home/[user]/bin:$PATH
 
 
 Create symbolic links to executables in custom bin folder. As example add startup shell script of application activator
 can be used to easily switch between different distributions of the same application
-	~$ cd bin
-	~/bin$ ln -s /home/[user]/work/software/activator-1.2.12/activator activator
+    ~$ cd bin
+    ~/bin$ ln -s /home/[user]/work/software/activator-1.2.12/activator activator
 
 
 Adding an application to the quick launcher bar:
 - create file [name of application].desktop somewhere, open it with an editor, add at least the following:
-	[Desktop Entry]
-	Type=Application
-	Name=[Name of application]
-	Comment=[Comment]
-	Icon=[path to icon]
-	Exec=[path to shell script]
-	Terminal=false
-	Categories=[Linux application categories e.g. Development;IDE;Java;]
+    [Desktop Entry]
+    Type=Application
+    Name=[Name of application]
+    Comment=[Comment]
+    Icon=[path to icon]
+    Exec=[path to shell script]
+    Terminal=false
+    Categories=[Linux application categories e.g. Development;IDE;Java;]
 - DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
 - DO NOT USE QUOTES WHEN SETTING THE ICON PATH
 - move the created .desktop file to hidden folder ~/.local/share/applications
@@ -68,29 +68,29 @@ Setting up new Linux Ubuntu computer
 - Install Ubuntu 14.04. LTE
 - Update Ubuntu (software center)
 - create folders
-	bin
-	chaos
-	chaos/dl
-	chaos/resources
-	work
-	software
+    bin
+    chaos
+    chaos/dl
+    chaos/resources
+    work
+    software
 
 
 
 Install Oracle Java 8
-	http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/
-	or
-	http://wiki.jetbrains.net/intellij/Installing_and_running_IntelliJ_IDEA_on_Ubuntu
+        http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/
+    or
+        http://wiki.jetbrains.net/intellij/Installing_and_running_IntelliJ_IDEA_on_Ubuntu
 
-	sudo add-apt-repository ppa:webupd8team/java
-	sudo apt-get update
-	sudo apt-get install oracle-java8-installer
+    sudo add-apt-repository ppa:webupd8team/java
+    sudo apt-get update
+    sudo apt-get install oracle-java8-installer
 
 - check java version
-	java -version
+    java -version
 
 - set up java environment
-	sudo apt-get install oracle-java8-set-default
+    sudo apt-get install oracle-java8-set-default
 
 
 Firefox
@@ -113,31 +113,31 @@ use software center, copy .desktop from /opt/JavaFXSceneBuilder2.0/ folder
 
 
 Install Vim
-	sudo apt-get install vim
+    sudo apt-get install vim
 
 Install HDFView
-	sudo apt-get install hdfview
+    sudo apt-get install hdfview
 
 Install nixio dependencies:
 Install gcc build dependencies
-	sudo apt-get libhdf5-serial-dev libhdf5-7 libcppunit-dev cmake build-essential
+    sudo apt-get libhdf5-serial-dev libhdf5-7 libcppunit-dev cmake build-essential
 
 Install libboost dependencies
-	sudo apt-get install libboost-all-dev
+    sudo apt-get install libboost-all-dev
 
 Install cpp-libyaml
     sudo apt-get install libyaml-cpp-dev
 
 
 Install cython for python and python3
-	sudo apt-get cython cython3
+    sudo apt-get cython cython3
 
 Install python libraries
-	sudo apt-get install python-dev python-setuptools python-numpy python-sphinx python-h5py python-matplotlib python-scipy python-rdflib python-magic
-	sudo apt-get install python3-dev python3-setuptools python3-numpy python3-sphinx python3-matplotlib python3-h5py python3-scipy python3-yaml
+    sudo apt-get install python-dev python-setuptools python-numpy python-sphinx python-h5py python-matplotlib python-scipy python-rdflib python-magic
+    sudo apt-get install python3-dev python3-setuptools python3-numpy python3-sphinx python3-matplotlib python3-h5py python3-scipy python3-yaml
 
 Install python library installation tool
-	sudo apt-get install python-pip python-pip3
+    sudo apt-get install python-pip python-pip3
 
 Upgrade pip in case it was already installed
     sudo pip install --upgrade pip
@@ -147,7 +147,7 @@ Install additional pyhton packages
     sudo pip3 install quantities coveralls cpp-coveralls mock
 
 Install python packages (futures for python 2to3, alabaster for documentation)
-	sudo pip install future alabaster
+    sudo pip install future alabaster
 
 
 Install neo dependencies
@@ -161,31 +161,29 @@ Install neo dependencies
 # Problem was: 
 
 Install ipython and ipython notebook
-	sudo apt-get install ipython ipython-notebook
+    sudo apt-get install ipython ipython-notebook
 
 Upgrade ipython notebook to jupyter
-	sudo pip install -U jupyter
+    sudo pip install -U jupyter
 
 
 If something does not work with the jupyter notebook, check this first for troubleshooting:
 http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
-
-	
 
 Setup ssh-keys:
 (copy folder ~/.ssh, makes it easier plus keeps old keys, otherwise:)
 (also checkout howTo create file for telling which key should be used where)
 
 create .ssh folder in ~ folder
-	mkdir .ssh
+    mkdir .ssh
 set folder properties
-	chmod go-rwx -R .ssh
+    chmod go-rwx -R .ssh
 create new general key
-	cd .ssh
-	ssh-keygen
-	//say yes to everything, no pw
+    cd .ssh
+    ssh-keygen
+    //say yes to everything, no pw
 create new github key
-	ssh-keygen
+    ssh-keygen
 call key "id_rsa_github"
 
 
@@ -194,54 +192,54 @@ Install curl
 
 
 Install Maven
-	sudo apt-get install maven
+    sudo apt-get install maven
 
 
 Install and setup Git
 -dl and install git (http://git-scm.com/)
-	sudo apt-get install git
+    sudo apt-get install git
 - check if ~/.gitconfig exists, create file otherwise
 - copy the following to file ~/.gitconfig
 
-			[user]
-				name = M. Sonntag
-				email = michael.p.sonntag@gmail.com
-			[color]
-				ui = auto
-				branch = auto
-				diff = auto
-				interactive = auto
-				status = auto
-			[branch "master"]
-				remote = origin
-				merge = refs/heads/master
-			[core]
-				editor = gedit
-				autocrlf = input
-				whitespace = trailing-space
-			[alias]
-				st = status
-				ci = commit
-				co = checkout
-				br = branch
-				me = merge
-			[push]
-				default = matching
+        [user]
+            name = M. Sonntag
+            email = michael.p.sonntag@gmail.com
+        [color]
+            ui = auto
+            branch = auto
+            diff = auto
+            interactive = auto
+            status = auto
+        [branch "master"]
+            remote = origin
+            merge = refs/heads/master
+        [core]
+            editor = gedit
+            autocrlf = input
+            whitespace = trailing-space
+        [alias]
+            st = status
+            ci = commit
+            co = checkout
+            br = branch
+            me = merge
+        [push]
+            default = matching
 
 - open ~/.bashrc (ctrl-h in file browser to show hidden files)
 - add the following to the end of the file
 
-			# Git state
-			function parse_git_dirty {
-			[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-			}
-			function parse_git_branch {
-			git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
-			}
-			export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+        # Git state
+        function parse_git_dirty {
+        [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+        }
+        function parse_git_branch {
+        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+        }
+        export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
 - if required: setup github with new ssh key.
-	cat id_rsa_github.pub
+    cat id_rsa_github.pub
 - prints public key, copy everything
 - log in to github/settings/ssh keys/add key/ paste public key
 
@@ -252,54 +250,54 @@ Install Idea 13 ultimate
 
 - modify Idea settings using Java G_Node.xml file from adrian
 - create file idea.desktop in ~./local/share/applications with content:
-	[Desktop Entry]
-	Type=Application
-	Name=IntelliJ IDEA
-	Comment=Integrated Development Environment (Version 13.1 EAP)
-	Icon=/home/[path]/idea-IU-135.1289/bin/idea.png
-	Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
-	Terminal=false
-	Categories=Development;IDE;Java;
+    [Desktop Entry]
+    Type=Application
+    Name=IntelliJ IDEA
+    Comment=Integrated Development Environment (Version 13.1 EAP)
+    Icon=/home/[path]/idea-IU-135.1289/bin/idea.png
+    Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
+    Terminal=false
+    Categories=Development;IDE;Java;
 - set up git as version control tool in idea
 
 
 Install tree commandline programm (prints file structure tree from the current directory)
-	sudo apt-get install tree
+    sudo apt-get install tree
 
 
 Install Gedit
-	sudo apt-get install gedit
+    sudo apt-get install gedit
 
 Install Terminator terminal
-	sudo apt-get install terminator
+    sudo apt-get install terminator
 
 Setup terminator config file
-	cd ~/.config/
-	mkdir terminator
-	cd terminator
-	gedit config
+    cd ~/.config/
+    mkdir terminator
+    cd terminator
+    gedit config
 
-	add the following:
-	[global_config]
-	  title_transmit_bg_color = "#562946"
-	  title_inactive_bg_color = "#2f0922"
-	[keybindings]
-	[profiles]
-	  [[default]]
-		use_system_font = False
-		borderless = true
-		font = Monospace 12
-		background_color = "#2f0922"
-		foreground_color = "#ffffff"
-	[layouts]
-	  [[default]]
-		[[[child1]]]
-		  type = Terminal
-		  parent = window0
-		[[[window0]]]
-		  type = Window
-		  parent = ""
-	[plugins]
+    add the following:
+    [global_config]
+      title_transmit_bg_color = "#562946"
+      title_inactive_bg_color = "#2f0922"
+    [keybindings]
+    [profiles]
+      [[default]]
+        use_system_font = False
+        borderless = true
+        font = Monospace 12
+        background_color = "#2f0922"
+        foreground_color = "#ffffff"
+    [layouts]
+      [[default]]
+        [[[child1]]]
+          type = Terminal
+          parent = window0
+        [[[window0]]]
+          type = Window
+          parent = ""
+    [plugins]
 
 
 Activator
@@ -309,106 +307,105 @@ Activator
 
 Install and setup everything required to build bootstrap
 - nodejs and npm (required for bootstrap and jekyll), run from ~$
-	sudo apt-get install nodejs nodejs-dev npm node-less
+    sudo apt-get install nodejs nodejs-dev npm node-less
 //NOTE: NEVER USE THE FOLLOWING COMMAND IT WILL BREAK NPM! (if not run from ~$ if I read correctly but who knows)
-	sudo npm install npm -g
+    sudo npm install npm -g
 - get ruby(required for jekyll), jekyll and rouge (both required for grunt)
-	sudo apt-get install ruby ruby-dev make gcc
-	sudo gem install jekyll
-	sudo gem install rouge
+    sudo apt-get install ruby ruby-dev make gcc
+    sudo gem install jekyll
+    sudo gem install rouge
 - get grunt (required for bootstrap)
-	sudo npm install -g grunt-cli
+    sudo npm install -g grunt-cli
 
 
 Install Virtual box
-	sudo apt-get install virtualbox virtualbox-dkms
+    sudo apt-get install virtualbox virtualbox-dkms
 
 DL and Install the latest Pycharm IDE from Intellij
-	add shortcut to application bar from 
-	./local/share/applications/
+    add shortcut to application bar from
+    ./local/share/applications/
 
 
 Install LaTex and additional fonts
-	sudo apt-get install texlive-full texlive texlive-doc-de texlive-latex-extra texlive-fonts-extra
-	// update installed stuff (fonts, etc) for latex
-	sudo texhash
+    sudo apt-get install texlive-full texlive texlive-doc-de texlive-latex-extra texlive-fonts-extra
+    // update installed stuff (fonts, etc) for latex
+    sudo texhash
 
 
 Install Gedit latex plugins
-	sudo apt-get install gedit-latex-plugin
+    sudo apt-get install gedit-latex-plugin
 
 
 Install IRC Chat with empathy (but probably skip this, empathy sucks)
-	sudo apt-get install account-plugin-irc
+    sudo apt-get install account-plugin-irc
 
 Install XChat
-	sudo apt-get install xchat
+    sudo apt-get install xchat
 
 #gnode@freenode
 #ccc@blafasel
 
 
 Install Postgres
-	sudo apt-get install postgresql
+    sudo apt-get install postgresql
 
 
 Install VLC
-	sudo apt-get install vlc
+    sudo apt-get install vlc
 
 
 Install Chromium
-	sudo apt-get install chromium-browser
+    sudo apt-get install chromium-browser
 
 Install Go
 - download latest zip from golang.org
 - install according to golang.org/doc/install
 - unpack to directory of choice e.g. /usr/local or in our case $HOME/work/software
-	tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
+    tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
 - in case of /usr/local installation add to /etc/profile
-	export PATH=$PATH:/usr/local/go/bin
+    export PATH=$PATH:/usr/local/go/bin
 - in case of custom path installation add to $HOME/.profile ... GOPATH is an additional directory, where go looks for installed packages
-	export GOPATH=$HOME/work/software/go-packages
-	export GOROOT=$HOME/work/software/go
-	export PATH=$PATH:$GOROOT/bin
-	export PATH=$PATH:$GOPATH/bin
+    export GOPATH=$HOME/work/software/go-packages
+    export GOROOT=$HOME/work/software/go
+    export PATH=$PATH:$GOROOT/bin
+    export PATH=$PATH:$GOPATH/bin
 - re-load $PATH
-	source $HOME/.profile
-
+    source $HOME/.profile
 
 DL and install Visual Studio Code
 - Download latest visual studio code
 - Unpack it to directory of choice e.g. $HOME/work/software
 - Add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
-	gedit $HOME/VSCode.desktop &
+    gedit $HOME/VSCode.desktop &
 - add following statements to file, change where required:
-	[Desktop Entry]
-	Version=1.6
-	Type=Application
-	Name=Visual Studio Code
-	Icon=/home/msonntag/work/software/VSCode-linux-x64/resources/app/resources/linux/code.png
-	Exec="/home/msonntag/work/software/VSCode-linux-x64/code"
-	Categories=Development;IDE;
-	Terminal=false
+    [Desktop Entry]
+    Version=1.6
+    Type=Application
+    Name=Visual Studio Code
+    Icon=/home/msonntag/work/software/VSCode-linux-x64/resources/app/resources/linux/code.png
+    Exec="/home/msonntag/work/software/VSCode-linux-x64/code"
+    Categories=Development;IDE;
+    Terminal=false
 
 - move file to hidden folder
-	sudo mv $HOME/VSCode.desktop $HOME/.local/share/applications/VSCode.desktop
+    sudo mv $HOME/VSCode.desktop $HOME/.local/share/applications/VSCode.desktop
 
 - start, install add ons by F1 ... ext inst ... select add on
 -- install go, PowerShell, markdown linter
 
 - on the commandline install all recommended go-tools according to https://marketplace.visualstudio.com/items?itemName=lukehoban.Go
-	go get -u -v github.com/nsf/gocode
-	go get -u -v github.com/rogpeppe/godef
-	go get -u -v github.com/golang/lint/golint
-	go get -u -v github.com/lukehoban/go-find-references
-	go get -u -v github.com/lukehoban/go-outline
-	go get -u -v sourcegraph.com/sqs/goreturns
-	go get -u -v golang.org/x/tools/cmd/gorename
-	go get -u -v github.com/tpng/gopkgs
-	go get -u -v github.com/newhook/go-symbols
-	go get github.com/derekparker/delve/cmd/dlv
-	echo $GOPATH
+    go get -u -v github.com/nsf/gocode
+    go get -u -v github.com/rogpeppe/godef
+    go get -u -v github.com/golang/lint/golint
+    go get -u -v github.com/lukehoban/go-find-references
+    go get -u -v github.com/lukehoban/go-outline
+    go get -u -v sourcegraph.com/sqs/goreturns
+    go get -u -v golang.org/x/tools/cmd/gorename
+    go get -u -v github.com/tpng/gopkgs
+    go get -u -v github.com/newhook/go-symbols
+    go get github.com/derekparker/delve/cmd/dlv
+    echo $GOPATH
 
 Install the following Go packages at the $GOPATH folder:
     go get -tags "nomymysql nomysql nosqlite3" github.com/CloudCom/goose/cmd/goose
@@ -431,31 +428,31 @@ DL and install Protege
 add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
-		[Desktop Entry]
-		Version=5.0
-		Type=Application
-		Name=Protege
-		Exec="/home/msonntag/work/software/protege/Protege_5.0_beta/run.sh"
-		Categories=Development;IDE;
-		Terminal=false
+        [Desktop Entry]
+        Version=5.0
+        Type=Application
+        Name=Protege
+        Exec="/home/msonntag/work/software/protege/Protege_5.0_beta/run.sh"
+        Categories=Development;IDE;
+        Terminal=false
 
 DL and install Intellij PyCharm
 add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
-		[Desktop Entry]
-		Version=1.0
-		Type=Application
-		Name=PyCharm Community Edition
-		Icon=/home/[path]/pycharm-community-4.5.1/bin/pycharm.png
-		Exec="/home/[path]/pycharm-community-4.5.1/bin/pycharm.sh" %f
-		Comment=Develop with pleasure!
-		Categories=Development;IDE;
-		Terminal=false
-		StartupWMClass=jetbrains-pycharm-ce
+        [Desktop Entry]
+        Version=1.0
+        Type=Application
+        Name=PyCharm Community Edition
+        Icon=/home/[path]/pycharm-community-4.5.1/bin/pycharm.png
+        Exec="/home/[path]/pycharm-community-4.5.1/bin/pycharm.sh" %f
+        Comment=Develop with pleasure!
+        Categories=Development;IDE;
+        Terminal=false
+        StartupWMClass=jetbrains-pycharm-ce
 
 - change shortcut for closing subwindow to ctrl+w (settings, keymap, search for close tab)
-	https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html
+    https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html
 
 
 
@@ -488,26 +485,26 @@ clone and build nix
 - move to folder which will contain the nix files
 - clone files from github to local repository
 - set up required folders for build
-	cd nix
-	mkdir build
-	cd build
+    cd nix
+    mkdir build
+    cd build
 - set up build for nix
-	cmake ..
-	make -j 4 all
+    cmake ..
+    make -j 4 all
 - set up test
-	./TestRunner
+    ./TestRunner
 - run test, should complete without fail
-	ctest
+    ctest
 - build and install nix
-	sudo make install
+    sudo make install
 
 - set up local git repositories (if required!)
-	cd ..
+    cd ..
 - check recognised remotes first:
-	git remote -v	
+    git remote -v
 - add upstream if required
-	git remote add upstream git@github.com:G-Node/nix
-	git fetch --all
+    git remote add upstream git@github.com:G-Node/nix
+    git fetch --all
 
 
 clone and build nixpy
@@ -515,19 +512,19 @@ clone and build nixpy
 - clone files from github to local repository
 - set up local repositories (if required)
 - check recognised remotes first:
-	git remote -v
+    git remote -v
 - add upstream if required
-	git remote add upstream git@github.com:G-Node/nixpy
-	git fetch --all
+    git remote add upstream git@github.com:G-Node/nixpy
+    git fetch --all
 
 - setup nixpy
 - check existing libraries
-	pkg-config --libs --cflags nix
+    pkg-config --libs --cflags nix
 - setup nixpy:
-	python setup.py build
+    python setup.py build
 - manually remove all .egg folders and files
 - setup documentation
-	python setup.py build_sphinx
+    python setup.py build_sphinx
 
 
 
@@ -538,19 +535,19 @@ empathy: rooms, join, gnode
 
 
 Win:
-	notepad++
-	chocolatey
-	putty
-	winscp
-	java JDK
-	python jdk
-	git
-	maven
-	idea community
-	idea pycharm
+    notepad++
+    chocolatey
+    putty
+    winscp
+    java JDK
+    python jdk
+    git
+    maven
+    idea community
+    idea pycharm
 
 Add python to path variable
-(ctrl+x -> Systemsteuerung -> System -> erweiterte einstellungen -> umgebungsvariablen -> add to path variable)
+(ctrl+x -> Systemsteuerung -> System -> Erweiterte Einstellungen -> Umgebungsvariablen -> add to path variable)
 install numpy (python -m pip install numpy)
 install scipy (python -m pip install scipy)
 
