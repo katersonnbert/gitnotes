@@ -1,6 +1,6 @@
 NOTE: Good to know under debian/ubuntu:
 when using apt-get make sure the local package index is up to date:
-sudo apt-get update
+        sudo apt-get update
 
 NOTE: First of all good to know under Linux:
 $HOME ... contains absolute path to the home folder
@@ -38,14 +38,14 @@ can be used to easily switch between different distributions of the same applica
 
 Adding an application to the quick launcher bar:
 - create file [name of application].desktop somewhere, open it with an editor, add at least the following:
-    [Desktop Entry]
-    Type=Application
-    Name=[Name of application]
-    Comment=[Comment]
-    Icon=[path to icon]
-    Exec=[path to shell script]
-    Terminal=false
-    Categories=[Linux application categories e.g. Development;IDE;Java;]
+        [Desktop Entry]
+        Type=Application
+        Name=[Name of application]
+        Comment=[Comment]
+        Icon=[path to icon]
+        Exec=[path to shell script]
+        Terminal=false
+        Categories=[Linux application categories e.g. Development;IDE;Java;]
 - DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
 - DO NOT USE QUOTES WHEN SETTING THE ICON PATH
 - move the created .desktop file to hidden folder ~/.local/share/applications
@@ -105,13 +105,6 @@ firefox addons:
 - Print pages to Pdf
 
 
-JavaFX Scene Builder
-http://www.oracle.com/technetwork/java/javase/downloads/sb2download-2177776.html
-
-use software center, copy .desktop from /opt/JavaFXSceneBuilder2.0/ folder
-
-
-
 Install Vim
     sudo apt-get install vim
 
@@ -161,7 +154,7 @@ Install neo dependencies
 # Problem was: 
 
 Install ipython and ipython notebook
-    sudo apt-get install ipython ipython-notebook
+    sudo apt-get install ipython ipython-notebook ipython3 ipython3-notebook
 
 Upgrade ipython notebook to jupyter
     sudo pip install -U jupyter
@@ -169,6 +162,7 @@ Upgrade ipython notebook to jupyter
 
 If something does not work with the jupyter notebook, check this first for troubleshooting:
 http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
+
 
 Setup ssh-keys:
 (copy folder ~/.ssh, makes it easier plus keeps old keys, otherwise:)
@@ -244,29 +238,13 @@ Install and setup Git
 - log in to github/settings/ssh keys/add key/ paste public key
 
 
-Install Idea 13 ultimate
-- DL Idea 13 ultimate
-- install Idea 13 in folder programs using university license key
-
-- modify Idea settings using Java G_Node.xml file from adrian
-- create file idea.desktop in ~./local/share/applications with content:
-    [Desktop Entry]
-    Type=Application
-    Name=IntelliJ IDEA
-    Comment=Integrated Development Environment (Version 13.1 EAP)
-    Icon=/home/[path]/idea-IU-135.1289/bin/idea.png
-    Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
-    Terminal=false
-    Categories=Development;IDE;Java;
-- set up git as version control tool in idea
-
-
 Install tree commandline programm (prints file structure tree from the current directory)
     sudo apt-get install tree
 
 
 Install Gedit
     sudo apt-get install gedit
+
 
 Install Terminator terminal
     sudo apt-get install terminator
@@ -301,8 +279,8 @@ Setup terminator config file
 
 
 Activator
-- DL from homepage https://typesafe.com/get-started
-- follow install instructions at https://www.playframework.com/documentation
+- DL from [homepage](https://typesafe.com/get-started).
+- follow [install instructions](https://www.playframework.com/documentation).
 
 
 Install and setup everything required to build bootstrap
@@ -328,28 +306,14 @@ Install and setup everything required to build bootstrap
 
 
 Install Virtual box
-    sudo apt-get install virtualbox virtualbox-dkms
-
-DL and Install the latest Pycharm IDE from Intellij
-    add shortcut to application bar from
-    ./local/share/applications/
-
-
-Install LaTex and additional fonts
-    sudo apt-get install texlive-full texlive texlive-doc-de texlive-latex-extra texlive-fonts-extra
-    // update installed stuff (fonts, etc) for latex
-    sudo texhash
-
-
-Install Gedit latex plugins
-    sudo apt-get install gedit-latex-plugin
+        sudo apt-get install virtualbox virtualbox-dkms
 
 
 Install XChat
-    sudo apt-get install xchat
+    #gnode@freenode
+    #ccc@blafasel
 
-#gnode@freenode
-#ccc@blafasel
+        sudo apt-get install xchat
 
 
 Install Postgres
@@ -362,6 +326,7 @@ Install VLC
 
 Install Chromium
     sudo apt-get install chromium-browser
+
 
 Install Go
 - download latest zip from golang.org
@@ -430,6 +395,7 @@ Install the following Go packages at the $GOPATH folder:
     go get golang.org/x/crypto/bcrypt
     go get github.com/docopt/docopt-go
 
+
 DL and install Protege
 add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
@@ -442,7 +408,18 @@ add Launcher:
         Categories=Development;IDE;
         Terminal=false
 
-DL and install Intellij PyCharm
+
+DL and install the latest Intellij IDEA Ultimate
+add Launcher:
+- create .desktop file in hidden ~/.local/share/applications folder
+- add following statements to file, change where required:
+
+DL and install the latest Intellij IDEA Community
+add Launcher:
+- create .desktop file in hidden ~/.local/share/applications folder
+- add following statements to file, change where required:
+
+DL and install Intellij PyCharm Community
 add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
@@ -459,8 +436,6 @@ add Launcher:
 
 - change shortcut for closing subwindow to ctrl+w (settings, keymap, search for close tab)
     https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html
-
-
 
 
 Resources:
@@ -485,52 +460,52 @@ printer setup (hp p2015):
 
 
 
-clone all forks from github
+Clone all forks from github
 
-clone and build nix
+Clone and build NIX
 - move to folder which will contain the nix files
 - clone files from github to local repository
 - set up required folders for build
-    cd nix
-    mkdir build
-    cd build
+        cd nix
+        mkdir build
+        cd build
 - set up build for nix
-    cmake ..
-    make -j 4 all
+        cmake ..
+        make -j 4 all
 - set up test
-    ./TestRunner
+        ./TestRunner
 - run test, should complete without fail
-    ctest
+        ctest
 - build and install nix
-    sudo make install
+        sudo make install
 
 - set up local git repositories (if required!)
-    cd ..
+        cd ..
 - check recognised remotes first:
-    git remote -v
+        git remote -v
 - add upstream if required
-    git remote add upstream git@github.com:G-Node/nix
-    git fetch --all
+        git remote add upstream git@github.com:G-Node/nix
+        git fetch --all
 
 
-clone and build nixpy
+Clone and build nixpy
 - move to folder where nixpy should be imported
 - clone files from github to local repository
 - set up local repositories (if required)
 - check recognised remotes first:
-    git remote -v
+        git remote -v
 - add upstream if required
-    git remote add upstream git@github.com:G-Node/nixpy
-    git fetch --all
+        git remote add upstream git@github.com:G-Node/nixpy
+        git fetch --all
 
 - setup nixpy
 - check existing libraries
-    pkg-config --libs --cflags nix
+        pkg-config --libs --cflags nix
 - setup nixpy:
-    python setup.py build
+        python setup.py build
 - manually remove all .egg folders and files
 - setup documentation
-    python setup.py build_sphinx
+        python setup.py build_sphinx
 
 
 
@@ -557,9 +532,39 @@ dl protege
 dl hdfview -> extract -> change paths in bin/hdfview.bat
 
 
-old stuff:
+# Old stuff:
 Install IRC Chat with empathy (but probably skip this, empathy sucks)
-    sudo apt-get install account-plugin-irc
+
+        sudo apt-get install account-plugin-irc
 
 empathy: rooms, join, gnode
 
+
+Install LaTex and additional fonts
+
+        sudo apt-get install texlive-full texlive texlive-doc-de texlive-latex-extra texlive-fonts-extra
+        // update installed stuff (fonts, etc) for latex
+        sudo texhash
+
+
+Install Gedit latex plugins
+    sudo apt-get install gedit-latex-plugin
+
+JavaFX Scene Builder
+- use software center, copy .desktop from /opt/JavaFXSceneBuilder2.0/ folder
+- or get it from [here](http://www.oracle.com/technetwork/java/javase/downloads/sb2download-2177776.html).
+
+Install Idea 13 ultimate
+- DL Idea 13 ultimate
+- install Idea 13 in folder programs using university license key
+- modify Idea settings using Java G_Node.xml file from adrian
+- create file idea.desktop in ~./local/share/applications with content:
+    [Desktop Entry]
+    Type=Application
+    Name=IntelliJ IDEA
+    Comment=Integrated Development Environment (Version 13.1 EAP)
+    Icon=/home/[path]/idea-IU-135.1289/bin/idea.png
+    Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
+    Terminal=false
+    Categories=Development;IDE;Java;
+- set up git as version control tool in idea
