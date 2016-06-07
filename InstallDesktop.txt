@@ -116,7 +116,7 @@ firefox addons:
 
 Install Chromium
     sudo apt-get install chromium-browser
-
+- open chromium from terminal, lock to launcher
 
 Install Vim
     sudo apt-get install vim
@@ -128,7 +128,8 @@ Install HDFView
 
 Install nixio dependencies:
 Install gcc build dependencies
-    sudo apt-get libhdf5-serial-dev libhdf5-7 libcppunit-dev cmake build-essential
+    sudo apt-get install libhdf5-serial-dev libcppunit-dev cmake build-essential
+    #sudo apt-get install libhdf5-7 #does not work
 
 Install libboost dependencies
     sudo apt-get install libboost-all-dev
@@ -138,7 +139,7 @@ Install cpp-libyaml
 
 
 Install cython for python and python3
-    sudo apt-get cython cython3
+    sudo apt-get install cython cython3
 
 Install python libraries
     sudo apt-get install python-dev python-setuptools python-numpy python-sphinx python-h5py python-matplotlib python-scipy python-rdflib python-magic
@@ -260,6 +261,10 @@ Install tree commandline programm (prints file structure tree from the current d
 Install Gedit
     sudo apt-get install gedit
 
+- change gedit settings
+	Edit -> Preferences -> View ... Display line numbers
+	Edit -> Preferences -> Font & Colors -> Oblivion
+
 
 Install Terminator terminal
     sudo apt-get install terminator
@@ -291,6 +296,7 @@ Setup terminator config file
           type = Window
           parent = ""
     [plugins]
+- open terminator from terminal, lock to launcher
 
 
 Activator
@@ -321,14 +327,14 @@ Install and setup everything required to build bootstrap
 
 
 Install Virtual box
-        sudo apt-get install virtualbox virtualbox-dkms
+    sudo apt-get install virtualbox virtualbox-dkms
 
 
-Install XChat
+Install IRC client
     #gnode@freenode
     #ccc@blafasel
 
-        sudo apt-get install xchat
+    # sudo apt-get install xchat # does only work up to ubuntu 14
 
 
 Install Postgres
