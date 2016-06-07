@@ -1,3 +1,5 @@
+IMPORTANT NOTE: before new install do a thorough backup! especially config files & ssh keys!
+
 NOTE: Good to know under debian/ubuntu:
 when using apt-get make sure the local package index is up to date:
         sudo apt-get update
@@ -62,22 +64,29 @@ Before migration:
 - check directories, copy all interesting stuff
 - export bookmarks
 - copy source code not managed by git
+- save ssh keys and congig/profile files
 
 
 Setting up new Linux Ubuntu computer
-- Install Ubuntu 14.04. LTE
+- Install latest Ubuntu LTS
+    here are a couple of installation notes for Ubuntu 16 LTS
+    https://help.ubuntu.com/community/Installation/FromUSBStick
+    http://www.tecmint.com/ubuntu-16-04-installation-guide/
+    http://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/#
+    http://www.tecmint.com/things-you-mostly-need-to-do-after-installing-ubuntu-16-04/4/
+
 - Update Ubuntu (software center)
 - create folders
     bin
     chaos
     chaos/dl
-    chaos/resources
-    work
-    software
+    chaos/DC
+    chaos/DNC
+    chaos/work
+    chaos/software
 
 
-
-Install Oracle Java 8
+Install latest Oracle Java
         http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/
     or
         http://wiki.jetbrains.net/intellij/Installing_and_running_IntelliJ_IDEA_on_Ubuntu
@@ -105,11 +114,17 @@ firefox addons:
 - Print pages to Pdf
 
 
+Install Chromium
+    sudo apt-get install chromium-browser
+
+
 Install Vim
     sudo apt-get install vim
 
+
 Install HDFView
     sudo apt-get install hdfview
+
 
 Install nixio dependencies:
 Install gcc build dependencies
@@ -161,7 +176,7 @@ Upgrade ipython notebook to jupyter
 
 
 If something does not work with the jupyter notebook, check this first for troubleshooting:
-http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
+    http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
 
 
 Setup ssh-keys:
@@ -324,10 +339,6 @@ Install VLC
     sudo apt-get install vlc
 
 
-Install Chromium
-    sudo apt-get install chromium-browser
-
-
 Install Go
 - download latest zip from golang.org
 - install according to golang.org/doc/install
@@ -452,13 +463,6 @@ printer setup (hp p2015):
 - HP LaserJet P2015 Series - should be the first entry
 - use AppSocket/HP Direct ... should be done
 
-- add
-- network printer
-- cp3525
-- socket://hpljcp3525.snc.bmz:9100
-
-
-
 
 Clone all forks from github
 
@@ -530,6 +534,12 @@ install github for windows
 
 dl protege
 dl hdfview -> extract -> change paths in bin/hdfview.bat
+
+
+Regarding Windows Installation / refresh / Linux Dual boot
+    http://superuser.com/questions/697253/clean-install-windows-8-1-or-windows-8-from-oem-key/900235#900235
+    http://windows.microsoft.com/en-us/windows-8/create-reset-refresh-media
+    https://wiki.ubuntu.com/Touch/DualBootInstallation
 
 
 # Old stuff:
