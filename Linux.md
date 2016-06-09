@@ -15,13 +15,16 @@ Under Ubuntu Linux a terminal can be opened by using Ctrl + Alt + T
 
 ##  More resources:
 
-Understanding the unix file system:
+Understanding the unix file system (you should really read this):
 http://www.december.com/unix/tutor/filesystem.html
 
-and
+and (you could read this)
 http://linuxcommand.org/lts0040.php
 
-Shell Tutorial
+and (if you are really interested)
+https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+
+Shell Tutorial (you can work through this if you want to know more about using the shell)
 http://linuxcommand.org/learning_the_shell.php
 
 
@@ -34,7 +37,7 @@ This means, that you have logged into a linux network with username "chris", tha
 
 In a more abstract way will always see the information like this:
 
-	[username@computername current_folder]$
+    [username@computername current_folder]$
 
 You can navigate through the filesystem by using the "cd" (change directory) command right after the "$" sign. Work yourself through the navigation introduction provided with the links above.
 
