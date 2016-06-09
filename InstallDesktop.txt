@@ -262,8 +262,9 @@ Install Gedit
     sudo apt-get install gedit
 
 - change gedit settings
-	Edit -> Preferences -> View ... Display line numbers
-	Edit -> Preferences -> Font & Colors -> Oblivion
+    Edit -> Preferences -> View ... Display line numbers
+    Edit -> Preferences -> Font & Colors -> Oblivion
+    Edit -> Preferences -> Editor ... Tab width 4, Insert spaces instead of tabs, autosave files every 5min
 
 
 Install Terminator terminal
@@ -335,6 +336,10 @@ Install IRC client
     #ccc@blafasel
 
     # sudo apt-get install xchat # does only work up to ubuntu 14
+
+    sudo apt-get install hexchat
+- freenode #gnode
+- Settings -> preferences -> Monospace 12
 
 
 Install Postgres
@@ -455,9 +460,13 @@ add Launcher:
     https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html
 
 
-Resources:
-- copy all university resources to work/resources
-
+Update Ubuntu settings
+- System settings -> Appearance ... enable workspaces
+- System settings -> Appearance ... set icon size to small
+- System settings -> Brightness & Lock ... set Turn off screen to 30min
+- System settings -> Display ... Sticky edges ... off
+- Open Nautilus/Files -> Edit -> Preferences -> Views -> List view
+- Display shortcuts when in desktop view: keep super pressed
 
 
 Uni specific
