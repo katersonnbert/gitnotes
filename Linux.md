@@ -46,7 +46,7 @@ You can navigate through the filesystem by using the "cd" (change directory) com
     ` /, .., ~, *, ?, >, <, |, \`
 
 - Linux is case sensitive!
-	`Filename.txt` is not the same as `filename.txt`
+    `Filename.txt` is not the same as `filename.txt`
 
 - Try to avoid blanks within file- or folder names, always use underscore or minus, especially, if you create folders or files using the filebrowser!
         e.g.
@@ -100,7 +100,7 @@ You can navigate through the filesystem by using the "cd" (change directory) com
 - Most of the command line programs displaying the contents of text files can be ended by simply pressing "q".
 
 - How to end a running program:
-		`ctrl + c`
+        `ctrl + c`
 
 - How to stop a running program (process will be on hold in the background):
         `ctrl + z`
@@ -251,7 +251,7 @@ Use the command "exit" to close the ssh connection to another computer.
 `scp computername:remote_directory/filename current_directory`   ... copy file "filename" from a remote computer or network into the "current_directory" using encrypted file copy
 
         e.g. [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
-        	
+
 `wc filename` ... counts lines, words and letters within file "filename"
 
         e.g. [chris@troll work]wc shopping_list.txt
@@ -288,8 +288,8 @@ Use the --help option for in depth information, links provided or the interweb.
 In a nutshell sudo is the commandline way to grant a user root access for the following command e.g. when installing a software package. 
 It will require a password that is associated with a user that has root access.
 
-	sudo [command]
-	[sudo] password for [username]:
+    sudo [command]
+    [sudo] password for [username]:
 
 
 # Installing packages by using apt (Advanced Packaging Tool)
@@ -300,11 +300,11 @@ For most of the packages root access is required which means using `sudo apt-get
 
 - Update the index to be up to date with all the packages that can be installed via apt-get
 
-	    sudo apt-get update
+        sudo apt-get update
 
 - Install a package e.g. the terminator linux terminal, which is an awesome linux terminal
 
-	    sudo apt-get install terminator
+        sudo apt-get install terminator
 
 - Install a package that is not handled via the normal apt-get package list e.g. the java8 distribution: 
 This requires to manually add a repository to the apt-get list of installable packages, update the repository and the install the package.
@@ -384,13 +384,13 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
 ###  Global searchpath variable $PATH:
 
 - display all directories currently included in the searchpath:
-	    `echo $PATH`
+        `echo $PATH`
 
 - permanently add directories to `$PATH` by editing `/etc/profile` or `$HOME/.profile` by adding
-	    `export PATH=$PATH:/[directory of choice]`
+        `export PATH=$PATH:/[directory of choice]`
 
 - Symlinks for the operating system:
-    	`/etc/alternatives`
+        `/etc/alternatives`
 
 - Custom packages and libraries can usually be found in one of the following folders:
 
@@ -412,46 +412,45 @@ this will be executed.
 Example:
 In folder ~ (absolute /home/msonntag in our example)
 
-	~$ mkdir bin
+    ~$ mkdir bin
 
 Check if path has been automatically added by linux:
 
-	~$ cat $PATH
+    ~$ cat $PATH
 
 If not, then execute the following to recompile the .profile file:
 
-	~$ source .profile
+    ~$ source .profile
 
 Check path again
 
-	~$ cat $PATH
+    ~$ cat $PATH
 
 If its still not in there, then add it manually to the beginning of the `$PATH`:
 
-	~$ export PATH=/home/msonntag/bin:$PATH
+    ~$ export PATH=/home/msonntag/bin:$PATH
 
 Create symbolic links to executables in custom bin folder. As example add startup shell script of application activator
 can be used to easily switch between different distributions of the same application
 
-	~$ cd bin
-	~/bin$ ln -s /home/msonntag/work/software/activator-1.2.12/activator activator
+    ~$ cd bin
+    ~/bin$ ln -s /home/msonntag/work/software/activator-1.2.12/activator activator
 
 
 
 # Find text in files using grep
 
 - Find text "NoResultsException" in all files of all subfolders (-R) of the current folder (.) and print the line number where the match has been found (-n).
-	`grep -Rn "NoResultsException" .`
+
+    `grep -Rn "NoResultsException" .`
 
 
 # netstat: check connections and available sockets
 
-	`netstat`
-	
-- Check connections:
-	`netstat -l`
-- Check connections showing their local address
-	`netstat -lt`
+    netstat
+
+- Check connections: `netstat -l`
+- Check connections showing their local address `netstat -lt`
 
 
 # Bashrc
@@ -476,5 +475,7 @@ http://www.linuxhowtos.org/C_C++/socket.htm
 - The mainly used socket type is the STREAM SOCKET. Stream sockets TCP (transmission control protocol).
 
 
+# Customizing Ubuntu 16
 
+- open new instance of already open program e.g. Nautilus: middle click or shift+left click on icon in launcher
 
