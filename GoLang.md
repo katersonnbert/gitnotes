@@ -61,7 +61,8 @@ unused import. To still allow this import, the following code can be used.
             fmt.Println("hypot", hypot(5, 12))
     
             fmt.Println("compute(hypot)", compute(hypot))   // passes hypot without arguments to compute. 
-                                                            // Compute uses hypot with its own values 3, 4 and returns the return value of hypot.
+                                                            // Compute uses hypot with its own values 3, 4 and
+                                                            // returns the return value of hypot.
             fmt.Println("compute(math.Pow)", compute(math.Pow))
         }
 
@@ -264,14 +265,14 @@ the end of the surrounding function.
         i := 42
         p = &i
 
-	or
+    or
 
-    	b := &i
+        b := &i
 
 - The `*` operator enables access to the value of the variable a pointer is associated with.
 
-        fmt.Println(*p)	// read value of i through pointer p
-        *p = 21			// set value of i through pointer p
+        fmt.Println(*p) // read value of i through pointer p
+        *p = 21         // set value of i through pointer p
 
 - The following example shows basic pointer usage and unusage:
 
@@ -282,19 +283,19 @@ the end of the surrounding function.
             //fmt.Println("*x has value:\t", *x) // Since the pointer points nowhere at the moment, this leads to panic.
             //x = 12 // Since this is a pointer, it can only hold addresses, no actual value and this leads to panic.
     
-            fmt.Println("x has value:\t", x)		// <nil>
+            fmt.Println("x has value:\t", x)        // <nil>
     
             x = &i
-            fmt.Println("x has value:\t", x)		// [some address]
-            fmt.Println("*x points to:\t", *x)		// 21
-            fmt.Println("i before:\t", i)			// 21
+            fmt.Println("x has value:\t", x)        // [some address]
+            fmt.Println("*x points to:\t", *x)      // 21
+            fmt.Println("i before:\t", i)           // 21
     
             *x = 22
-            fmt.Println("i after:\t", i)			// 22
-            fmt.Println("x has value:\t", x)		// [same address]
+            fmt.Println("i after:\t", i)            // 22
+            fmt.Println("x has value:\t", x)        // [same address]
     
             *x = *x/2
-            fmt.Println("i has been divided:\t", i)	// 11
+            fmt.Println("i has been divided:\t", i) // 11
         }
 
 
@@ -494,7 +495,8 @@ Go conveniently interprets "p" as "&p" in our example since the UpdateFname meth
 - Go interfaces are implemented implicitly. There is no statement, that a type is implementing an interface using 
 e.g. an "implements" keyword. Only if a type actually implements all interface methods, it implements the interface. 
 - Example of an interface: *Stringers*; One of the most ubiquitous interfaces is Stringer, defined by the fmt package. 
-Before printing a value, fmt will check, if the value has implemented the `Stringer` interface and use the corresponding methods return value to print.
+Before printing a value, fmt will check, if the value has implemented the `Stringer` interface
+and use the corresponding methods return value to print.
 
         type Stringer interface {
             String() string
@@ -681,11 +683,11 @@ the channel returns the values from the individual goroutines...
 
         ch := make(chan int, 2)
         ch <- 1
-        ch <- 2				// adding ch <-3 here would lead to an error
-        fmt.Println(<-ch)	// prints 1
-        ch <- 3				// since one channel slot has been consumed, its ok to use it again
-        fmt.Println(<-ch)	// prints 2
-        fmt.Println(<-ch)	// prints 3
+        ch <- 2             // adding ch <-3 here would lead to an error
+        fmt.Println(<-ch)   // prints 1
+        ch <- 3             // since one channel slot has been consumed, its ok to use it again
+        fmt.Println(<-ch)   // prints 2
+        fmt.Println(<-ch)   // prints 3
 
     
 ## Channel close and range
@@ -753,11 +755,11 @@ that variable access conflicts can be avoided.
 - download latest zip from golang.org
 - unpack to directory of choice e.g. `/usr/local` or in our case `$HOME/work/software`
 
-	    tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
+       tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
 
 - in case of `/usr/local` installation add to `/etc/profile`
 
-	    export PATH=$PATH:/usr/local/go/bin
+       export PATH=$PATH:/usr/local/go/bin
 
 - in case of custom path installation add to `$HOME/.profile` ... GOPATH is an additional directory, 
 where go looks for installed packages
@@ -769,7 +771,7 @@ where go looks for installed packages
 
 - re-load `$PATH`
 
-	    source $HOME/.profile
+       source $HOME/.profile
 
 
 ## Install additional packages
