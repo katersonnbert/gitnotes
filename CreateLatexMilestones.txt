@@ -1,5 +1,0 @@
-- ALWAYS stay in the actual milestone folders with the build.sh.
-- ALWAYS use only this build sh!
-	use the lines within build.sh to actually create the pdf from the tex you want.
-- NEVER use the gedit feature!
-- ALWAYS use an existing template and modify it!
