@@ -278,7 +278,7 @@ Use the --help option for in depth information, links provided or the interweb.
 `fmt`  |Reads text from standard input, then outputs formatted text on standard output.
 `pr`   |Takes text input from standard input and splits the data into pages with page breaks, headers and footers in preparation for printing.
 `head` |Outputs the first few lines of its input. Useful for getting the header of a file.
-`tail` |Outputs the last few lines of its input. Useful for things like getting the most recent entries from a log file.
+`tail -f` |Outputs the last few lines of its input. Useful for things like getting the most recent entries from a log file.
 `tr`   |Translates characters. Can be used to perform tasks such as upper/lowercase conversions or changing line termination characters from one type to another (for example, converting DOS text files into Unix style text files).
 `grep` |Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.<br/>http://www.panix.com/~elflord/unix/grep.html
 `sed`  |Stream editor. Can perform more sophisticated text translations than tr. <br/> http://www.ceri.memphis.edu/computer/docs/unix/sed.htm |
