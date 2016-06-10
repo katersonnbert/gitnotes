@@ -50,7 +50,8 @@ Allgemein:
 JavaScript: read the JavaScript pitfalls presentation. (redmine)
 
 
-Bestimmte play frameworks brauchen bestimmte sbt versionen, damit die beiden die richtigen sachen bekommen benötigt man activator, das die korrekten sbt's bzw compiler für die sbt's lädt, installiert und aufsetzt,
+Bestimmte play frameworks brauchen bestimmte sbt versionen, damit die beiden die richtigen sachen bekommen benötigt
+man activator, das die korrekten sbt's bzw compiler für die sbt's lädt, installiert und aufsetzt,
 damit das framework überhaupt arbeiten kann.
 
 
@@ -61,20 +62,21 @@ damit das framework überhaupt arbeiten kann.
 - Extract to software/activator_[current_version]
 - Update ~/bin/activator Symlink
 - Clone GCA-Web to directory of choice
-- Open IDEA -> New -> Project from existing source -> Select clone -> create project from existing sources -> Keep name the same -> Overwrite .idea -> Do not select any pre-compiled source files -> finish
+- Open IDEA -> New -> Project from existing source -> Select clone -> create project from existing sources
+    -> Keep name the same -> Overwrite .idea -> Do not select any pre-compiled source files -> finish
 - Open Project Structure -> Project -> Select Java version -> Select Project language level 8 -> Apply
-- Follow all sbt import Dialogs
+- Open build.sbt -> "Import project" (takes a while) -> Follow all sbt import Dialogs
 - Should have imported 2 modules by the end of the process.
 
 - At the shell to start the project use:
-	activator run
+    activator run
 - Move to browser
-	http://localhost:9000
+    http://localhost:9000
 - Use firefox to debug javascript: activate debugger by ctrl-shift-k
 
 - Use chromium to debug javaScript - activate debugger by ctrl-shift-j
 - More info on the debugger:
-	http://stackoverflow.com/questions/66420/how-do-you-launch-the-javascript-debugger-in-google-chrome
+    http://stackoverflow.com/questions/66420/how-do-you-launch-the-javascript-debugger-in-google-chrome
 
 Test User:
 check "Tests:Assets" for users .. should be there once all tests have run successfully at least once.
@@ -85,11 +87,13 @@ check "Tests:Assets" for users .. should be there once all tests have run succes
 - Intellij supports database ... add db from file, install drivers
 - If the tests fail:
 -- check, if the correct test unit is selected (requires scala tests instead of e.g. junit)
--- delete all db files and run the tests again - if the jpa.default in conf.application.conf is defaultpersistenceunit, when the tests are run, the or mapper should create every table which it does not encounter.
+-- delete all db files and run the tests again - if the jpa.default in conf.application.conf is defaultpersistenceunit,
+    when the tests are run, the or mapper should create every table which it does not encounter.
 
 - Intellij Enterprise is required for support of the play framework, database interaction support and convenience functions.
 
-NOTE: if we cannot connect to an H2 DB with some obscure primary key violation error, IDEA probably uses the wrong drivers for the database. Search the path of the SBT H2 jar from the external libraries.
+NOTE: if we cannot connect to an H2 DB with some obscure primary key violation error,
+IDEA probably uses the wrong drivers for the database. Search the path of the SBT H2 jar from the external libraries.
 Use these drivers in the DB settings as H2 DB drivers.
 
 In my case e.g. /home/[username]/.ivy2/cache/com.h2database/h2/jars
@@ -100,7 +104,8 @@ Set up infos:
 
 the main setup infos are defined in:
 - conf.application.conf (requires conf.META-INF.orm.xml & conf.META-INF.persitence.xml for the setup of the OR Mapper)
-- conf.play.plugins (additional plugins - also states the order in which the plugins are started. play starts plugins of its own, so the defined order for additional should not be too low)
+- conf.play.plugins (additional plugins - also states the order in which the plugins are started. play starts plugins
+    of its own, so the defined order for additional should not be too low)
 - conf.routes
 - project.build.properties
 - project.plugin.sbt
@@ -115,17 +120,20 @@ The project uses hibernate to map classes to the used database.
 - H2 ... development
 - Postgres ... production
 
-- to switch the Database, add a file "application.dev.conf" or "application.prod.conf" to the "conf" folder which contain the proper access settings for a different database.
+- to switch the Database, add a file "application.dev.conf" or "application.prod.conf" to the "conf" folder
+    which contain the proper access settings for a different database.
 
 - An example additional setup file to use postgres is "application.prod.example.conf"
 - If we want to use postgres, create an empty postgres database with an owner
-	- change db.default.url to new database
-	- change db.default.user and password to new database owner
-	- IMPORTANT! if the database already contains data that should not be overwritten, change jpa.default to "prodPersistenceUnit"
-	- If no mailserver is available, set smtp.mock to "true"
+    - change db.default.url to new database
+    - change db.default.user and password to new database owner
+    - IMPORTANT! if the database already contains data that should not be overwritten,
+       change jpa.default to "prodPersistenceUnit"
+    - If no mailserver is available, set smtp.mock to "true"
 
 Mapping Models to DB:
-The models for the individual tables of the database are found in app/models/ - the main class here is app/models/AbstractState.scala
+The models for the individual tables of the database are found in app/models/
+    - the main class here is app/models/AbstractState.scala
 
 Queries:
 All queries to the database can be found in app/service/
@@ -133,7 +141,7 @@ All queries to the database can be found in app/service/
 
 # HTML templates:
 - All HTML templates can be found at app/views
-	*.scala.html ... these are the html templates, can be accessed via included .js files and JQuery $
+    *.scala.html ... these are the html templates, can be accessed via included .js files and JQuery $
 
 - All javascripts used in these templates can be found in app/assets/javascript
 - All additional stylesheets for these templates can be found in app/assets/stylesheets
@@ -164,18 +172,19 @@ $(document.getElementById('someId'))
 
 To create html pages, play uses a templating framework that is similar to scala.
 
-In a *.scala.html template page, html can be written plainly. When the page is compiled, these parts will be converted to print(plainHTML)
+In a *.scala.html template page, html can be written plainly. When the page is compiled,
+    these parts will be converted to print(plainHTML)
 
 If the compiler encounters an "@", it treats everything after this as scala code and creates functions out of them.
 
 e.g.
-	@if(some.text != null) {
-		<p>@some.text</p>
-	}
+    @if(some.text != null) {
+        <p>@some.text</p>
+    }
 creates a function: func (s: String) = {
-	print("<p>")
-	print(s)
-	print("</p>")
+    print("<p>")
+    print(s)
+    print("</p>")
 }
 
 
@@ -184,8 +193,8 @@ creates a function: func (s: String) = {
 The play framework mainly uses JSON for transmitting information from server to client and vice versa.
 
 The two main converters are:
-	json.parse(stuff)	... parse text to JSON
-	Json.stringify(stuff) ... convert JSON to text
+    json.parse(stuff)       ... parse text to JSON
+    Json.stringify(stuff)   ... convert JSON to text
 These two do the exact (?) opposite of each other.
 
 
@@ -236,11 +245,14 @@ Viele Grüße,
 
 
 
-wir können es Dienstag oder Mittwoch zusammen du und ich am Telefon machen. Würde es als Backup reichen, wenn ich ein Datenbank dump und eine Kopie des Verzeichnis, wo GCA installiert ist, mache?
+wir können es Dienstag oder Mittwoch zusammen du und ich am Telefon machen. Würde es als Backup reichen,
+    wenn ich ein Datenbank dump und eine Kopie des Verzeichnis, wo GCA installiert ist, mache?
 
-Für die DB-Schema Änderungen hätte ich gerne sie als SQL-Skript im Voraus, so dass wir keine Zeit mit Dateienaustausch verschwenden.
+Für die DB-Schema Änderungen hätte ich gerne sie als SQL-Skript im Voraus, so dass wir
+    keine Zeit mit Dateienaustausch verschwenden.
 
-Ich nehme an, ihr habt alles schon bei euch in pre-production getestet, oder? Also die ganze Gelegenheit sollte ein 10-minutigen Sache sein, oder?
+Ich nehme an, ihr habt alles schon bei euch in pre-production getestet, oder? Also die ganze
+    Gelegenheit sollte ein 10-minutigen Sache sein, oder?
 
 Ciao,
 
