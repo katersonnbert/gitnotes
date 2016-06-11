@@ -86,101 +86,66 @@ Setting up new Linux Ubuntu computer
     chaos/software
 
 
-Install latest Oracle Java
+## Install latest Oracle Java
         http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/
     or
         http://wiki.jetbrains.net/intellij/Installing_and_running_IntelliJ_IDEA_on_Ubuntu
 
-    sudo add-apt-repository ppa:webupd8team/java
-    sudo apt-get update
-    sudo apt-get install oracle-java8-installer
+        sudo add-apt-repository ppa:webupd8team/java
+        sudo apt-get update
+        sudo apt-get install oracle-java8-installer
 
 - check java version
-    java -version
+        java -version
 
 - set up java environment
-    sudo apt-get install oracle-java8-set-default
+        sudo apt-get install oracle-java8-set-default
 
 
-Firefox
-update ff preferences:
+## Firefox - update ff preferences:
 - privacy
 - select individual history
 - set third party cookies to never
 - set ask every time
-firefox addons:
+
+### Firefox addons:
 - Adblock plus
 - Youtube video and audio downloader
 - Print pages to Pdf
 
 
-Install Chromium
-    sudo apt-get install chromium-browser
+## Install Chromium
+        sudo apt-get install chromium-browser
 - open chromium from terminal, lock to launcher
 
-Install Vim
-    sudo apt-get install vim
+
+## Install Vim
+        sudo apt-get install vim
 
 
-Install HDFView
-    sudo apt-get install hdfview
+## Install HDFView
+        sudo apt-get install hdfview
 
 
-Install nixio dependencies:
-Install gcc build dependencies
-    sudo apt-get install libhdf5-serial-dev libcppunit-dev cmake build-essential
-    #sudo apt-get install libhdf5-7 #does not work
+## Install nixio dependencies:
+### Install gcc build dependencies
+        sudo apt-get install libhdf5-serial-dev libcppunit-dev cmake build-essential
+        #sudo apt-get install libhdf5-7 #does not work
 
-Install libboost dependencies
-    sudo apt-get install libboost-all-dev
+### Install libboost dependencies
+        sudo apt-get install libboost-all-dev
 
-Install cpp-libyaml
-    sudo apt-get install libyaml-cpp-dev
+### Install cpp-libyaml
+        sudo apt-get install libyaml-cpp-dev
 
-
-Install cython for python and python3
-    sudo apt-get install cython cython3
-
-Install python libraries
-    sudo apt-get install python-dev python-setuptools python-numpy python-sphinx python-h5py python-matplotlib python-scipy python-rdflib python-magic
-    sudo apt-get install python3-dev python3-setuptools python3-numpy python3-sphinx python3-matplotlib python3-h5py python3-scipy python3-yaml
-
-Install python library installation tool
-    sudo apt-get install python-pip python-pip3
-
-Upgrade pip in case it was already installed
-    sudo pip install --upgrade pip
-
-Install additional pyhton packages
-    sudo pip install quantities coveralls cpp-coveralls mock==1.0.1
-    sudo pip3 install quantities coveralls cpp-coveralls mock
-
-Install python packages (futures for python 2to3, alabaster for documentation)
-    sudo pip install future alabaster
+### Install cython for python and python3
+        sudo apt-get install cython cython3
 
 
-Install neo dependencies
-    sudo apt-get install python-numexpr python3-numexpr
-    sudo pip install tables
-    sudo pip3 install tables
 
 
-# REPLACE the following with sole installation of jupyter - check if its best to install solely via pip and NOT via apt-get
-# To see which kernels and where they are installed, check `jupyter kernelspec list`
-# Problem was: 
 
-Install ipython and ipython notebook
-    sudo apt-get install ipython ipython-notebook ipython3 ipython3-notebook
-
-Upgrade ipython notebook to jupyter
-    sudo pip install -U jupyter
-
-
-If something does not work with the jupyter notebook, check this first for troubleshooting:
-    http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
-
-
-Setup ssh-keys:
+## Setup ssh-keys:
 (copy folder ~/.ssh, makes it easier plus keeps old keys, otherwise:)
 (also checkout howTo create file for telling which key should be used where)
 
@@ -197,17 +162,18 @@ create new github key
 call key "id_rsa_github"
 
 
-Install curl
-    sudo apt-get install curl
+## Install curl
+        sudo apt-get install curl
 
 
-Install Maven
-    sudo apt-get install maven
+## Install Maven
+        sudo apt-get install maven
 
 
-Install and setup Git
+## Install and setup Git
 -dl and install git (http://git-scm.com/)
-    sudo apt-get install git
+        sudo apt-get install git
+
 - check if ~/.gitconfig exists, create file otherwise
 - copy the following to file ~/.gitconfig
 
@@ -254,12 +220,12 @@ Install and setup Git
 - log in to github/settings/ssh keys/add key/ paste public key
 
 
-Install tree commandline programm (prints file structure tree from the current directory)
-    sudo apt-get install tree
+## Install tree commandline programm (prints file structure tree from the current directory)
+        sudo apt-get install tree
 
 
-Install Gedit
-    sudo apt-get install gedit
+## Install Gedit
+        sudo apt-get install gedit
 
 - change gedit settings
     Edit -> Preferences -> View ... Display line numbers
@@ -267,49 +233,153 @@ Install Gedit
     Edit -> Preferences -> Editor ... Tab width 4, Insert spaces instead of tabs, autosave files every 5min
 
 
-Install Terminator terminal
-    sudo apt-get install terminator
+## Install Terminator terminal
 
-Setup terminator config file
-    cd ~/.config/
-    mkdir terminator
-    cd terminator
-    gedit config
+        sudo apt-get install terminator
 
-    add the following:
-    [global_config]
-      title_transmit_bg_color = "#562946"
-      title_inactive_bg_color = "#2f0922"
-    [keybindings]
-    [profiles]
-      [[default]]
-        use_system_font = False
-        borderless = true
-        font = Monospace 12
-        background_color = "#2f0922"
-        foreground_color = "#ffffff"
-    [layouts]
-      [[default]]
-        [[[child1]]]
-          type = Terminal
-          parent = window0
-        [[[window0]]]
-          type = Window
-          parent = ""
-    [plugins]
+- Setup terminator config file
+        cd ~/.config/
+        mkdir terminator
+        cd terminator
+        gedit config
+
+        add the following:
+        [global_config]
+          title_transmit_bg_color = "#562946"
+          title_inactive_bg_color = "#2f0922"
+        [keybindings]
+        [profiles]
+          [[default]]
+            use_system_font = False
+            borderless = true
+            font = Monospace 12
+            background_color = "#2f0922"
+            foreground_color = "#ffffff"
+        [layouts]
+          [[default]]
+            [[[child1]]]
+              type = Terminal
+              parent = window0
+            [[[window0]]]
+              type = Window
+              parent = ""
+        [plugins]
 - open terminator from terminal, lock to launcher
 
+# Set up python
 
-Activator
+## Install python and python libraries
+
+### Install matplotlib dependencies for later
+        sudo apt-get install libfreetype6-dev libpng-dev
+
+### Install python-odml dependencies for later
+        sudo apt-get install libxml2-dev libxslt-dev
+
+### Install python package manager and virtualenv
+        sudo apt-get install python-pip python-pip3
+        sudo pip install --upgrade pip
+        sudo pip install virtualenv
+
+### Prepare folders for python virtualenv
+
+        cd /home/Chaos/software
+        mkdir pyvirtualenv
+        cd pyvirtualenv
+
+### Create and setup python2 virtualenv
+        virtualenv pymain
+
+- activate py2 virtualenv
+        source /home/msonntag/Chaos/software/pyvirtualenv/pymain/bin/activate
+
+- install python libraries
+        pip install numpy
+        pip install sphinx
+        pip install matplotlib
+        pip install h5py
+        pip install scipy
+        pip install pyyaml
+        pip install quantities
+        pip install coveralls
+        pip install cpp-coveralls
+        pip install mock==1.0.1
+        pip install rdflib
+        pip install alabaster
+        pip install future
+        pip install python-magic
+
+- install neo dependencies
+        pip install numexpr
+        pip install tables
+
+- install odml dependencies
+        pip install enum
+        pip install lxml
+
+- install jupyter + jupyter
+        pip install jupyter
+
+- end virtualenv
+        deactivate
+
+
+### Create and setup python3 virtualenv
+        virtualenv -p /usr/bin/python3 py3main
+
+- install python libraries
+        pip3 install numpy
+        pip3 install sphinx
+        pip3 install matplotlib
+        pip3 install h5py
+        pip3 install scipy
+        pip3 install pyyaml
+        pip3 install quantities
+        pip3 install coveralls
+        pip3 install cpp-coveralls
+        pip3 install mock
+        pip3 install rdflib
+        pip3 install alabaster
+        pip3 install python magic
+
+- install neo dependencies
+        pip3 install numexpr
+        pip3 install tables
+
+- install odml dependencies
+        pip3 install lxml
+        # cannot install enum with pip3 for now, does not actually matter, because python-odml still doesn't build either...
+        # pip3 install enum
+
+- install jupyter + ipython
+        pip3 install jupyter
+
+- end virtualenv
+        deactivate
+
+## Add bash alias for virtualenv activation
+        cd
+        gedit .bashrc
+
+- add at the end of ~/.bashrc
+
+        # Custom alias'es
+        if [ -d ]; then
+          alias pyenv='source /home/msonntag/Chaos/software/pyvirtualenv/pymain/bin/activate'
+          alias pyenv3='source /home/msonntag/Chaos/software/pyvirtualenv/py3main/bin/activate'
+        fi
+
+
+## Activator
 - DL from [homepage](https://typesafe.com/get-started).
 - follow [install instructions](https://www.playframework.com/documentation).
 
 
-Install and setup everything required to build bootstrap
+## Install and setup everything required to build bootstrap
 - get ruby(required for jekyll), jekyll and rouge (both required for grunt)
-    sudo apt-get install ruby ruby-dev make gcc
-    sudo gem install jekyll
-    sudo gem install rouge
+        sudo apt-get install ruby ruby-dev make gcc
+        sudo gem install jekyll
+        sudo gem install rouge
 - get latest version of npm from [here](https://nodejs.org/)
 - Create version independent link; add version independent link to $HOME/.profile
     (don't forget to ```source``` afterwards), e.g.:
@@ -318,38 +388,44 @@ Install and setup everything required to build bootstrap
             PATH="$PATH:$HOME/work/software/nodejs/bin"
         fi
 - //NOTE: NEVER EVER USE THE FOLLOWING COMMAND IT WILL BREAK NPM! (if not run from ~$ if I read correctly but who knows)
-      sudo npm install npm -g
+        sudo npm install npm -g
 - get grunt (required for bootstrap)
-    sudo npm install -g grunt-cli
+        sudo npm install -g grunt-cli
 
 - if required, install the following:
-    sudo apt-get install nodejs nodejs-dev node-less
+        sudo apt-get install nodejs nodejs-dev node-less
 
 
-Install Virtual box
-    sudo apt-get install virtualbox virtualbox-dkms
+## Install Virtual box
+        sudo apt-get install virtualbox virtualbox-dkms
+
+- copy existing virtual boxes
+- start the virtual machine by terminal, lock to launcher
+- File -> Machine -> Add -> add virtual box
+- Check settings: System - Base memory: 4096MB; Shared Folders: Win_Share (/home/msonntag/VirtualBox VMs/WinShare, auto-mount, full access)
 
 
-Install IRC client
-    #gnode@freenode
-    #ccc@blafasel
+## Install IRC client
+#gnode@freenode
+#ccc@blafasel
 
-    # sudo apt-get install xchat # does only work up to ubuntu 14
+- sudo apt-get install xchat # does only work up to ubuntu 14
 
-    sudo apt-get install hexchat
+        sudo apt-get install hexchat
+
 - freenode #gnode
 - Settings -> preferences -> Monospace 12
 
 
-Install Postgres
-    sudo apt-get install postgresql
+## Install Postgres
+        sudo apt-get install postgresql
 
 
-Install VLC
-    sudo apt-get install vlc
+## Install VLC
+        sudo apt-get install vlc
 
 
-Install Go
+## Install Go
 - download latest zip from golang.org
 - install according to golang.org/doc/install
 - unpack to directory of choice e.g. /usr/local or in our case $HOME/work/software
@@ -364,61 +440,62 @@ Install Go
 - re-load $PATH
     source $HOME/.profile
 
-DL and install Visual Studio Code
+### DL and install Visual Studio Code
 - Download latest visual studio code
 - Unpack it to directory of choice e.g. $HOME/work/software
 - Add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
-    gedit $HOME/VSCode.desktop &
+        gedit $HOME/VSCode.desktop &
+
 - add following statements to file, change where required:
-    [Desktop Entry]
-    Version=1.6
-    Type=Application
-    Name=Visual Studio Code
-    Icon=/home/msonntag/work/software/VSCode-linux-x64/resources/app/resources/linux/code.png
-    Exec="/home/msonntag/work/software/VSCode-linux-x64/code"
-    Categories=Development;IDE;
-    Terminal=false
+        [Desktop Entry]
+        Version=1.6
+        Type=Application
+        Name=Visual Studio Code
+        Icon=/home/msonntag/work/software/VSCode-linux-x64/resources/app/resources/linux/code.png
+        Exec="/home/msonntag/work/software/VSCode-linux-x64/code"
+        Categories=Development;IDE;
+        Terminal=false
 
 - move file to hidden folder
-    sudo mv $HOME/VSCode.desktop $HOME/.local/share/applications/VSCode.desktop
+        sudo mv $HOME/VSCode.desktop $HOME/.local/share/applications/VSCode.desktop
 
 - start, install add ons by F1 ... ext inst ... select add on
 -- install go, PowerShell, markdown linter
 
 - on the commandline install all recommended go-tools according to https://marketplace.visualstudio.com/items?itemName=lukehoban.Go
-    go get -u -v github.com/nsf/gocode
-    go get -u -v github.com/rogpeppe/godef
-    go get -u -v github.com/golang/lint/golint
-    go get -u -v github.com/lukehoban/go-find-references
-    go get -u -v github.com/lukehoban/go-outline
-    go get -u -v sourcegraph.com/sqs/goreturns
-    go get -u -v golang.org/x/tools/cmd/gorename
-    go get -u -v github.com/tpng/gopkgs
-    go get -u -v github.com/newhook/go-symbols
-    go get github.com/derekparker/delve/cmd/dlv
-    echo $GOPATH
+        go get -u -v github.com/nsf/gocode
+        go get -u -v github.com/rogpeppe/godef
+        go get -u -v github.com/golang/lint/golint
+        go get -u -v github.com/lukehoban/go-find-references
+        go get -u -v github.com/lukehoban/go-outline
+        go get -u -v sourcegraph.com/sqs/goreturns
+        go get -u -v golang.org/x/tools/cmd/gorename
+        go get -u -v github.com/tpng/gopkgs
+        go get -u -v github.com/newhook/go-symbols
+        go get github.com/derekparker/delve/cmd/dlv
+        echo $GOPATH
 
-Install the following Go packages at the $GOPATH folder:
-    go get -tags "nomymysql nomysql nosqlite3" github.com/CloudCom/goose/cmd/goose
-    go get github.com/golang/lint/golint
-    go get github.com/GeertJohan/fgt
+### Install the following Go packages at the $GOPATH folder:
+        go get -tags "nomymysql nomysql nosqlite3" github.com/CloudCom/goose/cmd/goose
+        go get github.com/golang/lint/golint
+        go get github.com/GeertJohan/fgt
 
-# coveralls
-    go get github.com/mattn/goveralls
-    go get golang.org/x/tools/cmd/cover
+- coveralls
+        go get github.com/mattn/goveralls
+        go get golang.org/x/tools/cmd/cover
 
-# dependencies
-    go get github.com/jmoiron/sqlx
-    go get github.com/lib/pq
-    go get gopkg.in/yaml.v2
-    go get github.com/pborman/uuid
-    go get golang.org/x/crypto/bcrypt
-    go get github.com/docopt/docopt-go
+- dependencies
+        go get github.com/jmoiron/sqlx
+        go get github.com/lib/pq
+        go get gopkg.in/yaml.v2
+        go get github.com/pborman/uuid
+        go get golang.org/x/crypto/bcrypt
+        go get github.com/docopt/docopt-go
 
 
-DL and install Protege
-add Launcher:
+## DL and install Protege
+- add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
         [Desktop Entry]
@@ -430,8 +507,8 @@ add Launcher:
         Terminal=false
 
 
-DL and install the latest Intellij IDEA Ultimate
-add Launcher:
+## DL and install the latest Intellij IDEA Ultimate
+- add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
 
@@ -440,8 +517,8 @@ add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
 
-DL and install Intellij PyCharm Community
-add Launcher:
+## DL and install Intellij PyCharm Community
+- add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
         [Desktop Entry]
@@ -459,11 +536,13 @@ add Launcher:
     https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html
 
 
-Update Ubuntu settings
+## Update Ubuntu settings
 - System settings -> Appearance ... enable workspaces
 - System settings -> Appearance ... set icon size to small
 - System settings -> Brightness & Lock ... set Turn off screen to 30min
 - System settings -> Display ... Sticky edges ... off
+- System settings -> Keyboard ... sound & media
+- right click mp3/m3u -> properties -> open with -> VLC
 - Open Nautilus/Files -> Edit -> Preferences -> Views -> List view
 - Display shortcuts when in desktop view: keep super pressed
 
@@ -478,11 +557,27 @@ printer setup (hp p2015):
 - use AppSocket/HP Direct ... should be done
 
 
-Clone all forks from github
+## Set up GCA-Web
 
-Clone and build NIX
-- move to folder which will contain the nix files
-- clone files from github to local repository
+- get activator-1.3.7-minimal.
+- create `/home/[user]/bin`; create link to `.../activator-1.3.7-minimal/activator` in `.../bin/`.
+- restart or at least `source ~/.profile`.
+- if exists, nuke `GCA-web` folder.
+- clone GCA-web (add upstream)
+- Open IDEA -> New -> Project from existing source -> Select clone -> create project from existing sources
+    -> Keep name the same -> Overwrite .idea -> Do not select any pre-compiled source files -> finish
+- Open Project Structure -> Project -> Select Java version -> Select Project language level 8 -> Apply
+- Open build.sbt -> "Import project" (takes a while) -> Follow all sbt import Dialogs
+- Should have imported 2 modules by the end of the process.
+- At the shell to start the project use (this will take some time the first time):
+    activator run
+- Run all tests to populate database
+- Add application run in IDEA ... Run -> Edit Configurations -> + -> Play 2 App -> Add name -> OK
+
+
+## Set up NIX
+
+- clone NIX, set upstream, fetch and rebase
 - set up required folders for build
         cd nix
         mkdir build
@@ -497,16 +592,9 @@ Clone and build NIX
 - build and install nix
         sudo make install
 
-- set up local git repositories (if required!)
-        cd ..
-- check recognised remotes first:
-        git remote -v
-- add upstream if required
-        git remote add upstream git@github.com:G-Node/nix
-        git fetch --all
 
+## Set up nixpy
 
-Clone and build nixpy
 - move to folder where nixpy should be imported
 - clone files from github to local repository
 - set up local repositories (if required)
@@ -516,18 +604,81 @@ Clone and build nixpy
         git remote add upstream git@github.com:G-Node/nixpy
         git fetch --all
 
-- setup nixpy
 - check existing libraries
         pkg-config --libs --cflags nix
-- setup nixpy:
+
+- build nixpy with python2:
+        pyenv
         python setup.py build
+        python setup.py install
 - manually remove all .egg folders and files
 - setup documentation
         python setup.py build_sphinx
+- deactivate python2 environment
+        deactivate
+
+- build nixpy with python3:
+        pyenv3
+        python3 setup.py build
+        python3 setup.py install
+- deactivate python3 environment
+        deactivate
+
+
+## Set up python-odml
+
+- install dependencies
+        sudo apt-get install libxml2-dev libxslt-dev
+
+- clone python-odml, set upstream, fetch and rebase
+- install python-odml for python2
+        pyenv
+        python setup.py install
+        deactivate
+- install python-odml for python3 ... still leads to errors.
+        pyenv3
+        python3 setup.py install
+        deactivate
+
+
+## Set up python-neo
+- clone python-neo, set upstream, fetch and rebase from tag "api-break"
+- install python-neo for python2
+        pyenv
+        python setup.py install
+        deactivate
+- install python-neo for python3
+        pyenv3
+        python3 setup.py install
+        deactivate
+
+
+## Set up python-neo-nixio
+- clone python-neo-nixio, set upstream, fetch and rebase
+- install python-neo-nixio for python2
+        pyenv
+        python setup.py install
+        deactivate
+- install python-neo-nixio for python3
+        pyenv3
+        python3 setup.py install
+        deactivate
+
+
+## Set up python-odml2
+- clone python-odml2, set upstream, fetch and rebase
+- install python-odml2 for python2
+        pyenv
+        python setup.py install
+        deactivate
+- install python-odml2 for python3
+        pyenv3
+        python3 setup.py install
+        deactivate
 
 
 
-Win:
+# Win:
     notepad++
     chocolatey
     putty
@@ -557,38 +708,79 @@ Regarding Windows Installation / refresh / Linux Dual boot
 
 
 # Old stuff:
-Install IRC Chat with empathy (but probably skip this, empathy sucks)
+## Install IRC Chat with empathy (but probably skip this, empathy sucks)
 
         sudo apt-get install account-plugin-irc
 
-empathy: rooms, join, gnode
+- empathy: rooms, join, gnode
 
 
-Install LaTex and additional fonts
+## Install LaTex and additional fonts
 
         sudo apt-get install texlive-full texlive texlive-doc-de texlive-latex-extra texlive-fonts-extra
         // update installed stuff (fonts, etc) for latex
         sudo texhash
 
 
-Install Gedit latex plugins
-    sudo apt-get install gedit-latex-plugin
+## Install Gedit latex plugins
+        sudo apt-get install gedit-latex-plugin
 
-JavaFX Scene Builder
+## JavaFX Scene Builder
 - use software center, copy .desktop from /opt/JavaFXSceneBuilder2.0/ folder
 - or get it from [here](http://www.oracle.com/technetwork/java/javase/downloads/sb2download-2177776.html).
 
-Install Idea 13 ultimate
+## Install Idea 13 ultimate
 - DL Idea 13 ultimate
 - install Idea 13 in folder programs using university license key
 - modify Idea settings using Java G_Node.xml file from adrian
 - create file idea.desktop in ~./local/share/applications with content:
-    [Desktop Entry]
-    Type=Application
-    Name=IntelliJ IDEA
-    Comment=Integrated Development Environment (Version 13.1 EAP)
-    Icon=/home/[path]/idea-IU-135.1289/bin/idea.png
-    Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
-    Terminal=false
-    Categories=Development;IDE;Java;
+        [Desktop Entry]
+        Type=Application
+        Name=IntelliJ IDEA
+        Comment=Integrated Development Environment (Version 13.1 EAP)
+        Icon=/home/[path]/idea-IU-135.1289/bin/idea.png
+        Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
+        Terminal=false
+        Categories=Development;IDE;Java;
 - set up git as version control tool in idea
+
+
+# [OLD] Install python and python libraries
+
+### Install python library installation tool
+        sudo apt-get install python-pip python-pip3
+
+### Install python libraries
+        sudo apt-get install python-dev python-setuptools python-numpy python-sphinx python-h5py python-matplotlib python-scipy python-rdflib python-magic
+        sudo apt-get install python3-dev python3-setuptools python3-numpy python3-sphinx python3-matplotlib python3-h5py python3-scipy python3-yaml
+
+### Upgrade pip in case it was already installed
+        sudo pip install --upgrade pip
+
+### Install additional pyhton packages
+        sudo pip install quantities coveralls cpp-coveralls mock==1.0.1
+        sudo pip3 install quantities coveralls cpp-coveralls mock
+
+### Install python packages (futures for python 2to3, alabaster for documentation)
+        sudo pip install future alabaster
+
+
+### Install neo dependencies
+        sudo apt-get install python-numexpr python3-numexpr
+        sudo pip install tables
+        sudo pip3 install tables
+
+
+- REPLACE the following with sole installation of jupyter - check if its best to install solely via pip and NOT via apt-get
+- To see which kernels and where they are installed, check `jupyter kernelspec list`
+
+
+## Install ipython and ipython notebook
+        sudo apt-get install ipython ipython-notebook ipython3 ipython3-notebook
+
+## Upgrade ipython notebook to jupyter
+        sudo pip install -U jupyter
+
+
+If something does not work with the jupyter notebook, check this first for troubleshooting:
+    http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
