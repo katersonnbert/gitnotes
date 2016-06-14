@@ -5,6 +5,7 @@ Under Linux, if you encounter the following error message upon startup:
         IBus prior to 1.5.11 may cause input problems. See IDEA-78860 for details
 
 add the following line to the idea.sh startup shell script right after the shebang line:
+
         export XMODIFIERS=""
 
 Finds details how to create git ssh keys [here](https://help.github.com/articles/generating-ssh-keys/).
@@ -62,11 +63,11 @@ Find details [here](http://stackoverflow.com/questions/3587071/disable-intellij-
 ## Community edition
 - DL newest version from Intellij
 - unzip to folder of joice
-- change properties of quick launcher to .../[new idea directory]/bin/idea.sh
+- change properties of quick launcher to `.../[new idea directory]/bin/idea.sh`.
 
 ## Ultimate edition
 - same as community edition
-- at first open, activate by providing intellij account data
+- at first open, activate by providing Intellij account data.
 
 
 # IDEA ShortCuts:
@@ -134,7 +135,7 @@ Find details [here](https://dzone.com/refcardz/intellij-idea-update)
 # Using IDEA
 
 ## Using commandline inputs:
-- Run > Edit configurations
+- `Run > Edit configurations`
 
 
 # Specific problems with projects in IDEA
@@ -151,16 +152,16 @@ Get plugins for play and scala:
 
         Settings > plugin > Install JetBrains plugin
 
-- search for scala - install "scala" plugin
-- search for play - install "play x.x support" plugin
+- search for scala - install `scala` plugin
+- search for play - install `play x.x support` plugin
 - Close IDEA and open new scala/play2 project
-- In Settings/IDE Settings > Scala: change JVM SDK to latest java version
+- In Settings/IDE `Settings > Scala`: change JVM SDK to latest java version
 
 
 ## Problems with building a project after IDEA update:
 - move to main old project folder, remove old dependencies:
 
-        $rm target project/target project/project/ .idea/ *.iml -rf
+        rm target project/target project/project/ .idea/ *.iml -rf
 
 - close project in IDEA and CREATE new scala + play 2 project, not import!
 - select project folder
@@ -181,35 +182,34 @@ MAVEN
 
 - check if java version is 1.8 or higher:
 
-        ~$ java -version
+        java -version
 
 - check if maven version is 3 or higher:
 
-        ~$ mvn -v
+        mvn -v
 
 - Move to a directory where the project can be built and installed:
 
-        ~$ cd work
-        ~/work$ mkdir tmp
-        ~/work$ cd tmp
-        ~/work/tmp$
+        cd work
+        mkdir tmp
+        cd tmp
 
 - Clone project to be built from github to local build directory
 - Use an optional directory name, otherwise the directory name of the git project will be used
 
-        ~/work/tmp$ git clone git@github.com:G-Node/gndata-editor.git testBuild
+        git clone git@github.com:G-Node/gndata-editor.git testBuild
 
 - move to main project folder e.g. testBuild
 
-        ~/work/tmp$ cd testBuild
+        cd testBuild
 
 - Build project
 
-        ~/work/tmp/testBuild$ mvn clean compile package install
+        mvn clean compile package install
 
 - Start application
 
-        ~/work/tmp/testBuild$ java -jar target/gndata-*.jar
+        java -jar target/gndata-*.jar
 
 
 # Setup a Java MAVEN project with IDEA
@@ -234,27 +234,29 @@ maven requires the global variable JAVA_HOME, the maven bin directory has to add
 
 - here modify system variable "path" and add the path to the maven bin directory at the end.
 
-
-Find more details here:
-http://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
-https://confluence.atlassian.com/display/DOC/Setting+the+JAVA_HOME+Variable+in+Windows
+- Find more details here:
+    - [Edit system path](http://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)
+    - [Java home in Windows](https://confluence.atlassian.com/display/DOC/Setting+the+JAVA_HOME+Variable+in+Windows)
 
 
 # Create a new Maven project:
 
 Find more details [here](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 
-- Maven is a project setup tool ... it sets up project structure dependent on the archetype you select for a new project
+- Maven is a project setup tool ... it sets up project structure dependent on the archetype you select for a new project.
 - To create a new maven project, identify which archetype you want to use (google maven archetypes, duh).
 - Move to the directory where the new project should be created
 
         mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-description:
-archetype:generate ... creates a maven project based on an archetype
--DgroupId=org.g_node ... namespace the project will be created in. will create a package with this namespace. use a unique one, if you want to publish your package somewhere else [xxx] better description. in case of g-node projects always use org.g_node
--DartifactId= ... name of the project. will create src/main/java/[name of the project]
--DarchetypeArtifactId= ... the archetype that is used to create the project structure ... check documentation for different archetypes.
+Description:
+- `archetype:generate` ... creates a maven project based on an archetype
+- `-DgroupId=org.g_node` ... namespace the project will be created in. will create a package with this namespace.
+        use a unique one, if you want to publish your package somewhere else
+        [xxx] better description. in case of g-node projects always use org.g_node
+- `-DartifactId=` ... name of the project. will create `src/main/java/[name of the project]`
+- `-DarchetypeArtifactId=` ... the archetype that is used to create the project structure
+        ... check documentation for different archetypes.
 
 
 To use IDEA with a Maven Project go to the start screen:
@@ -268,7 +270,7 @@ To use IDEA with a Maven Project go to the start screen:
 
 - set Project language level to 8 - Lambdas
 
-Add the following to the pom file:
+- Add the following to the pom file:
 
         <build>
           <plugins>
@@ -288,12 +290,14 @@ Add the following to the pom file:
 
 If you made any mistakes during the import process delete the following stuff from the main project folder and import again:
 folders:
-- target
-- out
-.idea (hidden)
 
-files (from all subfolders):
-*.iml
+    - target
+    - out
+
+    .idea (hidden)
+
+    files (from all subfolders):
+    *.iml
 
 
 
@@ -314,4 +318,3 @@ files (from all subfolders):
 
 - add repository to: travis; appveyor; coveralls
 - add badges to readme.md
-
