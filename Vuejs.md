@@ -7,31 +7,31 @@ Vuejs Framework
 ## Getting started
 
 - Requires npm v >= 3.9
-- If lesser version is installed, remove from system. Check, that ```which npm``` does not yield any result.
-if there still is a result e.g. in /usr/local/lib or /usr/local/bin, unlink these before continuing.
+- If lesser version is installed, remove from system. Check, that `which npm` does not yield any result.
+if there still is a result e.g. in `/usr/local/lib or /usr/local/bin`, unlink these before continuing.
 - DL latest version of [nodejs from here](https://nodejs.org/). Extract to program folder of choice.
-- Create version independent link; add version independent link to $HOME/.profile
-(don't forget to ```source``` afterwards), e.g.:
+- Create version independent link; add version independent link to `$HOME/.profile`.
+(don't forget to `source` afterwards), e.g.:
 
         if [ -d "$HOME/work/software/nodejs" ] ; then
             PATH="$PATH:$HOME/work/software/nodejs/bin"
         fi
 
 - clone vue.js project
-- Install npm dependencies in main folder ```npm install```. This will add all dependencies
+- Install npm dependencies in main folder `npm install`. This will add all dependencies
 specified in "package.json" to the node_modules folder.
-- Start local application using ```npm run dev```
+- Start local application using `npm run dev`
 
 ## Structure of a vue file
-- \<style> block: additional styles specific for the current page.
-- \<template> block: contains the structure of a page using HTML elements; these can contain css attributes
+- `<style>` block: additional styles specific for the current page.
+- `<template>` block: contains the structure of a page using HTML elements; these can contain css attributes
 as well as vue specific attribute to dynamically include data. Elements can be bound to different views using v-bind.
-- \<script> block: contains imports of further views and bindings to data. only parts within ```export``` or
-```export default``` can be accessed outside of the file.
+- `<script>` block: contains imports of further views and bindings to data. only parts within `export` or
+`export default` can be accessed outside of the file.
 
 
-- export blocks can contain functions like e.g. ```data()```, ```methods```, ```events```, ```props```, ```mixins```
-- ```props``` can be used to share bound data between various views (using ```twoway: true```)
+- export blocks can contain functions like e.g. `data()`, `methods`, `events`, `props`, `mixins`
+- `props` can be used to share bound data between various views (using `twoway: true`)
 
 ## Project structure
 
