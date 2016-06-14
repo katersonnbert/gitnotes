@@ -316,6 +316,20 @@ This requires to manually add a repository to the apt-get list of installable pa
         sudo apt-get update
         sudo apt-get install oracle-java8-installer
 
+- Print installed packages to terminal
+
+        apt --installed list
+
+        # grep to narrow down for specific packages
+        apt --installed list | grep "somePackage"
+
+- Display information for specific installed packages (requires exact package name)
+
+        dpkg -s <packagename>
+
+        # or
+        dpkg-query -l <packagename>
+
 
 # Using SFTP with the file browser
 - ctrl + l
@@ -481,4 +495,10 @@ http://www.linuxhowtos.org/C_C++/socket.htm
 # Customizing Ubuntu 16
 
 - open new instance of already open program e.g. Nautilus: middle click or shift+left click on icon in launcher
+
+
+# Ubuntu shortcuts making our life easier
+
+- alt + tab ... switch between open applications in the current workspace
+- alt + ^ ... switch between open windows of the current application in the current workspace
 
