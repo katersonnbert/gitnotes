@@ -1,7 +1,7 @@
 Linux and using the Bash (bourne again shell)
 ===============================
 
-#  Using the shell
+##  Using the shell
 
 Baby steps:
 1) get someone to show you how to open a shell and execute commands
@@ -9,40 +9,43 @@ Baby steps:
 3) get to know the basic shell commands described below
 4) script away
 
-## Opening a shell
-Under Ubuntu Linux a terminal can be opened by using Ctrl + Alt + T
+### Opening a shell
+Under Ubuntu Linux a terminal can be opened by using `Ctrl + Alt + T`.
 
 
-##  More resources:
+###  More resources:
 
 Understanding the unix file system (you should really read this):
-http://www.december.com/unix/tutor/filesystem.html
+- http://www.december.com/unix/tutor/filesystem.html
 
 and (you could read this)
-http://linuxcommand.org/lts0040.php
+- http://linuxcommand.org/lts0040.php
 
 and (if you are really interested)
-https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
+- https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 
 Shell Tutorial (you can work through this if you want to know more about using the shell)
-http://linuxcommand.org/learning_the_shell.php
+- http://linuxcommand.org/learning_the_shell.php
 
 
-# Navigating the filesystem:
+## Navigating the filesystem:
 When you first open your shell you will see something like this:
     
     [chris@troll ~]$
 
-This means, that you have logged into a linux network with username "chris", that you currently use the computer named "troll" and are currently within the space, the filesystem has reserved as your workspace (indicated by "~").
+This means, that you have logged into a linux network with username "chris",
+that you currently use the computer named "troll" and are currently within the space,
+the filesystem has reserved as your workspace (indicated by "~").
 
 In a more abstract way will always see the information like this:
 
     [username@computername current_folder]$
 
-You can navigate through the filesystem by using the "cd" (change directory) command right after the "$" sign. Work yourself through the navigation introduction provided with the links above.
+You can navigate through the filesystem by using the "cd" (change directory) command right after the "$" sign.
+Work yourself through the navigation introduction provided with the links above.
 
 
-# Linux nice to knows:
+## Linux nice to knows:
 
 - Special characters which are not allowed in file- or folder names:
 
@@ -51,7 +54,8 @@ You can navigate through the filesystem by using the "cd" (change directory) com
 - Linux is case sensitive!
     `Filename.txt` is not the same as `filename.txt`
 
-- Try to avoid blanks within file- or folder names, always use underscore or minus, especially, if you create folders or files using the filebrowser!
+- Try to avoid blanks within file- or folder names, always use underscore or minus, especially,
+if you create folders or files using the filebrowser!
         e.g.
 
         do not use:
@@ -116,97 +120,96 @@ You can navigate through the filesystem by using the "cd" (change directory) com
 
 # Basic Bash commands:
 
-`ls`        ... display files and directories within your current directory
-`ls -l`     ... like ls, but display additional information
-`ls -a`     ... like ls, but also display hidden files and directories
-`ls -l -a`  ... combination of `ls -l` and `ls -a`
-
-ls ../Foldername ... display the contents of directory "Foldername" residing on the same hirarchical layer as the folder we are currently residing in
-
-ll ... like ls -l
-
-pwd ... print working directory, prints the complete path from root until the directory we are currently residing in
+- `ls`        ... display files and directories within your current directory
+- `ls -l`     ... like ls, but display additional information
+- `ls -a`     ... like ls, but also display hidden files and directories
+- `ls -l -a`  ... combination of `ls -l` and `ls -a`
+- `ls ../Foldername` ... display the contents of directory "Foldername" residing on the same
+hierarchical layer as the folder we are currently residing in
+- `ll` ... like ls -l
+- `pwd` ... print working directory, prints the complete path from root until the directory we are currently residing in
 
         e.g. [chris@troll papers]$pwd
              /home/users/chris/papers/
              [chris@troll papers]$
 
-cd [path] ... change directory; move within the filesystem from your current directory to another directory specified in your [path]
+- `cd [path]` ... change directory; move within the filesystem from your current directory to another directory specified in your [path]
 
         e.g. [chris@troll ~]$cd /home/user/franz/
 
-cd ..   ... change from the current directory to the directory directly above.
+- `cd ..`   ... change from the current directory to the directory directly above.
 
-mkdir foldername ... create folder "foldername" at your current position within the filesystem
+- `mkdir foldername` ... create folder "foldername" at your current position within the filesystem
 
         e.g. [chris@troll papers]$mkdir cell_papers
 
-rmdir foldername ... remove folder "foldername" from the filesystem. will only work, if the folder is empty.
+- `rmdir foldername` ... remove folder "foldername" from the filesystem. will only work, if the folder is empty.
 
         e.g. [chris@troll papers]$rmdir cell_papers
 
-rm filename ... remove file "filename" from the filesystem.
+- `rm filename` ... remove file "filename" from the filesystem.
 
         e.g. [chris@troll papers]$rm 2011_Science_2282772.pdf
 
-rm foldername -r ... remove folder "foldername" from the filesystem including all files and folders it contains.
+- `rm foldername -r` ... remove folder "foldername" from the filesystem including all files and folders it contains.
 
         e.g. [chris@troll work]$rm papers -r
 
-cp path1/source path2/target ... copy file "source" residing at location "path1" to file "target" residing at location "path2"
+- `cp path1/source path2/target` ... copy file "source" residing at location "path1" to file "target"
+residing at location "path2"
 
         e.g. [chris@troll work]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf /home/users/chris/work/papers/science/2011_Science_2282772.pdf
 
-cp path1/source ./target ... copy file "source" residing at location "path1" to file "target" at the current location
+- `cp path1/source ./target` ... copy file "source" residing at location "path1" to file "target" at the current location
 
         e.g. [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf ./2011_Science_2282772.pdf
 
 will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/papers/ to location /home/users/chris/work/papers/science/
 
-cp path1/source . ... copy file "source" residing at location "path1" to the current location, keeping the same filename.
+- `cp path1/source .` ... copy file "source" residing at location "path1" to the current location, keeping the same filename.
 
         e.g. [chris@troll science]$cp /home/user/chris/work/papers/2011_Science_2282772.pdf .
 will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/papers/ to location /home/users/chris/work/papers/science/
 
-mv [Pfad-Quelle]/[Filename] [Pfad-Ziel] ... same as "cp" command, but moves the file from one location to the other, deleting the original file.
+- `mv [Pfad-Quelle]/[Filename] [Pfad-Ziel]` ... same as "cp" command, but moves the file from one location to the other, deleting the original file.
 
-
-echo text ... prints "text" onto the screen
+- `echo text` ... prints "text" onto the screen
 
         e.g. [chris@troll work]$echo hurray for icecream!
         
-echo text > filename.txt ... saves "text" into file "filename.txt" which will be created at the current filesystem location
+- `echo text > filename.txt` ... saves "text" into file "filename.txt" which will be created at the current filesystem location
 
         e.g. [chris@troll work]$echo hurray for icecream! > important.txt
 
-cat filename ... prints the contents of file "filename" onto the screen.
+- `cat filename` ... prints the contents of file "filename" onto the screen.
 
         e.g. [chris@troll work]$cat important.txt
 
-less filename ... displays the contents of file "filename" in the screen, contents are scrollable by using "up" and "down" keys. end this by pressing "q"
+- `less filename` ... displays the contents of file "filename" in the screen, contents are scrollable by using "up" and "down" keys. end this by pressing "q"
 
         e.g. [chris@troll work]$less important.txt
 
-history ... list of all commands executed within this terminal
+- `history` ... list of all commands executed within this terminal
 
         e.g. [chris@troll ~]$history
 
-exit ... close the shell
+- `exit` ... close the shell
 
         e.g. [chris@troll ~]$exit
 
 
+## Further basic Bash command line options:
 
-# Further Basic Bash command line options:
-
-[command] > [filename] ... will write the output of a specifc [command] to a specific file. note, that an already existing file with the same filename at the same location will be replaced!
+- `[command] > [filename]` ... will write the output of a specific `[command]` to a specific file.
+Note, that an already existing file with the same filename at the same location will be replaced!
 
         e.g.    [chris@troll work]$echo hurray for icecream! > important.txt
                 [chris@troll work]$less important.txt
                 [chris@troll work]$echo another hurray for schnitzel! > important.txt
                 [chris@troll work]$less important.txt
 
-[command] >> [filename] ... will append the output of a specific [command] to a specific file. If the file does not exist yet, it will be created.
+- `[command] >> [filename]` ... will append the output of a specific `[command]` to a specific file.
+If the file does not exist yet, it will be created.
 
         e.g.    [chris@troll work]$echo chicken >> shopping_list.txt
                 [chris@troll work]$less shopping_list.txt
@@ -216,30 +219,29 @@ exit ... close the shell
                 [chris@troll work]$echo rosemary >> shopping_list.txt
                 [chris@troll work]$less shopping_list.txt
 
-[command] & ... start a program running in the background, getting back the shell.
+- `[command] &` ... start a program running in the background, getting back the shell.
 
         e.g.    [chris@troll work]$firefox &
 
-[command]       ... start a program
+- `[command]` ... start a program
 
         e.g.    [chris@troll work]$firefox
 
-ctr + z         ... stop the execution of the program and keep it on hold in the background
-bg              ... restart the program, but keep it running in the background (bg)
+- `ctr + z`         ... stop the execution of the program and keep it on hold in the background
+- `bg`              ... restart the program, but keep it running in the background (bg)
 
                 [chris@troll work]$bg
 
-fg              ... if you have a program running in the background, get it back by fg (foreground)
+- `fg`              ... if you have a program running in the background, get it back by fg (foreground)
 
         e.g.    [chris@troll work]$fg
 
-command_1 | command_2 ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
+- `command_1 | command_2` ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
 
+## Further useful Bash commands:
 
-# Further useful Bash commands:
-
-`ssh computername` ... connect to another computer using secure shell (an encrypted connection to another computer within the network). once connected, the cpu of this computer will be used for all further actions. makes sense to do large calculations on the server rather than on the local machine. Might require a password.
+- `ssh computername` ... connect to another computer using secure shell (an encrypted connection to another computer within the network). once connected, the cpu of this computer will be used for all further actions. makes sense to do large calculations on the server rather than on the local machine. Might require a password.
 
         [chris@troll work]$ssh server4
         [chris@server4 ~]$
@@ -260,16 +262,13 @@ Use the command "exit" to close the ssh connection to another computer.
         e.g. [chris@troll work]wc shopping_list.txt
 
 
-# More nice bash commands, use the --help option for in depth information:
+## More nice bash commands, use the --help option for in depth information:
 
-top     ... displays all processes running on the currently used computer. exit using "q"
+- `top`     ... displays all processes running on the currently used computer. exit using "q"
+- `gzip`    ... compress/uncompress files
+- `tar`     ... compress/uncompress files
 
-gzip    ... compress/uncompress files
-
-tar     ... compress/uncompress files
-
-
-# Commandline programs for text file handling:
+## Commandline programs for text file handling:
 Use the --help option for in depth information, links provided or the interweb.
 
 ---|---
@@ -285,7 +284,7 @@ Use the --help option for in depth information, links provided or the interweb.
 `awk`  |An entire programming language designed for constructing filters. Extremely powerful. <br/> http://www.vectorsite.net/tsawk.html
 
 
-# Root access by using `sudo`
+## Root access by using `sudo`
 [Introduction to sudo](https://www.linux.com/learn/tutorials/306766:linux-101-introduction-to-sudo)
 
 In a nutshell sudo is the commandline way to grant a user root access for the following command e.g. when installing a software package. 
@@ -295,7 +294,7 @@ It will require a password that is associated with a user that has root access.
     [sudo] password for [username]:
 
 
-# Installing packages by using apt (Advanced Packaging Tool)
+## Installing packages by using apt (Advanced Packaging Tool)
 [Quick apt-get overview](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool)
 
 When working on Debian based Linux systems, apt-get is a convenient way to download and install software packages.
@@ -331,45 +330,32 @@ This requires to manually add a repository to the apt-get list of installable pa
         dpkg-query -l <packagename>
 
 
-# Using SFTP with the file browser
+## Using SFTP with the file browser
 - ctrl + l
 - enter user@url e.g. nix@projects.g-node.org
 - enter pass phrase
  
 
-# Finding where a program is installed
+## Finding where a program is installed
 
     which [program name]
 
+## File operations
 
-
-# File operations
-
-### Create file
-
-    touch fileName
-
-### Overwrite file
-
-    echo "text" > fileName
-
-### Add to file at the bottom
-
-    echo "text" >> fileName
-
+- `touch [filename]` ... create file "filename"
+- `echo "text" > fileName` ... Overwrite file
+- `echo "text" >> fileName` ... Add to file at the bottom
 
 ## File permissions
 
-### Changing permissions:
-    
-    chmod options permissions filename
+- `chmod options permissions filename` ... change file permissions
 
 ### Change permissions to read, write and delete for everyone:
 
     chmod 777 filename
 
 Detailed description and examples:
-http://www.computerhope.com/unix/uchmod.htm
+- http://www.computerhope.com/unix/uchmod.htm
 
 
 ## SymLinks (Symbolic links) to files or folders
@@ -379,8 +365,8 @@ http://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/
 
         ln -s [target-filename] [symbolic-filename]
 
-This creates a symbolic link named [symbolic-filename] that points to [target-filename]
-NOTE: ALWAYS use the whole path as [target-filename], do not use relative terms.
+This creates a symbolic link named `[symbolic-filename]` that points to `[target-filename]`
+NOTE: ALWAYS use the whole path as `[target-filename]`, do not use relative terms.
 
         e.g. ln -s /home/currentUser/tmp/testLinks/hurra.txt ../hurraLink
 
@@ -390,24 +376,26 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
         e.g. rm hurraLink
 
 
+## Linux System variables
+- `$HOME` ... contains absolute path to the home folder
+- `$PATH` ... contains all directories which are included when looking for an executable
 
-# Linux System variables
-`$HOME` ... contains absolute path to the home folder
-`$PATH` ... contains all directories which are included when looking for an executable
 
-
-# Important system folders under Linux:
+## Important system folders under Linux:
 
 ###  Global searchpath variable $PATH:
 
 - display all directories currently included in the searchpath:
-        `echo $PATH`
+
+        echo $PATH
 
 - permanently add directories to `$PATH` by editing `/etc/profile` or `$HOME/.profile` by adding
-        `export PATH=$PATH:/[directory of choice]`
+
+        export PATH=$PATH:/[directory of choice]
 
 - Symlinks for the operating system:
-        `/etc/alternatives`
+
+        /etc/alternatives
 
 - Custom packages and libraries can usually be found in one of the following folders:
 
@@ -420,71 +408,70 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
 
 ## Adding custom executable paths under Linux:
 
-Set up a bin folder that is included in the Linux $PATH which contains all the links to starting programs. check out this link for 
-further information:
-http://www.troubleshooters.com/linux/prepostpath.htm
-Folders can easily be added to the beginning and the the end of the variable - depending on where the application is first found, 
-this will be executed.
+- Set up a bin folder that is included in the Linux $PATH which contains all the links to starting programs.
+- Check out this link for [more information](http://www.troubleshooters.com/linux/prepostpath.htm).
+- Folders can easily be added to the beginning and the the end of the variable -
+depending on where the application is first found, this will be executed.
 
 Example:
 In folder ~ (absolute /home/msonntag in our example)
 
-    ~$ mkdir bin
+    mkdir bin
 
 Check if path has been automatically added by linux:
 
-    ~$ cat $PATH
+    cat $PATH
 
 If not, then execute the following to recompile the .profile file:
 
-    ~$ source .profile
+    source .profile
 
 Check path again
 
-    ~$ cat $PATH
+    cat $PATH
 
 If its still not in there, then add it manually to the beginning of the `$PATH`:
 
-    ~$ export PATH=/home/msonntag/bin:$PATH
+    export PATH=/home/msonntag/bin:$PATH
 
 Create symbolic links to executables in custom bin folder. As example add startup shell script of application activator
 can be used to easily switch between different distributions of the same application
 
-    ~$ cd bin
-    ~/bin$ ln -s /home/msonntag/work/software/activator-1.2.12/activator activator
+    cd bin
+    ln -s /home/msonntag/work/software/activator-1.2.12/activator activator
 
 
+## Find text in files using grep
 
-# Find text in files using grep
+- Find text "NoResultsException" in all files of all subfolders (-R) of the current folder (.)
+and print the line number where the match has been found (-n).
 
-- Find text "NoResultsException" in all files of all subfolders (-R) of the current folder (.) and print the line number where the match has been found (-n).
-
-    `grep -Rn "NoResultsException" .`
+        grep -Rn "NoResultsException" .
 
 
-# netstat: check connections and available sockets
-
+## netstat: check connections and available sockets
     netstat
 
-- Check connections: `netstat -l`
-- Check connections showing their local address `netstat -lt`
+- `netstat -l` ... check connections
+- `netstat -lt` ... check connections showing their local address
 
 
-# Bashrc
+## Bashrc
 - The hidden `.bashrc` file is a script, that is executed, whenever a new terminal session is started.
 - The file contains configurations for the terminal session. An example would be the shorthand `ll` instead of `ls -l`
 - There are two main bashrc files.
-- The first is found in /etc/bash.bashrc, this one applies to all shell sessions
-- The second one is found in /home/[user]/.bashrc. This one applies only to non-login shell sessions.
+- The first is found in `/etc/bash.bashrc`, this one applies to all shell sessions
+- The second one is found in `/home/[user]/.bashrc`. This one applies only to non-login shell sessions.
 
 
-# Linux server crash course:
+## Linux server crash course:
 
 http://www.linuxhowtos.org/C_C++/socket.htm
 
 - client and server are both processes, that communicate with each other via SOCKETS.
 - processes can only communicate, if they are in the same ADRESS DOMAIN and have the same SOCKET TYPE.
-- the two main different address domains are the UNIX DOMAIN (processes live in a common file system) and the INTERNET DOMAIN (processes live on two hosts anywhere in the internet)
+- the two main different address domains are the UNIX DOMAIN (processes live in a common file system) and the INTERNET DOMAIN
+(processes live on two hosts anywhere in the internet)
 - the address of a socket in the unix domain is a CHARACTER STRING entry in the file system
 - the address of a socket in the internet domain is the internet adress of the host machine which is the IP ADDRESS (unique 32bit address).
 - Each internet socket address needs a port number on its host (16bit unsigned integer).
@@ -492,12 +479,12 @@ http://www.linuxhowtos.org/C_C++/socket.htm
 - The mainly used socket type is the STREAM SOCKET. Stream sockets TCP (transmission control protocol).
 
 
-# Customizing Ubuntu 16
+## Customizing Ubuntu 16
 
 - open new instance of already open program e.g. Nautilus: middle click or shift+left click on icon in launcher
 
 
-# Ubuntu shortcuts making our life easier
+## Ubuntu shortcuts making our life easier
 
 - find an extensive list [here](http://askubuntu.com/questions/28086/what-are-unitys-keyboard-and-mouse-shortcuts).
 
