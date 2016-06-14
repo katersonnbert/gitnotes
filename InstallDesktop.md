@@ -1,45 +1,57 @@
-IMPORTANT NOTE: before new install do a thorough backup! especially config files & ssh keys!
+ Outline how to setup a nice Ubuntu Linux desktop
+===================================================
 
-NOTE: Good to know under debian/ubuntu:
-when using apt-get make sure the local package index is up to date:
+- IMPORTANT NOTE: before new install do a thorough backup! especially config files & ssh keys!
+
+- NOTE: Good to know under debian/ubuntu: when using apt-get make sure the local package index is up to date:
+
         sudo apt-get update
 
-NOTE: First of all good to know under Linux:
-$HOME ... contains absolute path to the home folder
-$PATH ... contains all directories which are included when looking for an executable
+#### NOTE: First of all good to know under Linux:
+- `$HOME` ... contains absolute path to the home folder
+- `$PATH` ... contains all directories which are included when looking for an executable
 
 
+#### Adding custom executable path under Linux:
 
-Adding custom executable path under Linux:
-Set up a bin folder that is included in the Linux $PATH which contains all the links to starting programs. check out this link for further information:
-http://www.troubleshooters.com/linux/prepostpath.htm
-Folders can be easily added to the beginning and the the end of the variable - depending on where the application is first found, this will be executed.
+- Set up a bin folder that is included in the Linux $PATH which contains all the links to starting programs.
+- Check out this [link](http://www.troubleshooters.com/linux/prepostpath.htm) for further information.
+- Folders can be easily added to the beginning and the the end of the variable - depending on where the
+application is first found, this will be executed.
 
 Example:
-In folder ~ (absolute /home/[username] in our example)
-    ~$ mkdir bin
+- In folder ~ (absolute `/home/[username]` in our example)
 
-Check if path has been automatically added by linux:
-    ~$ cat $PATH
+        mkdir bin
 
-If not, then execute the following to recompile the .profile file:
-    ~$ source .profile
+- Check if path has been automatically added
 
-Check path again
-    ~$ cat $PATH
+        cat $PATH
 
-If its still not in there, then add it manually to the beginning of the PATH:
-    ~$ export PATH=/home/[user]/bin:$PATH
+- If not, then execute the following to recompile the `.profile` file
 
+        source .profile
 
-Create symbolic links to executables in custom bin folder. As example add startup shell script of application activator
+- Check path again
+
+        cat $PATH
+
+- If its still not in there, then add it manually to the beginning of the PATH:
+
+        export PATH=/home/[user]/bin:$PATH
+
+##### Symbolic links
+- Create symbolic links to executables in custom bin folder.
+- As example add startup shell script of application activator
 can be used to easily switch between different distributions of the same application
-    ~$ cd bin
-    ~/bin$ ln -s /home/[user]/work/software/activator-1.2.12/activator activator
+
+        cd bin
+        ln -s /home/[user]/work/software/activator-1.2.12/activator activator
 
 
-Adding an application to the quick launcher bar:
-- create file [name of application].desktop somewhere, open it with an editor, add at least the following:
+##### Adding an application to the quick launcher bar:
+- create file `[name of application].desktop` somewhere, open it with an editor, add at least the following:
+
         [Desktop Entry]
         Type=Application
         Name=[Name of application]
@@ -48,134 +60,137 @@ Adding an application to the quick launcher bar:
         Exec=[path to shell script]
         Terminal=false
         Categories=[Linux application categories e.g. Development;IDE;Java;]
+
 - DO NOT CREATE DIRECTLY IN THE HIDDEN FOLDER
 - DO NOT USE QUOTES WHEN SETTING THE ICON PATH
-- move the created .desktop file to hidden folder ~/.local/share/applications
-- manually edit the properties (properties -> permissions -> execute) to make it executable
+- move the created .desktop file to hidden folder `~/.local/share/applications`
+- manually edit the properties (`properties -> permissions -> execute`) to make it executable
 - draw it onto the quick launcher bar.
 
-Edit an existing quick launcher link: right click, properties, change whatever you like.
-Remove an existing quick launcher link: alt + right-click
+##### Edit launcher links in Ubuntu 14
+- Edit an existing quick launcher link: right click, properties, change whatever you like.
+- Remove an existing quick launcher link: alt + right-click
 
 
-
-
-Before migration:
+## Before a migration:
 - check directories, copy all interesting stuff
 - export bookmarks
 - copy source code not managed by git
 - save ssh keys and congig/profile files
 
 
-Setting up new Linux Ubuntu computer
+## Setting up new Linux Ubuntu computer
 - Install latest Ubuntu LTS
-    here are a couple of installation notes for Ubuntu 16 LTS
-    https://help.ubuntu.com/community/Installation/FromUSBStick
-    http://www.tecmint.com/ubuntu-16-04-installation-guide/
-    http://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/#
-    http://www.tecmint.com/things-you-mostly-need-to-do-after-installing-ubuntu-16-04/4/
+- Here are a couple of installation notes for Ubuntu 16 LTS
+    - [Ubuntu from USB](https://help.ubuntu.com/community/Installation/FromUSBStick)
+    - [Ubuntu 16 installation guide](http://www.tecmint.com/ubuntu-16-04-installation-guide/)
+    - [Dual boot alongside Windows](http://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/#)
+    - [Customize Ubuntu 16](http://www.tecmint.com/things-you-mostly-need-to-do-after-installing-ubuntu-16-04/4/)
 
 - Update Ubuntu (software center)
 - create folders
-    bin
-    chaos
-    chaos/dl
-    chaos/DC
-    chaos/DNC
-    chaos/work
-    chaos/software
+
+        bin
+        chaos
+        chaos/dl
+        chaos/DC
+        chaos/DNC
+        chaos/work
+        chaos/software
 
 
-## Install latest Oracle Java
-        http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/
-    or
-        http://wiki.jetbrains.net/intellij/Installing_and_running_IntelliJ_IDEA_on_Ubuntu
+### Install latest Oracle Java
+
+- find infos:
+    - [Java via ppa](http://tecadmin.net/install-oracle-java-8-jdk-8-ubuntu-via-ppa/)
+    - [Running Intellij on Ubuntu](http://wiki.jetbrains.net/intellij/Installing_and_running_IntelliJ_IDEA_on_Ubuntu)
+
 
         sudo add-apt-repository ppa:webupd8team/java
         sudo apt-get update
         sudo apt-get install oracle-java8-installer
 
 - check java version
+
         java -version
 
 - set up java environment
+
         sudo apt-get install oracle-java8-set-default
 
 
-## Firefox - update ff preferences:
+### Firefox - update ff preferences:
 - privacy
 - select individual history
 - set third party cookies to never
 - set ask every time
 
-### Firefox addons:
+#### Firefox addons:
 - Adblock plus
 - Youtube video and audio downloader
 - Print pages to Pdf
 
 
-## Install Chromium
-        sudo apt-get install chromium-browser
+### Install Chromium
+
+    sudo apt-get install chromium-browser
+
 - open chromium from terminal, lock to launcher
 
 
-## Install Vim
-        sudo apt-get install vim
+### Install HDFView
 
+    sudo apt-get install hdfview
 
-## Install HDFView
-        sudo apt-get install hdfview
+### Install nixio dependencies:
 
+    sudo apt-get install libhdf5-serial-dev libcppunit-dev cmake build-essential
+    #sudo apt-get install libhdf5-7 #does not work
 
-## Install nixio dependencies:
-### Install gcc build dependencies
-        sudo apt-get install libhdf5-serial-dev libcppunit-dev cmake build-essential
-        #sudo apt-get install libhdf5-7 #does not work
-
-### Install libboost dependencies
-        sudo apt-get install libboost-all-dev
-
-### Install cpp-libyaml
-        sudo apt-get install libyaml-cpp-dev
-
-### Install cython for python and python3
-        sudo apt-get install cython cython3
-
-
+    sudo apt-get install libboost-all-dev
+    sudo apt-get install libyaml-cpp-dev
+    sudo apt-get install cython cython3
 
 
 
 ## Setup ssh-keys:
-(copy folder ~/.ssh, makes it easier plus keeps old keys, otherwise:)
-(also checkout howTo create file for telling which key should be used where)
+Copy folder `~/.ssh`, makes it easier plus keeps old keys, otherwise:
 
-create .ssh folder in ~ folder
-    mkdir .ssh
-set folder properties
-    chmod go-rwx -R .ssh
-create new general key
-    cd .ssh
-    ssh-keygen
-    //say yes to everything, no pw
-create new github key
-    ssh-keygen
-call key "id_rsa_github"
+- create `.ssh` folder in home folder folder
+
+        cd
+        mkdir .ssh
+
+- set folder properties
+
+        chmod go-rwx -R .ssh
+
+- create new general key
+
+        cd .ssh
+        ssh-keygen
+        # say yes to everything, no pw
+
+- create new github key
+
+        ssh-keygen
+
+- call key "id_rsa_github"
 
 
-## Install curl
-        sudo apt-get install curl
+### Install curl
+    sudo apt-get install curl
 
+### Install Maven
+    sudo apt-get install maven
 
-## Install Maven
-        sudo apt-get install maven
+### Install and setup Git
+- Dl and install [git](http://git-scm.com/)
 
-
-## Install and setup Git
--dl and install git (http://git-scm.com/)
         sudo apt-get install git
 
-- check if ~/.gitconfig exists, create file otherwise
-- copy the following to file ~/.gitconfig
+- check if `~/.gitconfig` exists, create file otherwise
+- copy the following to file `~/.gitconfig`
 
         [user]
             name = M. Sonntag
@@ -202,7 +217,7 @@ call key "id_rsa_github"
         [push]
             default = matching
 
-- open ~/.bashrc (ctrl-h in file browser to show hidden files)
+- open `~/.bashrc` (ctrl-h in file browser to show hidden files)
 - add the following to the end of the file
 
         # Git state
@@ -215,29 +230,34 @@ call key "id_rsa_github"
         export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
 - if required: setup github with new ssh key.
-    cat id_rsa_github.pub
+
+        cat id_rsa_github.pub
+
 - prints public key, copy everything
-- log in to github/settings/ssh keys/add key/ paste public key
+- log in to github
+    - settings
+    - ssh keys
+    - new SSH key
+    - paste public key
+
+### Install tree commandline programm (prints file structure tree from the current directory)
+    sudo apt-get install tree
 
 
-## Install tree commandline programm (prints file structure tree from the current directory)
-        sudo apt-get install tree
-
-
-## Install Gedit
+### Install Gedit (if its not there)
         sudo apt-get install gedit
 
 - change gedit settings
-    Edit -> Preferences -> View ... Display line numbers
-    Edit -> Preferences -> Font & Colors -> Oblivion
-    Edit -> Preferences -> Editor ... Tab width 4, Insert spaces instead of tabs, autosave files every 5min
+    - Edit -> Preferences -> View ... Display line numbers
+    - Edit -> Preferences -> Font & Colors -> Oblivion
+    - Edit -> Preferences -> Editor ... Tab width 4, Insert spaces instead of tabs, autosave files every 5min
 
 
-## Install Terminator terminal
-
+### Install terminator terminal
         sudo apt-get install terminator
 
 - Setup terminator config file
+
         cd ~/.config/
         mkdir terminator
         cd terminator
@@ -271,29 +291,30 @@ call key "id_rsa_github"
 ## Install python and python libraries
 
 ### Install matplotlib dependencies for later
-        sudo apt-get install libfreetype6-dev libpng-dev
+    sudo apt-get install libfreetype6-dev libpng-dev
 
 ### Install python-odml dependencies for later
-        sudo apt-get install libxml2-dev libxslt-dev
+    sudo apt-get install libxml2-dev libxslt-dev
 
 ### Install python package manager and virtualenv
-        sudo apt-get install python-pip python-pip3
-        sudo pip install --upgrade pip
-        sudo pip install virtualenv
+    sudo apt-get install python-pip python-pip3
+    sudo pip install --upgrade pip
+    sudo pip install virtualenv
 
 ### Prepare folders for python virtualenv
-
-        cd /home/Chaos/software
-        mkdir pyvirtualenv
-        cd pyvirtualenv
+    cd /home/Chaos/software
+    mkdir pyvirtualenv
+    cd pyvirtualenv
 
 ### Create and setup python2 virtualenv
-        virtualenv --system-site-packages pymain
+    virtualenv --system-site-packages pymain
 
 - activate py2 virtualenv
+
         source /home/msonntag/Chaos/software/pyvirtualenv/pymain/bin/activate
 
 - install python libraries
+
         pip install numpy
         pip install sphinx
         pip install matplotlib
@@ -310,24 +331,29 @@ call key "id_rsa_github"
         pip install python-magic
 
 - install neo dependencies
+
         pip install numexpr
         pip install tables
 
 - install odml dependencies
+
         pip install enum
         pip install lxml
 
 - install jupyter + jupyter
+
         pip install jupyter
 
 - end virtualenv
+
         deactivate
 
 
 ### Create and setup python3 virtualenv
-        virtualenv --system-site-packages -p /usr/bin/python3 py3main
+    virtualenv --system-site-packages -p /usr/bin/python3 py3main
 
 - install python libraries
+
         pip3 install numpy
         pip3 install sphinx
         pip3 install matplotlib
@@ -343,24 +369,28 @@ call key "id_rsa_github"
         pip3 install python magic
 
 - install neo dependencies
+
         pip3 install numexpr
         pip3 install tables
 
 - install odml dependencies
+
         pip3 install lxml
         # python3 does not need to install enum
 
 - install jupyter + ipython
+
         pip3 install jupyter
 
 - end virtualenv
+
         deactivate
 
-## Add bash alias for virtualenv activation
-        cd
-        gedit .bashrc
+### Add bash alias for virtualenv activation
+    cd
+    gedit .bashrc
 
-- add at the end of ~/.bashrc
+- add at the end of `~/.bashrc`
 
         # Custom alias'es
         if [ -d ]; then
@@ -369,34 +399,40 @@ call key "id_rsa_github"
         fi
 
 
-## Activator
+### Activator
 - DL from [homepage](https://typesafe.com/get-started).
 - follow [install instructions](https://www.playframework.com/documentation).
 
 
-## Install and setup everything required to build bootstrap
+### Install and setup everything required to build bootstrap
 - get ruby(required for jekyll), jekyll and rouge (both required for grunt)
+
         sudo apt-get install ruby ruby-dev make gcc
         sudo gem install jekyll
         sudo gem install rouge
+
 - get latest version of npm from [here](https://nodejs.org/)
 - Create version independent link; add version independent link to $HOME/.profile
-    (don't forget to ```source``` afterwards), e.g.:
+    (don't forget to `source` afterwards), e.g.:
 
         if [ -d "$HOME/work/software/nodejs" ] ; then
             PATH="$PATH:$HOME/work/software/nodejs/bin"
         fi
 - //NOTE: NEVER EVER USE THE FOLLOWING COMMAND IT WILL BREAK NPM! (if not run from ~$ if I read correctly but who knows)
+
         sudo npm install npm -g
+
 - get grunt (required for bootstrap)
+
         sudo npm install -g grunt-cli
 
 - if required, install the following:
+
         sudo apt-get install nodejs nodejs-dev node-less
 
 
-## Install Virtual box
-        sudo apt-get install virtualbox virtualbox-dkms
+### Install Virtual box
+    sudo apt-get install virtualbox virtualbox-dkms
 
 - copy existing virtual boxes
 - start the virtual machine by terminal, lock to launcher
@@ -404,52 +440,56 @@ call key "id_rsa_github"
 - Check settings: System - Base memory: 4096MB; Shared Folders: Win_Share (/home/msonntag/VirtualBox VMs/WinShare, auto-mount, full access)
 
 
-## Install IRC client
-#gnode@freenode
-#ccc@blafasel
+### Install IRC client
+    sudo apt-get install hexchat
 
-- sudo apt-get install xchat # does only work up to ubuntu 14
-
-        sudo apt-get install hexchat
-
-- freenode #gnode
+- channels gnode@freenode, ccc@blafasel
 - Settings -> preferences -> Monospace 12
 
 
-## Install Postgres
+### Install Postgres
         sudo apt-get install postgresql
 
-
-## Install VLC
+### Install VLC
         sudo apt-get install vlc
 
-## Install unity tweak to gain more control over ubuntu unity
+### Install unity tweak to gain more control over ubuntu unity
         sudo apt-get install unity-tweak-tool
 
 
-## Install Go
+### Install Go
 - download latest zip from golang.org
 - install according to golang.org/doc/install
 - unpack to directory of choice e.g. /usr/local or in our case $HOME/work/software
-    tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
+
+        tar -C $HOME/work/software -xzf go$VERSION.$OS-$ARCH.tar.gz
+
 - in case of /usr/local installation add to /etc/profile
-    export PATH=$PATH:/usr/local/go/bin
-- in case of custom path installation add to $HOME/.profile ... GOPATH is an additional directory, where go looks for installed packages
-    export GOROOT=$HOME/Chaos/software/go
-    export GOPATH=$HOME/Chaos/work/go-packages
-    export PATH=$PATH:$GOROOT/bin
-    export PATH=$PATH:$GOPATH/bin
+
+        export PATH=$PATH:/usr/local/go/bin
+
+- in case of custom path installation add to $HOME/.profile
+GOPATH is an additional directory, where go looks for installed packages
+
+        export GOROOT=$HOME/Chaos/software/go
+        export GOPATH=$HOME/Chaos/work/go-packages
+        export PATH=$PATH:$GOROOT/bin
+        export PATH=$PATH:$GOPATH/bin
+
 - re-load $PATH
-    source $HOME/.profile
+
+        source $HOME/.profile
 
 ### DL and install Visual Studio Code
 - Download latest visual studio code
 - Unpack it to directory of choice e.g. $HOME/work/software
 - Add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
-        gedit $HOME/VSCode.desktop &
+
+            gedit $HOME/VSCode.desktop &
 
 - add following statements to file, change where required:
+
         [Desktop Entry]
         Version=1.6
         Type=Application
@@ -460,12 +500,14 @@ call key "id_rsa_github"
         Terminal=false
 
 - move file to hidden folder
+
         sudo mv $HOME/VSCode.desktop $HOME/.local/share/applications/VSCode.desktop
 
 - start, install add ons by F1 ... ext inst ... select add on
--- install go, PowerShell, markdown linter
+- install go, PowerShell, markdown linter
 
-- on the commandline install all recommended go-tools according to https://marketplace.visualstudio.com/items?itemName=lukehoban.Go
+- on the commandline install all recommended go-tools according to [this](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go).
+
         go get -u -v github.com/nsf/gocode
         go get -u -v github.com/rogpeppe/godef
         go get -u -v github.com/golang/lint/golint
@@ -479,15 +521,17 @@ call key "id_rsa_github"
         echo $GOPATH
 
 ### Install the following Go packages at the $GOPATH folder:
-        go get -tags "nomymysql nomysql nosqlite3" github.com/CloudCom/goose/cmd/goose
-        go get github.com/golang/lint/golint
-        go get github.com/GeertJohan/fgt
+    go get -tags "nomymysql nomysql nosqlite3" github.com/CloudCom/goose/cmd/goose
+    go get github.com/golang/lint/golint
+    go get github.com/GeertJohan/fgt
 
 - coveralls
+
         go get github.com/mattn/goveralls
         go get golang.org/x/tools/cmd/cover
 
 - dependencies
+
         go get github.com/jmoiron/sqlx
         go get github.com/lib/pq
         go get gopkg.in/yaml.v2
@@ -500,6 +544,7 @@ call key "id_rsa_github"
 - add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
+
         [Desktop Entry]
         Version=5.0
         Type=Application
@@ -523,6 +568,7 @@ add Launcher:
 - add Launcher:
 - create .desktop file in hidden ~/.local/share/applications folder
 - add following statements to file, change where required:
+
         [Desktop Entry]
         Version=1.0
         Type=Application
@@ -535,7 +581,7 @@ add Launcher:
         StartupWMClass=jetbrains-pycharm-ce
 
 - change shortcut for closing subwindow to ctrl+w (settings, keymap, search for close tab)
-    https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html
+- find more pycharm shortcuts [here](https://www.jetbrains.com/pycharm/help/configuring-keyboard-shortcuts.html).
 
 
 ## Update Ubuntu settings
@@ -581,17 +627,26 @@ printer setup (hp p2015):
 
 - clone NIX, set upstream, fetch and rebase
 - set up required folders for build
+
         cd nix
         mkdir build
         cd build
+
 - set up build for nix
+
         cmake ..
         make -j 4 all
+
 - set up test
+
         ./TestRunner
+
 - run test, should complete without fail
+
         ctest
+
 - build and install nix
+
         sudo make install
 
 
@@ -601,43 +656,59 @@ printer setup (hp p2015):
 - clone files from github to local repository
 - set up local repositories (if required)
 - check recognised remotes first:
+
         git remote -v
+
 - add upstream if required
+
         git remote add upstream git@github.com:G-Node/nixpy
         git fetch --all
 
 - check existing libraries
+
         pkg-config --libs --cflags nix
 
 - build nixpy with python2:
+
         pyenv
         python setup.py build
         python setup.py install
+
 - manually remove all .egg folders and files
 - setup documentation
+
         python setup.py build_sphinx
+
 - deactivate python2 environment
+
         deactivate
 
 - build nixpy with python3:
+
         pyenv3
         python3 setup.py build
         python3 setup.py install
+
 - deactivate python3 environment
+
         deactivate
 
 
 ## Set up python-odml
 
 - install dependencies
+
         sudo apt-get install libxml2-dev libxslt-dev
 
 - clone python-odml, set upstream, fetch and rebase
 - install python-odml for python2
+
         pyenv
         python setup.py install
         deactivate
+
 - install python-odml for python3 ... still leads to errors.
+
         pyenv3
         python3 setup.py install
         deactivate
@@ -646,10 +717,13 @@ printer setup (hp p2015):
 ## Set up python-neo
 - clone python-neo, set upstream, fetch and rebase from tag "api-break"
 - install python-neo for python2
+
         pyenv
         python setup.py install
         deactivate
+
 - install python-neo for python3
+
         pyenv3
         python3 setup.py install
         deactivate
@@ -658,9 +732,11 @@ printer setup (hp p2015):
 ## Set up python-neo-nixio
 - clone python-neo-nixio, set upstream, fetch and rebase
 - install python-neo-nixio for python2
+
         pyenv
         python setup.py install
         deactivate
+
 - install python-neo-nixio for python3
         pyenv3
         python3 setup.py install
@@ -670,14 +746,16 @@ printer setup (hp p2015):
 ## Set up python-odml2
 - clone python-odml2, set upstream, fetch and rebase
 - install python-odml2 for python2
+
         pyenv
         python setup.py install
         deactivate
+
 - install python-odml2 for python3
+
         pyenv3
         python3 setup.py install
         deactivate
-
 
 
 # Win:
@@ -692,21 +770,20 @@ printer setup (hp p2015):
     idea community
     idea pycharm
 
-Add python to path variable
+- Add python to path variable
 (ctrl+x -> Systemsteuerung -> System -> Erweiterte Einstellungen -> Umgebungsvariablen -> add to path variable)
-install numpy (python -m pip install numpy)
-install scipy (python -m pip install scipy)
+- install numpy (python -m pip install numpy)
+- install scipy (python -m pip install scipy)
 
-install github for windows
-
-dl protege
-dl hdfview -> extract -> change paths in bin/hdfview.bat
+- install github for windows
+- dl protege
+- dl hdfview -> extract -> change paths in bin/hdfview.bat
 
 
 Regarding Windows Installation / refresh / Linux Dual boot
-    http://superuser.com/questions/697253/clean-install-windows-8-1-or-windows-8-from-oem-key/900235#900235
-    http://windows.microsoft.com/en-us/windows-8/create-reset-refresh-media
-    https://wiki.ubuntu.com/Touch/DualBootInstallation
+- [Install Win from OEM key](http://superuser.com/questions/697253/clean-install-windows-8-1-or-windows-8-from-oem-key/900235#900235)
+- [Refresh media](http://windows.microsoft.com/en-us/windows-8/create-reset-refresh-media)
+- [Dual Boot](https://wiki.ubuntu.com/Touch/DualBootInstallation)
 
 
 # Old stuff:
@@ -736,6 +813,7 @@ Regarding Windows Installation / refresh / Linux Dual boot
 - install Idea 13 in folder programs using university license key
 - modify Idea settings using Java G_Node.xml file from adrian
 - create file idea.desktop in ~./local/share/applications with content:
+
         [Desktop Entry]
         Type=Application
         Name=IntelliJ IDEA
@@ -744,10 +822,10 @@ Regarding Windows Installation / refresh / Linux Dual boot
         Exec=/home/[path]/idea-IU-135.1289/bin/idea.sh
         Terminal=false
         Categories=Development;IDE;Java;
+
 - set up git as version control tool in idea
 
-
-# [OLD] Install python and python libraries
+## Install python and python libraries
 
 ### Install python library installation tool
         sudo apt-get install python-pip python-pip3
@@ -784,5 +862,5 @@ Regarding Windows Installation / refresh / Linux Dual boot
         sudo pip install -U jupyter
 
 
-If something does not work with the jupyter notebook, check this first for troubleshooting:
-    http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041
+If something does not work with the jupyter notebook, check this first
+for [troubleshooting](http://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython/28840041#28840041).
