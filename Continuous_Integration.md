@@ -33,7 +33,6 @@ There are no 32 bit environments under [Travis CI](https://github.com/travis-ci/
 
 
 
-
 AppVeyor with GitHub
 ====================
 
@@ -56,12 +55,14 @@ More information about the appveyor yaml file:
     copy markdown code
 
 
+
 MAVEN
 =====
 
 build project locally
 
     mvn clean compile package install
+
 
 
 JACOCO MAVEN plugin
@@ -79,6 +80,7 @@ To get jacoco test results:
 - run from the project root:
 
     mvn clean compile test jacoco:report
+
 
 
 Coveralls with Travis CI & GitHub
@@ -143,11 +145,12 @@ Create Javadoc:
 [Javadoc](https://newcircle.com/bookshelf/java_fundamentals_tutorial/javadoc)
 
 This is how it works:
+
     javadoc -private -d [path] [sourcepath] -subpackages [list of packages]
 
--private ... includes everything (packages, classes, class members) into the documentation
--d ... output directory
--subpackages ... required to add every sub package specifically which sucks.
+- `-private` ... includes everything (packages, classes, class members) into the documentation
+- `-d` ... output directory
+- `-subpackages` ... required to add every sub package specifically which sucks.
 
 Example: Don't mind the warnings:
 
