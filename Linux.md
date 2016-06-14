@@ -499,6 +499,7 @@ http://www.linuxhowtos.org/C_C++/socket.htm
 
 # Ubuntu shortcuts making our life easier
 
+- find an extensive list [here](http://askubuntu.com/questions/28086/what-are-unitys-keyboard-and-mouse-shortcuts).
+
 - alt + tab ... switch between open applications in the current workspace
 - alt + ^ ... switch between open windows of the current application in the current workspace
-
