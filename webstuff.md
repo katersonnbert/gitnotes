@@ -8,14 +8,20 @@ To interact with a REST API, HTTP methods are used. The mainly used methods are:
 ## GET
 - Requests data from a specific resource.
 - Information required to get to the requested data can be sent via a query string in the URL of a GET request.
-- Can also be sent as a conditional GET, when the request message header includes an If-Modified-Since, If-Unmodified-Since, If-Match, If-None-Match or If-Range.
+- Can also be sent as a conditional GET, when the request message header includes an
+    - `If-Modified-Since`
+    - `If-Unmodified-Since`
+    - `If-Match`
+    - `If-None-Match`
+    - `If-Range`
 
 NOTE: See HTML query for more information regarding request message query.
 
 ## POST
 - Submits data to a specific resource.
 - Any necessary query string is sent in the HTTP message body of the POST request.
-- In detail, POST requires the server to accept an enclosed entity and process it at the provided Request-URI in the request line.
+- In detail, POST requires the server to accept an enclosed entity and process it at the
+    provided Request-URI in the request line.
 
 ## Further HTTP methods:
 - PUT       ... Submits data and requests, that it should be stored at an also provided Request-URI.
@@ -60,14 +66,16 @@ JSON (Java Script Object Notation)
 ==================================
 http://www.w3schools.com/json/default.asp
 
-Data format for information exchange between applications. Every valid JSON document should be valid javascript and be interpretable by eval(). The default character set is utf-8.
+Data format for information exchange between applications. Every valid JSON document should be valid javascript
+and be interpretable by `eval()`. The default character set is utf-8.
 In its syntax its similar to XML, but reduces some of the overhead.
 
 
-###The main differences and similarites comparted to XML are:
+###The main differences and similarities compared to XML are:
 - both JSON and XML are plain text, human readable, hierarchical and can be fetched by httpRequest
 - JSON has no end tags, can use arrays
-- JSON is parsed by the standard JavaScript parser or custom functions even within a page, XML requires its own parser before its converted to e.g. HTML.
+- JSON is parsed by the standard JavaScript parser or custom functions even within a page,
+XML requires its own parser before its converted to e.g. HTML.
 
 ###JSON files
 - the file type is ".json"
@@ -85,34 +93,39 @@ In its syntax its similar to XML, but reduces some of the overhead.
 ###The JSON syntax defines the following main rules:
 - strings are always in double quotes
 - data is in name:value pairs, separated by a colon
-    "firstName":"Blaubaer"
+
+        "firstName":"Blaubaer"
+
 - data is separated by commas
-- curly braces hold objects
--- objects can hold multiple name:value pairs
-    {"firstName":"Abdul", "lastName":"Nachtigaller"}
+- curly braces hold objects -- objects can hold multiple name:value pairs
+
+        {"firstName":"Abdul", "lastName":"Nachtigaller"}
+
 - square brackets hold arrays, arrays can hold multiple objects
-    "litCharacters": [
-        {"firstName":"Abdul", "lastName":"Nachtigaller"},
-        {"firstName":"Randolph", "lastName":"Carter"},
-        {"firstName":"Arlen", "lastName":"Bales"}
-    ]
+
+        "litCharacters": [
+            {"firstName":"Abdul", "lastName":"Nachtigaller"},
+            {"firstName":"Randolph", "lastName":"Carter"},
+            {"firstName":"Arlen", "lastName":"Bales"}
+        ]
 
 
 ###JSON uses JavaScript syntax
 JSON objects can be accessed using JavaScript
 
-    var litCharacters = [
-        {"firstName":"Abdul", "lastName":"Nachtigaller"},
-        {"firstName":"Randolp", "lastName":"Carter"},
-        {"firstName":"Arlen", "lastName":"Bales"}
-    ];
+        var litCharacters = [
+            {"firstName":"Abdul", "lastName":"Nachtigaller"},
+            {"firstName":"Randolp", "lastName":"Carter"},
+            {"firstName":"Arlen", "lastName":"Bales"}
+        ];
 
-    litCharacters[0].firstName +" "+ litCharacters[0].lastName;
-    litCharacters[0].firstName = "Dr. Abdul";
+        litCharacters[0].firstName +" "+ litCharacters[0].lastName;
+        litCharacters[0].firstName = "Dr. Abdul";
 
 
 ###JSON object from string
-To convert a JSON string to a JSON object, the JavaScript function JSON.parse() is used, this object can in turn be used within the web page.
+To convert a JSON string to a JSON object, the JavaScript function `JSON.parse()` is used,
+this object can in turn be used within the web page.
 
     var text = '{ "litCharacters" : = [' +
         '{"firstName":"Abdul", "lastName":"Nachtigaller"},' +
