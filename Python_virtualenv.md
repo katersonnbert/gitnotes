@@ -55,22 +55,43 @@ within the virtual environment, the installer will complain.
 
 - when you want to use ALL globally installed packages in addition to your virtual environment,
  use the flag `--system-site-packages`. In this case all globally installed packages are available to the
- virtual environment. (not tested yet)
+ virtual environment. (recommended, works nicely)
 
         virtualenv --system-site-packages [yourNewEnvironment]
 
 - link the required libraries manually in the lib folder of the virtual environment.
-NOTE: Make sure the versions of python you are using match!
+NOTE: Make sure the versions of python you are using match! (not recommended unless you really, annoying to try
+and link until you get it right)
 
         cd /home/[user]/pyvirtualenv/pymain/lib
         ln -s /usr/lib/python2.7/dist-packages/pygtk.py gtk.py
         ln -s /usr/lib/python2.7/dist-packages/gobject/
         ln -s /usr/lib/python2.7/dist-packages/glib/
 
-- install the packages regardless in the active virtual environment (option not tested yet)
+- install the packages regardless in the active virtual environment (option not tested so far)
 
         /home/[user]/pyvirtualenv/pymain/bin/activate
         pip install --ignore-installed [package]
 
 - For more details on this topic check
- [here](http://stackoverflow.com/questions/12830662/python-package-installed-globally-but-not-in-a-virtualenv-pygtk).
+ [Virtualenv user guide](https://virtualenv.pypa.io/en/stable/userguide/),
+ [use site packages](http://stackoverflow.com/questions/12079607/make-virtualenv-inherit-specific-packages-from-your-global-site-packages),
+ [link site packages](http://stackoverflow.com/questions/12830662/python-package-installed-globally-but-not-in-a-virtualenv-pygtk).
+
+
+# PyCharm
+
+- if you are using PyCharm as your python IDE, set the paths to the virtual environments here:
+
+        File -> Settings -> Project -> Project Interpreter -> [Symbol] -> Add local -> Choose VirtualEnv path
+
+    - for more information see
+    [here](https://www.jetbrains.com/help/pycharm/2016.1/adding-existing-virtual-environment.html) and
+    [here](http://stackoverflow.com/questions/10322424/how-to-select-python-version-in-pycharm).
+
+- you can add different python interpreters to a project as described above.
+- Once different interpreters have been added, run configurations can be defined to run / test the project
+with different interpreters.
+
+        Run -> Edit Configuration -> Change Python interpreter as you see fit -> save as "Run-[your config]"
+
