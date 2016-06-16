@@ -757,6 +757,12 @@ printer setup (hp p2015):
         python3 setup.py install
         deactivate
 
+## Set up gin-ui
+
+- Set up chromium for use of vue.js
+    - Add chromium "vue.js devtools" app
+    - edit chrome://flags/, enable "experimental javascript"
+
 
 # Win:
     notepad++
