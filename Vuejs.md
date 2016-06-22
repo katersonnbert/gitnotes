@@ -2,7 +2,8 @@ Vuejs Framework
 ===============
 
 - Based on ECMAScript6 (ECMA Script is the standard, javascript an implementation of ECMA script)
-- Find a quick tour [here](https://vuejs.org/guide/).
+- Find a quick Vuejs tour [here](https://vuejs.org/guide/).
+- For CSS related lookups use [GetBootstrap](http://getbootstrap.com/).
 
 ## Getting started
 
@@ -45,3 +46,27 @@ can specify up to which file size images should be encoded with base64 rather th
 
 #### src.App.vue
 - Main entry point to the App.
+
+
+## Random notes
+
+### `<template>`
+- `<template>` should always contain only a single child tag. This child tag can of course contain multiple tags.
+
+### export default
+- stuff that is accessible to the outside of the current file / component
+- has to return at least an empty data object.
+
+        export default {
+            data() {}
+        }
+
+- this thing is at the moment and object w/o a name. It will be given a name, if it is imported somewhere else:
+
+        import NewName from "./someFile.vue"
+
+- data() is actually a short cut supported by ecma script 6. The compiler will transform this to a proper key-value pair:
+
+        export default {
+            data : function() {}
+        }
