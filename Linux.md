@@ -456,8 +456,15 @@ and print the line number where the match has been found (-n).
 - `netstat -lt` ... check connections showing their local address
 
 
+## List USB devices
+    lsusb
+
+- `lsusb` lists all connected usb devices
+- `lsusb -v` does the same as above, but includes more details about the devices
+- `lsusb -d [vendorID]:[deviceID] -v` gives a verbose description of just the specified device
+
 ## Bashrc
-- The hidden `.bashrc` file is a script, that is executed, whenever a new terminal session is started.
+- The hidden `.bashrc` file is a script that is executed, whenever a new terminal session is started.
 - The file contains configurations for the terminal session. An example would be the shorthand `ll` instead of `ls -l`
 - There are two main bashrc files.
 - The first is found in `/etc/bash.bashrc`, this one applies to all shell sessions
