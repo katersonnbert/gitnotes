@@ -5,6 +5,13 @@ Vuejs Framework
 - Find a quick Vuejs tour [here](https://vuejs.org/guide/).
 - For CSS related lookups use [GetBootstrap](http://getbootstrap.com/).
 
+### Debug Vuejs in Google chrome:
+
+- Add "Vue.js devtools" plugin to Chrome
+- open console, open vue plugin
+- "send to console" ... gives access to all elements via $vm
+
+
 ## Getting started
 
 - Requires npm v >= 3.9
@@ -242,5 +249,3 @@ can specify up to which file size images should be encoded with base64 rather th
 - components within `v-if` are always destroyed and newly computed when it changes its value.
 - `v-show` is always compiled.
 - prefer `v-if` when the child components contain dynamic, `v-show` when they contain static content.
-
-
