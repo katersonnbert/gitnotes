@@ -220,3 +220,27 @@ can specify up to which file size images should be encoded with base64 rather th
             }
         </script>
 
+### Dynamically show containers / branches
+
+- use `v-if` or `v-show`
+
+        <template>
+            <div v-if="show-branch">
+                <div>some text</div>
+                <div v-show="show-div">some other text</div>
+            </div>
+        </template>
+
+        <script>
+            data() {
+                return { show-branch: true, show-div: false }
+            }
+        </script>
+
+- `v-if` is lazy - it is initialized with `false`; all its child components are only computed
+    when it turns `true` the first time.
+- components within `v-if` are always destroyed and newly computed when it changes its value.
+- `v-show` is always compiled.
+- prefer `v-if` when the child components contain dynamic, `v-show` when they contain static content.
+
+
