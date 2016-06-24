@@ -297,7 +297,13 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
         git push origin [problem branch]    // ... if this does not work, use force:
         git push origin [problem branch] -f
 
-        git commit --amend                  // add changes to last commit
+        git commit --amend                  // add changes to last commit,
+                                            //      opens editor for changes in the commit message
+                                            // Be aware, that every "amend" will change the commit hash.
+                                            // If the edited commit has been pushed to a remote, a new push will require force,
+                                            // since it needs to replace the existing commit remotely.
+        git commit --amend -m "New message" // add changes to last commit, use new commit message
+        git commit --amend --no-edit        // add changes to last commit, do not change commit message (git v1.7.9+)
 
 
 ## Creating an intermediate branch and subsequent pull request with these changes only
