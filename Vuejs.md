@@ -249,3 +249,30 @@ can specify up to which file size images should be encoded with base64 rather th
 - components within `v-if` are always destroyed and newly computed when it changes its value.
 - `v-show` is always compiled.
 - prefer `v-if` when the child components contain dynamic, `v-show` when they contain static content.
+
+### Handling arrays
+
+- arrays are can be observables as well
+- they can be included as e.g. dynamic lists using the `v-for` attribute
+
+        <template>
+            <ul v-for="item in listItems">
+                <li>{{ item.mes }}</li>
+            </ul>
+        </template>
+
+        <script>
+            data() {
+                var listItems = [{mes: 'one'}, {mes: 'two'}, {mes: 'three'}]
+                return { listItems }
+            }
+        </script>
+
+- the array is observed, changes to it will trigger View updates.
+
+- be aware: if arrays are modified or replaced during runtime, they will usually not be destroyed. Vue.js uses
+    heuristics to keep arrays for DOM element reuse e.g. if elements between old and new array overlap.
+
+- NOTE: there are limitations to the observation of arrays. In the following cases changes are not updating the View:
+    - when setting an item via index; e.g. `$vm.items[0] = {}`
+    - when modifying the length of the array; e.g. `$vm.items.length = 0`
