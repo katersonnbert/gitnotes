@@ -276,3 +276,23 @@ can specify up to which file size images should be encoded with base64 rather th
 - NOTE: there are limitations to the observation of arrays. In the following cases changes are not updating the View:
     - when setting an item via index; e.g. `$vm.items[0] = {}`
     - when modifying the length of the array; e.g. `$vm.items.length = 0`
+
+
+## Handling components
+
+- every `<template>` is actually its own vue component that has to be registered to vue.
+- every component has its own isolated scope.
+- parent data should therefore not be directly used in a child components template.
+
+### Using `props`
+
+- data from a parent should always be passed to a child using the `props` field within a child component `data`
+
+- NOTE: objects / arrays are passed by reference from parent to child via `props`. Changes to the content in the
+    child also affect the parent!
+
+## Handling parent - child
+
+- a child can access its parent by `this.$parent`
+- a parent has access to its children by the `this.$children` array
+- don't do direct access
