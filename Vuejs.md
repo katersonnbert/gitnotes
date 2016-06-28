@@ -296,3 +296,73 @@ can specify up to which file size images should be encoded with base64 rather th
 - a child can access its parent by `this.$parent`
 - a parent has access to its children by the `this.$children` array
 - don't do direct access
+- parents are usually not aware of a child components state. Therefore vue-directives (`v-`)
+    dealing with the child will not work in the parent component.
+
+        # will not work
+        <child-component v-show="childProperty"></child-component>
+
+## Content distribution using `<slot>`
+
+### Slots when handling parent / child content
+
+- Parent content will be discarded in child elements, unless a child component contains at least one `<slot>` tag.
+- The content of `<slot>` tags is a "fallback content", that will only be displayed,
+    if there is no other content from the parent.
+
+        # parent template 1
+        <child-component1>
+            <div>This is my parent content!</div>
+        </child-component1>
+
+        # parent template 2
+        <child-component2></child-component2>
+
+        # child template for both components 1 / 2
+        <div>
+            <h1>child header</h1>
+            <slot>
+                <div>I shall be displayed as fallback!</div>
+            </slot>
+        </div>
+
+        # The output of child component 1:
+        <h1>Child header</h1>
+        <div>This is my parent content</div>
+
+        # The output of child component 2:
+        <h1>Child header</h1>
+        <div>I shall be displayed as fallback!</div>
+
+### Named slots
+
+- named slots can be used to define how multiple parent content is distributed in child elements.
+
+        # parent template
+        <child-content>
+            <p slot="one">Text one</p>
+            <p slot="two">Text two</p>
+            <p>Default text</p>
+        </child-content>
+
+        # child-content template
+        <div>
+            <slot name="one"></slot>
+            <slot></slot>
+            <slot name="two"></slot>
+        </div>
+
+        # The ouutput will be:
+        <div>
+            <p slot="one">Text one</p>
+            <p>Default text</p>
+            <p slot="two">Text two</p>
+        </div>
+
+## Dynamic components
+
+- whole components can be switched dynamically using the `<component>` tag.
+- the state of components that have been switched can be cached and kept in the background using the `keep-alive` attribute.
+- the `activate` hook can be used to perform initial setup of a switched in component before it will be displayed.
+- the `transition-mode` parameter attribute can be used to define how two dynamic components should behave when
+    they are switched. e.g. using a fade effect during the switch.
