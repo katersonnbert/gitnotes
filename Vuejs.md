@@ -484,11 +484,37 @@ can specify up to which file size images should be encoded with base64 rather th
             }
         })
 
-### terminal directives
+### Terminal directives
 
 - Vue walks the DOM tree recursively when compiling templates.
 - It stops if it reaches a "terminal" directive like `v-if` or `v-for`.
 - It is possible to write custom terminal directives by adding the `terminal: true` option.
 
 
+## Mixins
+
+- Mixins can be used to write reusable functionalities for Vue components.
+
+- A mixin can contain any component option like `methods` or `computed`.
+
+        var custMixin = { created: function() { console.log('mixin hook') } }
+
+        new Vue({
+            mixins: [custMixin],
+            created: function() { console.log('component hook') }
+        })
+
+        # will output
+        # "mixin hook"
+        # "component hook"
+
+- "Overlapping" options  will be automatically "merged" by different strategies:
+    - hook functions with the same name are merged into an array, all of them will be called.
+    - mixin hooks will always be called before component hooks.
+    - options handling objects e.g. `methods` or `components` will be merged into the same object.
+    - here component options take priority over mixin options.
+
+- There is the option to create custom merge strategies using `Vue.config.optionMergeStrategies`.
+
+- There is the option to create global mixins `Vue.mixin({ // do stuff })` but use this option carefully...
 
