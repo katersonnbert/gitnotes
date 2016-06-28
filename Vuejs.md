@@ -491,6 +491,16 @@ can specify up to which file size images should be encoded with base64 rather th
 - It is possible to write custom terminal directives by adding the `terminal: true` option.
 
 
+## Custom filters
+
+- Custom filters can be added by using `Vue.filter(idString, functionDefinition)`
+
+        Vue.filter('reverse', function(value) { return value.split('').reverse().join('') })
+
+        # use somewhere as
+        <div v-text="message | reverse"></div>
+
+
 ## Mixins
 
 - Mixins can be used to write reusable functionalities for Vue components.
