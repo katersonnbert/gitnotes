@@ -6,14 +6,16 @@ Vuejs Framework
 - For CSS related lookups use [GetBootstrap](http://getbootstrap.com/).
 
 ### Debug Vuejs in Google chrome:
-
 - Add "Vue.js devtools" plugin to Chrome
 - open console, open vue plugin
 - "send to console" ... gives access to all elements via $vm
 
 
-## Getting started
+## Good to knows
+- Vuejs does not support IE8 and below, because it requires ECMAScript 5.
 
+
+## Getting started
 - Requires npm v >= 3.9
 - If lesser version is installed, remove from system. Check, that `which npm` does not yield any result.
 if there still is a result e.g. in `/usr/local/lib or /usr/local/bin`, unlink these before continuing.
@@ -30,6 +32,7 @@ if there still is a result e.g. in `/usr/local/lib or /usr/local/bin`, unlink th
 specified in "package.json" to the node_modules folder.
 - Start local application using `npm run dev`
 
+
 ## Structure of a vue file
 - `<style>` block: additional styles specific for the current page.
 - `<template>` block: contains the structure of a page using HTML elements; these can contain css attributes
@@ -40,6 +43,7 @@ as well as vue specific attribute to dynamically include data. Elements can be b
 
 - export blocks can contain functions like e.g. `data()`, `methods`, `events`, `props`, `mixins`
 - `props` can be used to share bound data between various views (using `twoway: true`)
+
 
 ## Project structure
 
@@ -359,10 +363,31 @@ can specify up to which file size images should be encoded with base64 rather th
             <p slot="two">Text two</p>
         </div>
 
+
 ## Dynamic components
 
 - whole components can be switched dynamically using the `<component>` tag.
-- the state of components that have been switched can be cached and kept in the background using the `keep-alive` attribute.
+- the state of components that have been switched can be cached and kept in the background
+    using the `keep-alive` attribute.
 - the `activate` hook can be used to perform initial setup of a switched in component before it will be displayed.
 - the `transition-mode` parameter attribute can be used to define how two dynamic components should behave when
     they are switched. e.g. using a fade effect during the switch.
+
+
+# Some Vuejs internals
+
+## How changes are tracked
+
+- when a JavaScript object is passed to a Vue instance as a `data` option, Vuejs will convert
+    all the objects properties to getters and setters using ES5 `Object.defineProperty()`.
+- these properties are used by Vuejs to send notifications if their content is accessed or changes.
+    NOTE: browser consoles display getter/setter differently when they are logged!
+- in detail, vor every directive or data binding in a vue template, a "watcher" object is created, that
+    records any properties "touched". In these cases the watcher object triggers corresponding DOM updates.
+    [Check this for details](https://vuejs.org/images/data.png).
+
+- NOTE: getters and setters are created during instance initialization. Properties that are added to `data` after
+    this initialization are not tracked, since the getters and setters will not be created after
+    the instance is initialized! Always prefer to declare reactive properties in the data option!
+
+
