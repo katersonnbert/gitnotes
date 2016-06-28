@@ -528,3 +528,17 @@ can specify up to which file size images should be encoded with base64 rather th
 
 - There is the option to create global mixins `Vue.mixin({ // do stuff })` but use this option carefully...
 
+
+## Plugins
+
+- Plugins can be used by using the global method `Vue.use(some-vue-plugin)`.
+- Examples of existing plugins:
+    - vue-router        ... official router for Vuejs
+    - vue-resource      ... web requests, XMLHttpRequests, JSONP
+    - vue-async-data    ... load data asynchroniously
+    - vue-validator     ... form validations
+    - vue-devtools      ... chrome plugin for debugging
+    - vue-touch         ... touch gesture directives
+    - vue-animated-list ... animations for `v-for` rendered lists
+    - [list of user contributed tools](https://github.com/vuejs/awesome-vue#libraries--plugins)
+
