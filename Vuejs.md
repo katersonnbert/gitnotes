@@ -12,7 +12,8 @@ Vuejs Framework
 
 
 ## Good to knows
-- Vuejs does not support IE8 and below, because it requires ECMAScript 5.
+- Vue does not support IE8 and below, because it requires ECMAScript 5.
+- Vue compiles templates by recursively walking the DOM tree.
 
 
 ## Getting started
@@ -194,7 +195,7 @@ can specify up to which file size images should be encoded with base64 rather th
     should be re-evaluated every time the property is accessed, turn caching off.
 
         <script>
-            data: {
+            data() {
                 msg: "hurra!"
             },
             computed: {
@@ -406,5 +407,88 @@ can specify up to which file size images should be encoded with base64 rather th
 - NOTE: getters and setters are created during instance initialization. Properties that are added to `data` after
     this initialization are not tracked, since the getters and setters will not be created after
     the instance is initialized! Always prefer to declare reactive properties in the data option!
+
+
+## Custom Directives
+
+- register custom directives globally by using `Vue.directive(idString, function definition)`.
+
+        Vue.directive('cstm', { // define stuff })
+
+        # use in a template with the "v-" prefix
+        <div v-cstm="hurra"></div>
+
+- register custom directives locally by including them in a components `directives` option.
+- directives can be registered as attributes (`<div some-directive="">`) or directly as elements (`<some-directive>`).
+
+        Vue.elementDirective('cstm-el', { //define stuff })
+
+        # use as
+        <cstm-el></cstm-el>
+
+- NOTE: if a custom directive is used on an object and it should track changes within this
+    object, the property `deep: true` has to be used
+
+        Vue.directive('custom', {
+            deep: true,
+            update(obj) { // do stuff }
+        })
+
+
+### Hook functions
+
+- Custom directives can be created using some of the following hooks:
+    - `bind`    ... called when the directive is first bound to the element.
+    - `update`  ... called after `bind` and every time the binding value changes.
+    - `unbind`  ... called once when the directive is unbound from the element.
+
+            # register global directive
+            Vue.directive('cstm', {
+                bind: function() {},
+                update: function() {},
+                unbind: function {}
+            })
+
+            # use as
+            <div v-cstm="someValue"></div>
+
+### Custom attributes with custom directives
+
+- when defining custom directives, an array of custom attributes can be defined via option `params`.
+
+        Vue.directive('cstm', {
+            params: ['attr-1', 'attr-2'],
+            bind() {
+                console.log(this.params.attr-1)
+            }
+        })
+
+        # use as
+        <div v-cstm attr-1="hurra" attr-2="die gams"></div>
+
+### Bidirectional custom directives
+
+- when a custom directive is supposed to write information back to the Vue instance, use option `twoWay: true`
+
+        Vue.directive('cstm', {
+            twoWay: true,
+            bind() {
+                this.setHandler = function() {
+                    # this.el ... element the directive is bound to
+                    this.set(this.el.value)
+                }.bind(this)
+                this.el.addEventListener('input', this.setHandler)
+            },
+            unbind() {
+                this.el.removeEventListener('input', this.setHandler)
+            }
+        })
+
+### terminal directives
+
+- Vue walks the DOM tree recursively when compiling templates.
+- It stops if it reaches a "terminal" directive like `v-if` or `v-for`.
+- It is possible to write custom terminal directives by adding the `terminal: true` option.
+
 
 
