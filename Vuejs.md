@@ -190,6 +190,23 @@ can specify up to which file size images should be encoded with base64 rather th
             }
         </script>
 
+- NOTE: computed properties are cached. In case a computed property contains a function call, that
+    should be re-evaluated every time the property is accessed, turn caching off.
+
+        <script>
+            data: {
+                msg: "hurra!"
+            },
+            computed: {
+                example: {
+                    cahe: false,
+                    get: function() {
+                        return Date.now() + this.msg
+                    }
+                }
+            }
+        </script>
+
 
 ### Dynamically handling css classes and styles
 
