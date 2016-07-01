@@ -790,12 +790,32 @@ So before checking in a file use the following lines of go code:
     go vet ./...
     gofmt -w [yourfile].go
 
+### gofmt
+
+
+- `gofmt -d [filename]`     displays all changes that would be done to `filename` if it would be reformatted
+- `gofmt -w [filename]`     automatically reformats `filename`
+- `gofmt -w .`              automatically reformats all go files recursively from the current directory
+- `goftm -l .`              lists all files that would be reformatted
+
+
+## Tests
+
+- `go test ./...`                   run tests for all packages in parallel (can lead to race conditions)
+- `go test ./specificPackage`       run all tests of package `specificPackage`
+- `go test -v ./...`                run all tests, be verbose about it
+- `go test -p #x ./...`             run tests for all packages in parallel, but only #x packages at the same time
+- `go test -p #1 ./...`             run all tests with only one package at a time
+
+- for more information about go tests check the following
+    [blog entry](https://splice.com/blog/lesser-known-features-go-test/).
+
+# Addendum
 
 Distilled from resources:
 [Go homepage](https://golang.org/doc/)
 [Go by example](https://gobyexample.com/)
 [Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
-
 
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
