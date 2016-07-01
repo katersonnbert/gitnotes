@@ -200,7 +200,7 @@ can specify up to which file size images should be encoded with base64 rather th
             },
             computed: {
                 example: {
-                    cahe: false,
+                    cache: false,
                     get: function() {
                         return Date.now() + this.msg
                     }
