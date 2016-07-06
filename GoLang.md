@@ -810,6 +810,46 @@ So before checking in a file use the following lines of go code:
 - for more information about go tests check the following
     [blog entry](https://splice.com/blog/lesser-known-features-go-test/).
 
+
+## Go gotcha
+
+### sqlx database get error with private fieldnames
+
+- When using an sqlx database connection and handing over a struct for a get SELECT,
+    the names of the struct fields have to be uppercase, otherwise an error will occur.
+
+    - This error will also only occur, if the requested value is NOT STRING e.g. if it is int or bool.
+
+            db, err = sqlx.Connect(dbDriver, openString)
+            localStruct := &struct {
+                blub int
+            }{}
+            q := `SELECT COUNT(blub) FROM sometable WHERE blub = $1`
+            db.Get(localStruct, q, "somevalue")
+
+            // Error: "sql: Scan error on column index 0: unsupported Scan, storing driver.Value type int64 into type *struct { login int }"
+
+    - if there are more than one struct fields the error message will change to
+
+            localStruct := &struct {
+                blub int
+                blub2 bool
+                blub3 int
+            }{}
+                ...
+            // Error: "scannable dest type struct with >1 columns (3) in result"
+
+    - it will only work, if the fieldnames of the struct are public (start with an uppercase letter)
+
+            localStruct := &struct {
+                // Uppercase here
+                Blub int
+            }{}
+            q := `SELECT COUNT(blub) FROM sometable WHERE blub = $1`
+            db.Get(localStruct, q, "somevalue")
+            // works fine
+
+
 # Addendum
 
 Distilled from resources:
