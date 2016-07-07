@@ -386,6 +386,12 @@ From [here](https://help.github.com/articles/adding-an-existing-project-to-githu
 Read details [here](http://stackoverflow.com/questions/22620393/various-ways-to-remove-local-git-changes)
 
 # Undo / remove last commit:
+You want to NUKE THE LAST COMMIT AND NEVER SEE IT AGAIN. You do this:
+
+        git reset --hard HEAD~1
+
+WARNING: this will also remove ALL UNTRACKED CHANGES!
+
 Read details [here](http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit)
 
 
