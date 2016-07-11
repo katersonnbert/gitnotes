@@ -1,11 +1,13 @@
-HTTP Methods
-============
+HTTP
+====
+
+## HTTP Methods
 To interact with a REST API, HTTP methods are used. The mainly used methods are:
 
 - GET
 - POST 
 
-## GET
+### GET
 - Requests data from a specific resource.
 - Information required to get to the requested data can be sent via a query string in the URL of a GET request.
 - Can also be sent as a conditional GET, when the request message header includes an
@@ -17,25 +19,21 @@ To interact with a REST API, HTTP methods are used. The mainly used methods are:
 
 NOTE: See HTML query for more information regarding request message query.
 
-## POST
+### POST
 - Submits data to a specific resource.
 - Any necessary query string is sent in the HTTP message body of the POST request.
 - In detail, POST requires the server to accept an enclosed entity and process it at the
     provided Request-URI in the request line.
 
-## Further HTTP methods:
+### Further HTTP methods:
 - PUT       ... Submits data and requests, that it should be stored at an also provided Request-URI.
 - HEAD      ... like GET, but returns only the HTTP headers without a document body
 - DELETE    ... Sends a Request-URI and requests, that the resource found at this URI should be deleted.
 - OPTIONS   ... Returns which HTTP methods are supported by the server.
 - CONNECT   ... Converts the connection to a TCP/IP tunnel
 
-Find more basics [here](http://www.w3schools.com/tags/ref_httpmethods.asp)
-and more details [here](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
 
-HTML query
-==========
-
+## HTML query
 - A query string is a part of the URL and can be used to submit data to a server.
 - A query string is composed of key-value pairs, each pair is separated by "&"
 - Key-value of each pair is separated by "=" e.g. field1=value1
@@ -47,17 +45,28 @@ NOTE: HTML URLs have to solely consist of characters from the ASCII character-se
 Find a description how to properly encode a URL [here](http://www.w3schools.com/tags/ref_urlencode.asp).
 
 
-REST API status codes
-=====================
+## REST API status codes
 
 A list of REST API status codes can be found [here](http://www.restapitutorial.com/httpstatuscodes.html)
 or [here](http://www.w3schools.com/tags/ref_httpmessages.asp).
 
 
+## HTTP Resources
+- [Basics about HTTP methods](http://www.w3schools.com/tags/ref_httpmethods.asp)
+- [Details about the http protocols](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
+- [More about XHR](https://en.wikipedia.org/wiki/XMLHttpRequest) and a specification [here](https://xhr.spec.whatwg.org/)
+- Information about [CORS (Cross origin resource sharing)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
+
+
+CSS and Bootstrap
+=================
+For CSS related lookups use [GetBootstrap](http://getbootstrap.com/)
+
+
 LESS
 ====
-
 less files require the metadata tags:
+
     fileExtension='.less'
     mimeType='text/css'
 
@@ -71,18 +80,18 @@ and be interpretable by `eval()`. The default character set is utf-8.
 In its syntax its similar to XML, but reduces some of the overhead.
 
 
-###The main differences and similarities compared to XML are:
+### The main differences and similarities compared to XML are:
 - both JSON and XML are plain text, human readable, hierarchical and can be fetched by httpRequest
 - JSON has no end tags, can use arrays
 - JSON is parsed by the standard JavaScript parser or custom functions even within a page,
 XML requires its own parser before its converted to e.g. HTML.
 
-###JSON files
+### JSON files
 - the file type is ".json"
 - the MIME type is "application/json"
 
 
-###JSON values can be
+### JSON values can be
 - null
 - number (integer & floating point)
 - string ... ""
@@ -90,7 +99,7 @@ XML requires its own parser before its converted to e.g. HTML.
 - objects ... {}
 
 
-###The JSON syntax defines the following main rules:
+### The JSON syntax defines the following main rules:
 - strings are always in double quotes
 - data is in name:value pairs, separated by a colon
 
@@ -110,7 +119,7 @@ XML requires its own parser before its converted to e.g. HTML.
         ]
 
 
-###JSON uses JavaScript syntax
+### JSON uses JavaScript syntax
 JSON objects can be accessed using JavaScript
 
         var litCharacters = [
@@ -123,7 +132,7 @@ JSON objects can be accessed using JavaScript
         litCharacters[0].firstName = "Dr. Abdul";
 
 
-###JSON object from string
+### JSON object from string
 To convert a JSON string to a JSON object, the JavaScript function `JSON.parse()` is used,
 this object can in turn be used within the web page.
 
