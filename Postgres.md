@@ -2,7 +2,7 @@ Postgres
 ========
 
 
-# Install postgres (Linux)
+## Install postgres (Linux)
 
     apt-get install postgresql
 
@@ -18,7 +18,7 @@ Postgres
 - To check how one can connect to the database, open `/etc/postgresql/[version]/main/pg_hba.conf`
 
 
-# Create user and database
+## Create user and database
 
 - First open the postgres terminal using the superuser "postgres"
 
@@ -55,3 +55,13 @@ Postgres
 - Here we can create a couple of tables e.g. "swingset" with columns "plank" and "tire".
 - Now we can list, which tables are available using `\d`
 - We can also display the table setup using `\d swingset`
+
+
+## Connecting to database
+
+- Connect to an existing database:
+
+        psql -h [hostname] -d [database] -U [user]
+
+        // Example:
+        psql -h localhost -d testDB -U testUser
