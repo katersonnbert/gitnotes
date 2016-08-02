@@ -448,7 +448,7 @@ Distilled from [here](https://help.github.com/articles/transferring-a-repository
 
 # Create branch from previous commit:
 
-e.g. to create a save branch when an specific release has been done.
+e.g. to create a save branch when a specific release has been done.
 
         git branch branchname <sha1-commit-hash>
 
@@ -581,3 +581,18 @@ The actual commands you need to run to execute the full git bisect flow are:
 - Log the last git bisect that completed successfully.
 
         git bisect log
+
+
+## stash changes
+
+If there are changes that should not be staged for a commit, they can be stashed. This way branches can be switched 
+without committing any unfinished changes.
+
+        // stashes all currently untracked changes
+        git stash
+
+        // re-apply stashed changes
+        git stash apply
+
+Find more details about stashing and using different stashes [here](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
+
