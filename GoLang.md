@@ -747,6 +747,19 @@ that variable access conflicts can be avoided.
         go test -run="SomeFunctionNamePart" ./...
 
 
+# Go Web programming 
+
+## Templates
+
+`.` in a template accesses data structures that are passed to a template
+
+    // passes in whole struct
+    {{ . }}
+    // accesses a field of a struct
+    {{ .SomeField }}
+    // accesses a method of a named type e.g. a method that returns a specific value from a DB
+    {{ .SomeMethod }}
+
 # Go Hands On
 
 ## Install Go
