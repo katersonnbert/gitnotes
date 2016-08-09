@@ -866,9 +866,14 @@ So before checking in a file use the following lines of go code:
 # Addendum
 
 Distilled from resources:
-[Go homepage](https://golang.org/doc/)
-[Go by example](https://gobyexample.com/)
-[Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
+- [Go homepage](https://golang.org/doc/)
+- [Go by example](https://gobyexample.com/)
+- [Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
+
+## Further nice to knows / reads
+
+- [Go in production](https://peter.bourgon.org/go-in-production/)
+- [Go common mistakes](https://github.com/golang/go/wiki/CodeReviewComments)
 
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
