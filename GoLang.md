@@ -68,9 +68,9 @@ unused import. To still allow this import, the following code can be used.
 
     
 ### Closures
-- Closures are anonymous functions, that are returned by a function. These anonymous functions have access to the variables 
-that have been defined by the surrounding function, keep track of the state of these variables and will work with them 
-each time the variable that the anonymous function has been assigned to is accessed.
+- Closures are anonymous functions, that are returned by a function. These anonymous functions have access 
+to the variables that have been defined by the surrounding function, keep track of the state of these variables 
+and will work with them each time the variable that the anonymous function has been assigned to is accessed.
 
         func intSeq() func() int {
             i := 0
@@ -835,11 +835,12 @@ So before checking in a file use the following lines of go code:
 
 ## Logging with Go
 
-- a description of how to use the standard go log can be found [here](https://www.goinggo.net/2013/11/using-log-package-in-go.html)
+- a description of how to use the standard go log can be found 
+    [here](https://www.goinggo.net/2013/11/using-log-package-in-go.html)
 - find an interesting view on logging [here](http://dave.cheney.net/2015/11/05/lets-talk-about-logging)
 - logrus is a pretty interesting logger also providing support for hooks
     - find it [here](https://github.com/Sirupsen/logrus)
-- support for logrotate with go by [NYTimes](https://github.com/NYTimes/logrotate/blob/master/logrotate.go)
+- support for logrotate with go by [NYTimes](https://github.com/NYTimes/logrotate)
     - a description about logrotate itself can be found [here](http://www.thegeekstuff.com/2010/07/logrotate-examples/)
 
 ## Go, QML and Qt
@@ -872,7 +873,8 @@ Some links about the topic:
             q := `SELECT COUNT(blub) FROM sometable WHERE blub = $1`
             db.Get(localStruct, q, "somevalue")
 
-            // Error: "sql: Scan error on column index 0: unsupported Scan, storing driver.Value type int64 into type *struct { login int }"
+            // Error: "sql: Scan error on column index 0: unsupported Scan, storing driver.Value type int64 
+            // into type *struct { login int }"
 
     - if there are more than one struct fields the error message will change to
 
