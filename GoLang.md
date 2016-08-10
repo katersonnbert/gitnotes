@@ -605,6 +605,7 @@ look for an implementation of `error` before printing a value.
             }
         }
 
+
 # Visibility
 - Constants, variables, structs and functions that have an identifier starting with an upper case letter 
 can be accessed from outside of the package.
@@ -621,6 +622,7 @@ can be accessed from outside of the package.
 
 Definition can be found [here](https://golang.org/ref/spec#Exported_identifiers), examples from [here]
 (http://golangtutorials.blogspot.de/2011/06/structs-in-go-instead-of-classes-in.html)
+
 
 # Goroutines, Channels and Mutex
 
@@ -726,7 +728,6 @@ that variable access conflicts can be avoided.
 - `sync.Mutex Unlock` releases access to a locked variable 
 
 
-
 # Tests
 - Test files have to reside in the same package as the go files that are to be tested.
 - Test files have the same name as the go files, with an additional "_test.go" ending.
@@ -759,6 +760,7 @@ that variable access conflicts can be avoided.
     {{ .SomeField }}
     // accesses a method of a named type e.g. a method that returns a specific value from a DB
     {{ .SomeMethod }}
+
 
 # Go Hands On
 
@@ -824,7 +826,37 @@ So before checking in a file use the following lines of go code:
     [blog entry](https://splice.com/blog/lesser-known-features-go-test/).
 
 
-## Go gotcha
+## Third party package manager
+
+- gopkg.in: install go packages not by go get but by version number of a github repo
+    - find it [here](http://labix.org/gopkg.in)
+    - [from here](http://stackoverflow.com/a/33948752)
+
+
+## Logging with Go
+
+- a description of how to use the standard go log can be found [here](https://www.goinggo.net/2013/11/using-log-package-in-go.html)
+- find an interesting view on logging [here](http://dave.cheney.net/2015/11/05/lets-talk-about-logging)
+- logrus is a pretty interesting logger also providing support for hooks
+    - find it [here](https://github.com/Sirupsen/logrus)
+- support for logrotate with go by [NYTimes](https://github.com/NYTimes/logrotate/blob/master/logrotate.go)
+    - a description about logrotate itself can be found [here](http://www.thegeekstuff.com/2010/07/logrotate-examples/)
+
+## Go, QML and Qt
+
+Some links about the topic: 
+- [qml for go on github](https://github.com/go-qml/qml)
+- [examples 1](http://blog.labix.org/2013/12/23/qml-components-with-go-and-opengl)
+- [qml crashcourse](https://en.wikipedia.org/wiki/QML)
+
+## Further nice to knows / reads
+
+- Best practices for production environment: [Go in production](https://peter.bourgon.org/go-in-production/)
+- Go common mistakes: [Code review comments](https://github.com/golang/go/wiki/CodeReviewComments)
+
+
+
+## Go gotchas
 
 ### sqlx database get error with private fieldnames
 
@@ -869,11 +901,5 @@ Distilled from resources:
 - [Go homepage](https://golang.org/doc/)
 - [Go by example](https://gobyexample.com/)
 - [Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
-
-## Further nice to knows / reads
-
-- [Go in production](https://peter.bourgon.org/go-in-production/)
-- [Go common mistakes](https://github.com/golang/go/wiki/CodeReviewComments)
-
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
