@@ -239,7 +239,6 @@ and will work with them each time the variable that the anonymous function has b
 
 
 ### Defer
-
 - The `defer` statement defers the execution of a function until the surrounding function ends.
 - The defer's arguments are evaluated immediately, but the function call is not executed until 
 the end of the surrounding function.
@@ -254,7 +253,6 @@ the end of the surrounding function.
 
 
 # Pointers
-
 - Go has no pointer arithmetic.
 - A pointer holds the memory address of a variable.
 - `*T` is of type pointer to a value of type `T`, e.g. `var p *int`
@@ -762,6 +760,28 @@ that variable access conflicts can be avoided.
     {{ .SomeMethod }}
 
 
+# Go initialization
+
+Go programs are executed in the order:
+
+- package-level variables
+- init() function
+- main() function
+
+- if main imports dependencies,
+    - each dependency is initialized
+        - as first criteria if it is required by another
+        - as second criteria in alphabetical order
+
+                import {"a", "b", "c", "d"}
+                // if "a" is dependent on "c" the initialization order would be "c", "a", "b", "d"
+ 
+    - each dependency is initialized in the same order as above (1st package var, 2nd init func) 
+    - after that package var, init fun, main func of the importing code.
+
+Read the specs [here](https://golang.org/ref/spec#Program_initialization_and_execution)
+
+
 # Go Hands On
 
 ## Install Go
@@ -797,7 +817,6 @@ where go looks for installed packages
 
 
 ## Lint, vet and format your go code
-
 To increase readability and enforce standard code layout go offers linting and autoformat.
 So before checking in a file use the following lines of go code:
 
@@ -806,8 +825,6 @@ So before checking in a file use the following lines of go code:
     gofmt -w [yourfile].go
 
 ### gofmt
-
-
 - `gofmt -d [filename]`     displays all changes that would be done to `filename` if it would be reformatted
 - `gofmt -w [filename]`     automatically reformats `filename`
 - `gofmt -w .`              automatically reformats all go files recursively from the current directory
@@ -815,7 +832,6 @@ So before checking in a file use the following lines of go code:
 
 
 ## Tests
-
 - `go test ./...`                   run tests for all packages in parallel (can lead to race conditions)
 - `go test ./specificPackage`       run all tests of package `specificPackage`
 - `go test -v ./...`                run all tests, be verbose about it
@@ -827,14 +843,12 @@ So before checking in a file use the following lines of go code:
 
 
 ## Third party package manager
-
 - gopkg.in: install go packages not by go get but by version number of a github repo
     - find it [here](http://labix.org/gopkg.in)
     - [from here](http://stackoverflow.com/a/33948752)
 
 
 ## Logging with Go
-
 - a description of how to use the standard go log can be found 
     [here](https://www.goinggo.net/2013/11/using-log-package-in-go.html)
 - find an interesting view on logging [here](http://dave.cheney.net/2015/11/05/lets-talk-about-logging)
@@ -843,18 +857,17 @@ So before checking in a file use the following lines of go code:
 - support for logrotate with go by [NYTimes](https://github.com/NYTimes/logrotate)
     - a description about logrotate itself can be found [here](http://www.thegeekstuff.com/2010/07/logrotate-examples/)
 
-## Go, QML and Qt
 
+## Go, QML and Qt
 Some links about the topic: 
 - [qml for go on github](https://github.com/go-qml/qml)
 - [examples 1](http://blog.labix.org/2013/12/23/qml-components-with-go-and-opengl)
 - [qml crashcourse](https://en.wikipedia.org/wiki/QML)
 
-## Further nice to knows / reads
 
+## Further nice to knows / reads
 - Best practices for production environment: [Go in production](https://peter.bourgon.org/go-in-production/)
 - Go common mistakes: [Code review comments](https://github.com/golang/go/wiki/CodeReviewComments)
-
 
 
 ## Go gotchas
