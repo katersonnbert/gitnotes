@@ -241,54 +241,90 @@ If the file does not exist yet, it will be created.
 
 ## Further useful Bash commands:
 
-- `ssh computername` ... connect to another computer using secure shell (an encrypted connection to another computer within the network). once connected, the cpu of this computer will be used for all further actions. makes sense to do large calculations on the server rather than on the local machine. Might require a password.
+To get more information about a command use `man [command]` or the `--help` option.
 
+        e.g.
+        man ssh
+        ssh --help
+
+### ssh (Secure SHell)
+
+- Connect to another machine using secure shell (an encrypted connection to another computer within the network). 
+- Once connected, the cpu of this machine will be used for all further actions.
+- Makes sense to do large calculations on the server rather than on the local machine.
+- Logging on to another machine will most likely require a password.
+
+        ssh [remote machine]
+
+        e.g.
         [chris@troll work]$ssh server4
         [chris@server4 ~]$
 
-Notice, that the computername in the bash shell has changed from "troll" to "server4"
+- Notice that the name of the machine in the bash shell has changed from `troll` to `server4`
+- Use the command `exit` to close the ssh connection to a remote machine.
 
-Use the command "exit" to close the ssh connection to another computer.
-
+        e.g.
         [chris@server4 ~]$exit
         [chris@troll ~]$
 
-`scp computername:remote_directory/filename current_directory`   ... copy file "filename" from a remote computer or network into the "current_directory" using encrypted file copy
+### scp (Secure Copy)
 
-        e.g. [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
+- Use a secure connection to copy files from or to a remote machine
 
-`wc filename` ... counts lines, words and letters within file "filename"
+        scp [computername]:[remote_directory]/[filename] [current_directory]
 
-        e.g. [chris@troll work]wc shopping_list.txt
+        e.g.
+        [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
+
+### wc (word count)
+
+- counts lines, words and letters within a file
+
+        wc filename 
+
+        e.g.
+        [chris@troll work]wc shopping_list.txt
 
 
-## More nice bash commands, use the --help option for in depth information:
+### top (display active processes)
 
-- `top`     ... displays all processes running on the currently used computer. exit using "q"
-- `gzip`    ... compress/uncompress files
-- `tar`     ... compress/uncompress files
+- Displays all processes running on the currently used machine.
+- Exit by pressing `q`
 
-## Commandline programs for text file handling:
-Use the --help option for in depth information, links provided or the interweb.
 
----|---
-`sort` |Sorts standard input then outputs the sorted result on standard output.
-`uniq` |Given a sorted stream of data from standard input, it removes duplicate lines of data (i.e., it makes sure that every line is unique).
-`fmt`  |Reads text from standard input, then outputs formatted text on standard output.
-`pr`   |Takes text input from standard input and splits the data into pages with page breaks, headers and footers in preparation for printing.
-`head` |Outputs the first few lines of its input. Useful for getting the header of a file.
-`tail -f` |Outputs the last few lines of its input. Useful for things like getting the most recent entries from a log file.
-`tr`   |Translates characters. Can be used to perform tasks such as upper/lowercase conversions or changing line termination characters from one type to another (for example, converting DOS text files into Unix style text files).
-`grep` |Examines each line of data it receives from standard input and outputs every line that contains a specified pattern of characters.<br/>http://www.panix.com/~elflord/unix/grep.html
-`sed`  |Stream editor. Can perform more sophisticated text translations than tr. <br/> http://www.ceri.memphis.edu/computer/docs/unix/sed.htm |
-`awk`  |An entire programming language designed for constructing filters. Extremely powerful. <br/> http://www.vectorsite.net/tsawk.html
+### Compression / uncompression of files
+
+- Use `gzip` or `tar` for compression related activities
+- Please refer to the manual for details
+
+
+### Programs for text file handling
+
+- `sort` ... Sorts standard input then outputs the sorted result on standard output.
+- `uniq` ... Given a sorted stream of data from standard input, it removes 
+duplicate lines of data (i.e., it makes sure that every line is unique).
+- `fmt` ... Reads text from standard input, then outputs formatted text on standard output.
+- `pr` ... Takes text input from standard input and splits the data into pages with page breaks, 
+headers and footers in preparation for printing.
+- `head` ... Outputs the first few lines of its input. Useful for getting the header of a file.
+- `tail -f` ... Outputs the last few lines of its input. Useful for things like getting the most 
+recent entries from a log file.
+- `tr` ... Translates characters. Can be used to perform tasks such as upper/lowercase conversions 
+or changing line termination characters from one type to another (for example, converting DOS text files 
+into Unix style text files).
+- `grep` ... Examines each line of data it receives from standard input and outputs every line that contains 
+a specified pattern of characters. Find some neat examples [here](http://www.panix.com/~elflord/unix/grep.html)
+- `sed` ... Stream editor. Can perform more sophisticated text translations than tr.
+- `awk` ... An entire processing language designed for filtering text files, 
+more [here](http://www.vectorsite.net/tsawk.html)
 
 
 ## Root access by using `sudo`
 [Introduction to sudo](https://www.linux.com/learn/tutorials/306766:linux-101-introduction-to-sudo)
 
-In a nutshell sudo is the commandline way to grant a user root access for the following command e.g. when installing a software package. 
-It will require a password that is associated with a user that has root access.
+In a nutshell `sudo` is the commandline way to grant a user root access for the following command 
+e.g. when installing a software package. It will require a password that is associated with a user 
+which has root access.
 
     sudo [command]
     [sudo] password for [username]:
