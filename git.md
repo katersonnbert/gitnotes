@@ -2,14 +2,13 @@ git
 ===
 
 # Fork/clone a project
-NOTE: never use the [https://github.com/...] address for forks
- use [git@github.com:...] instead!
-
- if that somehow happens, the paths can be replaced in ".../[mainGitDir/.git/config]"
-
+NOTE:
+- never use the `https://github.com/...` address for forks
+- use `git@github.com:...` instead!
+- If that somehow happens, the paths can be replaced in `.../[mainGitDir/.git/config]`
 
 - fork project in github to your user
-- copy ssh clone URL e.g. git@github.com:mpsonntag/gndata-editor.git
+- copy ssh clone URL e.g. `git@github.com:mpsonntag/gndata-editor.git`
 - terminal: move to folder you want to create your repository
 - clone repository
 
@@ -54,7 +53,7 @@ and .git/config in each of the repositories for local repository specific settin
     2) update the email address in the local .git/config with the secondary account email address
  
 For more information about this topic check [here](https://help.github.com/articles/setting-your-email-in-git/)
- 
+
 
 # Regarding commits
 - always pull before a commit!
@@ -86,6 +85,7 @@ git remote -v               | shows, which repositories are added
 git log                     | displays commit history
 git log --oneline --graph   | displays shortened commit history
 
+
 ## git add
 
 You can do `git add -p yourFile` (or `--patch`), and git will begin breaking down your file in what it thinks are 
@@ -110,7 +110,8 @@ And here the meaning of each option:
     e manually edit the current hunk
     ? print help
 
-If the file is not in the repository yet, do first `git add -N yourFile`. Afterwards you can go on with `git add -p yourFile`.
+If the file is not in the repository yet, do first `git add -N yourFile`. 
+Afterwards you can go on with `git add -p yourFile`.
 
 You can then use:
 
@@ -122,7 +123,10 @@ Paraphrase from [here](http://stackoverflow.com/a/1085191)
 
 
 # Forking and cloning a project
-If we fork a project in github from a folder to our own user, we create a copy of the original project within a new "namespace". when this is cloned. this new project will be the master to which commits can be pushed. upstream repositorys can be defined, so that the original project can also be updated - but its better for other people to pull from a fork and merge that with their own project than update the main repository.
+If we fork a project in github from a folder to our own user, we create a copy of the original project 
+within a new "namespace". when this is cloned. this new project will be the master to which commits can be pushed. 
+upstream repositorys can be defined, so that the original project can also be updated - but its better 
+for other people to pull from a fork and merge that with their own project than update the main repository.
 
 #### How to specify the original repository to our fork (the "spoon-knife" repository)
 - get clone url of spoon-knife repository from github
@@ -156,11 +160,14 @@ If we fork a project in github from a folder to our own user, we create a copy o
 
 
 # Pull request
-If everyone is working on their own forks, then a pull request lets other people know, that there are major changes in your fork and they should sync their forks with the contents of your fork.
+If everyone is working on their own forks, then a pull request lets other people know, that there are major changes 
+in your fork and they should sync their forks with the contents of your fork.
 
 #### Creating a pull request
-In github under your user and your fork, look on the left hand side above the file list. there is a green button and a branch button. 
-select the branch you want to compare and then use the green button, to see, if there are any changes between the spoon and the fork repositories of the selected branch. 
+In github under your user and your fork, look on the left hand side above the file list. there is a green button 
+and a branch button. 
+select the branch you want to compare and then use the green button, to see, if there are any changes between the 
+spoon and the fork repositories of the selected branch. 
 Through the following menu you can create a pull request for all other users.
 
 #### Handling a pull requires
@@ -168,8 +175,8 @@ If there is an open pull request, it can be seen on the right hand side
 
 
 # Branches
-Branches are useful for working on stuff, while always keeping a master branch that contains the last working version. once the branch version is functional, 
-the changes can be merged with the last functional version of the master branch.
+Branches are useful for working on stuff, while always keeping a master branch that contains the last working version. 
+Once the branch version is functional, the changes can be merged with the last functional version of the master branch.
 
 - first create a new branch and immediately switch to this branch
 
@@ -261,7 +268,8 @@ A very good explanation can be found [here](http://git-scm.com/book/de/v1/Git-Br
 - on right hand side upper corner select default task/add task ... issues from github should be imported.
 - if this is correct, IDEA creates a new branch for this issue
 - make changes in project, add changed files in "changes"
-- use "commit", write one line description, leave one empty line, write "Fixes #issuenumber" if this commit actually fixes the number
+- use "commit", write one line description, leave one empty line, write "Fixes #issuenumber" 
+if this commit actually fixes the number
 
         git log                         // ... check last commits
         git push origin [branchname]    // ... push issue branch to repository e.g.: git push origin gndata-editor-46
@@ -474,7 +482,8 @@ Distilled from [here](http://gitready.com/intermediate/2009/02/13/list-remote-br
 
 # Remove stale upstream repositories
 
-If working on with distributed repositories, it can happen, that stale remote repositories can be shown when using git branch -a or git checkout
+If working on with distributed repositories, it can happen, that stale remote repositories 
+can be shown when using git branch -a or git checkout
 
 Remove stale remote repositories by:
 
