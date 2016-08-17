@@ -366,9 +366,9 @@ This requires to manually add a repository to the apt-get list of installable pa
         dpkg-query -l <packagename>
 
 
-## Using SFTP with the file browser
+## Using SFTP with the file browser (files/nautilus)
 - ctrl + l
-- enter user@url e.g. nix@projects.g-node.org
+- enter `user@url` ... e.g. `nix@projects.g-node.org`
 - enter pass phrase
  
 
@@ -376,40 +376,41 @@ This requires to manually add a repository to the apt-get list of installable pa
 
     which [program name]
 
+
 ## File operations
 
-- `touch [filename]` ... create file "filename"
+- `touch fileName` ... create file "fileName"
 - `echo "text" > fileName` ... Overwrite file
-- `echo "text" >> fileName` ... Add to file at the bottom
+- `echo "text" >> fileName` ... Add to file after existing content
 
 ## File permissions
 
-- `chmod options permissions filename` ... change file permissions
+- `chmod [options] [permissions] [filename]` ... change file permissions
 
 ### Change permissions to read, write and delete for everyone:
 
     chmod 777 filename
 
-Detailed description and examples:
-- http://www.computerhope.com/unix/uchmod.htm
+Find detailed description and examples [here](http://www.computerhope.com/unix/uchmod.htm)
 
 
 ## SymLinks (Symbolic links) to files or folders
 
 ### Create Symlink (symbolic link)
-http://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/
-
+        e.g.
         ln -s [target-filename] [symbolic-filename]
 
 This creates a symbolic link named `[symbolic-filename]` that points to `[target-filename]`
 NOTE: ALWAYS use the whole path as `[target-filename]`, do not use relative terms.
 
-        e.g. ln -s /home/currentUser/tmp/testLinks/hurra.txt ../hurraLink
+        e.g.
+        ln -s /home/currentUser/tmp/testLinks/hurra.txt ../hurraLink
 
 ### Delete Symlink
 Symlinks can simply be deleted by rm. This will not touch the file the link points to.
 
-        e.g. rm hurraLink
+        e.g.
+        rm hurraLink
 
 
 ## Linux System variables
@@ -417,7 +418,7 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
 - `$PATH` ... contains all directories which are included when looking for an executable
 
 
-## Important system folders under Linux:
+## Important system folders in Linux:
 
 ###  Global searchpath variable $PATH:
 
@@ -442,9 +443,9 @@ Symlinks can simply be deleted by rm. This will not touch the file the link poin
         /home/[user]/bin/
 
 
-## Adding custom executable paths under Linux:
+## Adding custom executable paths in Linux:
 
-- Set up a bin folder that is included in the Linux $PATH which contains all the links to starting programs.
+- Set up a bin folder that is included in the Linux `$PATH` which contains all the links to starting programs.
 - Check out this link for [more information](http://www.troubleshooters.com/linux/prepostpath.htm).
 - Folders can easily be added to the beginning and the the end of the variable -
 depending on where the application is first found, this will be executed.
@@ -502,14 +503,12 @@ and print the line number where the match has been found (-n).
 ## Bashrc
 - The hidden `.bashrc` file is a script that is executed, whenever a new terminal session is started.
 - The file contains configurations for the terminal session. An example would be the shorthand `ll` instead of `ls -l`
-- There are two main bashrc files.
+- There are two main bashrc files
 - The first is found in `/etc/bash.bashrc`, this one applies to all shell sessions
 - The second one is found in `/home/[user]/.bashrc`. This one applies only to non-login shell sessions.
 
 
 ## Linux server crash course:
-
-http://www.linuxhowtos.org/C_C++/socket.htm
 
 - client and server are both processes, that communicate with each other via SOCKETS.
 - processes can only communicate, if they are in the same ADRESS DOMAIN and have the same SOCKET TYPE.
@@ -520,6 +519,8 @@ http://www.linuxhowtos.org/C_C++/socket.htm
 - Each internet socket address needs a port number on its host (16bit unsigned integer).
 - There are port numbers reserved for Unix standard services, port numbers above 2000 are available.
 - The mainly used socket type is the STREAM SOCKET. Stream sockets TCP (transmission control protocol).
+
+Find a nice introduction [here](http://www.linuxhowtos.org/C_C++/socket.htm)
 
 
 ## Customizing Ubuntu 16
