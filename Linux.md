@@ -491,9 +491,30 @@ http://www.linuxhowtos.org/C_C++/socket.htm
 - open new instance of already open program e.g. Nautilus: middle click or shift+left click on icon in launcher
 
 
-## Ubuntu shortcuts making our life easier
+## Ubuntu keyboard shortcuts making our life easier
 
 - find an extensive list [here](http://askubuntu.com/questions/28086/what-are-unitys-keyboard-and-mouse-shortcuts).
 
 - alt + tab ... switch between open applications in the current workspace
 - alt + ^ ... switch between open windows of the current application in the current workspace
+
+
+# Unix in depth
+
+## Partitions
+
+- find information [here](https://en.wikipedia.org/wiki/Disk_partitioning) 
+and [hier](https://de.wikipedia.org/wiki/Partition_(Datentr%C3%A4ger))
+
+## Inodes
+
+- Inodes and partitions
+- structure
+- files
+- folders
+- links
+- links to the actual data
+- how to show Inodes in linux
+
+- find information [here](https://en.wikipedia.org/wiki/Inode) and [hier](https://de.wikipedia.org/wiki/Inode)
+
