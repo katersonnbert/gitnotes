@@ -397,20 +397,25 @@ Find detailed description and examples [here](http://www.computerhope.com/unix/u
 ## SymLinks (Symbolic links) to files or folders
 
 ### Create Symlink (symbolic link)
-        e.g.
         ln -s [target-filename] [symbolic-filename]
 
 This creates a symbolic link named `[symbolic-filename]` that points to `[target-filename]`
 NOTE: ALWAYS use the whole path as `[target-filename]`, do not use relative terms.
 
-        e.g.
         ln -s /home/currentUser/tmp/testLinks/hurra.txt ../hurraLink
 
 ### Delete Symlink
 Symlinks can simply be deleted by rm. This will not touch the file the link points to.
 
-        e.g.
         rm hurraLink
+
+### Read a link
+
+To show where a link actually leads to use:
+
+        readlink [linkName]
+        // e.g. using the link from above
+        readlink hurraLink
 
 
 ## Linux System variables
