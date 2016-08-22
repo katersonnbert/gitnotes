@@ -782,6 +782,41 @@ Go programs are executed in the order:
 Read the specs [here](https://golang.org/ref/spec#Program_initialization_and_execution)
 
 
+# Go build process
+
+- The go build toolchain:
+    - go compiler, c compiler, assembler, linker
+    - all of these can be found in go/src/cmd
+
+## Building a go package
+
+    // '-x' ... print build steps
+    go build -x crypto/hmac
+
+Building a go package does the following:
+- create a temporary folder
+- use the appropriate compiler for the current platform and the different source code files.
+- pack the result to an archive
+
+Note: 
+- After a build the resulting archive is simply deleted when the temporary folder is deleted. 
+- After an install, the created archive is copied to `GOPATH/pkg`.  
+- Compiler and linker only accept a single file representing the built package. 
+For this reason the archive is created during the build process using `pack`.
+
+## Building a go command
+
+- A go command is package which requires a file named `main.go` as entry point.
+- The build process will perform additional steps to produce an executable.
+- Building a command will leave the result in the current working directory.
+- If `go install` is used, the resulting file fill be copied to `GOPATH/bin`.
+
+
+Read more
+- [Quickstart](https://golang.org/doc/code.html#Command)
+- [How does the go build command work](http://dave.cheney.net/2013/10/15/how-does-the-go-build-command-work)
+
+
 # Go Hands On
 
 ## Install Go
