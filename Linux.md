@@ -548,15 +548,33 @@ Find a nice introduction [here](http://www.linuxhowtos.org/C_C++/socket.htm)
 - find information [here](https://en.wikipedia.org/wiki/Disk_partitioning) 
 and [hier](https://de.wikipedia.org/wiki/Partition_(Datentr%C3%A4ger))
 
+
 ## Inodes
 
-- Inodes and partitions
-- structure
-- files
-- folders
-- links
-- links to the actual data
-- how to show Inodes in linux
+- inodes contain information about files and directories
+    - ownership (group and userid)
+    - access mode
+    - file type
+    - device id of the device containing the file
+    - size of the file in bytes
+    - ctime ... when was the inode last changed
+    - mtime ... when was the file last changed
+    - atime ... when was the file last accessed
+- each inode is identified by an integer number
+
+        // identify a files inode number
+        ls -i [filename]
+
+- one file can be linked multiple times. if a link points to an inode number, then the link is a `hard link` 
+- if an inode is not referenced by a link, the corresponding file is removed from disk when it is 
+no longer used by any process.
+- A specific part of the filesystem, the `superblock` contains information about where the inodes themselves are found. 
+- when a file is opened the following happens:
+    - file system driver reads the superblock to get access to the inodes
+    - the root of the inode directory is opened and the inode of the required directory where 
+    the file resides in is looked up
+    - the inode of the directory is used to look up the inode of the file
+    - the inode of the file contains the link to the actual data of the file.
 
 - find information [here](https://en.wikipedia.org/wiki/Inode) and [hier](https://de.wikipedia.org/wiki/Inode)
 
