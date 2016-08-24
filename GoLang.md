@@ -2,7 +2,7 @@
 
 # Packages:
 - Go programs are organized in packages.
-- Programs start running in package main.
+- Programs require a package `main`.
 - Further packages can be used via `import`
 - Imports can be written as:
 
@@ -16,16 +16,25 @@
             "math"
         )
 
+- Aliases to imports can be assigned
+
+        // contents of the imported package can be used via "short"
+        import short "totallyUnGoLikelongAndWindingPackageName"
+
 - Unused imports are not allowed.
-- NOTE - Jumping ahead: Every package can contain an init() function, which is executed once upon import. If only
-code within the init() function of a package is required, but nothing of the package itself, it would be an
-unused import. To still allow this import, the following code can be used.
+- NOTE - Jumping ahead: Every package can contain an `init()` function, which is executed once upon import. If only
+code within the `init()` function of a package is required, but nothing of the package itself, it would be an
+unused import. To still allow this import, the following code can be used. `_` is always used to immediately 
+discard any data that is being assigned to it.
 
         _ import "fmt"
 
+- To see in which order packages are imported and in which order the respective `init()` functions 
+are executed see section "Go initialization" below.
+
 
 # Functions:
-- Go is a statically typed language.
+- Go is a statically typed language (type is known at compile time).
 - Functions take zero or more arguments, argument and return types have to be provided.
 - The types of function arguments are defined AFTER the name of the argument.
 
@@ -48,7 +57,7 @@ unused import. To still allow this import, the following code can be used.
             fmt.Println(c, "a king")
         }
 
-- Functions can be passed to other functions as arguments and values.
+- Go is a first order language: Functions can be passed to other functions as arguments and values.
 
         func compute(fn func(float64, float64) float64) float64 {
             return fn(3, 4)
@@ -66,7 +75,7 @@ unused import. To still allow this import, the following code can be used.
             fmt.Println("compute(math.Pow)", compute(math.Pow))
         }
 
-    
+
 ### Closures
 - Closures are anonymous functions, that are returned by a function. These anonymous functions have access 
 to the variables that have been defined by the surrounding function, keep track of the state of these variables 
@@ -103,7 +112,10 @@ and will work with them each time the variable that the anonymous function has b
 
 - NOTE: Depending on the type, the variables are initialized with initial values matching the type 
 (e.g. bool: false, byte, int, float, etc: 0, string: "") - and not with null/nil.
-- Inside a function the variable declaration can be shortened by using the short assignment `:=` with implicit type.
+- NOTE: If a variable is declared at package level, it will be initialized even BEFORE the `init()` function 
+of the package.
+- Inside a function the variable declaration can be shortened by using the short assignment `:=` with implicit type,
+meaning, that the type will be inferred from whatever comes after ths short assignment.
 
         fancyPants := "The fairy queen short assigns fancy pants which are made of"
         fmt.Println(fancyPants, reflect.TypeOf(fancyPants))
@@ -113,13 +125,13 @@ and will work with them each time the variable that the anonymous function has b
 
 # Constants
 - Constants are declared like variables using the keyword `const`.
-- Constants can only be initialized at the point of their declaration, but can take advantage of type inference.
+- Constants can only be initialized at the same time as their declaration, but can take advantage of type inference.
 
         const epicPants string = "Her epic pants on the other hand are very constant"
         fmt.Println(epicPants)
         const epicShirt = "As is her epic shirt, which interestingly is also made of inferred"
         fmt.Println(epicShirt, reflect.TypeOf(epicShirt))
-    
+
         const intern = 10
         const lowFloat = 1.2
         fmt.Println("Meanwhile the", reflect.TypeOf(intern), "does not even know its inferred", 
