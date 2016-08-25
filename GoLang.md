@@ -77,9 +77,11 @@ are executed see section "Go initialization" below.
 
 
 ### Closures
-- Closures are anonymous functions, that are returned by a function. These anonymous functions have access 
-to the variables that have been defined by the surrounding function, keep track of the state of these variables 
-and will work with them each time the variable that the anonymous function has been assigned to is accessed.
+- are anonymous functions
+- are returned by a function
+- have access to the variables that have been defined by the surrounding function
+- keep track of the state of their contained variables and will work with them each time the variable 
+that the anonymous function has been assigned to is accessed.
 
         func intSeq() func() int {
             i := 0
