@@ -551,6 +551,7 @@ and [hier](https://de.wikipedia.org/wiki/Partition_(Datentr%C3%A4ger))
 
 ## Inodes
 
+- inodes reside in a specially reserved block of the memory - which is usually 10% of memory capacity.
 - inodes contain information about files and directories
     - ownership (group and userid)
     - access mode
@@ -560,14 +561,17 @@ and [hier](https://de.wikipedia.org/wiki/Partition_(Datentr%C3%A4ger))
     - ctime ... when was the inode last changed
     - mtime ... when was the file last changed
     - atime ... when was the file last accessed
+    - link count (how many hard links point to the inode)
+    - pointers to datacluster - can also be a pointer to a cluster further pointing to the actual data 
+    (if the data is too extensive for one pointer in the inode)
 - each inode is identified by an integer number
 
         // identify a files inode number
         ls -i [filename]
 
 - one file can be linked multiple times. if a link points to an inode number, then the link is a `hard link` 
-- if an inode is not referenced by a link, the corresponding file is removed from disk when it is 
-no longer used by any process.
+- if an inode is not referenced by a link, the corresponding data is removed from disk (???) when it is 
+no longer used by any process. (or is it rather, that the pointers to the datacluster is removed & therefore free to be written to again?)
 - A specific part of the filesystem, the `superblock` contains information about where the inodes themselves are found. 
 - when a file is opened the following happens:
     - file system driver reads the superblock to get access to the inodes
@@ -576,5 +580,4 @@ no longer used by any process.
     - the inode of the directory is used to look up the inode of the file
     - the inode of the file contains the link to the actual data of the file.
 
-- find information [here](https://en.wikipedia.org/wiki/Inode) and [hier](https://de.wikipedia.org/wiki/Inode)
-
+- find wikipedia information [here](https://en.wikipedia.org/wiki/Inode) and [hier](https://de.wikipedia.org/wiki/Inode)
