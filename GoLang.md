@@ -155,12 +155,21 @@ meaning, that the type will be inferred from whatever comes after ths short assi
 - NOTE! `int, uint, uintptr` types are 32bit/64bit on 32/64bit systems respectively.
 - More information about strings, bytes and runes can be found [in this blog entry](https://blog.golang.org/strings).
 
-### String (and runes)
+### String, runes, UTF-8 code points
 - In Go a string is a read-only slice of bytes (of any format e.g. Unicode, UTF-8, etc).
 - Since a string is a slice of bytes, the individual bytes of a string can be accessed by index.
-        e.g. `sampleString[0]` yields the byte of string *sampleString* at index 0.
-- Every string literal always holds valid UTF-8 sequences.
-- These sequences are called runes (not chars, since they hold bytes).
+        e.g. `sampleString[0]` yields the byte of string `sampleString` at index 0.
+
+- go source code is always UTF-8
+- it is assumed, that strings contain proper UTF-8 code points - but that does not necessarily have to be true;
+this depends from where the string came from.
+- a rune can hold a proper UTF-8 code point
+- if we `for range` over a `[]byte`, the individual pieces will be of type `byte`=`uint8`
+- if we `for range` over a `string`, the individual pieces will be of type `rune`=`int32`=UTF-8 code points
+
+The go library unicode/utf8 provides support for validating and working with UTF8 strings, 
+find it [here](http://golang.org/pkg/unicode/utf8/).
+Find out more about unicode characters [here](http://unicode.org/).
 
 
 # Type conversion
