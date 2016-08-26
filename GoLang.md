@@ -171,6 +171,39 @@ The go library unicode/utf8 provides support for validating and working with UTF
 find it [here](http://golang.org/pkg/unicode/utf8/).
 Find out more about unicode characters [here](http://unicode.org/).
 
+- What I don't understand as of yet: if I range over a []byte the resulting individual pieces will be 
+byte, so int8 long. These are not proper UTF-8 code points. If I read a text from a file in go, it will
+be imported as []byte. I can read them as such. every
+
+- look at the output from the following experiment:
+
+        s := "abcä⌘"
+        b := []byte(s)
+        for i, v := range b {
+            fmt.Printf("(%d)%s / ", i, string(v))
+        }
+        // (0)a / (1)b / (2)c / (3)Ã / (4)¤ / (5)â / (6) / (7) /
+        for i, v := range s {
+            fmt.Printf("(%d)%s/", i, string(v))
+        }
+        // (0)a / (1)b / (2)c / (3)ä / (5)⌘ /
+
+- The output suggests, that 'a', 'b' and 'c' are saved differently then the other characters: they are actually 
+represented as int8 only! Otherwise they would not be interpreted correctly by the range over byte. HOW does that work?
+
+- it seems to work like this (with utf-8 for sure):
+    - if we have a string, this is actually a slice of bytes.
+    - we walk through every byte.
+    - we check the first bit of the first byte.
+    - if the first bit of the first byte is a 0, we are dealing with an ASCII character, which is 
+        exactly one byte long. We can look up in the ASCII table, which character it is, do whatever we
+        want with it and move on to interpreting the next byte!
+    - if the first bit of the first byte was a 1, then the byte encodes for a code point that requires more than
+        just one byte of length and it has to be further looked up, which character it is.
+
+For more information check the description and example part [on wikipedia](https://en.wikipedia.org/wiki/UTF-8#Description)  
+and read the [minimal unicode](http://www.joelonsoftware.com/articles/Unicode.html) blogpost from Joel Spolsky.
+
 
 # Type conversion
 - The expression `T(v)` converts value `v` to type `T`.
