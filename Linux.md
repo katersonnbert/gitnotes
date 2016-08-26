@@ -425,6 +425,8 @@ To show where a link actually leads to use:
 
 ## Important system folders in Linux:
 
+- /proc ... [TODO]
+
 ###  Global searchpath variable $PATH:
 
 - display all directories currently included in the searchpath:
