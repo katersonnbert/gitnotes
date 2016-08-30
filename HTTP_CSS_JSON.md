@@ -9,7 +9,7 @@ HTTP
 
 An HTTP request has the following form:
 - Request line with syntax `<HTTP Request Method> <URI>` terminated by a CRLF (carriage return line feed).
-- Zero or more request headers with syntax `key: value[, key: value[, ...]]` terminated by a CRLF.
+- Zero or more request headers of syntax `key: value[, key: value[, ...]]` terminated by a CRLF.
 - An empty line terminated by a CRLF (this has to be present even if the message body is empty).
 - [Optional] The message body.
 
@@ -28,7 +28,7 @@ Example:
 - `OPTIONS`   ... Returns which HTTP methods are supported by the server.
 - `CONNECT`   ... Converts the connection to a TCP/IP tunnel
 
-Note: The most commonly used HTTP Request Methods are `GET` and `POST`.
+NOTE: The most commonly used HTTP Request Methods are `GET` and `POST`.
 
 
 ##### GET
@@ -49,9 +49,10 @@ NOTE: See HTML query for more information regarding request message query.
 - In detail, `POST` requires the server to accept an enclosed entity and process it at the
     provided Request-URI in the request line.
 
+
 ### HTTP Request Header fields
 
-- HTTP request headers are optional except:
+- HTTP request headers are optional, except:
     - `Host: [URI]` has to be present in HTTP 1.1.
     - `Content-Length` OR `Transfer-Encoding` have to be present, if the request has a message body.
 - RFC 7231 defines a core set of HTTP request header fields
@@ -63,7 +64,7 @@ NOTE: See HTML query for more information regarding request message query.
 ### The Request URI
 - The request URI follows the syntax `<scheme name> : <hierarchical part> [ ?<query> ] [ # <fragment> ]`
 
-    - the `scheme name` defines how the rest of the URI structure is to be interpreted
+    - the `scheme name` defines how the rest of the URI structure is to be interpreted (which protocol is used)
 
             http:
 
@@ -89,7 +90,6 @@ NOTE: See HTML query for more information regarding request message query.
         - if the URI contains a `query` part, the `fragment` is always added after the query.
 
                 http://www.example.org/nowhere?field1=value1&field2=value2#summary
-
 
 
 NOTE: HTML URLs have to solely consist of characters from the ASCII character-set, other characters need to be encoded.
