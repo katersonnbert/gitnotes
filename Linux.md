@@ -292,12 +292,35 @@ To get more information about a command use `man [command]` or the `--help` opti
 - Exit by pressing `q`
 
 
-### curl
+### curl (commandline url)
 
-- commandline tool for sending http requests
+Read up on the http protocol if you are not familiar with it. 
 
-        // sends a GET request to hackernews toplinks
-        curl "http://www.hntoplinks.com/"
+- commandline tool for sending a GET http request (GET is the default http request method for curl)
+
+        curl "http://www.hntoplinks.com"
+
+- include the http response headers: `-i`
+
+        curl -i "http://www.hntoplinks.com"
+
+- add a request header: `-H`
+
+        curl "http://www.hntoplinks.com" -H "Accept: application/json" 
+
+- use a different request method than GET: `-X`
+
+        curl -X POST "http://somewhere.com?value=key"
+
+- add a request body to the request: `-d`
+
+        curl -X POST "http://somewhere.com" -d "value=key"
+
+- add an http form body to the request: `-F`
+
+        curl -X POST "http://somewhere.com" -F user[lname]=Karl
+
+Find a very nice introduction to curl [here](http://conqueringthecommandline.com/book/curl).
 
 
 ### Compression / uncompression of files
