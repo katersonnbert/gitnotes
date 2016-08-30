@@ -239,7 +239,7 @@ If the file does not exist yet, it will be created.
 - `command_1 | command_2` ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
 
-## Further useful Bash commands:
+## Even more useful Bash commands:
 
 To get more information about a command use `man [command]` or the `--help` option.
 
@@ -290,6 +290,14 @@ To get more information about a command use `man [command]` or the `--help` opti
 
 - Displays all processes running on the currently used machine.
 - Exit by pressing `q`
+
+
+### curl
+
+- commandline tool for sending http requests
+
+        // sends a GET request to hackernews toplinks
+        curl "http://www.hntoplinks.com/"
 
 
 ### Compression / uncompression of files
