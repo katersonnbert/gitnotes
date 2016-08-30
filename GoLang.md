@@ -362,8 +362,6 @@ the end of the surrounding function.
         y := &customType     // returns *customType
 
 
-[xxx] I'm here!
-
 # Structs
 - A `struct` is a collection of fields.
 - The fields of a struct can be accessed using a dot. Struct fields can also be accessed via a struct pointer.
@@ -374,7 +372,7 @@ if they are not set at struct initialization.
             X int
             Y int
         }
-    
+
         func useVertex() {
             var va Vertex = Vertex{1, 2}
             vb := Vertex{}
@@ -389,6 +387,11 @@ if they are not set at struct initialization.
             fmt.Println("Pointer replace of struct vb:", vb)
         }
 
+- Note: Visibility of structs and their fields is defined by their first letter. If a struct or a field of a struct 
+starts with a capital letter, it is public and can be accessed outside of the package. If it starts with a lower case 
+letter, it is only accessible within the same package!
+
+[xxx] I'm here!
 
 # Arrays
 - `[n]T` is an array of `n` values of type `T`.
