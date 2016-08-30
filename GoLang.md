@@ -171,11 +171,16 @@ The go library unicode/utf8 provides support for validating and working with UTF
 find it [here](http://golang.org/pkg/unicode/utf8/).
 Find out more about unicode characters [here](http://unicode.org/).
 
-- What I don't understand as of yet: if I range over a []byte the resulting individual pieces will be 
-byte, so int8 long. These are not proper UTF-8 code points. If I read a text from a file in go, it will
-be imported as []byte. I can read them as such. every
-
-- look at the output from the following experiment:
+- it seems to work like this (with utf-8 for sure):
+    - if we have a string, this is actually a slice of bytes.
+    - we walk through every byte.
+    - we check the first bit of the first byte.
+    - if the first bit of the first byte is a 0, we are dealing with an ASCII character, which is 
+        exactly one byte long. We can look up in the ASCII table, which character it is, do whatever we
+        want with it and move on to interpreting the next byte!
+    - if the first bit of the first byte was a 1, then the byte encodes for a code point that requires more than
+        just one byte of length and it has to be further looked up, which character it is.
+- look at the output from the following experiment to make it clearer:
 
         s := "abcä⌘"
         b := []byte(s)
@@ -188,22 +193,8 @@ be imported as []byte. I can read them as such. every
         }
         // (0)a / (1)b / (2)c / (3)ä / (5)⌘ /
 
-- The output suggests, that 'a', 'b' and 'c' are saved differently then the other characters: they are actually 
-represented as int8 only! Otherwise they would not be interpreted correctly by the range over byte. HOW does that work?
-
-- it seems to work like this (with utf-8 for sure):
-    - if we have a string, this is actually a slice of bytes.
-    - we walk through every byte.
-    - we check the first bit of the first byte.
-    - if the first bit of the first byte is a 0, we are dealing with an ASCII character, which is 
-        exactly one byte long. We can look up in the ASCII table, which character it is, do whatever we
-        want with it and move on to interpreting the next byte!
-    - if the first bit of the first byte was a 1, then the byte encodes for a code point that requires more than
-        just one byte of length and it has to be further looked up, which character it is.
-
 For more information check the description and example part [on wikipedia](https://en.wikipedia.org/wiki/UTF-8#Description)  
 and read the [minimal unicode](http://www.joelonsoftware.com/articles/Unicode.html) blogpost from Joel Spolsky.
-
 
 # Type conversion
 - The expression `T(v)` converts value `v` to type `T`.
@@ -282,6 +273,8 @@ and read the [minimal unicode](http://www.joelonsoftware.com/articles/Unicode.ht
             fmt.Printf("%s.", os)
         }
 
+[xxx] todo - read up on default
+
 - Switch without a condition is used instead of if-else chains:
 
         switch {
@@ -307,13 +300,14 @@ the end of the surrounding function.
 
 - Defers are pushed onto a stack, which means: last in first out...
 
+[xxx] how does that work with error or panic
 
 # Pointers
-- Go has no pointer arithmetic.
 - A pointer holds the memory address of a variable.
-- `*T` is of type pointer to a value of type `T`, e.g. `var p *int`
 - Pointers are initialized with value nil.
-- The `&` operator generates a pointer to its corresponding variable:
+- Go has no pointer arithmetic. [xxx] what is pointer arithmetic
+- `*T` is of type pointer to a value of type `T`, e.g. `var p *int`
+- The `&` operator generates a pointer to its corresponding variable: [xxx] how is & called in this context
 
         var p *int
         i := 42
@@ -352,6 +346,7 @@ the end of the surrounding function.
             fmt.Println("i has been divided:\t", i) // 11
         }
 
+[xxx] I'm here!
 
 # Structs
 - A `struct` is a collection of fields.
