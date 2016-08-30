@@ -154,6 +154,8 @@ meaning, that the type will be inferred from whatever comes after ths short assi
 
 - NOTE! `int, uint, uintptr` types are 32bit/64bit on 32/64bit systems respectively.
 - More information about strings, bytes and runes can be found [in this blog entry](https://blog.golang.org/strings).
+- Crashcourse about the difference of int and uint 
+and how they can be represented in memory can be found [here](http://stackoverflow.com/a/13422442).
 
 ### String, runes, UTF-8 code points
 - In Go a string is a read-only slice of bytes (of any format e.g. Unicode, UTF-8, etc).
@@ -305,7 +307,8 @@ the end of the surrounding function.
 # Pointers
 - A pointer holds the memory address of a variable.
 - Pointers are initialized with value nil.
-- Go has no pointer arithmetic. [xxx] what is pointer arithmetic
+- Go has no pointer arithmetic
+(find out more about pointer arithmetic [here](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/BitOp/pointer.html)).
 - `*T` is of type pointer to a value of type `T`, e.g. `var p *int`
 - The `&` operator generates a pointer to its corresponding variable: [xxx] how is & called in this context
 
