@@ -275,7 +275,7 @@ and read the [minimal unicode](http://www.joelonsoftware.com/articles/Unicode.ht
             fmt.Printf("%s.", os)
         }
 
-[xxx] todo - read up on default
+[xxx] todo - read up on switch default
 
 - Switch without a condition is used instead of if-else chains:
 
@@ -310,11 +310,11 @@ the end of the surrounding function.
 - Go has no pointer arithmetic
 (find out more about pointer arithmetic [here](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/BitOp/pointer.html)).
 - `*T` is of type pointer to a value of type `T`, e.g. `var p *int`
-- The `&` operator generates a pointer to its corresponding variable: [xxx] how is & called in this context
+- The `&` operator generates a pointer to its corresponding variable (it returns the memory address of the variable):
 
         var p *int
         i := 42
-        p = &i
+        p = &i // &i returns *int in this case
 
     or
 
@@ -348,6 +348,19 @@ the end of the surrounding function.
             *x = *x/2
             fmt.Println("i has been divided:\t", i) // 11
         }
+
+### `new`
+- the `new` function can be used to get a pointer to a new value
+- it allocates enough memory to fit the value, the value will be the zero value corresponding to the used value type.
+- it returns a pointer to that allocated memory
+
+        type customType struct{
+            customField string
+        }
+
+        x := new(customType) // returns *customType
+        y := &customType     // returns *customType
+
 
 [xxx] I'm here!
 
