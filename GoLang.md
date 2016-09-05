@@ -79,7 +79,8 @@ are executed see section "Go initialization" below.
 ### Closures
 - are anonymous functions
 - are returned by a function
-- have access to the variables that have been defined by the surrounding function
+- have access to the variables that have been defined by the surrounding function - but once the closure is returned,
+there is no possible ways to access these variables except when the closure is executed (closure ... closed function?)
 - keep track of the state of their contained variables and will work with them each time the variable 
 that the anonymous function has been assigned to is accessed.
 
