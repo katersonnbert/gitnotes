@@ -1,24 +1,6 @@
 git
 ===
 
-# Fork/clone a project
-NOTE:
-- never use the `https://github.com/...` address for forks
-- use `git@github.com:...` instead!
-- If that somehow happens, the paths can be replaced in `.../[mainGitDir/.git/config]`
-
-- fork project in github to your user
-- copy ssh clone URL e.g. `git@github.com:mpsonntag/gndata-editor.git`
-- terminal: move to folder you want to create your repository
-- clone repository
-
-        git clone [git ssh clone URL] [projectFolderName]
-        e.g. ~/work$ git clone git@github.com:mpsonntag/gndata-editor.git GNdata-editor
-
-- set upstream repository!
-
-        git remote add upstream [git ssh spoon-knife clone url]
-
 # Managing git
 - There are two main config files for git: .gitconfig for global settings in the /home/[user]/ directory 
 and .git/config in each of the repositories for local repository specific settings.
@@ -122,11 +104,27 @@ You can then use:
 Paraphrase from [here](http://stackoverflow.com/a/1085191)
 
 
-# Forking and cloning a project
-If we fork a project in github from a folder to our own user, we create a copy of the original project 
-within a new "namespace". when this is cloned. this new project will be the master to which commits can be pushed. 
-upstream repositorys can be defined, so that the original project can also be updated - but its better 
-for other people to pull from a fork and merge that with their own project than update the main repository.
+# Fork/clone a project from github
+
+Forking a project from another user means creating a copy of this project, that is detached from the original.
+Work (including pushing commits to) the forked repository will now not directly affect the original repository.
+
+NOTE:
+- never use the `https://github.com/...` address for forks
+- use `git@github.com:...` instead!
+- If that somehow happens, the paths can be replaced in `.../[mainGitDir/.git/config]`
+
+- fork project in github to your user
+- copy ssh clone URL e.g. `git@github.com:mpsonntag/gndata-editor.git`
+- terminal: move to folder you want to create your repository
+- clone repository
+
+        git clone [git ssh clone URL] [projectFolderName]
+        e.g. ~/work$ git clone git@github.com:mpsonntag/gndata-editor.git GNdata-editor
+
+- set upstream repository!
+
+        git remote add upstream [git ssh spoon-knife clone url]
 
 #### How to specify the original repository to our fork (the "spoon-knife" repository)
 - get clone url of spoon-knife repository from github
