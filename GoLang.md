@@ -309,6 +309,7 @@ the end of the surrounding function.
     of the current go routine have ended.
     - then the program crashes.
 
+- find more information [here](https://blog.golang.org/defer-panic-and-recover)
 
 # Pointers
 - A pointer holds the memory address of a variable.
