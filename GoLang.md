@@ -302,8 +302,13 @@ the end of the surrounding function.
         fmt.Println(yy)
 
 - Defers are pushed onto a stack, which means: last in first out...
+- If a panic occurs
+    - the surrounding function will stop
+    - all deferred functions of the stopped function to this point will be executed
+    - the panic is then returned to the caller of the surrounding function and run up the stack until all functions
+    of the current go routine have ended.
+    - then the program crashes.
 
-[xxx] how does that work with error or panic
 
 # Pointers
 - A pointer holds the memory address of a variable.
