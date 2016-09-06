@@ -276,6 +276,19 @@ To get more information about a command use `man [command]` or the `--help` opti
         e.g.
         [chris@troll work]scp server4:/temp/work/* /home/user/chris/work/
 
+### SSH keys
+
+- For some secure connections SSH keys are required e.g. to use the ssh option with github.
+- if you are not familiar with PGP, read up on your trusty wikipedia page.
+- generate ssh keys:
+
+        ssh-keygen
+        enter a name (without spaces!) e.g. id_key
+        enter a pw pr leave it empty
+        cat id_rsa_gin_gnode_org.pub
+
+- The created key pair can be found in a hidden `.ssh` folder in the home directory.
+
 ### wc (word count)
 
 - counts lines, words and letters within a file
