@@ -197,6 +197,10 @@ will copy the file 2011_Science_2282772.pdf from location /home/user/chris/work/
 
         e.g. [chris@troll ~]$exit
 
+- `man [program]` ... manual of a command line program. Displays a brief description and all command line options.
+
+        e.g. [chris@troll ~]$man ls
+
 
 ## Further basic Bash command line options:
 
@@ -239,13 +243,7 @@ If the file does not exist yet, it will be created.
 - `command_1 | command_2` ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
 
-## Even more useful Bash commands:
-
-To get more information about a command use `man [command]` or the `--help` option.
-
-        e.g.
-        man ssh
-        ssh --help
+## Secure connection and keys 
 
 ### ssh (Secure SHell)
 
@@ -283,11 +281,33 @@ To get more information about a command use `man [command]` or the `--help` opti
 - generate ssh keys:
 
         ssh-keygen
-        enter a name (without spaces!) e.g. id_key
+        enter a name (without spaces!) e.g. id_rsa_gin_gnode_org
         enter a pw pr leave it empty
+        // print public key
         cat id_rsa_gin_gnode_org.pub
 
-- The created key pair can be found in a hidden `.ssh` folder in the home directory.
+- The created key pair can be found in a hidden `.ssh` folder in the home directory, if no other location has been 
+    specified.
+
+- To retrieve the SSH fingerprint of the public key use the following:
+
+        ssh-keygen -lf [location and name of the public key]
+
+
+### SSH Key Agent
+
+SSH keys reside in their folder, every time they are used, the passphrase has to be entered. 
+To make them available to other services without having to point services to their proper keys and 
+having to enter the pass phrase all the time.
+
+        //start an ssh-agent if it is not already started
+        eval "ssh-agent"
+        // add key to the agent e.g. the key created in example above
+        ssh-add ~/.ssh/id_rsa_gin_gnode_org
+        // enter the keys pass phrase.
+
+
+## Even more useful Bash commands:
 
 ### wc (word count)
 
