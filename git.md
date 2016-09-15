@@ -139,6 +139,12 @@ NOTE:
 
 - now we have specified the upstream repository for our fork repository
 
+
+#### Change the url of a remote
+ 
+    git remote set-url origin [different url]
+
+
 #### How to sync fork repository with upstream repository
 - to get modifications done in the upstream repository
 
@@ -494,7 +500,7 @@ You can display which repositories will be removed by using first:
 
 # Unstage file for commit
 
-        git reset <file>
+            git reset <file>
 
 
 # Commit messages
