@@ -13,3 +13,12 @@ Gimp
 
 ### Crop images
 - find out how [here](https://docs.gimp.org/en/gimp-tutorial-quickie-crop.html).
+
+
+Inkscape
+========
+
+check out guidelines
+
+
+
