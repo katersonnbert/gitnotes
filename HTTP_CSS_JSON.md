@@ -161,6 +161,12 @@ less files require the metadata tags:
     mimeType='text/css'
 
 
+Fonts and Icons for use with CSS
+================================
+
+Find resources at [Fontawesome](http://fontawesome.io/)
+
+
 JSON (Java Script Object Notation)
 ==================================
 http://www.w3schools.com/json/default.asp
