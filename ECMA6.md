@@ -7,3 +7,9 @@ ECMA Script 6
 - [ECMA Script 6](http://es6-features.org/)
 - [ES6 Hacks](https://hacks.mozilla.org/category/es6-in-depth/)
 - [jsfiddle playground](https://jsfiddle.net/)
+
+
+# TypeScript
+
+Think about using TypeScript instead of any JavaScript:
+http://www.typescriptlang.org/docs/tutorial.html
