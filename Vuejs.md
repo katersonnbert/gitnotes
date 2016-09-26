@@ -503,7 +503,7 @@ can specify up to which file size images should be encoded with base64 rather th
 
 ## Mixins
 
-- Mixins can be used to write reusable functionalities for Vue components.
+- Mixins can be used to write reusable functionality for Vue components.
 
 - A mixin can contain any component option like `methods` or `computed`.
 
