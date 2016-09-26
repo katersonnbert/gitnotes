@@ -560,9 +560,9 @@ and print the line number where the match has been found (-n).
 ## netstat: check connections and available sockets
     netstat
 
-- `netstat -l` ... check connections
-- `netstat -lt` ... check connections showing their local address
-
+- `netstat -l`      ... check connections
+- `netstat -lt`     ... check connections showing their local address
+- `netstat -ltupn`  ... show all connections with their ports, program name and pid
 
 ## List USB devices
     lsusb
