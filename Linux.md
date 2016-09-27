@@ -296,15 +296,24 @@ If the file does not exist yet, it will be created.
 
 ### SSH Key Agent
 
+Find a nice introduction [here](http://sshkeychain.sourceforge.net/mirrors/SSH-with-Keys-HOWTO/SSH-with-Keys-HOWTO-6.html) 
+and laugh at the passphrase.
+
 SSH keys reside in their folder, every time they are used, the passphrase has to be entered. 
 To make them available to other services without having to point services to their proper keys and 
 having to enter the pass phrase all the time.
 
-        //start an ssh-agent if it is not already started
+- start an ssh-agent if it is not already started
+
         eval "ssh-agent"
-        // add key to the agent e.g. the key created in example above
+
+- add key to the agent e.g. the key created in example above and enter the keys pass phrase once and never again.
+
         ssh-add ~/.ssh/id_rsa_gin_gnode_org
-        // enter the keys pass phrase.
+
+- check which keys are currently managed by the ssh key agent
+
+        ssh-add -l
 
 
 ## Even more useful Bash commands:
