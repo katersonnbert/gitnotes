@@ -580,6 +580,19 @@ and print the line number where the match has been found (-n).
 - `lsusb -v` does the same as above, but includes more details about the devices
 - `lsusb -d [vendorID]:[deviceID] -v` gives a verbose description of just the specified device
 
+## base64
+
+base64 encoding from the commandline
+
+    base64 <<< sometextstuff
+
+base64 decoding from the commandline
+
+    base64 -d <<< c29tZXRleHRzdHVmZgo=
+
+The base64 RFC with the nittygritty details can be found [here](https://tools.ietf.org/html/rfc4648#section-5). 
+
+
 ## Bashrc
 - The hidden `.bashrc` file is a script that is executed, whenever a new terminal session is started.
 - The file contains configurations for the terminal session. An example would be the shorthand `ll` instead of `ls -l`
