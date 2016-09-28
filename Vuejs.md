@@ -3,7 +3,8 @@ Vuejs Framework
 
 - Based on ECMAScript6 (ECMA Script is the standard, javascript an implementation of ECMA script)
 - Find a quick Vuejs tour [here](https://vuejs.org/guide/).
-- For CSS related lookups use [GetBootstrap](http://getbootstrap.com/).
+- For CSS-Bootstrap related lookups use [GetBootstrap](http://getbootstrap.com/).
+- Find a curated list of vue.js resources [here](https://github.com/vuejs/awesome-vue).
 
 ### Debug Vuejs in Google chrome:
 - Add "Vue.js devtools" plugin to Chrome
