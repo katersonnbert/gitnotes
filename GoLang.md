@@ -1028,5 +1028,6 @@ Distilled from resources:
 - [Go homepage](https://golang.org/doc/)
 - [Go by example](https://gobyexample.com/)
 - [Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
+- [Awesome Go](https://github.com/avelino/awesome-go)
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
