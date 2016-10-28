@@ -982,6 +982,40 @@ Some links about the topic:
 - Go common mistakes: [Code review comments](https://github.com/golang/go/wiki/CodeReviewComments)
 
 
+## Go test coverage
+
+- [How to create coverage for tests with Go](https://blog.golang.org/cover)
+
+- create a file named `profile.cov` containing the coverage profile for the current go package:
+
+        go test -coverprofile=profile.cov
+
+- display which parts of code are covered by the tests and which are not, using the above created profile:
+
+        go tool cover -html=profile.cov
+
+- if there are more than one packages in a project, the cover profiles can be run and combined 
+    using a custom bash script at the project root. 
+    In this example `gin-repo` is the name of the project and has to be replaced with the actual project path.
+
+        #!/bin/bash
+        echo "mode: count" > profile.cov;
+        for Dir in $(go list ./...);
+        do
+          # change path to actual project here
+          currDir=$(echo $Dir | sed 's/github.com\/G-Node\/gin-repo\///g');
+          currCount=$(ls -l $currDir/*.go 2>/dev/null | wc -l);
+          if [ $currCount -gt 0 ];
+          then
+            go test -covermode=count -coverprofile=tmp.out $Dir;
+            if [ -f tmp.out ];
+            then
+              cat tmp.out | grep -v "mode: count" >> profile.cov;
+            fi
+          fi
+        done
+
+
 ## Go gotchas
 
 ### sqlx database get error with private fieldnames
