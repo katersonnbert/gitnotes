@@ -49,6 +49,11 @@ NOTE: See HTML query for more information regarding request message query.
 - In detail, `POST` requires the server to accept an enclosed entity and process it at the
     provided Request-URI in the request line.
 
+##### PATCH
+
+An excellent article regarding PATCH can be found 
+[here](http://williamdurand.fr/2014/02/14/please-do-not-patch-like-an-idiot/). 
+
 
 ### HTTP Request Header fields
 
