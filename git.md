@@ -609,3 +609,8 @@ without committing any unfinished changes.
 
 Find more details about stashing and using different stashes [here](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
 
+
+## Signing commits and tags
+
+- [git signing](https://git-scm.com/book/tr/v2/Git-Tools-Signing-Your-Work)
+- [extensive examples](https://mikegerwitz.com/papers/git-horror-story)
