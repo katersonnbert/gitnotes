@@ -829,6 +829,11 @@ Find a good introduction on this topic [here](https://www.dotnetperls.com/json-g
 
         go test -run="SomeFunctionNamePart" ./...
 
+## Test Coverage
+
+Go has really nice support for test coverage, find a detailed description in this 
+[Go Blog article on coverage](https://blog.golang.org/cover). 
+
 
 # Go Web programming 
 
