@@ -7,9 +7,15 @@ ECMA Script 6
 - [ECMA Script 6](http://es6-features.org/)
 - [ES6 Hacks](https://hacks.mozilla.org/category/es6-in-depth/)
 - [jsfiddle playground](https://jsfiddle.net/)
+- Article about [problems with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html?utm_source=javascriptweekly)
+- Article about [iterators and generators](http://macr.ae/article/iterators-and-generators.html)
 
 
-# TypeScript
+### JavaScript linters
+- [ESlint](http://eslint.org/docs/user-guide/configuring)
+- [JSHint](http://jshint.com/docs/)
+- [Closure compiler](https://developers.google.com/closure/compiler/?csw=1)
 
-Think about using TypeScript instead of any JavaScript:
-http://www.typescriptlang.org/docs/tutorial.html
+
+## TypeScript
+Think about using [TypeScript](http://www.typescriptlang.org/docs/tutorial.html) instead of any JavaScript.
