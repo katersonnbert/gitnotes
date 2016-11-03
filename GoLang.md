@@ -1071,6 +1071,8 @@ Another graphical user interface is GTK, find support and a nicely maintained Go
             db.Get(localStruct, q, "somevalue")
             // works fine
 
+- List of [Go Gotchas](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/index.html#mline_lit_comma)
+ with examples.
 
 # Addendum
 
