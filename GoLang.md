@@ -988,6 +988,10 @@ Some links about the topic:
 - [examples 1](http://blog.labix.org/2013/12/23/qml-components-with-go-and-opengl)
 - [qml crashcourse](https://en.wikipedia.org/wiki/QML)
 
+## Go and GTK
+
+Another graphical user interface is GTK, find support and a nicely maintained GoTK3 project 
+[here](https://github.com/gotk3/gotk3).
 
 ## Further nice to knows / reads
 - Best practices for production environment: [Go in production](https://peter.bourgon.org/go-in-production/)
