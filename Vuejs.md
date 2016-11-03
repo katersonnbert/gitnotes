@@ -543,6 +543,9 @@ can specify up to which file size images should be encoded with base64 rather th
     - vue-animated-list ... animations for `v-for` rendered lists
     - [list of user contributed tools](https://github.com/vuejs/awesome-vue#libraries--plugins)
 
+# Problem solving
+
+For solving problems always search the [forum](http://forum.vuejs.org/) first!
 
 ## Appendix
 
