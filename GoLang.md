@@ -805,6 +805,10 @@ that variable access conflicts can be avoided.
 - `sync.Mutex Lock` locks the access to a variable for everything outside the current goroutine
 - `sync.Mutex Unlock` releases access to a locked variable 
 
+## JSON Marshaling and Unmarshaling
+
+Find a good introduction on this topic [here](https://www.dotnetperls.com/json-go).
+
 
 # Tests
 - Test files have to reside in the same package as the go files that are to be tested.
