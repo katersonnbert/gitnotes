@@ -20,17 +20,19 @@ Example:
         (empty line)
 
 ### HTTP request methods:
-- `GET`       ... Requests data from a specific resource, see below for details.
+- `GET`       ... Requests data from a specific resource, see below for details. Idempotent.
 - `POST`      ... Submits data to a specific resource, see below for details.
-- `PUT`       ... Submits data and requests, that it should be stored at an also provided Request-URI.
+- `PUT`       ... Submits data and requests, that it should be stored at an also provided Request-URI. Idempotent.
 - `PATCH`     ... An addition to POST and PUT - handles adds, updates and deletes of a specific resource
                     in the way the request describes.
-- `HEAD`      ... like GET, but returns only the HTTP headers without a document body
-- `DELETE`    ... Sends a Request-URI and requests, that the resource found at this URI should be deleted.
+- `HEAD`      ... like GET, but returns only the HTTP headers without a document body. Idempotent.
+- `DELETE`    ... Sends a Request-URI and requests, that the resource found at this URI should be deleted. Idempotent.
 - `OPTIONS`   ... Returns which HTTP methods are supported by the server.
 - `CONNECT`   ... Converts the connection to a TCP/IP tunnel
 
 NOTE: The most commonly used HTTP Request Methods are `GET` and `POST`.
+NOTE: Idempotent means, that no matter how often an idempotent method is executed, the side effects 
+and the outcome are always the same.
 
 
 ##### GET
