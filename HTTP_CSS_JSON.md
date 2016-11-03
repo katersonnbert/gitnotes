@@ -23,6 +23,8 @@ Example:
 - `GET`       ... Requests data from a specific resource, see below for details.
 - `POST`      ... Submits data to a specific resource, see below for details.
 - `PUT`       ... Submits data and requests, that it should be stored at an also provided Request-URI.
+- `PATCH`     ... An addition to POST and PUT - handles adds, updates and deletes of a specific resource
+                    in the way the request describes.
 - `HEAD`      ... like GET, but returns only the HTTP headers without a document body
 - `DELETE`    ... Sends a Request-URI and requests, that the resource found at this URI should be deleted.
 - `OPTIONS`   ... Returns which HTTP methods are supported by the server.
@@ -51,7 +53,12 @@ NOTE: See HTML query for more information regarding request message query.
 
 ##### PATCH
 
-An excellent article regarding PATCH can be found 
+The relevant RFCs regarding PATCH / PATCH + JSON:
+
+- [PATCH Method for HTTP](https://tools.ietf.org/html/rfc5789)
+- [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902)
+- [JSON Merge Patch](https://tools.ietf.org/html/rfc7396)
+- An excellent article regarding actually using PATCH can be found 
 [here](http://williamdurand.fr/2014/02/14/please-do-not-patch-like-an-idiot/). 
 
 
