@@ -368,6 +368,9 @@ the end of the surrounding function.
         x := new(customType) // returns *customType
         y := &customType     // returns *customType
 
+### When to use
+Find out when to use pointers to basic types 
+[here](https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html). 
 
 # Structs
 - A `struct` is a collection of fields.
