@@ -834,6 +834,10 @@ Find a good introduction on this topic [here](https://www.dotnetperls.com/json-g
 Go has really nice support for test coverage, find a detailed description in this 
 [Go Blog article on coverage](https://blog.golang.org/cover). 
 
+#### HTML coverage display
+
+    go tool cover -html=count.out
+
 
 # Go Web programming 
 
