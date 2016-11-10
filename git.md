@@ -614,3 +614,10 @@ Find more details about stashing and using different stashes [here](https://git-
 
 - [git signing](https://git-scm.com/book/tr/v2/Git-Tools-Signing-Your-Work)
 - [extensive examples](https://mikegerwitz.com/papers/git-horror-story)
+
+
+## Complementary software tools
+
+###  tig
+
+[tig](https://github.com/jonas/tig) makes browsing the history, viewing diffs and cherry picking really convenient.
