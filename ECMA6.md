@@ -19,3 +19,17 @@ ECMA Script 6
 
 ## TypeScript
 Think about using [TypeScript](http://www.typescriptlang.org/docs/tutorial.html) instead of any JavaScript.
+
+----------------------------------------
+
+JQuery
+======
+
+##### Various notes
+
+    $ ... returns JQuery object
+
+e.g.
+
+    $(document.getElementById('someId'))
+
