@@ -74,3 +74,9 @@ To dump data from a table to an sql file:
     pg_dump -U database_user -h localhost -t column_name --data-only --column-inserts database_name > outputfile.sql
 
 The `-t` option can be chosen multiple times. 
+
+## Run sql script
+
+at the psql prompt do this:
+
+    \i <sqlfile>
