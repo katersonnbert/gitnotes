@@ -179,6 +179,7 @@ Fonts and Icons for use with CSS
 ================================
 
 Find resources at [Fontawesome](http://fontawesome.io/)
+Find more resources at [cssreference](http://cssreference.io/).
 
 
 JSON (Java Script Object Notation)
