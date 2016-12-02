@@ -829,6 +829,12 @@ Find a good introduction on this topic [here](https://www.dotnetperls.com/json-g
 
         go test -run="SomeFunctionNamePart" ./...
 
+- Run only a specific test out of a specific package from the commandline, e.g. TestGetSSHKey of package data
+
+        go test github.com/G-Node/gin-auth/data -run TestGetSSHKey
+
+
+
 ## Test Coverage
 
 Go has really nice support for test coverage, find a detailed description in this 
