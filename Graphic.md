@@ -14,6 +14,13 @@ Gimp
 ### Crop images
 - find out how [here](https://docs.gimp.org/en/gimp-tutorial-quickie-crop.html).
 
+### Replace color in whole image
+- find out how [here](http://andr.esmejia.com/posts/1-how-to-replace-all-pixels-of-one-color-with-another-color-using-the-gimp)
+
+    - Select > By color
+    - Select replacement color
+    - Make sure "replace all" option is selected
+
 
 Inkscape
 ========
