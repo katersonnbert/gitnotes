@@ -57,7 +57,8 @@ git remote                  | show all remote repositories
 git pull origin master      | pull from master branch
 git pull origin [whatever]  | pull from [whatever] branch
 git push origin master      | push changes from current branch to respective master branch on github
-git push origin master --set-upstream | if a project is forked, the local master is the fork, then upstream pushes to the original master from where the project was forked
+git push origin master      | if a project is forked, the local master is the fork, then upstream pushes  
+    --set-upstream          |       to the original master from where the project was forked 
 git branch                  | show local branches of project
 git branch -a               | show all local and distant branches of project
 git checkout [branchName]   | switch from current project branch to [branchName]
@@ -438,6 +439,57 @@ Source can be found [here](http://jk.gs/git-diff.html)
 - change commit message of last commit
 
         git commit --amend -m "New commit message"
+
+
+# Amending more than one commit: interactive rebase
+
+Distilled from 
+[Atlassian](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase-i) and 
+[here](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history).
+
+- If commits should be changed that lie somewhere in the past, git offers interactive rebasing.
+- The commit has to be specified, from which the rebase should be started
+
+        git rebase -i <specify commit from where to start rebasing to the current commit>
+
+- rebase all commits of the current branch compared to a different branch:
+
+        git rebase -i <branch>
+        e.g.
+        git rebase -i master
+
+- rebase all commits starting from a specific commit in the current history:
+
+        git rebase -i HEAD~4
+
+
+- When the starting point of the interactive rebase has been chosen, the terminal will list all commits since then, 
+    it can be interactively chosen, which commits and how the selected commits then should be amended:
+
+    e.g.
+    pick ee056f1 Postgres: add export table data
+    pick f1f62a0 Postgres: add import table data
+    pick 40b0e70 css: add reference link
+    
+    # Rebase db073f7..f7236c7 onto db073f7 (3 command(s))
+    #
+    # Commands:
+    # p, pick = use commit
+    # r, reword = use commit, but edit the commit message
+    # e, edit = use commit, but stop for amending
+    # s, squash = use commit, but meld into previous commit
+    # f, fixup = like "squash", but discard this commit's log message
+    # x, exec = run command (the rest of the line) using shell
+    # d, drop = remove commit
+    #
+    # These lines can be re-ordered; they are executed from top to bottom.
+    #
+    # If you remove a line here THAT COMMIT WILL BE LOST.
+    #
+    # However, if you remove everything, the rebase will be aborted.
+    #
+    # Note that empty commits are commented out
+
 
 
 # Transfer ownership from user to organization:
