@@ -669,3 +669,14 @@ no longer used by any process. (or is it rather, that the pointers to the datacl
     - the inode of the file contains the link to the actual data of the file.
 
 - find wikipedia information [here](https://en.wikipedia.org/wiki/Inode) and [hier](https://de.wikipedia.org/wiki/Inode)
+
+
+# Move to fitting paragraph
+
+## Redirecting to /dev/null
+
+When redirecting to `/dev/null`, any command line output to `STDOUT` and `STDERR` from a program will be suppressed.
+
+    e.g. the output from wget will be suppressed
+    wget -O libgit2.tar.gz -o /dev/null https://github.com/libgit2/libgit2/archive/v0.24.5.tar.gz
+
