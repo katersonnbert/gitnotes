@@ -74,7 +74,7 @@ can specify up to which file size images should be encoded with base64 rather th
             data() {}
         }
 
-- this thing is at the moment and object w/o a name. It will be given a name, if it is imported somewhere else:
+- this thing is at the moment an object w/o a name. It will be given a name, if it is imported somewhere else:
 
         import NewName from "./someFile.vue"
 
@@ -483,6 +483,7 @@ can specify up to which file size images should be encoded with base64 rather th
             unbind() {
                 this.el.removeEventListener('input', this.setHandler)
             }
+        })
         })
 
 ### Terminal directives
