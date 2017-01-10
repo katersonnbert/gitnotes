@@ -491,6 +491,21 @@ Distilled from
         # Note that empty commits are commented out
 
 
+# Cherry pick a commit
+
+- when doing e.g. a hotfix, that is supposed to be applied to multiple branches, 
+the commit containing these changes can be copied - "cherry picked" - from one branch 
+to any other branch.
+- find out the hash of the required commit e.g. `145cef6`
+- checkout the branch where the commit is supposed to picked into
+- use the following command
+
+        git cherry-pick [commit hash]
+        e.g.
+        git cherry-pick 145cef6
+
+- git log should now show the commit applied to the top of the commit stash.
+
 
 # Transfer ownership from user to organization:
 
