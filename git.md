@@ -466,29 +466,29 @@ Distilled from
 - When the starting point of the interactive rebase has been chosen, the terminal will list all commits since then, 
     it can be interactively chosen, which commits and how the selected commits then should be amended:
 
-    e.g.
-    pick ee056f1 Postgres: add export table data
-    pick f1f62a0 Postgres: add import table data
-    pick 40b0e70 css: add reference link
-    
-    # Rebase db073f7..f7236c7 onto db073f7 (3 command(s))
-    #
-    # Commands:
-    # p, pick = use commit
-    # r, reword = use commit, but edit the commit message
-    # e, edit = use commit, but stop for amending
-    # s, squash = use commit, but meld into previous commit
-    # f, fixup = like "squash", but discard this commit's log message
-    # x, exec = run command (the rest of the line) using shell
-    # d, drop = remove commit
-    #
-    # These lines can be re-ordered; they are executed from top to bottom.
-    #
-    # If you remove a line here THAT COMMIT WILL BE LOST.
-    #
-    # However, if you remove everything, the rebase will be aborted.
-    #
-    # Note that empty commits are commented out
+        e.g.
+        pick ee056f1 Postgres: add export table data
+        pick f1f62a0 Postgres: add import table data
+        pick 40b0e70 css: add reference link
+        
+        # Rebase db073f7..f7236c7 onto db073f7 (3 command(s))
+        #
+        # Commands:
+        # p, pick = use commit
+        # r, reword = use commit, but edit the commit message
+        # e, edit = use commit, but stop for amending
+        # s, squash = use commit, but meld into previous commit
+        # f, fixup = like "squash", but discard this commit's log message
+        # x, exec = run command (the rest of the line) using shell
+        # d, drop = remove commit
+        #
+        # These lines can be re-ordered; they are executed from top to bottom.
+        #
+        # If you remove a line here THAT COMMIT WILL BE LOST.
+        #
+        # However, if you remove everything, the rebase will be aborted.
+        #
+        # Note that empty commits are commented out
 
 
 
