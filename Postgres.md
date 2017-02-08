@@ -80,3 +80,8 @@ The `-t` option can be chosen multiple times.
 at the psql prompt do this:
 
     \i <sqlfile>
+
+
+# Resources
+
+- [The Internals of PostgreSQL](http://www.interdb.jp/pg/index.html)
