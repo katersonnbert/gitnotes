@@ -25,11 +25,21 @@ Gimp
 Inkscape
 ========
 
-### Changing shape dimensions
-- change shape dimensions ... up top, below menu bar:
+### Default paper sizes
+Find default paper sizes [here](http://www.papersizes.org/a-paper-sizes.htm).
 
-        X, Y: coordinates within the canvas
-        W, H: width, height of the actual shape
+
+### Set default measurement units
+Default measurement units can be set at
+
+    File -> Document properties -> Page tab
+
+
+### Changing shape dimensions
+Change shape dimensions ... up top, below menu bar:
+
+    X, Y: coordinates within the canvas
+    W, H: width, height of the actual shape
 
 
 ### Using guide lines (lines to guide drawing...)
