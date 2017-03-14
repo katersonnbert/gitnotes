@@ -50,10 +50,12 @@ Change shape dimensions ... up top, below menu bar:
 
 
 ### Creating text boxes
-- When creating text boxes you have to do exactly this, otherwise, you will not be able to resize it later on:
-[check here](http://www.inkscapeforum.com/viewtopic.php?t=999)
+- When creating text boxes, follow [this description](http://www.inkscapeforum.com/viewtopic.php?t=999); 
+otherwise, resizing the box w/o scaling the contained text will not be possible:
  
-- Select the Text Box Symbol, drag and drop until you get the size of the textbox right
+- Select the Text Box Symbol
+- Create arbitrary textbox
+- Change size using the shape dimensions bar
 - Enter text
 - Only this kind of textbox can be resized later on, w/o scaling the text
 
