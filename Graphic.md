@@ -25,13 +25,18 @@ Gimp
 Inkscape
 ========
 
-check out guidelines
-
 ### Changing shape dimensions
 - change shape dimensions ... up top, below menu bar:
 
         X, Y: coordinates within the canvas
         W, H: width, height of the actual shape
+
+
+### Using guide lines (lines to guide drawing...)
+
+- [guide tutorial](https://inkscapetutorials.org/2014/04/25/working-with-guides-in-inkscape/)
+- click on the side ruler and drag towards the canvas - automatically creates a guide.
+- double clicking a guide line enables fine positioning.
 
 
 ### Creating text boxes
