@@ -55,9 +55,12 @@ otherwise, resizing the box w/o scaling the contained text will not be possible:
  
 - Select the Text Box Symbol
 - Create arbitrary textbox
-- Change size using the shape dimensions bar
-- Enter text
-- Only this kind of textbox can be resized later on, w/o scaling the text
+- Add text
+- When resizing this textbox w/o changing the font size, select textbox and press F8
+- In the right lower hand corner a handle will appear.
+- Use this handle to resize the textbox w/o scaling the text.
+- Resize the Textbox only in this mode.
+- Exit mode and position the resized box using the normal top bar positioning.
 
 
 ### Text formatting
