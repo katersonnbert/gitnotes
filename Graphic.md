@@ -60,6 +60,11 @@ otherwise, resizing the box w/o scaling the contained text will not be possible:
 - Only this kind of textbox can be resized later on, w/o scaling the text
 
 
+### Text formatting
+- Enter text box e.g. by double clicking.
+- Formatting options e.g. superscript will become available in the top bar. 
+
+
 ### Object order
 - send object one step to the back ... page down
 - send object one step to the front ... page up
