@@ -1,0 +1,25 @@
+## Minimal local setup of gin repo with a gin-auth user store
+
+- create repo server root folder and `repos/git` and `users` folder e.g.
+    mkdir repodata
+    mkdir repodata/repos
+    mkdir repodata/repos/git
+    mkdir repodata/users
+- create file `user.store` at the root of the repo directory and
+    add `ginauth@[gin-auth url]` (url of the auth server) to the file. e.g.
+    cd repodata
+    echo "ginauth@http://localhosts:8081" >> user.store
+- start the repo server in the root of the repo directory
+    gin-repod
+
+## Set up dev environment of gin-repo with a gin-auth user store
+
+- create repo server root folder e.g. `repodata` and change into it
+- create file `user.store` at the root of the repo directory and
+    add `ginauth@[gin-auth url]` (url of the auth server) to the file. e.g.
+    cd repodata
+    echo "ginauth@http://localhosts:8081" >> user.store
+- run `mkdata.py` script with the provided `data.yml` file
+  in the root of the directory to set up the test repo structure.
+    python [gin-repo-path]/contrib/mkdata.py [gin-repo-path]/contrib/data.yml
+- start the repo server in the root of the repo directory
