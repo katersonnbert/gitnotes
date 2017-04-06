@@ -1,6 +1,12 @@
 ECMA Script 6
 =============
 
+## Difference between `var` and `let`
+
+[Difference between let and var](
+http://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable#11444416)
+
+
 ## Link list:
 - [ECMA 6 Language Specification](http://ecma-international.org/ecma-262/6.0/)
 - [JavaScript Reference from Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
