@@ -31,6 +31,10 @@ Think about using [TypeScript](http://www.typescriptlang.org/docs/tutorial.html)
 node.js and npm
 ===============
 
+### Update packages of an npm project
+
+`npm outdated` displays current package versions and newest available version.
+
 ### Linklist
 - [npm kickstart](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm)
 - [nodejs package json tutorial](https://dzone.com/articles/the-basics-of-packagejson-in-nodejs-and-npm)
