@@ -1091,5 +1091,7 @@ Distilled from resources:
 - [Go by example](https://gobyexample.com/)
 - [Go slices - usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
 - [Awesome Go](https://github.com/avelino/awesome-go)
+- [Gonum: scientific go](https://github.com/gonum)
+- [Go Jupyter notebooks](http://www.datadan.io/announcing-a-golang-kernel-for-jupyter-notebooks/)
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
