@@ -553,3 +553,10 @@ can specify up to which file size images should be encoded with base64 rather th
 # Problem solving
 
 For solving problems always search the [forum](http://forum.vuejs.org/) first!
+
+
+# Resources
+
+- [Awesome Vue](https://github.com/vuejs/awesome-vue)
+- [Vue Chartjs](https://github.com/apertureless/vue-chartjs)
+- [Vue testing](https://github.com/BosNaufal/vue-testing)
