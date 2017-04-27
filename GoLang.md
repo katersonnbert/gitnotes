@@ -263,7 +263,8 @@ and read the [minimal unicode](http://www.joelonsoftware.com/articles/Unicode.ht
 
 
 ### Switch
-- `switch` has `case`, uses `default` as fallthrough and can have an initial statement:
+- `switch` has `case` and `default` and it supports initial statements. `switch` breaks once a case has matched; 
+`default` will only be reached, if no case has matched
 
         switch os := runtime.GOOS; os {
         case "darwin":
@@ -276,9 +277,26 @@ and read the [minimal unicode](http://www.joelonsoftware.com/articles/Unicode.ht
             fmt.Printf("%s.", os)
         }
 
-[xxx] todo - read up on switch default
+- `switch` supports fallthrough behavior; if a case contains `fallthrough`, it will fall into the next
+case, without checking.
 
-- Switch without a condition is used instead of if-else chains:
+        func test(value int) {
+            switch value {
+            case 3:
+                fmt.Println("3")
+            case 2:
+                fmt.Println("2")
+                fallthrough
+            case 1:
+                fmt.Println("1")
+                fallthrough
+            case 0:
+                fmt.Println("0")
+                break
+            }
+        }
+
+- `switch` without a condition is used instead of if-else chains:
 
         switch {
         case t.Hour() < 12:
