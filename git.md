@@ -741,8 +741,82 @@ Find more details about stashing and using different stashes [here](https://git-
 - [extensive examples](https://mikegerwitz.com/papers/git-horror-story)
 
 
+## Git internals
+
+### the Git database
+
+Git
+- under the hood is a content-adressable filesystem (a key value store)
+- has all files and the complete history local, which makes its operations really fast
+- stores an initial file, every following commit saves a snapshot of all available files. if a file has been changed, only the "delta" the change to the file in the previous commit is saved. if a file has not been changed, Git simply saves a pointer to the last change of this file.
+
+### Three states of Git files
+
+Local files in Git can be in one of three stages:
+- modified ... the file has been changed locally, Git knows only, that it has been changed, but has no further knowledge of the changes.
+- staged ... a file has been changed locally and marked AT ITS CURRENT STATE for the next commit. This means, that Git keeps track of the changes until this point. if more changes are added, these changes are not tracked.
+- commited ... all changes to the file have been written to the Git database.
+
+### The `.git` directory
+
+The hidden `.git` directory is where Git stores metadata and the object database of a Git repository. This directory is copied, when a repository is cloned from a remote.
+Whenever a branch is checked out or the repository is set to a previous commit, the content of the working tree is replaced by all files at the state, that is recorded in the Git database at the snapshot (point in time), when the commit was created.
+
+The root Git directory has the following important files and folders:
+
+        HEAD
+        config
+        hooks/
+        info/
+        objects/
+        refs/
+
+### Git objects
+
+Git is a key value store database. Files are stored in this database by hashing the content of the file and a header string using the SHA-1 algorithm and creating a new entry using the hash as the key and the filecontent as the value in the database.
+
+#### `blob` objects
+
+When files are added to the Git database, a folder and file entry is added to the `.git/objects` folder. In detail, the first two letters of the SHA-1 hash of file content and headerstring are used as the folder name, the rest of the 40 characters are used as the filename. e.g.
+
+        `.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4`
+
+Whenever changes to a file are committed, a new folder and a new file will be created in the `.git/objects/` folder. EVERY CHANGE leads to a new folder/file pair - a new entry to the Git database.
+
+Every file that is committed, will create an object entry into the Git database. The file type of these entries is `blob`.
+
+With the content of every file, Git stores a specific header in front of the actual content data. More precisely it stores "blob [bytesize of content][nullbyte][actual content]" e.g. `blob 12\u0000data content`. THIS data will be used to calculate the SHA-1 representing the file in the Git data store.
+
+#### `tree` objects
+
+Filenames are not saved alongside the content of a file. Filenames are saved in their own objects; these objects are called "Tree objects". Therefore all file content added to a Git database is either a `blob` or a `tree` object corresponding to UNIX directory entries and inodes.
+Every tree object contains the key-value pair (sha-1 and filename) of one or more files alongside the object type of the key-value pair since every object can also be a tree object, pointing to another subtree entry.
+Every `tree` object is also stored as `.git/objects/xx/xxxxxxxxxxxxxxxxxxxxx` via a hash over its content.
+
+#### `commit` objects
+The `commit` object is required to gain access to the state of a repository at a specific point in time, together with the information about who added the last changes right up until this point.
+A `commit` object contains the date, the commiters name, potentially a commit message and to the SHA-1 of a `tree` object, giving access to the SHA-1 of the files within the working tree at this particular point in time.
+
+Every `commit` object is also stored as `.git/objects/xx/xxxxxxxxxxxxxxxxxxxxx` via a hash over its content.
+
+The poodle has a peculiar bark, and with this information we know, how Git stores files, different file versions, directory structures and how it can clamp these together to coherent states of directories in time.
+
+### Git references
+
+Git commits are used to access a specific repository state in time (or rather within the commit history). To do this, all that is required is to know the SHA-1 of a specific commit. Since remembering different SHA-1's is not ideal, Git provides references, where SHA-1 values can be associated with plain string names.
+
+Git references can be found in the `.git/refs` directory. This directory can contain the following two subdirectories `.git/refs/heads` and `.git/refs/tags`.
+
+`.git/refs/heads` now contain files that are named with a clear name e.g "master" and contain the SHA-1 of a specific commit. When e.g. checking out branch "master" of a Git repository, Git looks up the SHA-1 out of `.git/refs/heads/master` 
+
+
 ## Complementary software tools
 
 ###  tig
 
 [tig](https://github.com/jonas/tig) makes browsing the history, viewing diffs and cherry picking really convenient.
+
+
+# Resources used
+
+[Git book](https://Git-scm.com/book/en/v2/)
