@@ -634,6 +634,64 @@ Read more details [here](https://help.github.com/articles/closing-issues-via-com
         git reset --hard HEAD~n
 
 
+# Git tagging
+
+Tags are used to create easily accessible points in the commit history e.g.
+for releases of a specific project.
+
+There are two different types of tags: lightweight and annotated.
+- Lightweight tags are simply pointers to a specific commit which makes it
+basically a branch.
+- Annotated tags are their own objects; they are checksummed, they contain their
+tagger name, email, date and a tagging message and can be GPG signed.
+
+Note: Created tags have to be pushed specifically to a remote, they are
+not pushed automatically e.g. by `Git push origin [branch]`.
+
+### Tag listing
+
+List all available tags of a repository in alphabetical order
+
+        git tag
+
+### Ligthweight tags:
+
+Lightweight tags are created by simply adding a name to the `Git tag` command
+
+        git tag v1.4-lw
+
+### Annotated tags:
+
+Annotated tags are created using the `-a` flag. Tag messages can be added after the 
+`-m` flag.
+
+        git tag -a v1.4 -m "tag message"
+
+### Tagging an earlier commit
+
+Both types of tags can be added to any commit in the commit history by using its checksum.
+
+        git tag -a v1.4 26dg28u
+
+### Details of a tag
+
+`Git show [tagname]` will display
+- the tag object in case of an annotated tag.
+- the commit a tag is pointint to in case of a lightweight tag.
+
+        git show v1.4
+
+### Pushing tags
+
+Like branches, tags have to be pushed explicitly to any remote.
+
+        git push origin v1.4
+
+If all local tags should be pushed to a remote at the same time, the `--tags` flag can be used.
+
+         git push origin --tags
+
+
 # Bisect - fast find breaking commit in history
 
 The actual commands you need to run to execute the full git bisect flow are:
