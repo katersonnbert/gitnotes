@@ -141,9 +141,14 @@ NOTE:
 - now we have specified the upstream repository for our fork repository
 
 
-#### Change the url of a remote
+#### Change the location of a remote
  
-    git remote set-url origin [different url]
+        git remote set-url origin [different url]
+
+
+#### Remove a remote
+
+        git remote rm [remoteName]
 
 
 #### How to sync fork repository with upstream repository
