@@ -855,3 +855,11 @@ specific commit. When e.g. checking out branch "master" of a Git repository, Git
 ### Reference a comment in e.g. an issue
 - The date when the comment was created is a link to to the comment itself.
 - Copy link, paste `[text](commit url)` into issue text...
+
+### Reference code line in specific commit
+- Move to file on github that is supposed to be referenced.
+- Select latest commit at the top of the page or
+    - Go to history tag.
+    - Select commit from which the code should be referenced
+- Now select "View" option to display the whole file at the specified commit
+- Select line which is supposed to be referenced, copy link, paste where intended.
