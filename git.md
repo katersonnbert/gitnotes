@@ -848,3 +848,10 @@ specific commit. When e.g. checking out branch "master" of a Git repository, Git
 # Resources used
 
 [Git book](https://Git-scm.com/book/en/v2/)
+
+
+# Github nice to knows
+
+### Reference a comment in e.g. an issue
+- The date when the comment was created is a link to to the comment itself.
+- Copy link, paste `[text](commit url)` into issue text...
