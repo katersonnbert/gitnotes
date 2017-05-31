@@ -149,6 +149,10 @@ NOTE:
 #### Remove a remote
 
         git remote rm [remoteName]
+        
+#### Rename a remote
+
+        git remote rename <old> <new>
 
 
 #### How to sync fork repository with upstream repository
