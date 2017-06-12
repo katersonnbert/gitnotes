@@ -40,3 +40,11 @@ JSON-LD (JSON-linked data)
 
 ### null
 - The null value is used to clear or forget data.
+
+
+
+# Resources
+
+- [JSON-LD and why I hate the sem-web](http://manu.sporny.org/2014/json-ld-origins-2/)
+- [Google JSON-LD](https://developers.google.com/schemas/formats/json-ld)
+- [Google knowledge graph](https://developers.google.com/knowledge-graph/)
