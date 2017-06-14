@@ -330,14 +330,27 @@ moderately complex class relationships, use OWL 2 / QL.
 
 
 ## Link list:
-
+- [w3c RDF primer](https://www.w3.org/2000/10/swap/Primer.html)
+- [w3c another RDF primer](https://www.w3.org/TR/2004/REC-rdf-primer-20040210/)
 - http://www.linkeddatatools.com/introducing-rdfs-owl
 - https://books.google.de/books?id=vcmoBQAAQBAJ
 - http://www.w3.org/TR/rdf-schema/
-- http://www.w3.org/TR/rdf11-concepts
+- [w3c/RDF 1.1 Concepts and Abstract Syntax](http://www.w3.org/TR/rdf11-concepts)
+- [RDF 1.1 XML syntax](https://www.w3.org/TR/rdf-syntax-grammar/)
 - http://www.w3.org/TR/rdf-sparql-query/
 - http://www.w3.org/TR/owl-profiles/#Computational_Properties
 - http://www.w3schools.com/webservices/ws_rdf_intro.asp
 - http://www.cambridgesemantics.com/semantic-university/rdfs-introduction
 - http://www.cambridgesemantics.com/semantic-university/owl-reference-humans
 - https://jena.apache.org/tutorials/rdf_api.html
+
+## RDF libraries
+
+- [Python/RDFlib github](https://github.com/RDFLib/rdflib)
+- [Python/RDFlib](https://rdflib.readthedocs.io/en/stable/)
+- [Python/RDFlib tutorial](http://code.alcidesfonseca.com/docs/rdflib/index.html)
+
+## RDF library tutorials
+
+- [RDF and SPARQL with Sesame and python](http://www.jenitennison.com/2011/01/25/getting-started-with-rdf-and-sparql-using-sesame-and-python.html)
+
