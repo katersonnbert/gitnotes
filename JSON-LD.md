@@ -1,9 +1,6 @@
 JSON-LD (JSON-linked data)
 ==========================
 
-[w3 specification of json-ld](http://www.w3.org/TR/json-ld)
-
-
 ## General Terminology
 
 ### JSON object
@@ -45,6 +42,7 @@ JSON-LD (JSON-linked data)
 
 # Resources
 
+- [w3 specification of json-ld](http://www.w3.org/TR/json-ld)
 - [JSON-LD and why I hate the sem-web](http://manu.sporny.org/2014/json-ld-origins-2/)
 - [Google JSON-LD](https://developers.google.com/schemas/formats/json-ld)
 - [Google knowledge graph](https://developers.google.com/knowledge-graph/)
