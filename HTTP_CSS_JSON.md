@@ -164,7 +164,10 @@ Example:
 
 CSS and Bootstrap
 =================
-For CSS related lookups use [GetBootstrap](http://getbootstrap.com/)
+
+- [Bootstrap](http://getbootstrap.com/)
+- [Bootstrap CSS](http://getbootstrap.com/css/)
+- [Bootstrap Components](http://getbootstrap.com/components/)
 
 
 LESS
@@ -180,6 +183,15 @@ Fonts and Icons for use with CSS
 
 Find resources at [Fontawesome](http://fontawesome.io/)
 Find more resources at [cssreference](http://cssreference.io/).
+
+
+## CSS / Bootstrap linklist
+
+- [Color Picker](https://www.webpagefx.com/web-design/color-picker/)
+- [Color Hex Codes](http://www.color-hex.com/)
+- [Color palettes](http://www.color-hex.com/color-palettes/)
+
+- [Bootstrap playground](https://codepen.io/mr-fuse/pen/eznEI)
 
 
 JSON (Java Script Object Notation)
