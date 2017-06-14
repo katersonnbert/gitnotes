@@ -852,6 +852,10 @@ Find a good introduction on this topic [here](https://www.dotnetperls.com/json-g
         go test github.com/G-Node/gin-auth/data -run TestGetSSHKey
 
 
+## Test driven development
+
+- [Test-driven development with Go](https://leanpub.com/golang-tdd/read)
+
 
 ## Test Coverage
 
@@ -1113,3 +1117,9 @@ Distilled from resources:
 - [Go Jupyter notebooks](http://www.datadan.io/announcing-a-golang-kernel-for-jupyter-notebooks/)
 
 Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfaces actually work!
+
+## golang projects and libraries
+
+- [image processing](https://github.com/anthonynsimon/bild)
+- [go linter list](https://go.libhunt.com/project/go-tools-dominikh)
+- [gonum - go scientific libraries](https://github.com/gonum)
