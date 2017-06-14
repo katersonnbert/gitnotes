@@ -6,6 +6,26 @@ ECMA Script 6
 [Difference between let and var](
 http://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable#11444416)
 
+## Promises
+
+- [Useful promises patterns in tests](https://www.sitepoint.com/promises-in-javascript-unit-tests-the-definitive-guide/)
+
+## Arrow functions
+
+- [arrow functions and method definitions](http://2ality.com/2012/04/arrow-functions.html)
+
+## Vector graphics
+
+- [SVG in js](https://www.sitepoint.com/add-svg-to-web-page/)
+
+
+## Unit tests with js
+
+- [Chai assertions](http://chaijs.com/api/assert/#method_lengthof)
+
+## Linting in js
+
+- [eslint rules](http://eslint.org/docs/rules/)
 
 ## Link list:
 - [ECMA 6 Language Specification](http://ecma-international.org/ecma-262/6.0/)
@@ -37,7 +57,12 @@ node.js and npm
 
 ### Linklist
 - [npm kickstart](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm)
+- [npm beginners guide](https://www.sitepoint.com/beginners-guide-node-package-manager/)
 - [nodejs package json tutorial](https://dzone.com/articles/the-basics-of-packagejson-in-nodejs-and-npm)
+
+## webpack and gulp
+
+- [Webpack usage with gulp](https://webpack.github.io/docs/usage-with-gulp.html)
 
 
 npm and testing with karma
