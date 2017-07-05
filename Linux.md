@@ -276,7 +276,7 @@ If the file does not exist yet, it will be created.
 
 ### SSH keys
 
-- For some secure connections SSH keys are required e.g. to use the ssh option with github.
+- For some secure connections, specific SSH keys are required e.g. to use the ssh option with github.
 - if you are not familiar with PGP, read up on your trusty wikipedia page.
 - generate ssh keys:
 
