@@ -315,6 +315,11 @@ having to enter the pass phrase all the time.
 
         ssh-add -l
 
+- even if you have added the key to the ssh key agent, if the key with the corresponding passphrase 
+    is not added to the linux keyring, it will prompt for the passphrase upon the first use of the 
+    ssh key. If the option is used to store key and phrase in the keyring, this login will be
+    done automatically and the prompt will not show up again, when the key is used.
+
 
 ## Even more useful Bash commands:
 
