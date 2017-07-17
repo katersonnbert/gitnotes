@@ -242,6 +242,11 @@ If the file does not exist yet, it will be created.
 
 - `command_1 | command_2` ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
+- `dd`          ... create a file with a specific size
+
+        # create 10MB file named 'out.txt' filled with zeros 
+        e.g. dd if=/dev/zero of=out.txt bs=1M count=10
+
 ### Formatting commandline output:
 
 Output from commandline programs can easily be formatted to display as a table
