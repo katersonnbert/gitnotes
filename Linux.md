@@ -255,6 +255,16 @@ by piping it to the `column` command e.g.:
     cat /etc/passwrd | column -t -s :
 
 
+### File content handling
+
+- replace spaces with tabs
+
+        cat textfile.txt | tr ':[space]:' '\t' > out.txt
+
+- convert a file to upper or lower case
+
+        cat textfile.txt | tr a-z A_Z > out.txt
+
 ## Secure connection and keys 
 
 ### ssh (Secure SHell)
