@@ -346,6 +346,17 @@ having to enter the pass phrase all the time.
 - Exit by pressing `q`
 
 
+### ps - report a snapshot of currently running processes / programs
+
+        ps
+
+        # list all processes, display in user oriented format
+        ps aux
+        # list all processes, sort by CPU usage
+        ps aux | sort -rnk
+        # list all processes, sort by Memory usage
+
+
 ### curl (commandline url)
 
 Read up on the http protocol if you are not familiar with it. 
