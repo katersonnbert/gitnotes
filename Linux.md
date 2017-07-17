@@ -265,6 +265,11 @@ by piping it to the `column` command e.g.:
 
         cat textfile.txt | tr a-z A_Z > out.txt
 
+
+### Displaying disc space
+
+    df -h
+
 ## Secure connection and keys 
 
 ### ssh (Secure SHell)
