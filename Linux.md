@@ -242,6 +242,13 @@ If the file does not exist yet, it will be created.
 
 - `command_1 | command_2` ... | ... "pipe". executes "command_1", directs the output of this command not to the screen, but the second command "command_2". Only then the output of "command_2" will be printed onto the screen.
 
+### Formatting commandline output:
+
+Output from commandline programs can easily be formatted to display as a table
+by piping it to the `column` command e.g.:
+
+    cat /etc/passwrd | column -t -s :
+
 
 ## Secure connection and keys 
 
