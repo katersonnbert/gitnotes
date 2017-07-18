@@ -57,3 +57,9 @@ copies of recent versions of the most popular Linux distributions.
 - Settings that worked for me:
     - first network connection: NAT without anything
     - second network connection: HostOnly Adapter
+
+
+# Random notes
+
+- [increase virtual box storage](https://www.maketecheasier.com/increase-virtual-hard-disk-size-in-virtualbox/)
+- [shrink virtual box storage](https://www.maketecheasier.com/shrink-your-virtualbox-vm/)
