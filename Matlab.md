@@ -29,7 +29,7 @@ Find out where the matlab user preferences file is kept:
 - open matlab
 - type in 'prefdir'
 - copy path
-- open file
+- open file 'matlab.prf'
 - paste in the following:
 
 
