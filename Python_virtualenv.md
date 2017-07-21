@@ -79,6 +79,12 @@ and link until you get it right)
  [link site packages](http://stackoverflow.com/questions/12830662/python-package-installed-globally-but-not-in-a-virtualenv-pygtk).
 
 
+# Troubleshooting
+
+If `pip` is broken within a virtual environment, activate the virtual environment and run `easy_install pip`.
+This should install the pip package again.
+
+
 # PyCharm
 
 - if you are using PyCharm as your python IDE, set the paths to the virtual environments here:
