@@ -63,3 +63,9 @@ copies of recent versions of the most popular Linux distributions.
 
 - [increase virtual box storage](https://www.maketecheasier.com/increase-virtual-hard-disk-size-in-virtualbox/)
 - [shrink virtual box storage](https://www.maketecheasier.com/shrink-your-virtualbox-vm/)
+
+### USB device problems
+
+Virtualbox requires an extension pack to properly pass through usb 2.0 devices to the guest system
+- [VB usb 2.0 under ubuntu](https://askubuntu.com/questions/25596/how-to-set-up-usb-for-virtualbox)
+- [official link to extension pack](https://blogs.oracle.com/hlsu/oracle-vm-virtualbox-extension-pack)
