@@ -559,6 +559,14 @@ Paraphrase from [here](http://stackoverflow.com/questions/2816715/branch-from-a-
 
 Distilled from [here](http://gitready.com/intermediate/2009/02/13/list-remote-branches.html)
 
+- rename branch:
+
+        git branch -m <oldname> <newname>
+
+- rename current branch:
+
+        git branch -m <newname>
+
 
 # Remove stale upstream repositories
 
