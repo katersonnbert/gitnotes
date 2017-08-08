@@ -330,9 +330,11 @@ SSH keys reside in their folder, every time they are used, the passphrase has to
 To make them available to other services without having to point services to their proper keys and 
 having to enter the pass phrase all the time.
 
-- start an ssh-agent if it is not already started
+- start an ssh-agent if it is not already started (might need one of the examples below to start properly)
 
         eval "ssh-agent"
+        eval "ssh-agent -s"
+        eval `ssh-agent -s`
 
 - add key to the agent e.g. the key created in example above and enter the keys pass phrase once and never again.
 
