@@ -331,10 +331,15 @@ To make them available to other services without having to point services to the
 having to enter the pass phrase all the time.
 
 - start an ssh-agent if it is not already started (might need one of the examples below to start properly)
+    - BEWARE! when starting the agent, the environment will be reset, meaning any active agent
+                is stopped, the new agent will not contain any keys, any keys previously added
+                have to be added again! So when in doubt, run `ssh-add -l` first.
 
         eval "ssh-agent"
         eval "ssh-agent -s"
         eval `ssh-agent -s`
+        or
+        eval $(ssh-agent)
 
 - add key to the agent e.g. the key created in example above and enter the keys pass phrase once and never again.
 
