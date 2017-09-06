@@ -581,6 +581,12 @@ You can display which repositories will be removed by using first:
 
         git remote prune --dry-run [origin/upstream]
 
+The [git documentation](https://git-scm.com/docs/git-gc) suggests to use `git gc` for cleanup instead:
+
+        git gc
+
+This does not remove all stale remote repositories though.
+
 
 # Unstage file for commit
 
