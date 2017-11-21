@@ -79,6 +79,12 @@ and link until you get it right)
  [link site packages](http://stackoverflow.com/questions/12830662/python-package-installed-globally-but-not-in-a-virtualenv-pygtk).
 
 
+# Installed packages
+Packages that have been installed via `pip` or `python setup.py xyz` can be found in 
+
+    [path to virtualenv]/lib/[pyversion]/site-packages
+
+
 # Troubleshooting
 
 If `pip` is broken within a virtual environment, activate the virtual environment and run `easy_install pip`.
