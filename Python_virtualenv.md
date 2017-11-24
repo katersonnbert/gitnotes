@@ -127,3 +127,21 @@ aliases for the command line e.g. und Linux aliases in .bash_aliases:
 
     # make deactivation of conda environments available
     alias condeact='source deactivate'
+
+## Managing environments
+
+### Create environments
+
+Environments including their downloaded libraries and programs will be found at `[path/to/conda]/envs/`.
+
+Create a conda environment with the default python version
+
+    conda --create [envName]
+
+Create a conda environment with a specific python version
+
+    conda -- create [envName] python=3.5
+
+Create a conda environment with additional packages
+
+    conda --create [envName] [package]
