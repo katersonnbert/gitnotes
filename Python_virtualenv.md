@@ -169,3 +169,23 @@ described above:
     condact [envName]
     # deactivate conda environment
     condeact
+
+### Environment commands
+
+The following are some useful environment related commands
+
+    # Show all available conda environments
+    conda info --env
+
+    # Copy existing environment
+    conda create --name [envName2] --clone [envName]
+
+    # Remove environment
+    conda remove --name [envName2] --all
+
+    # Search packages available for conda environments
+    # (exact match)
+    conda search --full-name [packageName]
+    # (package name contains)
+    conda search [packageName]
+
