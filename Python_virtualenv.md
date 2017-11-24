@@ -183,9 +183,29 @@ The following are some useful environment related commands
     # Remove environment
     conda remove --name [envName2] --all
 
+### Manage environment packages
+
     # Search packages available for conda environments
     # (exact match)
     conda search --full-name [packageName]
     # (package name contains)
     conda search [packageName]
 
+    # Display all packages installed in the currently active conda environment
+    conda list 
+
+    # Install into specific conda environment 
+    conda install --name [envName] [packageName]
+
+    # Install into currently active conda environment
+    conda install [packageName]
+
+There are many packages, that are not available via native `conda install`. These available packages can 
+be found via [anaconda.org](https://anaconda.org/). Run the install prompt for the required 
+package as described on the anaconda page. 
+
+    # Remove package from specific conda environment
+    conda remove --name [envName] [packageName]
+
+Python packages can be installed via `pip` and will be installed 
+into the currently active conda environment only. 
