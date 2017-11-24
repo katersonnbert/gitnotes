@@ -1,5 +1,5 @@
-Python virtual environment
-==========================
+Python virtual environment (1) and Anaconda (2)
+===============================================
 
 Virtual environments are nice due to various reasons I will add later when I don't want to do more productive things.
 
@@ -107,3 +107,23 @@ with different interpreters.
 
         Run -> Edit Configuration -> Change Python interpreter as you see fit -> save as "Run-[your config]"
 
+===================================
+
+# Anaconda
+
+As python virtual environments, anaconda is an environment manager. But it not only provides python
+specific environment handling, but also system packages.
+
+The Anaconda documentation can be found [here](https://conda.io/docs). 
+
+When not adding the conda bin directory to the operating systems' PATH variable, add convenient 
+aliases for the command line e.g. und Linux aliases in .bash_aliases:
+
+    # make conda command available
+    alias conda='[path/to/conda]/bin/conda'
+
+    # make activation of conda environments available; use as condact yourEnvName
+    alias condact='source [path/to/conda]/bin/activate'
+
+    # make deactivation of conda environments available
+    alias condeact='source deactivate'
