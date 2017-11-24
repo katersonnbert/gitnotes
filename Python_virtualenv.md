@@ -115,7 +115,7 @@ As python virtual environments, anaconda is an environment manager. But it not o
 specific environment handling, but also system packages.
 
 The Anaconda documentation as well as install instructions and a really good getting started guide 
-can be found at their [projects documentation page](https://conda.io/docs). 
+can be found at their [projects documentation page](https://conda.io/docs).
 
 ## Install notes
 
@@ -148,3 +148,24 @@ Create a conda environment with a specific python version
 Create a conda environment with additional packages
 
     conda --create [envName] [package]
+
+### Activate and deactivate environments
+
+To activate a conda environment just type:
+
+    source activate [envName]
+
+All installed packages and libraries should be available at this point.
+
+To deactivate a conda environment type:
+
+    source deactivate
+
+NOTE: If the conda bin directory was not added to the PATH variable (see install notes above)
+the conda `activate` command will not be available to the terminal. Use the `alias` approach
+described above:
+
+    # activate conda environment
+    condact [envName]
+    # deactivate conda environment
+    condeact
