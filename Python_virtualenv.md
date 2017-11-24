@@ -114,10 +114,13 @@ with different interpreters.
 As python virtual environments, anaconda is an environment manager. But it not only provides python
 specific environment handling, but also system packages.
 
-The Anaconda documentation can be found [here](https://conda.io/docs). 
+The Anaconda documentation as well as install instructions and a really good getting started guide 
+can be found at their [projects documentation page](https://conda.io/docs). 
 
-When not adding the conda bin directory to the operating systems' PATH variable, add convenient 
-aliases for the command line e.g. und Linux aliases in .bash_aliases:
+## Install notes
+
+When not adding the conda bin directory to the operating systems' `PATH variable, add convenient 
+aliases for the command line e.g. und Linux aliases in `.bash_aliases` and restart the terminal:
 
     # make conda command available
     alias conda='[path/to/conda]/bin/conda'
