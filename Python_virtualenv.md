@@ -115,7 +115,8 @@ As python virtual environments, anaconda is an environment manager. But it not o
 specific environment handling, but also system packages.
 
 The Anaconda documentation as well as install instructions and a really good getting started guide 
-can be found at their [projects documentation page](https://conda.io/docs).
+can be found at their [projects documentation page](https://conda.io/docs). It also provides
+a neat [commands cheat sheet](https://conda.io/docs/user-guide/cheatsheet.html).
 
 ## Install notes
 
@@ -139,15 +140,18 @@ Environments including their downloaded libraries and programs will be found at 
 
 Create a conda environment with the default python version
 
-    conda --create [envName]
+    conda create --name [envName]
 
 Create a conda environment with a specific python version
 
-    conda -- create [envName] python=3.5
+    conda create --name [envName] python=3.5
 
 Create a conda environment with additional packages
 
-    conda --create [envName] [package]
+    conda create -n [envName] [package]
+
+NOTE: when creating an environment without specifying a package, of course a completely empty
+environment will be created.
 
 ### Activate and deactivate environments
 
@@ -209,3 +213,14 @@ package as described on the anaconda page.
 
 Python packages can be installed via `pip` and will be installed 
 into the currently active conda environment only. 
+
+
+## Nice to have packages after the environment has been set up
+
+    jupyter
+
+        conda install -c conda-forge pygobject
+        conda install -c conda-forge atk
+        conda install -c conda-forge pango
+        conda install -c conda-forge gdk-pixbuf
+        conda install -c pkgw/label/superseded gtk3
