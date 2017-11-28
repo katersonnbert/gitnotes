@@ -213,14 +213,3 @@ package as described on the anaconda page.
 
 Python packages can be installed via `pip` and will be installed 
 into the currently active conda environment only. 
-
-
-## Nice to have packages after the environment has been set up
-
-    jupyter
-
-        conda install -c conda-forge pygobject
-        conda install -c conda-forge atk
-        conda install -c conda-forge pango
-        conda install -c conda-forge gdk-pixbuf
-        conda install -c pkgw/label/superseded gtk3
