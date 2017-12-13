@@ -435,6 +435,11 @@ __'-00'__ asserts and docstrings.
 [currently at](https://docs.python.org/3/tutorial/modules.html#standard-modules)
 
 
+# Writing Python 2 and 3 compatible code:
+A list of Python 2 and 3 compatible code can be found at 
+[Python-future](http://python-future.org/compatible_idioms.html).
+
+
 # Methods
 - Methods are functions that belong to an object and are named in the fashion __`obj.methodname`__.
 
