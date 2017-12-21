@@ -391,6 +391,10 @@ keyword arguments are passed as __`[identifier]=[value]`__
 - Dictionaries can be looped using the __`dict.items()`__ method.
 
 
+# Methods
+- Methods are functions that belong to an object and are named in the fashion __`obj.methodname`__.
+
+
 ## Modules
 - Files with the ending '.py' can contain one or more function definitions. The content of 
 these files can be imported by using the name of the file after an `import` statement.
@@ -439,9 +443,20 @@ __'-00'__ asserts and docstrings.
 A list of Python 2 and 3 compatible code can be found at 
 [Python-future](http://python-future.org/compatible_idioms.html).
 
+- [Porting Python 2 to 3](https://docs.python.org/3/howto/pyporting.html)
 
-# Methods
-- Methods are functions that belong to an object and are named in the fashion __`obj.methodname`__.
+
+# Creating PyPI packages
+
+Always use .rst files for as README file format.
+- [rst](http://docutils.sourceforge.net/rst.html)
+
+- [Creating python packages](https://packaging.python.org/tutorials/distributing-packages/)
+- [Creating a source distribution with distutils](https://docs.python.org/3.4/distutils/sourcedist.html)
+- [Packaging python libraries](http://www.diveintopython3.net/packaging.html)
+
+Before uploading to PyPI, test the distribution on TestPyPI
+- [Using TestPyPI](https://packaging.python.org/guides/using-testpypi)
 
 
 # Resources used:
