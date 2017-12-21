@@ -560,3 +560,4 @@ For solving problems always search the [forum](http://forum.vuejs.org/) first!
 - [Awesome Vue](https://github.com/vuejs/awesome-vue)
 - [Vue Chartjs](https://github.com/apertureless/vue-chartjs)
 - [Vue testing](https://github.com/BosNaufal/vue-testing)
+- [Vue overview](https://dzone.com/articles/creating-real-time-data-aapplication-using-vuejs)
