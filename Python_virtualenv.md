@@ -213,3 +213,8 @@ package as described on the anaconda page.
 
 Python packages can be installed via `pip` and will be installed 
 into the currently active conda environment only. 
+
+
+## Conda packaging
+- [Create custom channels](https://conda.io/docs/user-guide/tasks/create-custom-channels.html)
+- [Conda handle packages](https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages)
