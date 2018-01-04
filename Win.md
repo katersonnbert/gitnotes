@@ -42,3 +42,12 @@ Windows good to knows
     - narrow down search by providing the files that are to be searched
     - provides globbing
     - case sensitive by default. use `find /i` to ignore case
+
+
+### Anaconda:
+
+- requires python 2.7 or 3.6
+- windows pitfall: if the environment variable PATH contain references to any python or if the
+    environment variables PYTHONPATH or PYTHONHOME are set, conda will most likely fail. Check both
+    user wide and system wide environment variables.
+ 
