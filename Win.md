@@ -32,3 +32,13 @@ Windows good to knows
 - Windows guest in Linux host uses right-ctrl as host key
 - Change view if the view seems screwed up - use combination until the view fits again.
 - `[host key] + F`
+
+
+## Useful CMD programs
+
+- `where [command]` ... find installation directory of a program e.g. `where python`
+- `find` ... find document containing a specific phrase.
+    - will search all subdirectories for the phrase so might take very long depending on file structure
+    - narrow down search by providing the files that are to be searched
+    - provides globbing
+    - case sensitive by default. use `find /i` to ignore case
