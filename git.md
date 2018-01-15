@@ -657,6 +657,16 @@ Read more details [here](https://help.github.com/articles/closing-issues-via-com
         git reset --hard HEAD~n
 
 
+# Reconciling two diverging branches
+Merging 2 different branches into 1 where keeping the history of branch_2, but end up with
+the head of branch_1:
+
+    $[branch_2] git checkout -b <mergeBranch>
+    $[mergeBranch] git merge --strategy=ours branch_1
+    $[mergeBranch] git checkout branch_1 -- .
+    $[mergeBranch] git diff mergeBranch..branch_1
+
+
 # Git tagging
 
 Tags are used to create easily accessible points in the commit history e.g.
