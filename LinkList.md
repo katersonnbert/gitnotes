@@ -86,6 +86,10 @@ https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/
 
 ## Go libraries
 
+
+### go framework
+https://gohugo.io/
+
 ### go rdf
 https://github.com/Callidon/joseki
 https://github.com/PhillP/golibrdf
@@ -109,25 +113,54 @@ https://www.sitepoint.com/testing-javascript-jasmine-travis-karma/
 http://attackofzach.com/setting-up-a-project-using-karma-with-mocha-and-chai/
 http://www.bradoncode.com/blog/2015/02/27/karma-tutorial/
 
+### es articles
+http://www.datchley.name/es6-promises/
+
 ### es linter
 https://github.com/eslint/eslint
 http://jshint.com/docs/options/
 
+### vue js
+https://vuejs.org/guide/migration.html
+[vuejs components](https://vuetifyjs.com/components/steppers)
+https://github.com/vuejs/vue-migration-helper
+[jsfiddle stepper](https://jsfiddle.net/ilyabogdanov/sv6zdmzo/)
 
-### CSS
+
+## CSS
 [css components, vertical stepper](https://mdbootstrap.com/components/miscellaneous/#!)
 
-Themes
+### Themes
 https://bootswatch.com/
 
-Colors
+### Colors
 http://www.colorpicker.com/
-
 http://www.color-hex.com/color/d3d3d3
 
-### Licensing
+
+## Licensing
 https://spdx.org/licenses/
 https://www.fossology.org/
 
-[jsfiddle stepper](https://jsfiddle.net/ilyabogdanov/sv6zdmzo/)
-[vuejs components](https://vuetifyjs.com/components/steppers)
+
+## Shariff - Privacy Social Media Buttons
+https://www.heise.de/ct/artikel/Shariff-Social-Media-Buttons-mit-Datenschutz-2467514.html
+
+
+## MultiModel database
+https://www.arangodb.com/
+
+
+## Matlab
+http://uwethuemmel.com/continuous-integration-workflow-with-matlab-git-and-jenkins/
+https://www.cs.ubc.ca/~pcarbo/mex-tutorial/
+
+
+## Brainhack global
+More information about brainhacks
+http://gigascience.biomedcentral.com/articles/10.1186/s13742-016-0121-x
+
+and examples:
+https://uwescience.github.io/brainhack-global-2017-03/
+https://github.com/DynAge/brainhack-zh
+https://dynage.github.io//brainhack-zh/
