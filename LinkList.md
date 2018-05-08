@@ -1,48 +1,42 @@
 # LinkList
 
-### INCF
-https://incf.org/activities/standards-and-best-practices
-https://incf.org/activities/standards-and-best-practices/requirements-for-standards-and-best-practices
-
-
-### Flatpack / Flathub
-https://flathub.org/home
-http://flatpak.readthedocs.io/en/latest/building.html
-https://github.com/flathub/org.gnode.NixView
-https://github.com/flatpak/flatpak-builder-tools/tree/master/pip
-
-
-### Docker
-https://www.keycdn.com/blog/docker-tutorial/
-
-
-### Shippable
-https://www.shippable.com/
-
-
-### Jenkins
-https://jenkins.io/doc/
-
+# Python
 
 ### PyQt
 http://movingthelamppost.com/blog/html/2013/07/12/installing_pyqt____because_it_s_too_good_for_pip_or_easy_install_.html
 
+### Python and Windows:
+http://www.tylerbutler.com/2012/05/how-to-install-python-pip-and-virtualenv-on-windows-with-powershell/
+https://zignar.net/2012/06/17/install-python-on-windows/
+http://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/
 
-### Anaconda
+### PyGtk - Gtk icons in conda environment
+http://pygtk.org/docs/pygtk/class-gtkicontheme.html
+https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
+
+### Python packaging
+https://packaging.python.org/tutorials/distributing-packages
+https://packaging.python.org/guides/using-testpypi/
+https://testpypi.python.org
+https://test.pypi.org
+
+### Porting python 2->3
+https://docs.python.org/3/howto/pyporting.html
+http://python-future.org/compatible_idioms.html
+http://python-future.org/unicode_literals.html
+
+
+## Anaconda
 https://conda.io/docs/user-guide/tutorials/build-pkgs.html
 http://conda-test.pydata.org/docs/build_tutorials/pkgs.html
 https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages#uploading-packages
 https://conda.io/docs/user-guide/tasks/build-packages/index.html
 https://conda.io/docs/user-guide/tasks/create-custom-channels.html
 
-
 ### Travis conda
-----------------
 https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
 
-
 ### Appveyor python / conda
----------------------------
 https://www.appveyor.com/docs/build-environment/#python
 https://packaging.python.org/guides/supporting-windows-using-appveyor/
 http://tjelvarolsson.com/blog/how-to-continuously-test-your-python-code-on-windows-using-appveyor/
@@ -51,33 +45,6 @@ https://github.com/rmcgibbo/python-appveyor-conda-example/blob/master/appveyor.y
 https://media.readthedocs.org/pdf/python-packaging-user-guide/latest/python-packaging-user-guide.pdf
 https://docs.travis-ci.com/user/languages/python/
 https://stackoverflow.com/questions/45257534/how-can-i-build-a-python-project-with-osx-environment-on-travis
-
-
-### Python and Windows:
-http://www.tylerbutler.com/2012/05/how-to-install-python-pip-and-virtualenv-on-windows-with-powershell/
-https://zignar.net/2012/06/17/install-python-on-windows/
-http://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/
-
-
-### PyGtk - Gtk icons in conda environment
-http://pygtk.org/docs/pygtk/class-gtkicontheme.html
-https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
-
-### Debugging on MacOS:
-gdb, lldb, dtruss
-https://opensourcehacker.com/2011/12/02/osx-strace-equivalent-dtruss-seeing-inside-applications-what-they-do-and-why-they-hang/
-https://lldb.llvm.org/lldb-gdb.html
-
-
-### Latex presentations
-https://www.overleaf.com/latex/templates/beamer-presentation/zxrfltwmbcrt
-https://www.sharelatex.com/learn/Beamer
-
-
-### Porting python 2->3
-https://docs.python.org/3/howto/pyporting.html
-http://python-future.org/compatible_idioms.html
-http://python-future.org/unicode_literals.html
 
 
 # Go libraries
@@ -170,6 +137,17 @@ https://jena.apache.org/documentation/sdb/
 
 # Tools
 
+## Debugging on MacOS:
+gdb, lldb, dtruss
+https://opensourcehacker.com/2011/12/02/osx-strace-equivalent-dtruss-seeing-inside-applications-what-they-do-and-why-they-hang/
+https://lldb.llvm.org/lldb-gdb.html
+
+
+## Latex presentations
+https://www.overleaf.com/latex/templates/beamer-presentation/zxrfltwmbcrt
+https://www.sharelatex.com/learn/Beamer
+
+
 ## Android IDE
 https://developer.android.com/studio/#downloads
 
@@ -179,8 +157,27 @@ https://www.arangodb.com/
 ## AWS
 https://aws.amazon.com/
 
+### Flatpack / Flathub
+https://flathub.org/home
+http://flatpak.readthedocs.io/en/latest/building.html
+https://github.com/flathub/org.gnode.NixView
+https://github.com/flatpak/flatpak-builder-tools/tree/master/pip
+
+### Docker
+https://www.keycdn.com/blog/docker-tutorial/
+
+### Shippable
+https://www.shippable.com/
+
+### Jenkins
+https://jenkins.io/doc/
+
 
 # Other
+
+## INCF
+https://incf.org/activities/standards-and-best-practices
+https://incf.org/activities/standards-and-best-practices/requirements-for-standards-and-best-practices
 
 ## Brainhack global
 More information about brainhacks
