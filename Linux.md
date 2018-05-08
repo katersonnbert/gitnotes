@@ -355,6 +355,40 @@ having to enter the pass phrase all the time.
     done automatically and the prompt will not show up again, when the key is used.
 
 
+## Setup user with sudo access on an ssh accessible server
+
+Modified from [here](https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/).
+
+- ssh to the server
+- create new user (add password in the process)
+
+        sudo adduser new_user
+
+- [Optional] add user to the sudoer user group (after the user has been created)
+
+        sudo adduser new_user sudo
+
+- switch to new user, create .ssh folder and authorized key entry with the appropriate permissions for this user
+
+        sudo su new_user
+        mkdir /home/new_user/.ssh
+        chmod 700 /home/new_user/.ssh
+        touch /home/new_user/.ssh/authorized_keys
+        chmod 600 /home/new_user/.ssh/authorized_keys
+
+- open authorized keys with an editor e.g. and paste the required public key string into the file.
+
+        vim /home/new_user/.ssh/authorized_keys
+        "press i"
+        "paste public key string"
+        "press esc and type :x to save changes"
+
+- [optional] change user password
+
+        passwd
+
+- Now the new_user should be able to ssh into the server.
+
 ## Even more useful Bash commands:
 
 ### wc (word count)
