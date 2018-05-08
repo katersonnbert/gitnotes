@@ -104,6 +104,18 @@ https://golang.org/cmd/cgo/
 using go + c rdf library?
 
 
+### go tutorials
+http://www.golangbootcamp.com
+https://golang.org/doc/effective_go.html
+https://blog.golang.org/
+
+
+### go mobile
+https://github.com/golang/go/wiki/Mobile
+https://godoc.org/golang.org/x/mobile/cmd/gomobile
+https://github.com/gomatcha/matcha
+
+
 # JavaScript
 
 ### karma
