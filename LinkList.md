@@ -80,12 +80,7 @@ http://python-future.org/compatible_idioms.html
 http://python-future.org/unicode_literals.html
 
 
-### RDF resource
-https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/
-
-
-## Go libraries
-
+# Go libraries
 
 ### go framework
 https://gohugo.io/
@@ -139,7 +134,7 @@ https://github.com/vuejs/vue-migration-helper
 [jsfiddle stepper](https://jsfiddle.net/ilyabogdanov/sv6zdmzo/)
 
 
-## CSS
+# CSS
 [css components, vertical stepper](https://mdbootstrap.com/components/miscellaneous/#!)
 
 ### Themes
@@ -148,6 +143,53 @@ https://bootswatch.com/
 ### Colors
 http://www.colorpicker.com/
 http://www.color-hex.com/color/d3d3d3
+
+
+# Matlab
+http://uwethuemmel.com/continuous-integration-workflow-with-matlab-git-and-jenkins/
+https://www.cs.ubc.ca/~pcarbo/mex-tutorial/
+
+
+# Data formats and models
+
+## RDF resources
+https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/
+https://www.ebi.ac.uk/rdf/documentation/sparql-endpoints/
+http://www.snee.com/bobdc.blog/2010/01/federated-sparql-queries.html
+https://www.w3.org/TR/2013/REC-sparql11-federated-query-20130321/
+https://jena.apache.org/documentation/query/service.html
+
+
+### Apache Jena
+https://jena.apache.org/tutorials/
+https://jena.apache.org/documentation/tdb/faqs.html
+https://jena.apache.org/documentation/tdb2/
+https://jena.apache.org/documentation/fuseki2/
+https://jena.apache.org/documentation/sdb/
+
+
+# Tools
+
+## Android IDE
+https://developer.android.com/studio/#downloads
+
+## MultiModel database
+https://www.arangodb.com/
+
+## AWS
+https://aws.amazon.com/
+
+
+# Other
+
+## Brainhack global
+More information about brainhacks
+http://gigascience.biomedcentral.com/articles/10.1186/s13742-016-0121-x
+
+and examples:
+https://uwescience.github.io/brainhack-global-2017-03/
+https://github.com/DynAge/brainhack-zh
+https://dynage.github.io//brainhack-zh/
 
 
 ## Licensing
@@ -159,20 +201,7 @@ https://www.fossology.org/
 https://www.heise.de/ct/artikel/Shariff-Social-Media-Buttons-mit-Datenschutz-2467514.html
 
 
-## MultiModel database
-https://www.arangodb.com/
-
-
-## Matlab
-http://uwethuemmel.com/continuous-integration-workflow-with-matlab-git-and-jenkins/
-https://www.cs.ubc.ca/~pcarbo/mex-tutorial/
-
-
-## Brainhack global
-More information about brainhacks
-http://gigascience.biomedcentral.com/articles/10.1186/s13742-016-0121-x
-
-and examples:
-https://uwescience.github.io/brainhack-global-2017-03/
-https://github.com/DynAge/brainhack-zh
-https://dynage.github.io//brainhack-zh/
+## FAIR Principles
+https://www.nature.com/articles/sdata201618
+https://www.force11.org/group/fairgroup/fairprinciples
+https://www.go-fair.org/fair-principles/
