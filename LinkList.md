@@ -179,6 +179,12 @@ https://jenkins.io/doc/
 https://incf.org/activities/standards-and-best-practices
 https://incf.org/activities/standards-and-best-practices/requirements-for-standards-and-best-practices
 
+## Neuroscience information framework
+https://neuinfo.org/
+
+## Brain imaging data structure
+http://bids.neuroimaging.io/
+
 ## Brainhack global
 More information about brainhacks
 http://gigascience.biomedcentral.com/articles/10.1186/s13742-016-0121-x
