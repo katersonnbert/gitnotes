@@ -205,3 +205,51 @@ https://www.heise.de/ct/artikel/Shariff-Social-Media-Buttons-mit-Datenschutz-246
 https://www.nature.com/articles/sdata201618
 https://www.force11.org/group/fairgroup/fairprinciples
 https://www.go-fair.org/fair-principles/
+
+
+
+# Various Articles:
+
+### You Are Not Paid to Write Code
+http://bravenewgeek.com/you-are-not-paid-to-write-code/
+https://dzone.com/articles/you-are-not-paid-to-write-code
+
+### 7 Deadly DevOps Sins and How to Avoid Them
+https://dzone.com/articles/7-deadly-devops-sins-and-how-to-avoid-them
+http://onpage.com/seven-deadly-devops-sins/
+
+### Git Behind the Curtain: What Happens When You Commit, Branch, and Merge
+https://dzone.com/articles/git-behind-the-curtain-what-happens-when-you-commi
+
+### Our Journey to Git
+https://dzone.com/articles/our-journey-to-git
+https://www.cqse.eu/en/blog/our-journey-to-git/
+
+### Docker For Developers
+https://dzone.com/articles/docker-for-developers
+
+### The One Method I’ve Used to Eliminate Bad Tech Hires
+https://mattermark.com/the-one-method-ive-used-to-eliminate-bad-tech-hires/
+
+### How to Leave Your Software Development Job (Without Screwing Up Your Future)
+https://dzone.com/articles/how-to-leave-your-software-development-job-without
+https://simpleprogrammer.com/2016/10/17/how-to-leave-your-software-development-job/
+
+### Not so crazy idea: Charge for meetings
+https://medium.com/@matryer/not-so-crazy-idea-charge-for-meetings-7e96ea166748#.dwa4peg9a
+
+I spent 3 months applying to jobs after a coding bootcamp. Here’s what I learned.
+https://medium.freecodecamp.com/5-key-learnings-from-the-post-bootcamp-job-search-9a07468d2331#.dvf1tu8tw
+
+### GO PROVERBS, learn them by heart!
+https://go-proverbs.github.io/
+
+### HTTP resttutorial
+http://www.restapitutorial.com/httpstatuscodes.html
+
+### Docker in production, why its a bad idea
+https://thehftguy.wordpress.com/2016/11/01/docker-in-production-an-history-of-failure/
+
+## GraphQL
+http://graphql.org/learn/
+
