@@ -207,6 +207,10 @@ https://www.force11.org/group/fairgroup/fairprinciples
 https://www.go-fair.org/fair-principles/
 
 
+## IoT
+https://bridgera.com/ebook/
+https://dzone.com/articles/mqtt-the-nerve-system-of-iot
+
 
 # Various Articles:
 
