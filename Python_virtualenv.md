@@ -215,6 +215,17 @@ Python packages can be installed via `pip` and will be installed
 into the currently active conda environment only. 
 
 
+### Revisions
+
+Every addition or removal of a conda package is logged in a revision.
+
+Revisions can be displayed via 
+
+    conda list --revisions
+
+Description how revisions can be used to [roll an env back](
+http://blog.rtwilson.com/conda-revisions-letting-you-rollback-to-a-previous-version-of-your-environment/)
+
 ## Conda packaging
 - [Create custom channels](https://conda.io/docs/user-guide/tasks/create-custom-channels.html)
 - [Conda handle packages](https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages)
