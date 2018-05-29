@@ -25,6 +25,9 @@ https://docs.python.org/3/howto/pyporting.html
 http://python-future.org/compatible_idioms.html
 http://python-future.org/unicode_literals.html
 
+### Documentation: Read the docs
+https://docs.readthedocs.io
+
 
 ## Anaconda
 https://conda.io/docs/user-guide/tutorials/build-pkgs.html
