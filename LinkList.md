@@ -25,7 +25,8 @@ https://docs.python.org/3/howto/pyporting.html
 http://python-future.org/compatible_idioms.html
 http://python-future.org/unicode_literals.html
 
-### Documentation: Read the docs
+### Documentation
+http://www.sphinx-doc.org/
 https://docs.readthedocs.io
 
 
