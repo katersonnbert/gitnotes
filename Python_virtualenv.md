@@ -214,6 +214,13 @@ package as described on the anaconda page.
 Python packages can be installed via `pip` and will be installed 
 into the currently active conda environment only. 
 
+## Troubleshooting 
+
+If conda fails when trying to activate an environment, the shell is not properly setup to 
+handle conda. Try putting the following line into the /home/[user]/.bashrc file:
+
+    . /home/[user]/[path to conda]/miniconda2/etc/profile.d/conda.sh
+
 
 ### Revisions
 
