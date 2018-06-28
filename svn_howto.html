@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    content:howtos:subversion:subversion_primer    [Wiki - Dep. for Computational Systems Biology]
+  </title>
+
+  <meta name="generator" content="DokuWiki Release 2009-12-25c &quot;Lemming&quot;">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-03-23T09:02:20+0100">
+<meta name="keywords" content="content,howtos,subversion,subversion_primer">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.csb.univie.ac.at/lib/exe/opensearch.php" title="Wiki - Dep. for Computational Systems Biology">
+<link rel="start" href="http://wiki.csb.univie.ac.at/">
+<link rel="contents" href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:subversion_primer&amp;do=index" title="Index">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://wiki.csb.univie.ac.at/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://wiki.csb.univie.ac.at/feed.php?mode=list&amp;ns=content:howtos:subversion">
+<link rel="edit" title="Edit this page" href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:subversion_primer&amp;do=edit">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://wiki.csb.univie.ac.at/doku.php?do=export_xhtml&amp;id=content:howtos:subversion:subversion_primer">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://wiki.csb.univie.ac.at/doku.php?do=export_raw&amp;id=content:howtos:subversion:subversion_primer">
+<link rel="canonical" href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:subversion_primer">
+<link rel="stylesheet" media="all" type="text/css" href="svn_howto_files/css_002.css">
+<link rel="stylesheet" media="screen" type="text/css" href="svn_howto_files/css.css">
+<link rel="stylesheet" media="print" type="text/css" href="svn_howto_files/css_003.css">
+<script type="text/javascript" charset="utf-8"><!--//--><![CDATA[//><!--
+var NS='content:howtos:subversion';var SIG=' --- //[[cp-dev@gmx.net|Michael Sonntag]] 2012/04/20 10:06//';var JSINFO = {"id":"content:howtos:subversion:subversion_primer","namespace":"content:howtos:subversion"};
+//--><!]]></script>
+<script type="text/javascript" charset="utf-8" src="svn_howto_files/js.php"></script>
+<script type="text/javascript" charset="utf-8" src="svn_howto_files/usrmenu.js"></script>
+<script type="text/javascript" charset="utf-8" src="svn_howto_files/indexmenu.js"></script>
+<script type="text/javascript" charset="utf-8"><!--//--><![CDATA[//><!--
+var indexmenu_ID='content:howtos:subversion:subversion_primer'
+//--><!]]></script>
+
+  <link rel="shortcut icon" href="http://wiki.csb.univie.ac.at/lib/tpl/default/images/favicon.ico">
+
+  </head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="pagename">
+        [[<a href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:subversion_primer&amp;do=backlink" title="Backlinks">content:howtos:subversion:subversion_primer</a>]]
+      </div>
+      <div class="logo">
+        <a href="http://wiki.csb.univie.ac.at/doku.php" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[H]">Wiki - Dep. for Computational Systems Biology</a>      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+    
+    <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/doku.php"><div class="no"><input name="do" value="revisions" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/doku.php"><div class="no"><input name="do" value="recent" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" type="submit"></div></form>        <form action="/doku.php" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" type="text"><input value="Search" class="button" title="Search" type="submit"><div style="display: none;" id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">»</span> <span class="curid"><a href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:subversion_primer" class="breadcrumbs" title="content:howtos:subversion:subversion_primer">subversion_primer</a></span>          </div>
+    
+        <div class="breadcrumbs">
+      <span class="bchead">You are here: </span><a href="http://wiki.csb.univie.ac.at/doku.php?id=start" title="start">start</a> » <a href="http://wiki.csb.univie.ac.at/doku.php?id=content:start" title="content:start">content</a> » <a href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:start" title="content:howtos:start">howtos</a> » <a href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:start" title="content:howtos:subversion:start" class="wikilink2" rel="nofollow">subversion</a> » <a href="http://wiki.csb.univie.ac.at/doku.php?id=content:howtos:subversion:subversion_primer" title="content:howtos:subversion:subversion_primer">subversion_primer</a>    </div>
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div style="cursor: pointer;" class="tocheader toctoggle" id="toc__header"><span class="toc_close" style="cursor: pointer;" id="toc__toggle"><span>−</span></span>Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#subversion_svn" class="toc">Subversion (SVN)</a></span></div>
+<ul class="toc">
+<li class="clear">
+
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#definitions" class="toc">Definitions:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#organising_project_directories_within_the_repository" class="toc">Organising project directories within the repository:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#create_repository" class="toc">Create repository:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#basic_commands" class="toc">Basic commands:</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#further_commands" class="toc">Further commands:</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="subversion_svn" id="subversion_svn">Subversion (SVN)</a></h1>
+<div class="level1">
+
+<p>
+<a href="http://svnbook.red-bean.com/" class="urlextern" target="_blank" title="http://svnbook.red-bean.com" rel="nofollow">http://svnbook.red-bean.com</a> … online subversion book
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="1-91" type="hidden"><input name="rev" value="1332489740" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit" class="button" title="Subversion (SVN)" type="submit"></div></form></div>
+<h3><a name="definitions" id="definitions">Definitions:</a></h3>
+<div class="level3">
+<table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0 leftalign">'Repository'  </td><td class="col1">… </td><td class="col2">The directory storing the master copies of the project directories and files. The repository is a tree of directories.</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign">'Revision'    </td><td class="col1">… </td><td class="col2">A numerical or alpha-numerical tag identifying the version of a file.</td>
+	</tr>
+</tbody></table>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="92-349" type="hidden"><input name="rev" value="1332489740" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit" class="button" title="Definitions:" type="submit"></div></form></div>
+<h3><a name="organising_project_directories_within_the_repository" id="organising_project_directories_within_the_repository">Organising project directories within the repository:</a></h3>
+<div class="level3">
+<table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0">'Trunk' </td><td class="col1">… </td><td class="col2">Main source code development folder, containing directory tree and working files of the project.</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">'Tag' </td><td class="col1">… </td><td class="col2">Folder
+ containing released version of the program. Once the program, that's 
+being developed reaches release state, copy contents of trunk into a new
+ folder within Tag. Makes it easy to pull a released version from the 
+repository.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">'Branch' </td><td class="col1">… </td><td class="col2">Folder containing version of the trunk, if two or more individual types of the project have to be developed in parallel.</td>
+	</tr>
+</tbody></table>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="350-910" type="hidden"><input name="rev" value="1332489740" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit" class="button" title="Organising project directories within the repository:" type="submit"></div></form></div>
+<h3><a name="create_repository" id="create_repository">Create repository:</a></h3>
+<div class="level3">
+
+<p>
+<br>Most svn commands require a  comment current svn step from the command line.<br>
+</p>
+<pre class="code">-m "[text]"</pre>
+
+<p>
+Create repository folder at /path/ within folder dirName. Folder dirName must not exist.<br>
+</p>
+<pre class="code">svnadmin create /path/repositoryDirName</pre>
+
+<p>
+Don't forget to set write rights for all login users<br>
+</p>
+<pre class="code">chmod g+w -R /path/repositoryDirName</pre>
+
+<p>
+Actually create the repository. Imports directories and files from 
+path/[dirName], copies them into the repository path/repDirName and 
+commits them as revision 1. -m ”[text]” will be used as initial comment.<br>
+</p>
+<pre class="code">svn import path/[dirName]/ file:///path/repositoryDirName -m "[text]"</pre>
+
+<p>
+Instead of "file:///path/repositoryDirName" you can also use:<br>
+</p>
+<pre class="code">svn import path/[dirName]/ svn+ssh://vlogin1.csb.univie.ac.at/path/repDirName -m "[text]"</pre>
+
+<p>
+Once you checkout a folder, the contents will be copied to your current 
+directory. Furthermore, a hidden folder ”.svn” will be created at your 
+current location, linking your working directory to the specified 
+repository; every action within your working directory will always be 
+executed towards this repository.<br>
+</p>
+<pre class="code">svn checkout file:///repositoryPath/[dirName]</pre>
+
+<p>
+WATCH YOUR CURRENT DIRECTORY WHEN CHECKING OUT!<br>If you are e.g. at the following directory:<br>
+</p>
+<pre class="code">/home/user/username/working_dir/proj1/trunk</pre>
+
+<p>
+and you try to check out directory trunk, this will happen:<br>
+</p>
+<pre class="code">/home/user/username/working_dir/proj1/trunk/trunk</pre>
+
+<p>
+svn copies the complete folder trunk to your current location!<br>
+
+</p>
+
+<p>
+Commit transferes all changes made in the working directory to the repository.<br>
+</p>
+<pre class="code">svn commit -m "[commit text]"</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Commit [filename] transferes only changes of file [filename] to the repository.<br>
+</p>
+<pre class="code">svn commit [filename] -m "[commit text]"</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+If you create or checkout your repository as svn+ssh you might want to 
+generate an ssh client key at your main working machine(s) to avoid 
+having to enter your authentication at every svn transaction:<br>
+</p>
+<pre class="code">~</pre>
+<pre class="code">cd .ssh/</pre>
+<pre class="code">ssh-keygen -t rsa</pre>
+<pre class="code">cp id_rsa.pub authorized_keys</pre>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="911-3053" type="hidden"><input name="rev" value="1332489740" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit" class="button" title="Create repository:" type="submit"></div></form></div>
+<h3><a name="basic_commands" id="basic_commands">Basic commands:</a></h3>
+<div class="level3">
+
+<p>
+<br>NOTE: always use commandline option -m ”[description]” with most of 
+the following commands, where [description] should be a short text, 
+explaining why/which changes have been made.<br>
+
+</p>
+
+<p>
+Update files in your working directory from the repository if new 
+revisions are available. Files that have been modified at the repository
+ as well as locally are merged automatically, if the changes are not 
+overlapping. Should the differences overlap, a conflict will be 
+displayed. Svn does not allow any commit, as long as a conflict is 
+present.<br>
+</p>
+<pre class="code">svn update</pre>
+
+<p>
+Available options to resolve update conflicts are:
+</p>
+<table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><pre class="code">(p)ostpone</pre>
+</td><td class="col1">… </td><td class="col2">Leave the file in a conflicted state for you to resolve after your update is complete.</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><pre class="code">(d)iff</pre>
+</td><td class="col1">… </td><td class="col2">Display the differences between the base revision and the conflicted file itself in unified diff format.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><pre class="code">(e)dit</pre>
+</td><td class="col1">… </td><td class="col2">Open the file in conflict with your favorite editor, as set in the environment variable EDITOR.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><pre class="code">(r)esolved</pre>
+</td><td class="col1">… </td><td class="col2">After editing a file, tell
+ svn that you've resolved the conflicts in the file and that it should 
+accept the current contents—basically that you've “resolved” the 
+conflict.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><pre class="code">(m)ine-(f)ull</pre>
+</td><td class="col1">… </td><td class="col2">Discard the newly received changes from the repository and use only your local changes for the file under review.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><pre class="code">(t)heirs-(f)ull</pre>
+</td><td class="col1">… </td><td class="col2">Discard your local changes to the file under review and use only the newly received changes from the repository.</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><pre class="code">(l)aunch</pre>
+</td><td class="col1">… </td><td class="col2">Launch an external program to perform the conflict resolution. This requires a bit of preparation beforehand.</td>
+	</tr>
+</tbody></table>
+
+<p>
+<br>Update specified filename only within the working directory<br>
+</p>
+<pre class="code">svn update [filename]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+If a conflict has been identified by update or commit, svn needs the 
+user to confirm, that the changes that have been made, can be safely 
+transfered to the repository and overwrite the file of conflict there. 
+Requires succeeding commit.<br>
+</p>
+<pre class="code">svn resolve --accept [arg] [filename/dirname]</pre>
+
+<p>
+Available arguments for –accept are:
+</p>
+<table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><pre class="code">mine-full</pre>
+</td><td class="col1">… </td><td class="col2">Resolve all conflicted files with copies of the files as they stood immediately before you ran svn update.</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><pre class="code">theirs-full</pre>
+</td><td class="col1">… </td><td class="col2">Resolve all conflicted files with copies of the files that were fetched from the server when you ran svn update.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><pre class="code">working</pre>
+</td><td class="col1">… </td><td class="col2">Assuming that you've 
+manually handled the conflict resolution, choose the version of the file
+ as it currently stands in your working copy.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><pre class="code">base</pre>
+</td><td class="col1">… </td><td class="col2">Choose the file that was 
+the BASE revision before you updated your working copy. That is, the 
+file that you checked out before you made your latest edits.</td>
+	</tr>
+</tbody></table>
+
+<p>
+<br>Add new files or directories to the repository. Changes will only 
+become active after the next commit. Directories will be added including
+ all contained files and subdirectories. To add a folder without files, 
+use commandline option –depth empty.<br>
+</p>
+<pre class="code">svn add [filename/dirname]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Marks a file or folder for deletion. Requires succeeding commit.<br>NOTE: nothing is ever really deleted from the repository, deleted files can be “resurrected”.<br>
+</p>
+<pre class="code">svn delete [filename/dirname]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Duplicates [filename1] and adds it as [filename2]. Requires succeeding commit.<br>
+</p>
+<pre class="code">svn copy [filename1] [filename2]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Move file from [filename1] to [filename2]. in detail [filename2] is 
+added as copy of [filename1], [filename1] is marked for deletion. 
+Requires succeeding commit.<br>
+</p>
+<pre class="code">svn move [filename1] [filename2]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Same as mkdir [dirname]; svn add [dirname]. Requires succeeding commit.<br>
+</p>
+<pre class="code">svn mkdir [dirname]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Display changes in file status and project structure:<br>
+</p>
+<pre class="code">svn status</pre>
+<table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0">?</td><td class="col1">… </td><td class="col2">file is not under version control</td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">A</td><td class="col1">… </td><td class="col2">file is scheduled for addition</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">C</td><td class="col1">… </td><td class="col2">file has conflicts with the repository version</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">D</td><td class="col1">… </td><td class="col2">file is scheduled for deletion</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">M</td><td class="col1">… </td><td class="col2">file has been modified locally, but not at the repository.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">U</td><td class="col1">… </td><td class="col2">file has been modified at the repository, but not locally</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">G</td><td class="col1">… </td><td class="col2">file had non overlapping differences between repository and local file, files were merged.</td>
+	</tr>
+</tbody></table>
+
+<p>
+Command line option -u (–show-updates) displays available updates<br>
+
+</p>
+
+<p>
+Display in-file differences between local and repository version<br>
+</p>
+<pre class="code">svn diff  [filename/dirname]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Replace the local working copy of [filename] with the current revision copy from the repository.<br>
+</p>
+<pre class="code">svn revert [filename]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Again, commit transferes all changes made in the working directory to the repository.<br>
+</p>
+<pre class="code">svn commit -m "[commit text]"</pre>
+
+<p>
+Commit [filename] transferes only changes of file [filename] to the repository.<br>
+</p>
+<pre class="code">svn commit [filename] -m "[commit text]"</pre>
+
+<p>
+<br>
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="3054-7862" type="hidden"><input name="rev" value="1332489740" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit" class="button" title="Basic commands:" type="submit"></div></form></div>
+<h3><a name="further_commands" id="further_commands">Further commands:</a></h3>
+<div class="level3">
+
+<p>
+<br>Display all revisions of the current repository; command line option -v: displays additional information<br>
+</p>
+<pre class="code">svn log [-v]</pre>
+
+<p>
+<br>
+
+</p>
+
+<p>
+Display all revisions of the current repository of [fileName] only<br>
+</p>
+<pre class="code">svn log [fileName]</pre>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="7863-" type="hidden"><input name="rev" value="1332489740" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit" class="button" title="Further commands:" type="submit"></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+        Logged in as: Michael Sonntag (sonntag)      </div>
+      <div class="doc">
+        content/howtos/subversion/subversion_primer.txt · Last modified: 2012/03/23 09:02 by sonntag      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+        <form class="button btn_edit" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Edit this page" class="button" accesskey="e" title="Edit this page [E]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/doku.php"><div class="no"><input name="do" value="revisions" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>              </div>
+      <div class="bar-right" id="bar__bottomright">
+                                        <form class="button btn_logout" method="get" action="/doku.php"><div class="no"><input name="do" value="logout" type="hidden"><input name="sectok" value="fac86965fa7fe935e26740300525765f" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Logout" class="button" title="Logout" type="submit"></div></form>        <form class="button btn_index" method="get" action="/doku.php"><div class="no"><input name="do" value="index" type="hidden"><input name="id" value="content:howtos:subversion:subversion_primer" type="hidden"><input value="Index" class="button" accesskey="x" title="Index [X]" type="submit"></div></form>        <a class="nolink" href="#dokuwiki__top"><input class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" type="button"></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+  <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license:<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 3.0 Unported</a></div>
+</div>
+
+<div class="footerinc">
+
+  <a target="_blank" href="http://wiki.csb.univie.ac.at/feed.php" title="Recent changes RSS feed"><img src="svn_howto_files/button-rss.png" alt="Recent changes RSS feed" height="15" width="80"></a>
+
+        <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license" title="CC Attribution-Noncommercial-Share Alike 3.0 Unported"><img src="svn_howto_files/cc-by-nc-sa.png" alt="" height="15" width="80"></a>
+  
+  <a target="_blank" href="http://www.dokuwiki.org/donate" title="Donate"><img src="svn_howto_files/button-donate.gif" alt="Donate" height="15" width="80"></a>
+
+  <a target="_blank" href="http://www.php.net/" title="Powered by PHP"><img src="svn_howto_files/button-php.gif" alt="Powered by PHP" height="15" width="80"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="svn_howto_files/button-xhtml.png" alt="Valid XHTML 1.0" height="15" width="80"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="svn_howto_files/button-css.png" alt="Valid CSS" height="15" width="80"></a>
+
+  <a target="_blank" href="http://dokuwiki.org/" title="Driven by DokuWiki"><img src="svn_howto_files/button-dw.png" alt="Driven by DokuWiki" height="15" width="80"></a>
+
+
+
+</div>
+
+<div class="no"><img src="svn_howto_files/indexer.gif" alt="" height="1" width="1"></div>
+
+
+</body></html>
