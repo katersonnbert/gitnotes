@@ -3,16 +3,18 @@
 You can find the open source online subversion book [here](http://svnbook.red-bean.com).
 
 #### Definitions:
-- `Repository`  …   The directory storing the master copies of the project directories and files. 
+
+    Repository  …   The directory storing the master copies of the project directories and files. 
                     The repository is a tree of directories.
-- `Revision`    …   A numerical or alpha-numerical tag identifying the version of a file.
+    Revision    …   A numerical or alpha-numerical tag identifying the version of a file.
 
 #### Organising project directories within the repository:
-- `Trunk`   …   Main source code development folder, containing directory tree and working files of the project.
-- `Tag`     …   Folder containing released version of the program. Once the program, that's being developed reaches 
+
+    Trunk   …   Main source code development folder, containing directory tree and working files of the project.
+    Tag     …   Folder containing released version of the program. Once the program, that's being developed reaches 
                 release state, copy contents of trunk into a new folder within Tag. Makes it easy to pull a released 
                 version from the repository.
-- `Branch   …   Folder containing version of the trunk, if two or more individual types of the project have to be 
+    Branch  …   Folder containing version of the trunk, if two or more individual types of the project have to be 
                 developed in parallel.
 
 ## Basic setup and workflow
@@ -46,22 +48,21 @@ towards this repository.
 
     svn checkout file:///repositoryPath/[dirName]
 
-WATCH YOUR CURRENT DIRECTORY WHEN CHECKING OUT!
-If you are e.g. at the following directory:
+WATCH YOUR CURRENT DIRECTORY WHEN CHECKING OUT! If you are e.g. at the following directory:
 
     /home/user/username/working_dir/proj1/trunk
 
-and you try to check out directory trunk, this will happen:
+and you try to check out directory "trunk", this will happen:
 
     /home/user/username/working_dir/proj1/trunk/trunk
 
-svn copies the complete folder trunk to your current location!
+svn copies the complete folder "trunk" to your current location!
 
-Commit transferes all changes made in the working directory to the repository.
+Commit transfers all changes made in the working directory to the repository.
 
     svn commit -m "[commit text]"
 
-Commit [filename] transferes only changes of file [filename] to the repository.
+Commit [filename] transfers only changes of file [filename] to the repository.
 
     svn commit [filename] -m "[commit text]"
 
@@ -82,36 +83,45 @@ where [description] should be a short text, explaining why/which changes have be
 Update files in your working directory from the repository if new revisions are available. 
 Files that have been modified at the repository as well as locally are merged automatically, 
 if the changes are not overlapping. Should the differences overlap, a conflict will be displayed. 
-Svn does not allow any commit, as long as a conflict is present.
+Svn does not allow any commit as long as a conflict is present.
 
     svn update
 
 Available options to resolve update conflicts are:
 
     (p)ostpone      …   Leave the file in a conflicted state for you to resolve after your update is complete.
-    (d)iff          …   Display the differences between the base revision and the conflicted file itself in unified diff format.
-    (e)dit          …   Open the file in conflict with your favorite editor, as set in the environment variable EDITOR.
-    (r)esolved      …   After editing a file, tell svn that you've resolved the conflicts in the file and that it should 
-                        accept the current contents—basically that you've “resolved” the conflict.
-    (m)ine-(f)ull   …   Discard the newly received changes from the repository and use only your local changes for the file under review.
-    (t)heirs-(f)ull …   Discard your local changes to the file under review and use only the newly received changes from the repository.
-    (l)aunch        …   Launch an external program to perform the conflict resolution. This requires a bit of preparation beforehand.
+    (d)iff          …   Display the differences between the base revision and the conflicted file itself in 
+                        unified diff format.
+    (e)dit          …   Open the file in conflict with your favorite editor, as set in the environment 
+                        variable EDITOR.
+    (r)esolved      …   After editing a file, tell svn that you've resolved the conflicts in the file and 
+                        that it should accept the current contents—basically that you've “resolved” the conflict.
+    (m)ine-(f)ull   …   Discard the newly received changes from the repository and use only your local changes 
+                        for the file under review.
+    (t)heirs-(f)ull …   Discard your local changes to the file under review and use only the newly received 
+                        changes from the repository.
+    (l)aunch        …   Launch an external program to perform the conflict resolution. This requires a bit of 
+                        preparation beforehand.
 
 Update specified filename only within the working directory
 
     svn update [filename]
 
 If a conflict has been identified by update or commit, svn needs the user to confirm, that the changes that have been 
-made, can be safely transfered to the repository and overwrite the file of conflict there. Requires succeeding commit.
+made, can be safely transferred to the repository and overwrite the file of conflict there. Requires succeeding commit.
 
     svn resolve --accept [arg] [filename/dirname]
 
 Available arguments for –accept are:
 
-    mine-full   …   Resolve all conflicted files with copies of the files as they stood immediately before you ran svn update.
-    theirs-full …   Resolve all conflicted files with copies of the files that were fetched from the server when you ran svn update.
-    working     …   Assuming that you've manually handled the conflict resolution, choose the version of the file as it currently stands in your working copy.
-    base        …   Choose the file that was the BASE revision before you updated your working copy. That is, the file that you checked out before you made your latest edits.
+    mine-full   …   Resolve all conflicted files with copies of the files as they stood immediately 
+                    before svn update was run.
+    theirs-full …   Resolve all conflicted files with copies of the files that were fetched from the 
+                    server when svn update was run.
+    working     …   Assuming that you've manually handled the conflict resolution, choose the version 
+                    of the file as it currently stands in the working copy.
+    base        …   Choose the file that was the BASE revision before you updated your working copy. 
+                    That is, the file that was checked out before the latest edits were made.
 
 Add new files or directories to the repository. Changes will only become active after the next commit. 
 Directories will be added including all contained files and subdirectories. To add a folder without files, 
@@ -128,12 +138,12 @@ Duplicates [filename1] and adds it as [filename2]. Requires succeeding commit.
 
     svn copy [filename1] [filename2]
 
-Move file from [filename1] to [filename2]. in detail [filename2] is added as copy of [filename1], 
+Move file from [filename1] to [filename2]. In detail [filename2] is added as copy of [filename1], 
 [filename1] is marked for deletion. Requires succeeding commit.
 
     svn move [filename1] [filename2]
 
-Same as mkdir [dirname]; svn add [dirname]. Requires succeeding commit.
+Same as `mkdir [dirname]; svn add [dirname]`. Requires succeeding commit.
 
     svn mkdir [dirname]
 
@@ -149,7 +159,7 @@ Display changes in file status and project structure:
     U   …   file has been modified at the repository, but not locally
     G   …   file had non overlapping differences between repository and local file, files were merged.
 
-Command line option -u (–show-updates) displays available updates
+Command line option `-u (–show-updates)` displays available updates
 
 Display in-file differences between local and repository version
 
@@ -169,7 +179,7 @@ Commit [filename] transferes only changes of file [filename] to the repository.
 
 ## Further commands:
 
-Display all revisions of the current repository; command line option -v: displays additional information
+Display all revisions of the current repository; command line option `-v`: displays additional information
 
     svn log [-v]
 
