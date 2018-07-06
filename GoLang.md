@@ -1123,3 +1123,9 @@ Rehearse: Function: closures! Defer, Pointer section, Slices, Check how interfac
 - [image processing](https://github.com/anthonynsimon/bild)
 - [go linter list](https://go.libhunt.com/project/go-tools-dominikh)
 - [gonum - go scientific libraries](https://github.com/gonum)
+
+## IDEs
+
+- [Visual Studio code](https://code.visualstudio.com/)
+- [Visual Studio code go extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go)
+- [VS code go dubug extension](https://github.com/Microsoft/vscode-go/wiki/Debugging-Go-code-using-VS-Code)
