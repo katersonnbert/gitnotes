@@ -722,10 +722,35 @@ Definition can be found [here](https://golang.org/ref/spec#Exported_identifiers)
 
 # Goroutines, Channels and Mutex
 
+## Concurrency vs Parallelism
+
+Go is a concurrent language, multiple tasks are normally not executed side by side
+in independent threads, but is rather switching between the different tasks. Often 
+the two tasks are interdependent and need some for of communication between each
+other to reach a final goal. Go reduces the amount of communication between the
+multiple, interdependent tasks by using `goroutines` and `channels`.
+
+goroutines can be started independently from one another. They can be coupled
+to channels to enable interaction with the main program or other goroutines.
+This way, a task can be broken down into subtasks, that can either be run concurrently, 
+dependent on one another or properly in parallel.
+
+Find a more detailed discussion [here](https://blog.golang.org/concurrency-is-not-parallelism).
+
+"[...]
+
+Concurrency is about dealing with a lots of things at once.
+
+Parallelism is about doing lots of things at once.
+
+[...]" [source](https://talks.golang.org/2012/waza.slide#8)
+
+
 ## Goroutine
-- A goroutine is a thread managed by the Go runtime.
+- A goroutine is a thread managed by the Go runtime - it is like launching a function with shell's `&` notation.
 - The execution of code within a goroutine happens parallel to any subsequent code after the routine has been started.
-- NOTE: Access to memory must be synchronized, if goroutines are used, since they run in the same address space.
+- When a goroutine blocks, it does not affect other goroutines.
+- NOTE: Access to memory must be synchronized, if goroutines are used, since they run in the same address space!
 - Example:
 
         func say(s string) {
@@ -734,7 +759,7 @@ Definition can be found [here](https://golang.org/ref/spec#Exported_identifiers)
                 fmt.Println(s)
             }
         }
-    
+
         func main() {
             go say("world")
             say("hello")
@@ -750,17 +775,36 @@ Definition can be found [here](https://golang.org/ref/spec#Exported_identifiers)
         ch <- v     // send v to channel ch
         v := <-ch   // receive data from channel ch and assign value to v
 
-- One channel can be used for multiple goroutines. But I have no idea in which order 
-the channel returns the values from the individual goroutines...
+- Example (adapted from [here](https://talks.golang.org/2012/waza.slide#33))
+
+        // Communication channel
+        timerChan := make(chan time.Time)
+
+        // Start a goroutine that will start doing stuff immediately
+        // and provide its result via the timerChan channel once its done
+        go func() {
+            time.Sleep(deltaT)
+            timerChan <- time.Now() // finished, provide result via channel
+        }
+
+        fmt.Println("Do something")
+        fmt.Println("in the meantime")
+        fmt.Println("while we wait for the routine to finish")
+        completedAt := <- timerChan // This receive will block at this point 
+                                    // until the goroutine is done.
+        fmt.Printf("Finished at '%s'", completedAt.Format())
+
+- A single channel can be used by multiple goroutines as means to communicate.
+These can be used to properly parallelize computation. Example adapted from [here](https://tour.golang.org/concurrency/2)
 
         func sum(s []int, c chan int) {
             sum := 0
             for _, v := range s {
                 sum += v
             }
-            c <- sum // send sum to c
+            c <- sum // send resulting sum to communication channel c
         }
-    
+
         func main() {
             s := []int{7, 2, 8, -9, 4, 0}
     
@@ -768,13 +812,15 @@ the channel returns the values from the individual goroutines...
             go sum(s[:len(s)/2], c)     // calculates 17
             go sum(s[len(s)/2:], c)     // calculates -5
             go sum(s, c)                // calculates 12
-            x, y, z := <-c, <-c, <-c    // receive from c
+            x, y, z := <-c, <-c, <-c    // receive from c, blocks here until c has delivered for the third time.
     
-            fmt.Println(x, y, z)    // returns 12 17 -5; if go sum(s, c) would be moved to the top of the routine list, 
+            fmt.Println(x, y, z)    // returns 12 17 -5; if go sum(s, c) would be moved 
+                                    // to the top of the routine list, 
                                     // it would return -5 12 17
         }
 
-- NOTE: You must only consume as much channel output as have been opened, otherwise a deadlock fatal error will occur!
+- NOTE: You must only consume as many channel results as the channel has been used in routines, 
+otherwise a deadlock fatal error will occur!
 
 ### Buffered channel
 - Channels can be created with a buffer to ensure, that not too many channels will be opened.
