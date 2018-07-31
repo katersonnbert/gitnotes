@@ -891,3 +891,15 @@ specific commit. When e.g. checking out branch "master" of a Git repository, Git
     - Select commit from which the code should be referenced
 - Now select "View" option to display the whole file at the specified commit
 - Select line which is supposed to be referenced, copy link, paste where intended.
+
+
+
+# github flavored markdown specifics
+
+## Expandable details
+
+<details>
+<summary>Some description (click to expand)</summary>
+Expandable text
+</details>
+
