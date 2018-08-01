@@ -92,4 +92,10 @@ Draw.io
 Use amazon web service / cisco charts for architecture schematics
 
 
+## Bugfixing:
+
+When the message "not supported by view" appears in textboxes, make sure, "formatted text" is unticked under text
+
+https://desk.draw.io/support/solutions/articles/16000042487-why-does-the-text-of-svg-export-sometimes-not-display-correctly-in-ie-and-some-svg-editors-
+ 
 
