@@ -84,10 +84,35 @@ otherwise, resizing the box w/o scaling the contained text will not be possible:
 - Group ... Ctrl + g
 - Ungroup ... Ctrl + shift + g
 - Edit selected text object : F8
+- Send to back: end or page down
+- Send to front: pos 1 or page up
+- Enter unicode characters in textboxes: ctrl+u and unicode code e.g. Ctrl + u, 2022 for bullet point.
+
+## Inkscape and accents
+
+When you have the text cursor, press ctrl+U then type in a code from the linked page and press enter. 
+Not all fonts have all characters.
+
+http://jrgraphix.net/research/unicode_blocks.php?block=1
+
+## Disable snap
+
+A keyboard shortcut to disable the snap to feature, is the percent sign (% or SHIFT + 5 on most keyboards)
+Or there is a button on the top right.
+https://slackalaxy.com/2017/02/11/disable-snapping-in-inkscape/
+
+
+## Add round corners to rectangular shapes
+- draw rectangle.
+- select rectangle, make sure rectangular tool is also still selected.
+- a new toolbar appears up top - change Rx and Ry to the same values to define the radius of the corners.
+- done.
 
 
 Draw.io
 =======
+
+https://support.draw.io/
 
 Use amazon web service / cisco charts for architecture schematics
 
