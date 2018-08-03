@@ -109,6 +109,12 @@ https://slackalaxy.com/2017/02/11/disable-snapping-in-inkscape/
 - done.
 
 
+## Gotchas
+
+When trying to change spacing between lines in text boxes, make sure the textbox but not the text is
+selected, otherwise the text spacing might not be changed.
+
+
 Draw.io
 =======
 
