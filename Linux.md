@@ -363,6 +363,26 @@ having to enter the pass phrase all the time.
   You can debug this using the verbose setting on the ssh command e.g. `ssh -v username@some.server.com` 
 
 
+### Even easier ssh access by using .ssh/config
+
+As described above, having too many different ssh keys can lead to not being able to login somewhere.
+Its even easier to tell the agent which key to offer to a specific server first to avoid that dilemma.
+
+A nice tutorial for that can be found [here](https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/).
+
+- Just create a `config` file in the `.ssh` folder.
+- Define a specific Host and point to the ssh key file that should be used.
+
+    Host some.example.org
+        IdentityFile ~/.ssh/id_rsa_for_example
+
+- If you want to login at a specific port or with a different user than your current one:
+
+Host other.site.com
+    User root
+    Port 4444
+    IdentityFile ~/.ssh/id_rsa_for_site
+
 ## Setup user with sudo access on an ssh accessible server
 
 Modified from [here](https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/).
@@ -396,6 +416,7 @@ Modified from [here](https://aws.amazon.com/premiumsupport/knowledge-center/new-
         passwd
 
 - Now the new_user should be able to ssh into the server.
+
 
 ## Even more useful Bash commands:
 
