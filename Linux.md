@@ -354,6 +354,14 @@ having to enter the pass phrase all the time.
     ssh key. If the option is used to store key and phrase in the keyring, this login will be
     done automatically and the prompt will not show up again, when the key is used.
 
+- NOTE: as an important side note, when you have a lot of keys added to your agent, it will
+  try all of them against a potential server you want to log in to. If the server has a low
+  authentication failure tolerance, then you will be disconnected and potentially barred from
+  new attempts for a while. Usually the message `Received disconnect from [IP address] port 22:2: 
+  Too many authentication failures for [username]` is a dead giveaway. This can already happen
+  when you have more than three ssh keys...
+  You can debug this using the verbose setting on the ssh command e.g. `ssh -v username@some.server.com` 
+
 
 ## Setup user with sudo access on an ssh accessible server
 
