@@ -23,38 +23,42 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
 - write the shell script equivalent of installing dependencies and the project in the dockerfile and expose a port
 - build docker file from the root of the project containing the docker build file and give the container a name e.g. example
 
-    docker build -t example .
+        docker build -t example .
 
 - the configuration of a built docker container can be reviewed by using
 
-    docker inspect example
+        docker inspect example
 
 - show all created containers
 
-    docker image ls -a
+        docker image ls -a
 
 - a built docker container can be start by using
 
-    docker run example
+        docker run example
 
 - a built docker container can be run and accessed using the command. `-it` means interactive, `--entrypoint /bin/bash`
     opens the shell of the container giving cli access.
 
-    docker run -it --entrypoint /bin/bash example
+        docker run -it --entrypoint /bin/bash example
 
 - show all running containers, get names of the running containers
 
-    docker ps
+        docker ps
 
 - show the details of a running container, get the name of the container runtime via `docker ps`
     this will display the ip address under which the docker container is accessible.
 
-    docker inspect [docker ps runtime name]
+        docker inspect [docker ps runtime name]
 
 - stop a running docker container
 
-    docker kill [docker ps runtime name]
+        docker kill [docker ps runtime name]
 
-- mounting directories from the docker container to the outside
+- mounting directories from the docker container to the outside and vice versa
 
-    docker run -it -v /home/Chaos/DL/docker/results:/results -v /home/Chaos/DL/docker/temp:/temp -v /home/Chaos/DL/docker/config:/config gnode/gin-valid
+        docker run -it -v /home/Chaos/DL/docker/results:/results -v /home/Chaos/DL/docker/temp:/temp -v /home/Chaos/DL/docker/config:/config gnode/gin-valid
+
+- run docker in detached (background) mode
+
+        docker run -d [container]
