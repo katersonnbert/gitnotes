@@ -62,3 +62,14 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
 - run docker in detached (background) mode
 
         docker run -d [container]
+
+- [publish a docker container](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
+  - create a repo on dockerhub
+  - locally docker login
+  - create a tag from the to be published image - ideally use tagname "latest" if you want a docker pull to be easy.
+
+        docker tag [imageID] [dockerhubUsername]/[reponame]:[tagname]
+
+  - push tag to dockerhub
+  
+        docker push [dockerhubUsername]/[reponame]:[tagname]
