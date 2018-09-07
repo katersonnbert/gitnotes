@@ -63,6 +63,16 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
 
         docker run -d [container]
 
+- run a container in detached mode, give it a name and stop it after its done.
+
+        docker run -d --name [someName] [container]
+        docker stop [someName]
+        docker rm [someName] # remove the named container so we can create a container of the same name again
+
+        # with the flag --rm a named container gets automatically remove when it is stopped
+        docker run -d --name [someName] [container]
+        docker stop [someName]
+
 - [publish a docker container](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
   - create a repo on dockerhub
   - locally docker login
@@ -73,3 +83,5 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
   - push tag to dockerhub
   
         docker push [dockerhubUsername]/[reponame]:[tagname]
+
+- enter a container at startup to look around
