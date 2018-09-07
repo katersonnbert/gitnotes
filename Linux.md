@@ -298,6 +298,19 @@ To display all active/available users:
 
     usermod -l new_username old_username
 
+- check the id of a user and the groups a user is assigned to:
+
+    id [username]
+
+- modify the id of a user; use IDs 1000+, ids must be unique.
+
+    usermod -u [newID] [username]
+
+- add a user to an existing group
+
+    useradd -g [groupID] [username]
+
+
 
 ### Groups
 
@@ -312,6 +325,13 @@ To display all active/available groups:
 
     groups
 
+- add a group
+
+    sudo groupadd [groupname]
+
+- change groupID
+
+    groupmod -g [newID] [group]
 
 
 ## Secure connection and keys 
