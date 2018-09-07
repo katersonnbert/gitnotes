@@ -286,13 +286,18 @@ To display all active/available users:
 
     users
 
-- add a new user:
+- add a new user w/o a home directory:
 
-    sudo adduser [new_username]
+    sudo useradd [new_username]
+
+- add a new user and create a home directory and a password for this user:
+
+    sudo useradd -m [new_username] -p [password]
 
 - modify the name of a user
 
     usermod -l new_username old_username
+
 
 ### Groups
 
