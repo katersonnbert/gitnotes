@@ -274,11 +274,17 @@ by piping it to the `column` command e.g.:
 
 Unix systems feature groups and users to handle any access permissions.
 
+### Users
+
 Every user belongs to a user group.
 
 All registered users including their userID and their groupID can be listed via
 
     cat /etc/passwd
+
+To display all active/available users:
+
+    users
 
 - add a new user:
 
@@ -287,6 +293,20 @@ All registered users including their userID and their groupID can be listed via
 - modify the name of a user
 
     usermod -l new_username old_username
+
+### Groups
+
+users can belong to groups, permissions can be given via groups 
+to all users within a group.
+
+All registered groups can be displayed via
+
+    cat /etc/group
+
+To display all active/available groups:
+
+    groups
+
 
 
 ## Secure connection and keys 
