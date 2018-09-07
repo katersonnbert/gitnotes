@@ -84,4 +84,7 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
   
         docker push [dockerhubUsername]/[reponame]:[tagname]
 
-- enter a container at startup to look around
+- enter a container at startup to look around for any setup problems. This will not start the service since the
+    `entrypoint` is overwritten by executing `/bin/bash`. The container can be left by typing in `exit`.
+
+        docker run --entrypoint=/bin/bash
