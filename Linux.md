@@ -270,6 +270,25 @@ by piping it to the `column` command e.g.:
 
     df -h
 
+## User and group handling
+
+Unix systems feature groups and users to handle any access permissions.
+
+Every user belongs to a user group.
+
+All registered users including their userID and their groupID can be listed via
+
+    cat /etc/passwd
+
+- add a new user:
+
+    sudo adduser [new_username]
+
+- modify the name of a user
+
+    usermod -l new_username old_username
+
+
 ## Secure connection and keys 
 
 ### ssh (Secure SHell)
