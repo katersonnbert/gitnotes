@@ -23,11 +23,11 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
 - write the shell script equivalent of installing dependencies and the project in the dockerfile and expose a port
 - build docker file from the root of the project containing the docker build file and give the container a name e.g. example
 
-        docker build -t example .
+        docker build -t [container] .
 
 - the configuration of a built docker container can be reviewed by using
 
-        docker inspect example
+        docker inspect [container]
 
 - show all created containers
 
@@ -35,12 +35,14 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
 
 - a built docker container can be start by using
 
-        docker run example
+        docker run [container]
 
 - a built docker container can be run and accessed using the command. `-it` means interactive, `--entrypoint /bin/bash`
     opens the shell of the container giving cli access.
+- enter a container at startup to look around for any setup problems. This will not start the service since the
+    `entrypoint` is overwritten by executing `/bin/bash`. The container can be left by typing in `exit`.
 
-        docker run -it --entrypoint /bin/bash example
+        docker run -t --entrypoint=/bin/bash [container]
 
 - show all running containers, get names of the running containers
 
@@ -50,6 +52,11 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
     this will display the ip address under which the docker container is accessible.
 
         docker inspect [docker ps runtime name]
+
+- look into a running container to e.g. check whether files from the outside have been
+    properly mapped to inside the container.
+    
+    docker exec -it [docker ps runtime name] /bin/bash
 
 - stop a running docker container
 
@@ -70,7 +77,7 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
         docker rm [someName] # remove the named container so we can create a container of the same name again
 
         # with the flag --rm a named container gets automatically remove when it is stopped
-        docker run -d --name [someName] [container]
+        docker run --rm -d --name [someName] [container]
         docker stop [someName]
 
 - [publish a docker container](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
@@ -84,7 +91,3 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
   
         docker push [dockerhubUsername]/[reponame]:[tagname]
 
-- enter a container at startup to look around for any setup problems. This will not start the service since the
-    `entrypoint` is overwritten by executing `/bin/bash`. The container can be left by typing in `exit`.
-
-        docker run --entrypoint=/bin/bash
