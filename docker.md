@@ -91,3 +91,11 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
   
         docker push [dockerhubUsername]/[reponame]:[tagname]
 
+
+- docker debugging on failing background containers:
+
+When working with a docker container running in the background it can be hard to debug, if it fails and ends.
+In this case get the logfile that is being written while the container is still up and running:
+
+    docker inspect [docker runtime name] | grep log
+    # get the logfile name and check the available logs.
