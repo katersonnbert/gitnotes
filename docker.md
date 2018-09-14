@@ -80,6 +80,11 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
         docker run --rm -d --name [someName] [container]
         docker stop [someName]
 
+        # make sure the docker container keeps running in the background even if every script has been
+        # executed use the flags -dit
+        docker run --rm -dit --name [someName] [container]
+        docker stop [someName]
+
 - [publish a docker container](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
   - create a repo on dockerhub
   - locally docker login
@@ -89,8 +94,7 @@ https://www.linux.com/learn/intro-to-linux/2017/11/how-install-and-use-docker-li
 
   - push tag to dockerhub
   
-        docker push [dockerhubUsername]/[reponame]:[tagname]
-
+        docker push [dockerhubUsername]/[reponame]:[tagname] 
 
 - docker debugging on failing background containers:
 
@@ -99,3 +103,31 @@ In this case get the logfile that is being written while the container is still 
 
     docker inspect [docker runtime name] | grep log
     # get the logfile name and check the available logs.
+
+
+## Docker cleanup
+https://zaiste.net/removing_docker_containers/
+https://www.calazan.com/docker-cleanup-commands/
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+List all exited containers
+
+    docker ps -aq -f status=exited
+
+Remove stopped containers
+
+    docker ps -aq --no-trunc -f status=exited | xargs docker rm
+
+Cleanup dangling images
+
+    docker images -f "dangling=true" -q
+
+Remove unused data
+
+    docker system prune
+
+### Cleanup pipe/script
+
+    docker ps -aq --no-trunc -f status=exited | xargs docker rm
+    docker images -f "dangling=true" -q | xargs docker rmi
+    docker system prune
