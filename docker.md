@@ -104,6 +104,12 @@ In this case get the logfile that is being written while the container is still 
     docker inspect [docker runtime name] | grep log
     # get the logfile name and check the available logs.
 
+- checking the logs while a container is running:
+
+    docker logs [instanceName]
+
+  To follow the log of a running container, add the `-f` flag to the `logs` command.
+
 
 ## Docker cleanup
 https://zaiste.net/removing_docker_containers/
@@ -125,6 +131,7 @@ Cleanup dangling images
 Remove unused data
 
     docker system prune
+
 
 ### Cleanup pipe/script
 
