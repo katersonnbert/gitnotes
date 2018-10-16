@@ -901,3 +901,6 @@ Change shell of a user
 
     sudo chsh [username]
 
+Change permissions of a group to the same as the user
+
+    sudo chmod -R g=u
