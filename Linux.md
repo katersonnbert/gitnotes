@@ -857,3 +857,47 @@ When redirecting to `/dev/null`, any command line output to `STDOUT` and `STDERR
     e.g. the output from wget will be suppressed
     wget -O libgit2.tar.gz -o /dev/null https://github.com/libgit2/libgit2/archive/v0.24.5.tar.gz
 
+
+#ä User management
+
+Display all users
+
+    getent passwd
+or
+
+    cat /etc/passwd 
+
+or
+
+    compgen -u
+
+Add a new user
+
+    # user friendly perl script using 'useradd' 
+    sudo adduser [new_username]
+
+or
+
+    # native binary compiled with the system
+    sudo useradd [new_username]
+
+Delete user
+
+    sudo userdel [username]
+
+Remove home directory of a removed user
+
+    sudo rm -r /home/[username]
+
+Modify username
+
+    usermod -l [new_username] [old_username]
+
+Change Password
+
+    sudo passwd [username]
+
+Change shell of a user
+
+    sudo chsh [username]
+
