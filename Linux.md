@@ -858,7 +858,7 @@ When redirecting to `/dev/null`, any command line output to `STDOUT` and `STDERR
     wget -O libgit2.tar.gz -o /dev/null https://github.com/libgit2/libgit2/archive/v0.24.5.tar.gz
 
 
-#ä User management
+## User management
 
 Display all users
 
@@ -904,3 +904,11 @@ Change shell of a user
 Change permissions of a group to the same as the user
 
     sudo chmod -R g=u
+
+
+## Access System Error logs
+
+Print all logs since the last restart:
+
+    sudo journalctl -b -1
+
