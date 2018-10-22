@@ -79,6 +79,7 @@ otherwise, resizing the box w/o scaling the contained text will not be possible:
 
 
 ### Shortcuts
+- Enable/Disable snap ... Shift + 5
 - Enter Text properties ... Ctrl + Shift + t
 - Enter Object properties ... Ctrl + Shift + o
 - Group ... Ctrl + g
@@ -108,6 +109,11 @@ https://slackalaxy.com/2017/02/11/disable-snapping-in-inkscape/
 - a new toolbar appears up top - change Rx and Ry to the same values to define the radius of the corners.
 - done.
 
+## Add lines and arrows
+    Draw a line (Shift+F6)
+    Open Fill and Stroke dialog (Shift+Ctrl+F)
+    Select Stroke Style tab
+    Choose an arrow for the Start Marker or End Marker
 
 ## Gotchas
 
