@@ -912,3 +912,39 @@ Print all logs since the last restart:
 
     sudo journalctl -b -1
 
+
+## Hardware information
+
+Display CPU information
+
+    lscpu
+    # or
+    cat /proc/cpuinfo
+
+Display memory information
+
+    lsmem
+    # or
+    cat /proc/meminfo
+
+Display attached hardware
+
+    lspci
+
+Display attached usb devices
+
+    lsusb
+
+Display hostname (computer name within network)
+
+    hostname
+    # or
+    hostnamectl
+
+Display operating system details
+
+    uname -a
+    # or
+    lsb_release -a
+    # or
+    hostnamectl
