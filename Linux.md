@@ -948,3 +948,9 @@ Display operating system details
     lsb_release -a
     # or
     hostnamectl
+
+Display mac address
+
+    ip link
+    # or
+    ifconfig -a
