@@ -106,10 +106,34 @@ In this case get the logfile that is being written while the container is still 
 
 - checking the logs while a container is running:
 
-    docker logs [instanceName]
+        docker logs [instanceName]
 
   To follow the log of a running container, add the `-f` flag to the `logs` command.
 
+- copy files from a running docker instance
+
+        docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+        docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+
+## Docker networks
+
+- When multiple docker instances are running, they can communicate with each other via a docker network
+
+        docker network create someNetworkName
+
+- Now start two different named docker instances that join the created network. By naming them, each
+  docker instance can be address by any other docker instance via its name
+
+        docker run -dit --rm --name appA --network=someNetworkName applicationA:latest
+        docker run -dit --rm --name appB --network=someNetworkName applicationB:latest
+
+- When we access one container, we can check, if the other app is available
+
+        docker exec -it appA /bin/bash
+        #-- check if appB appears in the list of known hosts
+        cat /etc/hosts
+        #-- or even ping the application by name
+        ping appB
 
 ## Docker cleanup
 https://zaiste.net/removing_docker_containers/
