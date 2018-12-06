@@ -744,11 +744,19 @@ and print the line number where the match has been found (-n).
 
 
 ## netstat: check connections and available sockets
-    netstat
+netstat - Print network connections, routing tables, interface statistics, masquerade connections, 
+              and multicast memberships
 
+- `netstat -p`      ... show all connections with their program name and pid
 - `netstat -l`      ... check connections
 - `netstat -lt`     ... check connections showing their local address
 - `netstat -ltupn`  ... show all connections with their ports, program name and pid
+
+## iptables: IPv4/v6 inspection and packet filter rules
+
+Interesting to manage forwarding rules
+
+    iptables --help
 
 ## List USB devices
     lsusb
