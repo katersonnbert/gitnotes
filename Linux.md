@@ -24,9 +24,9 @@ and (you could read this)
 and (if you are really interested)
 - https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 
-Shell Tutorial (you can work through this if you want to know more about using the shell)
+Shell Tutorials (you can work through this if you want to know more about using the shell)
 - http://linuxcommand.org/learning_the_shell.php
-
+- https://linuxacademy.com/blog/linux/conditions-in-bash-scripting-if-statements/
 
 ## Navigating the filesystem:
 When you first open your shell you will see something like this:
