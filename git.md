@@ -853,6 +853,10 @@ Every `commit` object is also stored as `.git/objects/xx/xxxxxxxxxxxxxxxxxxxxx` 
 The poodle has a peculiar bark, and with this information we know, how Git stores files, different file versions, 
 directory structures and how it can clamp these together to coherent states of directories in time.
 
+You can check styleguides for useful commit messages
+[here](https://chris.beams.io/posts/git-commit/) and
+[here](https://github.com/erlang/otp/wiki/writing-good-commit-messages).
+
 ### Git references
 
 Git commits are used to access a specific repository state in time (or rather within the commit history). To do this, 
