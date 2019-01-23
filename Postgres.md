@@ -96,6 +96,12 @@ at the psql prompt do this:
     psql -UtestUser -dtestDB -a -f /tmp/lastBackup.sql 
 
 
+## Useful commands
+
+Display column details and relations of a specific table
+
+    \d+ <table name>
+
 # Resources
 
 - [The Internals of PostgreSQL](http://www.interdb.jp/pg/index.html)
