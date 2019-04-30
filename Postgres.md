@@ -36,6 +36,22 @@ Postgres
 
        \d  ... should return no relations
 
+- List all schemas
+
+        \dn
+
+- List all users
+
+        \du
+
+- List all tables in a database
+
+        \d
+
+- List columns of a table
+
+        \d table_name
+
 - First we need to connect to the main database "postgres" ... This database contains all information about installed roles and databases. Here we also add new users and databases
 
         \c postgres
