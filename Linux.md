@@ -542,6 +542,22 @@ Read up on the http protocol if you are not familiar with it.
 Find a very nice introduction to curl [here](http://conqueringthecommandline.com/book/curl).
 
 
+### stat - file information
+
+- print information about a specific file
+
+        stat [filename]
+
+### nmap - scan domain for open ports
+
+- to check if a server is secure or has open ports, use `nmap`
+
+        nmap [domain]
+
+        # e.g.
+        nmap example.com
+
+
 ### Compression / uncompression of files
 
 - Use `gzip` or `tar` for compression related activities
