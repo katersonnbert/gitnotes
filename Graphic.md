@@ -115,6 +115,19 @@ https://slackalaxy.com/2017/02/11/disable-snapping-in-inkscape/
     Select Stroke Style tab
     Choose an arrow for the Start Marker or End Marker
 
+## Rotate objects
+
+    Select object
+    -> object -> transform -> Rotate
+
+How to adjust an arrowhead to a changed arrow body:
+
+    copy an arrowhead from a straight (0°) arrow
+    move it next to the arrow body its supposed to be affixed to
+    rotate it until the base of the arrowhead and the base of the arrow body
+    do not show a gap any longer.
+
+
 ## Gotchas
 
 When trying to change spacing between lines in text boxes, make sure the textbox but not the text is
